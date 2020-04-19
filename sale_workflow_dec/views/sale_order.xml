@@ -25,7 +25,34 @@
                 <field name="partner_shipping_id"/>
                 <field name="partner_shipping_zip_id" class="d_partner_shipping_zip_id"/>
             </field>
-            <field name="state" position="after">
+            <field name="amount_total" position="after">
+                <field name="margin" sum="Total Margin" widget="monetary"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="order_tree_view">
+        <field name="name">sale.order.tree</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="summary" class="d_summary"/>
+            </field>
+            <field name="confirmation_date" position="attributes">
+                <attribute name="widget">date</attribute>
+            </field>
+            <field name="commitment_date" position="attributes">
+                <attribute name="widget">date</attribute>
+            </field>
+            <field name="expected_date" position="attributes">
+                <attribute name="widget">date</attribute>
+            </field>
+            <field name="partner_id" position="after">
+                <field name="partner_shipping_id"/>
+                <field name="partner_shipping_zip_id" class="d_partner_shipping_zip_id"/>
+            </field>
+            <field name="amount_total" position="after">
                 <field name="margin" sum="Total Margin" widget="monetary"/>
             </field>
         </field>
@@ -58,6 +85,11 @@
                 <field name="warranty"/>
             </xpath>
         </field>
+    </record>
+
+    <!-- Override context to clear 'search_default_my_quotation' -->
+    <record model="ir.actions.act_window" id="sale.action_quotations_with_onboarding">
+        <field name="context">{'search_default_draft': 1}</field>
     </record>
 
 </odoo>

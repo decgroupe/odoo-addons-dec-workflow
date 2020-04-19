@@ -1,5 +1,35 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+
+    <record model="ir.ui.view" id="quotation_tree_view">
+        <field name="name">sale.order.tree</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="class">d_sale_order</attribute>
+            </xpath>
+            <field name="name" position="after">
+                <field name="summary" class="d_summary"/>
+            </field>
+            <field name="date_order" position="attributes">
+                <attribute name="widget">date</attribute>
+            </field>
+            <field name="commitment_date" position="attributes">
+                <attribute name="widget">date</attribute>
+            </field>
+            <field name="expected_date" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <field name="partner_id" position="after">
+                <field name="partner_shipping_id"/>
+                <field name="partner_shipping_zip_id" class="d_partner_shipping_zip_id"/>
+            </field>
+            <field name="state" position="after">
+                <field name="margin" sum="Total Margin" widget="monetary"/>
+            </field>
+        </field>
+    </record>
 
     <record model="ir.ui.view" id="sale_order_form_view">
         <field name="name">sale.order.form</field>
@@ -7,7 +37,7 @@
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
             <notebook position="before">
-                <field name="summary" placeholder="Enter order summary ..." />
+                <field name="summary" placeholder="Enter order summary ..."/>
             </notebook>
             <xpath expr="//field[@name='validity_date']" position="before">
                 <field name="warranty"/>

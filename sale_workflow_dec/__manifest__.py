@@ -12,6 +12,7 @@
     #'force_migration':'12.0.0.0.0',
     'data':
         [
+            'views/assets.xml',
             'views/sale_order.xml',
         ],
     'installable': True

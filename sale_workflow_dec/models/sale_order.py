@@ -47,3 +47,10 @@ class SaleOrder(models.Model):
     #     store=True,
     #     help="Date of validity"
     # )
+
+    partner_shipping_zip_id = fields.Many2one(
+        'res.city.zip',
+        'ZIP Location',
+        related='partner_shipping_id.zip_id',
+        readonly=True,
+    )

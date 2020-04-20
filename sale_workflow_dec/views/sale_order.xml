@@ -7,7 +7,8 @@
         <field name="inherit_id" ref="sale.view_quotation_tree"/>
         <field name="arch" type="xml">
             <xpath expr="//tree" position="attributes">
-                <attribute name="class">d_sale_order</attribute>
+                <attribute name="class">d_sale_quotation</attribute>
+                <attribute name="decoration-primary">state in ('sale','locked')</attribute>
             </xpath>
             <field name="name" position="after">
                 <field name="summary" class="d_summary"/>
@@ -36,6 +37,11 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_tree"/>
         <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="class">d_sale_order</attribute>
+                <attribute name="decoration-success">invoice_status in ('invoiced')</attribute>
+                <attribute name="decoration-info">invoice_status in ('to invoice')</attribute>
+            </xpath>
             <field name="name" position="after">
                 <field name="summary" class="d_summary"/>
             </field>

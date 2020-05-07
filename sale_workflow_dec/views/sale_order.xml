@@ -85,7 +85,9 @@
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
             <notebook position="before">
-                <field name="summary" placeholder="Enter order summary ..."/>
+                <div class="d_summary alert alert-info">
+                    <field name="summary" placeholder="Enter order summary ..."/>
+                </div>
             </notebook>
             <xpath expr="//field[@name='validity_date']" position="before">
                 <field name="warranty"/>

@@ -1,4 +1,4 @@
-.d_summary{
+td .d_summary{
     font-size: 80%;
     font-style: italic;
     max-width: 16em;
@@ -7,4 +7,9 @@
 .d_partner_shipping_zip_id{
     font-size: 80%;
     max-width: 16em;
+}
+
+div .d_summary{
+    padding: 0.15rem .25rem;
+    margin-bottom: 0;
 }

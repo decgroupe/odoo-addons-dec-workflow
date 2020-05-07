@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
+    <record model="ir.ui.view" id="invoice_supplier_form_view">
+        <field name="name">account.invoice.supplier.form</field>
+        <field name="model">account.invoice</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="arch" type="xml">
+            <field name="reference" position="after">
+                <field name="company_invoice_number"/>
+            </field>
+        </field>
+    </record> 
+
+    <record model="ir.ui.view" id="invoice_supplier_tree_view">
+        <field name="name">account.invoice.tree</field>
+        <field name="model">account.invoice</field>
+        <field name="type">tree</field>
+        <field name="inherit_id" ref="account.invoice_supplier_tree"/>
+        <field name="arch" type="xml">
+            <field name="number" position="after">
+                <field name="company_invoice_number"/>
+            </field>
+        </field>
+    </record>
+
 </odoo>

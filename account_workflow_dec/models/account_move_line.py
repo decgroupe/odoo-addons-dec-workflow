@@ -14,21 +14,22 @@
 # Written by Yann Papouin <y.papouin@dec-industrie.com>, May 2020
 
 from odoo import api, fields, models
-from odoo.addons import decimal_precision as dp
 
 
-class AccountInvoiceLine(models.Model):
-    _inherit = 'account.invoice.line'
+class AccountMoveLine(models.Model):
+    _inherit = 'account.move.line'
 
-    @api.depends('price_unit', 'discount')
-    def _compute_price_reduce(self):
+    # Override name_get to print company_invoice_number for quicker line
+    # identification
+    @api.multi
+    @api.depends('ref', 'move_id')
+    def name_get(self):
+        result = []
         for line in self:
-            line.price_reduce = line.price_unit * (1.0 - line.discount / 100.0)
-
-    price_reduce = fields.Float(
-        compute='_compute_price_reduce',
-        string='Price Reduce',
-        digits=dp.get_precision('Product Price'),
-        readonly=True,
-        store=False,
-    )
+            value = line.move_id.name or ''
+            if line.ref:
+                value += '({})'.format(line.ref)
+                if line.invoice_id.company_invoice_number:
+                    value += '[{}]'.format(line.invoice_id.company_invoice_number)
+            result.append((line.id, value))
+        return result

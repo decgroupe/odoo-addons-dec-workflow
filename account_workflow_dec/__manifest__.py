@@ -9,8 +9,8 @@
     #'force_migration':'12.0.0.0.0',
     'data':
         [
-            # 'views/assets.xml',
-            # 'views/account_invoice.xml',
+            'views/assets.xml',
+            'views/account_invoice.xml',
         ],
     'installable': True
 }

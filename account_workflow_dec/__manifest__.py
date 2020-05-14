@@ -4,7 +4,8 @@
     'author': 'DEC, Yann Papouin',
     'website': 'http://www.dec-industrie.com',
     'depends': [
-        'sale'
+        'account',
+        'account_cancel',
     ],
     #'force_migration':'12.0.0.0.0',
     'data':

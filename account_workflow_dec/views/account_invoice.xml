@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
+    <record model="ir.ui.view" id="invoice_form_view">
+        <field name="name">account.invoice.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_invoice_open']" position="attributes">
+                <attribute name="confirm">Are you sure that you want to validate this invoice?</attribute>
+            </xpath>
+        </field>
+    </record>
+
     <record model="ir.ui.view" id="invoice_supplier_form_view">
         <field name="name">account.invoice.supplier.form</field>
         <field name="model">account.invoice</field>
         <field name="type">form</field>
         <field name="inherit_id" ref="account.invoice_supplier_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_invoice_open']" position="attributes">
+                <attribute name="confirm">Are you sure that you want to validate this invoice?</attribute>
+            </xpath>
             <field name="reference" position="after">
                 <field name="company_invoice_number"/>
             </field>
@@ -22,6 +36,28 @@
             <field name="number" position="after">
                 <field name="company_invoice_number"/>
             </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="cancel_invoice_form">
+        <field name="name">invoice.form.cancel.inherit</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account_cancel.invoice_form_cancel_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_invoice_cancel']" position="attributes">
+                <attribute name="confirm">Are you sure that you want to cancel this invoice?</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="cancel_invoice_supplier_form">
+        <field name="name">invoice.supplier.cancel.form.inherit</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account_cancel.invoice_supplier_cancel_form_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_invoice_cancel']" position="attributes">
+                <attribute name="confirm">Are you sure that you want to cancel this invoice?</attribute>
+            </xpath>
         </field>
     </record>
 

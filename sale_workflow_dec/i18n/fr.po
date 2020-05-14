@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-31 17:11+0000\n"
+"POT-Creation-Date: 2020-05-14 15:06+0000\n"
 "PO-Revision-Date: 2020-03-31 23:46+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
@@ -19,53 +19,23 @@ msgstr ""
 
 #. module: sale_workflow_dec
 #: model_terms:ir.ui.view,arch_db:sale_workflow_dec.sale_order_form_view
+msgid "Are you sure that you want to cancel this sale order?"
+msgstr ""
+
+#. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.sale_order_form_view
+msgid "Are you sure that you want to confirm this sale order?"
+msgstr ""
+
+#. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.sale_order_form_view
 msgid "Enter order summary ..."
 msgstr "Saisir un résumé pour cette commande ..."
-
-#. module: sale_workflow_dec
-#: model:ir.model.fields,field_description:sale_workflow_dec.field_sale_order_line__report_hide_line
-msgid "Hide Line"
-msgstr "Cacher la ligne"
-
-#. module: sale_workflow_dec
-#: model:ir.model.fields,field_description:sale_workflow_dec.field_sale_order_line__report_hide_price
-msgid "Hide Price"
-msgstr "Cacher le prix"
-
-#. module: sale_workflow_dec
-#: model:ir.model.fields,field_description:sale_workflow_dec.field_sale_order_line__report_hide_uom
-msgid "Hide Uom"
-msgstr "Cacher l'unité"
-
-#. module: sale_workflow_dec
-#: model:ir.model.fields,help:sale_workflow_dec.field_sale_order_line__report_hide_price
-msgid "Only hide price of this line (when equal to zero in most cases)"
-msgstr "Cacher seulement le prix de cette ligne (quand égal à zéro dans la plupart des cas)"
-
-#. module: sale_workflow_dec
-#: model:ir.model.fields,help:sale_workflow_dec.field_sale_order_line__report_hide_uom
-msgid "Only hide units of this line"
-msgstr "Cacher seulement l'unité de vente de cette ligne"
 
 #. module: sale_workflow_dec
 #: model:ir.model.fields,help:sale_workflow_dec.field_sale_order__summary
 msgid "Order summary to quickly identify this order in treeview"
 msgstr "Résumé pour identifier rapidement cette commande en vue liste"
-
-#. module: sale_workflow_dec
-#: model:ir.model.fields,field_description:sale_workflow_dec.field_sale_order_line__report_name
-msgid "Report Name"
-msgstr "Nom du rapport"
-
-#. module: sale_workflow_dec
-#: model:ir.model.fields,field_description:sale_workflow_dec.field_sale_order_line__report_note
-msgid "Report Note"
-msgstr "Note du rapport"
-
-#. module: sale_workflow_dec
-#: model:ir.model.fields,field_description:sale_workflow_dec.field_sale_order_line__report_subtotal
-msgid "Report Subtotal"
-msgstr "Sous-total du rapport"
 
 #. module: sale_workflow_dec
 #: model:ir.model,name:sale_workflow_dec.model_sale_order
@@ -83,9 +53,10 @@ msgid "Summary"
 msgstr "Résumé"
 
 #. module: sale_workflow_dec
-#: model:ir.model.fields,help:sale_workflow_dec.field_sale_order_line__report_hide_line
-msgid "This allows the seller to hide the entire printed line"
-msgstr "Ceci permet d'enlever complétement cette ligne du rapport"
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.order_tree_view
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.quotation_tree_view
+msgid "Total Margin"
+msgstr "Marge totale"
 
 #. module: sale_workflow_dec
 #: model:ir.model.fields,help:sale_workflow_dec.field_sale_order__warranty
@@ -96,3 +67,35 @@ msgstr "Durée de garantie en année(s)"
 #: model:ir.model.fields,field_description:sale_workflow_dec.field_sale_order__warranty
 msgid "Warranty period"
 msgstr "Garantie"
+
+#. module: sale_workflow_dec
+#: model:ir.model.fields,field_description:sale_workflow_dec.field_sale_order__partner_shipping_zip_id
+msgid "ZIP Location"
+msgstr "Code postal"
+
+#~ msgid "Hide Line"
+#~ msgstr "Cacher la ligne"
+
+#~ msgid "Hide Price"
+#~ msgstr "Cacher le prix"
+
+#~ msgid "Hide Uom"
+#~ msgstr "Cacher l'unité"
+
+#~ msgid "Only hide price of this line (when equal to zero in most cases)"
+#~ msgstr "Cacher seulement le prix de cette ligne (quand égal à zéro dans la plupart des cas)"
+
+#~ msgid "Only hide units of this line"
+#~ msgstr "Cacher seulement l'unité de vente de cette ligne"
+
+#~ msgid "Report Name"
+#~ msgstr "Nom du rapport"
+
+#~ msgid "Report Note"
+#~ msgstr "Note du rapport"
+
+#~ msgid "Report Subtotal"
+#~ msgstr "Sous-total du rapport"
+
+#~ msgid "This allows the seller to hide the entire printed line"
+#~ msgstr "Ceci permet d'enlever complétement cette ligne du rapport"

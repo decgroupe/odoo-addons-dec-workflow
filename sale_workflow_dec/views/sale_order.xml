@@ -84,8 +84,17 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_confirm'][1]" position="attributes">
+                <attribute name="confirm">Are you sure that you want to confirm this sale order?</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_confirm'][2]" position="attributes">
+                <attribute name="confirm">Are you sure that you want to confirm this sale order?</attribute>
+            </xpath>
+            <button name="action_cancel" position="attributes">
+                <attribute name="confirm">Are you sure that you want to cancel this sale order?</attribute>
+            </button>
             <notebook position="before">
-                <div class="d_summary alert alert-info">
+                <div class="d_summary">
                     <field name="summary" placeholder="Enter order summary ..."/>
                 </div>
             </notebook>

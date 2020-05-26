@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-14 15:03+0000\n"
-"PO-Revision-Date: 2020-05-14 15:03+0000\n"
+"POT-Creation-Date: 2020-05-26 11:48+0000\n"
+"PO-Revision-Date: 2020-05-26 11:48+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,18 +19,18 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:account_workflow_dec.cancel_invoice_form
 #: model_terms:ir.ui.view,arch_db:account_workflow_dec.cancel_invoice_supplier_form
 msgid "Are you sure that you want to cancel this invoice?"
-msgstr ""
+msgstr "Êtes-vous sur de vouloir annuler cette facture?"
 
 #. module: account_workflow_dec
 #: model_terms:ir.ui.view,arch_db:account_workflow_dec.invoice_form_view
 #: model_terms:ir.ui.view,arch_db:account_workflow_dec.invoice_supplier_form_view
 msgid "Are you sure that you want to validate this invoice?"
-msgstr ""
+msgstr "Êtes-vous sur de vouloir valider cette facture?"
 
 #. module: account_workflow_dec
 #: model:ir.model.fields,field_description:account_workflow_dec.field_account_invoice__company_invoice_number
 msgid "Company invoice number"
-msgstr ""
+msgstr "Numéro de fact."
 
 #. module: account_workflow_dec
 #: model:ir.model.fields,field_description:account_workflow_dec.field_account_invoice__client_order_ref

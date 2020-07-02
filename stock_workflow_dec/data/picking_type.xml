@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Create a picking type to add products to Production -->
+    <record model="stock.picking.type" id="picking_type_add">
+        <field name="name">Adds</field>
+        <field name="sequence_id" ref="stock.seq_picking_internal"/>
+        <field name="code">internal</field>
+        <field name="default_location_src_id" ref="stock.stock_location_stock"/>
+        <field name="default_location_dest_id" ref="stock.location_production"/>
+    </record>
+
+    <!-- Create a picking type to return product from Production to 
+        default Stock location -->
+    <record model="stock.picking.type" id="picking_type_return">
+        <field name="name">Returns</field>
+        <field name="sequence_id" ref="stock.seq_picking_internal"/>
+        <field name="code">internal</field>
+        <field name="default_location_src_id" ref="stock.location_production"/>
+        <field name="default_location_dest_id" ref="stock.stock_location_stock"/>
+    </record>
+
+    <!-- Create a picking type to return product from Production to 
+        Stock Schneider-Electric (sub-contracting) 
+        Note that we use an hardcoded database ID since no xml_id 
+        exists for this record -->
+    <record model="stock.picking.type" id="picking_type_exceed">
+        <field name="name">Exceeds</field>
+        <field name="sequence_id" ref="stock.seq_picking_internal"/>
+        <field name="code">internal</field>
+        <field name="default_location_src_id" ref="stock.location_production"/>
+        <field name="default_location_dest_id" eval="14"/>
+    </record>
+
+</odoo>

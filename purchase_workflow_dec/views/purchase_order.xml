@@ -12,4 +12,16 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="purchase_order_filter_view" >
+        <field name="name">request.quotation.select</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.view_purchase_order_filter"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="origin"/>
+                <field name="group_id"/>
+            </field>
+        </field>
+    </record>
+
 </odoo>

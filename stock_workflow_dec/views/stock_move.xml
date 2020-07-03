@@ -24,7 +24,7 @@
                 <attribute name="decoration-warning">state == 'partially_available'</attribute>
                 <attribute name="decoration-bf">state == 'available'</attribute>
                 <attribute name="decoration-muted">state == 'done'</attribute>
-                <attribute name="decoration-strike">state == 'cancel'</attribute>
+                <attribute name="decoration-muted-strike">state == 'cancel'</attribute>
             </xpath>
         </field>
     </record>
@@ -41,7 +41,7 @@
                 <attribute name="decoration-warning">state == 'partially_available'</attribute>
                 <attribute name="decoration-bf">state == 'available'</attribute>
                 <attribute name="decoration-muted">state == 'done'</attribute>
-                <attribute name="decoration-strike">state == 'cancel'</attribute>
+                <attribute name="decoration-muted-strike">state == 'cancel'</attribute>
             </xpath>
         </field>
     </record>
@@ -58,7 +58,7 @@
                 <attribute name="decoration-warning">state == 'partially_available'</attribute>
                 <attribute name="decoration-bf">state == 'available'</attribute>
                 <attribute name="decoration-muted">state == 'done'</attribute>
-                <attribute name="decoration-strike">state == 'cancel'</attribute>
+                <attribute name="decoration-muted-strike">state == 'cancel'</attribute>
             </xpath>
         </field>
     </record>

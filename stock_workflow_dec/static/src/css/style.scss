@@ -1,3 +1,8 @@
 .text-strike {
     text-decoration: line-through;
 }
+
+.text-muted-strike {
+    color: $text-muted !important;
+    text-decoration: line-through;
+}

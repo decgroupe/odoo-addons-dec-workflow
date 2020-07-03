@@ -24,4 +24,18 @@
         </field>
     </record>
 
+
+    <record model="ir.ui.view" id="purchase_order_view_form_inherit" >
+        <field name="name">purchase.order.form.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase_stock.purchase_order_view_form_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/form//field[@name='move_ids']" position="before">
+                <separator string="Reservation"/>
+                <field name="move_dest_ids"/>
+                <separator string="Reception"/>
+            </xpath>
+        </field>
+    </record>
+
 </odoo>

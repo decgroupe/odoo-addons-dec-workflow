@@ -104,9 +104,4 @@
         </field>
     </record>
 
-    <!-- Override context to clear 'search_default_my_quotation' -->
-    <record model="ir.actions.act_window" id="sale.action_quotations_with_onboarding">
-        <field name="context">{'search_default_draft': 1}</field>
-    </record>
-
 </odoo>

@@ -26,6 +26,9 @@
                 <attribute name="decoration-muted">state == 'done'</attribute>
                 <attribute name="decoration-muted-strike">state == 'cancel'</attribute>
             </xpath>
+            <xpath expr="//field[@name='move_raw_ids']/tree" position="attributes">
+                <attribute name="default_order">sequence</attribute>
+            </xpath>
         </field>
     </record>
 

@@ -11,7 +11,7 @@
             decoration-success          shows the line in LIGHT GREEN
             decoration-warning          shows the line in LIGHT BROWN
     -->
-    
+
     <record model="ir.ui.view" id="mrp_production_form_view">
         <field name="name">mrp.production.form</field>
         <field name="model">mrp.production</field>

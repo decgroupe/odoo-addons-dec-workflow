@@ -11,7 +11,6 @@
         'views/assets.xml',
         'views/stock_move.xml',
         'views/stock_picking.xml',
-        'views/mrp_production.xml',
     ],
     'installable': True
 }

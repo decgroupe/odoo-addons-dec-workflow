@@ -5,6 +5,8 @@
     'website': 'http://www.dec-industrie.com',
     'summary': '''Production order''',
     'depends': ['mrp', ],
-    'data': [],
+    'data': [
+        'views/mrp_production.xml',
+    ],
     'installable': True
 }

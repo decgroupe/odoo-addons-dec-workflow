@@ -68,3 +68,13 @@ class MrpProduction(models.Model):
             )
             production.finished_picking_ids = all_picking_ids.ids
             production.finished_picking_move_ids = all_move_ids.ids
+
+    @api.multi
+    def _generate_moves(self):
+        super(MrpProduction, self)._generate_moves()
+        for production in self:
+            # Assign consumable immediatly
+            consu_move_ids = production.move_raw_ids.filtered(
+                lambda r: r.product_type == 'consu'
+            )
+            consu_move_ids._action_assign()

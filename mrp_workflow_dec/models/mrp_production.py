@@ -73,6 +73,14 @@ class MrpProduction(models.Model):
     def _generate_moves(self):
         super(MrpProduction, self)._generate_moves()
         for production in self:
+            # Enable auto_validate on all make_to_order moves, so when a
+            # product is validated on reception then this move will be set to
+            # done at the same time
+            mto_move_ids = production.move_raw_ids.filtered(
+                lambda r: r.product_type == 'consu'
+            )
+            for move in mto_move_ids:
+                move.auto_validate = True
             # Assign consumable immediatly
             consu_move_ids = production.move_raw_ids.filtered(
                 lambda r: r.product_type == 'consu'

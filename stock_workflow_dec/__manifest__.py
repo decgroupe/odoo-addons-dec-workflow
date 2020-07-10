@@ -6,11 +6,12 @@
     'summary': '''Stock and pickings''',
     'depends': ['dec', 'stock'],
     #'force_migration':'12.0.0.0.0',
-    'data': [
-        'data/picking_type.xml',
-        'views/assets.xml',
-        'views/stock_move.xml',
-        'views/stock_picking.xml',
-    ],
+    'data':
+        [
+            'data/picking_type.xml',
+            'views/assets.xml',
+            'views/stock_move.xml',
+            'views/stock_picking.xml',
+        ],
     'installable': True
 }

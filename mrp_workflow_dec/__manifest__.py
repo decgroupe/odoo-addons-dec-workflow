@@ -7,7 +7,11 @@
     'depends': [
         'mrp',
         'stock_auto_validate',
+        'purchase_stock',
     ],
-    'data': ['views/mrp_production.xml', ],
+    'data': [
+        'data/stock_data.xml',
+        'views/mrp_production.xml',
+    ],
     'installable': True
 }

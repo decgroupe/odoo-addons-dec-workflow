@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="stock_rule_production_consumable" model="stock.rule">
+        <field name="route_id" ref="purchase_stock.route_warehouse0_buy"/>
+        <field name="name">Production → Production (Consumable)</field>
+        <field name="action">buy</field>
+        <field name="picking_type_id" ref="stock.picking_type_in"/>
+        <field name="location_id" ref="stock.location_production"/>
+    </record>
+</odoo>

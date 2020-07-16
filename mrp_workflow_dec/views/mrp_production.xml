@@ -29,6 +29,9 @@
             <xpath expr="//field[@name='move_raw_ids']/tree" position="attributes">
                 <attribute name="default_order">sequence</attribute>
             </xpath>
+            <xpath expr="//button[@name='%(mrp.action_change_production_qty)d']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
         </field>
     </record>
 

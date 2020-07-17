@@ -2,7 +2,7 @@
 # Copyright (C) DEC SARL, Inc - All Rights Reserved.
 # Written by Yann Papouin <y.papouin at dec-industrie.com>, July 2020
 
-from odoo import models, api, fields
+from odoo import models
 
 
 class StockPicking(models.Model):

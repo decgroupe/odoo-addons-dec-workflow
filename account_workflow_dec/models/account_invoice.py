@@ -3,7 +3,6 @@
 # Written by Yann Papouin <y.papouin at dec-industrie.com>, May 2020
 
 from odoo import api, fields, models
-from dateutil.relativedelta import relativedelta
 
 
 class AccountInvoice(models.Model):

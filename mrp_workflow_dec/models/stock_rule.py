@@ -3,7 +3,7 @@
 # Written by Yann Papouin <y.papouin at dec-industrie.com>, Jul 2020
 
 import logging
-from odoo import api, fields, models, _
+from odoo import api, models, _
 
 _logger = logging.getLogger(__name__)
 
@@ -18,7 +18,7 @@ class StockRule(models.Model):
         prod_location = location_id.get_warehouse()._get_production_location()
         if product_id.type == 'consu' and location_id == prod_location:
             _logger.info(
-                "Ignore consumable stock.rule for {}".format(
+                _("Ignore consumable stock.rule for {}").format(
                     product_id.display_name,
                 )
             )

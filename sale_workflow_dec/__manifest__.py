@@ -4,10 +4,11 @@
     'author': 'DEC, Yann Papouin',
     'website': 'http://www.dec-industrie.com',
     'category': 'Sales',
-    'summary': '''Adds warranty and validity on sale order''',
+    'summary': '''Custom views for sale order''',
     'depends': [
         'dec',
-        'sale'
+        'sale',
+        'sale_summary',
     ],
     #'force_migration':'12.0.0.0.0',
     'data':

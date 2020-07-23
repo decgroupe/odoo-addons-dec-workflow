@@ -10,9 +10,6 @@
                 <attribute name="class">d_sale_quotation</attribute>
                 <attribute name="decoration-primary">state in ('sale','locked')</attribute>
             </xpath>
-            <field name="name" position="after">
-                <field name="summary" class="d_summary"/>
-            </field>
             <field name="date_order" position="attributes">
                 <attribute name="widget">date</attribute>
             </field>
@@ -42,9 +39,6 @@
                 <attribute name="decoration-success">invoice_status in ('invoiced')</attribute>
                 <attribute name="decoration-info">invoice_status in ('to invoice')</attribute>
             </xpath>
-            <field name="name" position="after">
-                <field name="summary" class="d_summary"/>
-            </field>
             <field name="confirmation_date" position="attributes">
                 <attribute name="widget">date</attribute>
             </field>
@@ -93,11 +87,6 @@
             <button name="action_cancel" position="attributes">
                 <attribute name="confirm">Are you sure that you want to cancel this sale order?</attribute>
             </button>
-            <notebook position="before">
-                <div class="d_summary">
-                    <field name="summary" placeholder="Enter order summary ..."/>
-                </div>
-            </notebook>
             <xpath expr="//field[@name='validity_date']" position="before">
                 <field name="warranty"/>
             </xpath>

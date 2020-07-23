@@ -9,6 +9,7 @@
         'dec',
         'sale',
         'sale_summary',
+        'sale_warranty',
     ],
     #'force_migration':'12.0.0.0.0',
     'data':

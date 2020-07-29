@@ -1,0 +1,54 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mrp_workflow_dec
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-28 19:58+0000\n"
+"PO-Revision-Date: 2020-07-28 22:53+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 2.3.1\n"
+
+#. module: mrp_workflow_dec
+#: code:addons/mrp_workflow_dec/models/stock_rule.py:21
+#, python-format
+msgid "Ignore consumable stock.rule for {}"
+msgstr "Ignorer la règle de stock pour le consommable {}"
+
+#. module: mrp_workflow_dec
+#: model:ir.model.fields,field_description:mrp_workflow_dec.field_mrp_production__finished_picking_move_ids
+msgid "Moves on pickings associated with this manufacturing order output"
+msgstr "Mouvements sur les bons associés avec les produits finis de cet ordre de fabrication"
+
+#. module: mrp_workflow_dec
+#: model:ir.model.fields,field_description:mrp_workflow_dec.field_mrp_production__finished_picking_ids
+msgid "Pickings associated with this manufacturing order output"
+msgstr "Bons associés avec les produits finis de cet ordre de fabrication"
+
+#. module: mrp_workflow_dec
+#: model:ir.model.fields,field_description:mrp_workflow_dec.field_mrp_production__finished_picking_names
+msgid "Pickings names associated with this manufacturing order output"
+msgstr "Noms des bons associés avec les produits finis de cet ordre de fabrication"
+
+#. module: mrp_workflow_dec
+#: model:ir.model,name:mrp_workflow_dec.model_mrp_production
+msgid "Production Order"
+msgstr "Odre de fabrication"
+
+#. module: mrp_workflow_dec
+#: model:stock.rule,name:mrp_workflow_dec.stock_rule_production_consumable
+msgid "Production → Production (Consumable)"
+msgstr "Production → Production (Consommables)"
+
+#. module: mrp_workflow_dec
+#: model:ir.model,name:mrp_workflow_dec.model_stock_rule
+msgid "Stock Rule"
+msgstr "Règle de stock"

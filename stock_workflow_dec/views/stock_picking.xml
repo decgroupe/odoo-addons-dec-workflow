@@ -17,6 +17,9 @@
         <field name="model">stock.picking</field>
         <field name="inherit_id" ref="stock.view_picking_form"/>
         <field name="arch" type="xml">
+            <button name="action_cancel" position="attributes">
+                <attribute name="confirm">Are you sure that you want to cancel this picking order?</attribute>
+            </button>
             <xpath expr="//field[@name='move_line_ids_without_package']/tree/field[@name='product_id']" position="attributes">
                 <attribute name="options">{'no_create': True, 'no_create_edit':True}</attribute>
             </xpath>
@@ -31,6 +34,17 @@
                 <attribute name="decoration-bf">state == 'available'</attribute>
                 <attribute name="decoration-muted">state == 'done'</attribute>
                 <attribute name="decoration-muted-strike">state == 'cancel'</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="picking_internal_search_view" >
+        <field name="name">stock.picking.search</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="origin"/>
             </xpath>
         </field>
     </record>

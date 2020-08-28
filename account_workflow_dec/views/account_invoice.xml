@@ -2,7 +2,7 @@
 <odoo>
 
     <record model="ir.ui.view" id="invoice_form_view">
-        <field name="name">account.invoice.form</field>
+        <field name="name">account.invoice.form@account_workflow_dec</field>
         <field name="model">account.invoice</field>
         <field name="inherit_id" ref="account.invoice_form"/>
         <field name="arch" type="xml">
@@ -13,7 +13,7 @@
     </record>
 
     <record model="ir.ui.view" id="invoice_supplier_form_view">
-        <field name="name">account.invoice.supplier.form</field>
+        <field name="name">account.invoice.supplier.form@account_workflow_dec</field>
         <field name="model">account.invoice</field>
         <field name="type">form</field>
         <field name="inherit_id" ref="account.invoice_supplier_form"/>
@@ -28,7 +28,7 @@
     </record> 
 
     <record model="ir.ui.view" id="invoice_supplier_tree_view">
-        <field name="name">account.invoice.tree</field>
+        <field name="name">account.invoice.tree@account_workflow_dec</field>
         <field name="model">account.invoice</field>
         <field name="type">tree</field>
         <field name="inherit_id" ref="account.invoice_supplier_tree"/>
@@ -40,7 +40,7 @@
     </record>
 
     <record model="ir.ui.view" id="cancel_invoice_form">
-        <field name="name">invoice.form.cancel.inherit</field>
+        <field name="name">invoice.form.cancel.inherit@account_workflow_dec</field>
         <field name="model">account.invoice</field>
         <field name="inherit_id" ref="account_cancel.invoice_form_cancel_inherit"/>
         <field name="arch" type="xml">
@@ -51,7 +51,7 @@
     </record>
 
     <record model="ir.ui.view" id="cancel_invoice_supplier_form">
-        <field name="name">invoice.supplier.cancel.form.inherit</field>
+        <field name="name">invoice.supplier.cancel.form.inherit@account_workflow_dec</field>
         <field name="model">account.invoice</field>
         <field name="inherit_id" ref="account_cancel.invoice_supplier_cancel_form_inherit"/>
         <field name="arch" type="xml">

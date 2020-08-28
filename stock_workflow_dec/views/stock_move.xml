@@ -13,7 +13,7 @@
     -->
 
     <record model="ir.ui.view" id="stock_move_tree_view">
-        <field name="name">stock.move.tree</field>
+        <field name="name">stock.move.tree@stock_workflow_dec</field>
         <field name="model">stock.move</field>
         <field name="inherit_id" ref="stock.view_move_tree"/>
         <field name="arch" type="xml">
@@ -30,7 +30,7 @@
     </record>
 
     <record model="ir.ui.view" id="stock_move_receipt_picking_tree_view" >
-        <field name="name">stock.move.tree2</field>
+        <field name="name">stock.move.tree2@stock_workflow_dec</field>
         <field name="model">stock.move</field>
         <field name="inherit_id" ref="stock.view_move_tree_receipt_picking"/>
         <field name="arch" type="xml">
@@ -47,7 +47,7 @@
     </record>
 
     <record model="ir.ui.view" id="stock_move_form_view">
-        <field name="name">stock.move.form</field>
+        <field name="name">stock.move.form@stock_workflow_dec</field>
         <field name="model">stock.move</field>
         <field name="inherit_id" ref="stock.view_move_form"/>
         <field name="arch" type="xml">

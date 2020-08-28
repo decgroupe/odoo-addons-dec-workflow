@@ -13,7 +13,7 @@
     -->
 
     <record model="ir.ui.view" id="picking_form_view">
-        <field name="name">stock.picking.form</field>
+        <field name="name">stock.picking.form@stock_workflow_dec</field>
         <field name="model">stock.picking</field>
         <field name="inherit_id" ref="stock.view_picking_form"/>
         <field name="arch" type="xml">
@@ -39,7 +39,7 @@
     </record>
 
     <record model="ir.ui.view" id="picking_internal_search_view" >
-        <field name="name">stock.picking.search</field>
+        <field name="name">stock.picking.search@stock_workflow_dec</field>
         <field name="model">stock.picking</field>
         <field name="inherit_id" ref="stock.view_picking_internal_search"/>
         <field name="arch" type="xml">

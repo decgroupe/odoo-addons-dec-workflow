@@ -2,7 +2,7 @@
 <odoo>
 
     <record model="ir.ui.view" id="purchase_order_form_view">
-        <field name="name">purchase.order.form</field>
+        <field name="name">purchase.order.form@purchase_workflow_dec</field>
         <field name="model">purchase.order</field>
         <field name="inherit_id" ref="purchase.purchase_order_form"/>
         <field name="arch" type="xml">
@@ -16,7 +16,7 @@
     </record>
 
     <record model="ir.ui.view" id="purchase_order_filter_view" >
-        <field name="name">request.quotation.select</field>
+        <field name="name">request.quotation.select@purchase_workflow_dec</field>
         <field name="model">purchase.order</field>
         <field name="inherit_id" ref="purchase.view_purchase_order_filter"/>
         <field name="arch" type="xml">
@@ -29,7 +29,7 @@
 
 
     <record model="ir.ui.view" id="purchase_order_view_form_inherit" >
-        <field name="name">purchase.order.form.inherit</field>
+        <field name="name">purchase.order.form.inherit@purchase_workflow_dec</field>
         <field name="model">purchase.order</field>
         <field name="inherit_id" ref="purchase_stock.purchase_order_view_form_inherit"/>
         <field name="arch" type="xml">

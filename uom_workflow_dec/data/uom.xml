@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Method 1: Not working because you cannot change 'factor' when 
+        move lines exists -->
+    <!-- <record id="uom.product_uom_hour" model="uom.uom">
+        <field name="factor" eval="7.0"/>
+    </record> -->
+
+    <!-- Method 2: Not working because you cannot change 'factor' when move lines exists -->
+    <!-- <function model="uom.uom" name="write">
+        <value model="uom.uom" eval="[ref('uom.product_uom_hour')]"/>
+        <value eval="{'factor': 7.0}"/>
+    </function> -->
+
+</odoo>

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-28 20:03+0000\n"
-"PO-Revision-Date: 2020-07-28 20:03+0000\n"
+"POT-Creation-Date: 2020-09-25 17:06+0000\n"
+"PO-Revision-Date: 2020-09-25 17:06+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,17 +18,22 @@ msgstr ""
 #. module: stock_workflow_dec
 #: model:stock.picking.type,name:stock_workflow_dec.picking_type_add
 msgid "Adds"
+msgstr "Ajouts"
+
+#. module: stock_workflow_dec
+#: model_terms:ir.ui.view,arch_db:stock_workflow_dec.picking_form_view
+msgid "Are you sure that you want to cancel this picking order?"
 msgstr ""
 
 #. module: stock_workflow_dec
 #: model:stock.picking.type,name:stock_workflow_dec.picking_type_exceed
 msgid "Exceeds"
-msgstr ""
+msgstr "Surplus"
 
 #. module: stock_workflow_dec
 #: model:stock.picking.type,name:stock_workflow_dec.picking_type_return
 msgid "Returns"
-msgstr ""
+msgstr "Retours"
 
 #. module: stock_workflow_dec
 #: model:ir.model,name:stock_workflow_dec.model_stock_picking

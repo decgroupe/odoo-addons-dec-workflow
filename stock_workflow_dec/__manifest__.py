@@ -8,11 +8,13 @@
         'dec',
         'stock',
         'stock_split_procure_method',
+        'stock_mts_mto_rule',
     ],
     #'force_migration':'12.0.0.0.0',
     'data':
         [
             'data/picking_type.xml',
+            'data/stock_warehouse.xml',
             'views/assets.xml',
             'views/stock_move.xml',
             'views/stock_picking.xml',

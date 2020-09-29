@@ -66,7 +66,7 @@ class MrpProduction(models.Model):
             # product is validated on reception then this move will be set to
             # done at the same time
             mto_move_ids = production.move_raw_ids.filtered(
-                lambda r: r.product_type == 'consu'
+                lambda r: r.procure_method == 'make_to_order'
             )
             for move in mto_move_ids:
                 move.auto_validate = True

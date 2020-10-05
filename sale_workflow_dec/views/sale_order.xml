@@ -23,6 +23,9 @@
                 <field name="partner_shipping_id"/>
                 <field name="partner_shipping_zip_id" class="d_partner_shipping_zip_id"/>
             </field>
+            <field name="amount_total" position="before">
+                <field name="amount_untaxed" sum="Total Untaxed" widget="monetary"/>
+            </field>
             <field name="amount_total" position="after">
                 <field name="margin" sum="Total Margin" widget="monetary"/>
             </field>
@@ -51,6 +54,9 @@
             <field name="partner_id" position="after">
                 <field name="partner_shipping_id"/>
                 <field name="partner_shipping_zip_id" class="d_partner_shipping_zip_id"/>
+            </field>
+            <field name="amount_total" position="before">
+                <field name="amount_untaxed" sum="Total Untaxed" widget="monetary"/>
             </field>
             <field name="amount_total" position="after">
                 <field name="margin" sum="Total Margin" widget="monetary"/>

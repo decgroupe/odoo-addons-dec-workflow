@@ -20,11 +20,18 @@
         <field name="model">purchase.order</field>
         <field name="inherit_id" ref="purchase.view_purchase_order_filter"/>
         <field name="arch" type="xml">
+            <filter name="draft" position="before">
+                <filter name="filter_not_cancelled" string="Not Cancelled" domain="[('state', '!=', 'cancel')]"/>
+            </filter>
             <field name="name" position="after">
                 <field name="origin"/>
                 <field name="group_id"/>
             </field>
         </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="purchase.purchase_rfq" >
+        <field name="context">{"search_default_filter_not_cancelled":1}</field>
     </record>
 
 

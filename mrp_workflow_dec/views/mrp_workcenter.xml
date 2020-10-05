@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.menu" id="mrp.menu_mrp_dashboard">
+        <field name="sequence" eval="12"/>
+    </record>
+
+</odoo>

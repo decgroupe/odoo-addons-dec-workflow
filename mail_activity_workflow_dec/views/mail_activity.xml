@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record model="ir.actions.act_window" id="mail_activity_board.open_boards_activities">
+        <field name="context">{
+            'search_default_activities_my': 1,
+        }
+        </field>
+    </record>
+
+</odoo>

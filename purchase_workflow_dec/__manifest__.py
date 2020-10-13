@@ -6,11 +6,13 @@
     'summary': '''Purchase order''',
     'depends': [
         'dec',
-        'purchase'
+        'purchase',
+        'purchase_order_line_stock_available',
     ],
     #'force_migration':'12.0.0.0.0',
     'data':
         [
+            'views/assets.xml',
             'views/purchase_order.xml',
         ],
     'installable': True

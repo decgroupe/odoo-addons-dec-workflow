@@ -48,4 +48,15 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="purchase_order_form_view_stock">
+        <field name="name">purchase.order.form.view.stock@purchase_workflow_dec</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase_order_line_stock_available.purchase_order_form_view_stock"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='virtual_available']" position="attributes">
+                <attribute name="class">d_purchase_line_virtual_available</attribute>
+            </xpath>
+        </field>
+    </record>
+
 </odoo>

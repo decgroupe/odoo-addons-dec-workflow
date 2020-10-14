@@ -75,3 +75,24 @@ class MrpProduction(models.Model):
                 lambda r: r.product_type == 'consu'
             )
             consu_move_ids._action_assign()
+
+    @api.depends(
+        'move_raw_ids', 'is_locked', 'state', 'move_raw_ids.quantity_done'
+    )
+    def _compute_unreserve_visible(self):
+        """
+        Fixing builtin `_compute_unreserve_visible`:addons/mrp/models/mrp_production.py
+        Apply same filtering on `move_raw_ids` like the one in `do_unreserve`
+        """
+        super()._compute_unreserve_visible()
+        for order in self:
+            already_reserved = order.is_locked and order.state not in (
+                'done', 'cancel'
+            ) and order.mapped('move_raw_ids.move_line_ids')
+            any_quantity_done = any(
+                [
+                    m.quantity_done > 0 for m in order.move_raw_ids.
+                    filtered(lambda x: x.state not in ('done', 'cancel'))
+                ]
+            )
+            order.unreserve_visible = not any_quantity_done and already_reserved

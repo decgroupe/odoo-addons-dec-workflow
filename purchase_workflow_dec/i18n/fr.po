@@ -25,7 +25,7 @@ msgstr "Êtes-vous sûr de vouloir annuler cette commande fournisseur?"
 #. module: purchase_workflow_dec
 #: model_terms:ir.ui.view,arch_db:purchase_workflow_dec.purchase_order_filter_view
 msgid "Not Cancelled"
-msgstr "Pas annulé"
+msgstr "N'est pas annulé"
 
 #. module: purchase_workflow_dec
 #: model:ir.model,name:purchase_workflow_dec.model_purchase_order

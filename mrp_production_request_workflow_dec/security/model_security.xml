@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="group_mrp_production_request_readonly" model="res.groups">
+        <field name="name">Readonly</field>
+        <field name="implied_ids" eval="[
+            (4, ref('base.group_user')), 
+        ]"/>
+        <field name="category_id" ref="mrp_production_request.module_category_mrp_production_request"/>
+    </record>
+
+    <record id="mrp_production_request.group_mrp_production_request_user" model="res.groups">
+        <field name="implied_ids" eval="[
+            (4, ref('base.group_user')), 
+            (4, ref('group_mrp_production_request_readonly')), 
+        ]"/>
+    </record>
+
+    <record id="mrp_production_request_rule" model="ir.rule">
+        <field name="name">Manufacturing Request Readonly</field>
+        <field name="model_id" ref="mrp_production_request.model_mrp_production_request"/>
+        <field name="groups" eval="[(6,0, [ref('group_mrp_production_request_readonly')])]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+        <field name="domain_force"></field>
+    </record>
+
+
+</odoo>

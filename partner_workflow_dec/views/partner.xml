@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record model="ir.ui.view" id="partner_tree_view">
+        <field name="name">res.partner.tree@partner_workflow_dec</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree" />
+        <field name="arch" type="xml">
+            <field name="phone" position="before">
+                <field name="street"/>
+                <field name="zip_id"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

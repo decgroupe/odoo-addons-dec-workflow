@@ -8,6 +8,7 @@
         'mrp',
         'stock_auto_validate',
         'purchase_stock',
+        'product_small_supply',
     ],
     'data': [
         'data/stock_data.xml',

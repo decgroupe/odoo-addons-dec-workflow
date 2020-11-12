@@ -16,7 +16,7 @@ class StockRule(models.Model):
         name, origin, values):
         # Ignore consumable when sourcing from production location
         prod_location = location_id.get_warehouse()._get_production_location()
-        if product_id.type == 'consu' and location_id == prod_location:
+        if product_id.is_consumable and location_id == prod_location:
             _logger.info(
                 _("Ignore consumable stock.rule for {}").format(
                     product_id.display_name,

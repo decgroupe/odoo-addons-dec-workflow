@@ -73,7 +73,7 @@ class MrpProduction(models.Model):
                 move.auto_validate = True
             # Assign consumable immediatly
             consu_move_ids = production.move_raw_ids.filtered(
-                lambda r: r.product_type == 'consu'
+                lambda r: r.is_consumable == True
             )
             consu_move_ids._action_assign()
 

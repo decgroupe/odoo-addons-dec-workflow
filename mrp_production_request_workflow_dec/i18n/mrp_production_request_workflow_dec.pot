@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-29 17:40+0000\n"
-"PO-Revision-Date: 2020-10-29 17:40+0000\n"
+"POT-Creation-Date: 2020-11-14 11:34+0000\n"
+"PO-Revision-Date: 2020-11-14 11:34+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,5 +18,5 @@ msgstr ""
 #. module: mrp_production_request_workflow_dec
 #: model:res.groups,name:mrp_production_request_workflow_dec.group_mrp_production_request_readonly
 msgid "Readonly"
-msgstr ""
+msgstr "Lecture seule"
 

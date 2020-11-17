@@ -59,4 +59,16 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="purchase_order_tree_view" >
+        <field name="name">purchase.order.tree@purchase_workflow_dec</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_tree"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="before">
+                <!-- WARNING: the string character is a non-breakable space -->
+                <field name="partner_image_small" string=" " widget="image"/>
+            </field>
+        </field>
+    </record>
+
 </odoo>

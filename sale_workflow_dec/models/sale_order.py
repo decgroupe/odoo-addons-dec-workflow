@@ -14,6 +14,14 @@ class SaleOrder(models.Model):
         related='partner_shipping_id.zip_id',
         readonly=True,
     )
+    partner_image_small = fields.Binary(
+        related='partner_id.image_small',
+        string='Partner Logo',
+    )
+    user_image_small = fields.Binary(
+        related='user_id.image_small',
+        string='User Avatar',
+    )
 
     @api.multi
     def copy(self, default=None):

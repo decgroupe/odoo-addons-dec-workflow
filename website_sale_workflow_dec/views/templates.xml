@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="product" inherit_id="website_sale.product">
+        <xpath expr="//section[@id='product_detail']" position="replace">
+            <section t-attf-class="container py-2 oe_website_sale #{'discount' if combination_info['has_discounted_price'] else ''}" id="product_detail">
+                <div class="row">
+                    <div class="col-md-8">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a t-att-href="keep(category=0)">Products</a>
+                            </li>
+                            <li t-if="category" class="breadcrumb-item">
+                                <a t-att-href="keep('/shop/category/%s' % slug(category), category=0)" t-field="category.name" />
+                            </li>
+                            <li class="breadcrumb-item active">
+                                <span t-field="product.name" />
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-inline justify-content-end">
+                            <t t-call="website_sale.search">
+                                <t t-set="search" t-value="False"/>
+                            </t>
+                            <t t-call="website_sale.pricelist_list">
+                                <t t-set="_classes">ml-2</t>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <t t-set="variant_img" t-value="product_variant and product_variant.image_variant"/>
+                        <t t-set="image_ids"  t-value="product.product_image_ids"/>
+                        <div id="o-carousel-product" class="carousel slide" data-ride="carousel" data-interval="0">
+                        <div class="carousel-outer">
+                            <div class="carousel-inner">
+                                <div t-if="variant_img" class="carousel-item active" t-field="product_variant.image" t-options="{'widget': 'image', 'class': 'product_detail_img js_variant_img', 'alt-field': 'name', 'zoom': 'image', 'unique': str(product['__last_update']) + (str(product_variant['__last_update']) or ''), 'itemprop': 'image'}"/>
+                                <div t-attf-class="carousel-item#{'' if variant_img else ' active'}" t-field="product.image" t-options="{'widget': 'image', 'class': 'product_detail_img', 'alt-field': 'name', 'zoom': 'image', 'unique': product['__last_update'], 'itemprop': 'image'}"/>
+                                <t t-if="len(image_ids)" t-foreach="image_ids" t-as="pimg">
+                                    <div class="carousel-item" t-field="pimg.image" t-options='{"widget": "image", "class": "product_detail_img", "alt-field": "name", "zoom": "image", "itemprop": "image"}'/>
+                                </t>
+                            </div>
+
+                            <t t-if="len(image_ids) or variant_img">
+                                <a class="carousel-control-prev" href="#o-carousel-product" role="button" data-slide="prev" >
+                                    <span class="fa fa-chevron-left" role="img" aria-label="Previous" title="Previous"/>
+                                </a>
+                                <a class="carousel-control-next" href="#o-carousel-product" role="button" data-slide="next">
+                                    <span class="fa fa-chevron-right" role="img" aria-label="Next" title="Next"/>
+                                </a>
+                            </t>
+                        </div>
+
+                        <ol class="carousel-indicators" t-if="len(image_ids) or variant_img">
+                            <li t-if="variant_img" data-target="#o-carousel-product" data-slide-to="0" class="active">
+                                <img class="img img-fluid js_variant_img_small" t-attf-src="/website/image/product.product/{{product_variant.id}}/image/90x90" t-att-alt="product.name"/>
+                            </li>
+                            <li data-target="#o-carousel-product" t-att-data-slide-to="1 if variant_img else '0'" t-att-class="'' if variant_img else 'active'">
+                                <img class="img img-fluid" t-attf-src="/website/image/product.template/{{product.id}}/image/90x90" t-att-alt="product.name"/>
+                            </li>
+                            <t t-if="len(image_ids)" t-foreach="image_ids" t-as="pimg">
+                                <li data-target="#o-carousel-product" t-att-data-slide-to="pimg_index + (variant_img and 2 or 1)">
+                                    <img class="img img-fluid" t-attf-src="/website/image/product.image/{{pimg.id}}/image/90x90" t-att-alt="pimg.name"/>
+                                </li>
+                            </t>
+                        </ol>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-4 offset-xl-2" id="product_details">
+                        <h1 itemprop="name" t-field="product.name">Product Name</h1>
+                        <span itemprop="url" style="display:none;" t-esc="'%sshop/product/%s' % (request.httprequest.url_root, slug(product))"/>
+                        <form t-if="product._is_add_to_cart_possible()" action="/shop/cart/update" method="POST">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                            <div class="js_product js_main_product">
+                                <t t-placeholder="select">
+                                    <input type="hidden" class="product_id" name="product_id" t-att-value="product_variant.id" />
+                                    <input type="hidden" class="product_template_id" name="product_template_id" t-att-value="product.id" />
+                                    <t t-if="first_possible_combination" t-call="sale.variants">
+                                        <t t-set="ul_class" t-value="'flex-column'" />
+                                        <t t-set="parent_combination" t-value="None" />
+                                    </t>
+                                    <t t-else="">
+                                        <ul class="d-none js_add_cart_variants" t-att-data-attribute_exclusions="{'exclusions: []'}"/>
+                                    </t>
+                                </t>
+                                <t t-call="website_sale.product_price" />
+                                <p t-if="True" class="css_not_available_msg alert alert-warning">This combination does not exist.</p>
+                                <a role="button" id="add_to_cart" class="btn btn-primary btn-lg mt8 js_check_product a-submit" href="#">Add to Cart</a>
+                            </div>
+                        </form>
+                        <p t-elif="not product.active" class="alert alert-warning">This product is no longer available.</p>
+                        <p t-else="" class="alert alert-warning">This product has no valid combination.</p>
+                        <hr t-if="product.description_sale" />
+                        <div class="o_not_editable">
+                            <p t-field="product.description_sale" class="text-muted" />
+                        </div>
+                        <hr />
+                        <p class="text-muted">
+                        30-day money-back guarantee<br />
+                        Free Shipping in U.S.<br />
+                        Buy now, get in 2 days
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </xpath>
+    </template>
+
+</odoo>

@@ -8,6 +8,8 @@
         'website_sale',
         'website_sale_main_category',
     ],
-    'data': [],
+    'data': [
+        'views/templates.xml',
+    ],
     'installable': True
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.model.access" id="res_company_website_editor">
+        <field name="name">res_company_website_editor</field>
+        <field name="model_id" ref="base.model_res_company" />
+        <field name="group_id" ref="website.group_website_designer" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+
+</odoo>

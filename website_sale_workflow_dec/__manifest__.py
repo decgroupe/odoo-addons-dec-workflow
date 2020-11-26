@@ -7,6 +7,7 @@
     'depends': [
         'website_sale',
         'website_sale_main_category',
+        'website_sale_tax_toggle',
     ],
     'data': [
         'views/templates.xml',

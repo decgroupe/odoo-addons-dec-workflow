@@ -10,7 +10,10 @@
         'website_sale_tax_toggle',
     ],
     'data': [
-        'views/templates.xml',
+        'views/product.xml',
+        'views/product_carousel.xml',
+        'views/tax_toggle.xml',
+        'views/product_price.xml',
     ],
     'installable': True
 }

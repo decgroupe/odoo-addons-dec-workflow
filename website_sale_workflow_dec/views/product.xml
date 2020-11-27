@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <template id="product_v1" inherit_id="website_sale.product">
+    <template id="product" inherit_id="website_sale.product">
         <xpath expr="//section[@id='product_detail']" position="replace">
             <section t-attf-class="container py-2 oe_website_sale #{'discount' if combination_info['has_discounted_price'] else ''}" id="product_detail">
                 <div class="row">

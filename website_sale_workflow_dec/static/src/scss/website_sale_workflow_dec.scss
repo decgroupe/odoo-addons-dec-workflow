@@ -1,0 +1,14 @@
+.o_mega_menu {
+    .nav-link {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+// Fix for design fight between different scss where dropdown mega menu is
+// not correctly rendered between this two sizes
+@media (min-width: 768px) and (max-width: 991.98px) {
+    header.o_affix_enabled > .navbar > * .dropdown-menu {
+        max-height: 60vh;
+    }
+}

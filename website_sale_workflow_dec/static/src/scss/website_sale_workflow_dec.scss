@@ -1,8 +1,13 @@
 .o_mega_menu {
     .nav-link {
-        padding-top: 0;
+        padding-top: 0.1rem;
         padding-bottom: 0;
     }
+}
+
+.zoomodoo-flyout {
+    width: 200%;
+    border-radius: 15px;
 }
 
 // Fix for design fight between different scss where dropdown mega menu is

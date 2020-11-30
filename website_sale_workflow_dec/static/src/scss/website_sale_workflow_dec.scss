@@ -6,14 +6,28 @@
 }
 
 .zoomodoo-flyout {
-    width: 200%;
     border-radius: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    width: 200%;
+    img {
+        border-radius: 15px;
+    }
+}
+
+.zoomodoo-next .zoomodoo-flyout {
+    left: calc(100% + 45px);
+}
+
+.sticky-product-details {
+    z-index: 500;
+    position: sticky;
+    top: 110px;
 }
 
 // Fix for design fight between different scss where dropdown mega menu is
 // not correctly rendered between this two sizes
 @media (min-width: 768px) and (max-width: 991.98px) {
-    header.o_affix_enabled > .navbar > * .dropdown-menu {
+    header.o_affix_enabled>.navbar>* .dropdown-menu {
         max-height: 60vh;
     }
 }

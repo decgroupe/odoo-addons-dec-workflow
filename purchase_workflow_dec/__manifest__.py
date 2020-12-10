@@ -14,6 +14,7 @@
         [
             'views/assets.xml',
             'views/purchase_order.xml',
+            'templates/mail.xml',
         ],
     'installable': True
 }

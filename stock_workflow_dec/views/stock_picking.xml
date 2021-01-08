@@ -20,6 +20,9 @@
             <button name="action_cancel" position="attributes">
                 <attribute name="confirm">Are you sure that you want to cancel this picking order?</attribute>
             </button>
+            <xpath expr="//field[@name='move_ids_without_package']/tree" position="attributes">
+                <attribute name="limit">1000</attribute>
+            </xpath>
             <xpath expr="//field[@name='move_line_ids_without_package']/tree/field[@name='product_id']" position="attributes">
                 <attribute name="options">{'no_create': True, 'no_create_edit':True}</attribute>
             </xpath>

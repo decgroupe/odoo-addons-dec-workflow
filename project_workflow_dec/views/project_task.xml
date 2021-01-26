@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
+<!-- 
     <record model="ir.ui.view" id="project_task_form">
         <field name="name">project.task.form@project_workflow_dec</field>
         <field name="model">project.task</field>
@@ -16,6 +16,17 @@
         <field name="inherit_id" ref="project.view_task_search_form"/>
         <field name="arch" type="xml">
 
+        </field>
+    </record> -->
+
+    <record model="ir.ui.view" id="view_task_tree2">
+        <field name="name">project.task.tree.inherited@project_workflow_dec</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_tree2" />
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="tag_ids" widget="many2many_tags"/>
+            </field>
         </field>
     </record>
 

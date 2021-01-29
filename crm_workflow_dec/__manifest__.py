@@ -1,17 +1,15 @@
 {
-    'name': 'Project Workflow (DEC)',
+    'name': 'CRM (DEC)',
     'version': '12.0.1.0.0',
     'author': 'DEC, Yann Papouin',
     'website': 'http://www.dec-industrie.com',
-    'summary': '''Custom views for project''',
+    'summary': '''View customization''',
     'depends': [
-        'dec',
-        'project_category',
+        'crm',
         'web_kanban_draggable',
     ],
     'data': [
-        'views/project_project.xml',
-        'views/project_task.xml',
+        'views/crm_lead.xml',
     ],
     'installable': True
 }

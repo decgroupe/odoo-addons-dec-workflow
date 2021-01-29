@@ -28,6 +28,12 @@
         <field name="model">project.project</field>
         <field name="inherit_id" ref="project.view_project_kanban"/>
         <field name="arch" type="xml">
+            <kanban position="attributes">
+                <attribute name="group_create">false</attribute>
+                <attribute name="group_edit">false</attribute>
+                <attribute name="group_delete">false</attribute>
+                <attribute name="disable_sort_column">true</attribute>
+            </kanban>
             <field name="name" position="after">
                 <field name="type_id"/>
             </field>

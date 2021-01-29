@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-<!-- 
+    <!-- 
     <record model="ir.ui.view" id="project_task_form">
         <field name="name">project.task.form@project_workflow_dec</field>
         <field name="model">project.task</field>
@@ -27,6 +27,20 @@
             <field name="name" position="after">
                 <field name="tag_ids" widget="many2many_tags"/>
             </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_task_kanban">
+        <field name="name">project.task.kanban@project_workflow_dec</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_kanban"/>
+        <field name="arch" type="xml">
+            <kanban position="attributes">
+                <attribute name="group_create">false</attribute>
+                <attribute name="group_edit">false</attribute>
+                <attribute name="group_delete">false</attribute>
+                <attribute name="disable_sort_column">true</attribute>
+            </kanban>
         </field>
     </record>
 

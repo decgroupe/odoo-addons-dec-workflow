@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record model="ir.ui.view" id="sale_order_form_view" >
+    <record model="ir.ui.view" id="sale_order_form_view">
         <field name="name">sale.order.form@sale_crm_workflow_dec</field>
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//group[@name='technical']/field[@name='opportunity_id']" position="replace"/>
             <xpath expr="//field[@name='partner_id']" position="before">
-                <field name="opportunity_id"/>
+                <field name="opportunity_id" context="{
+                    'default_type': 'opportunity',
+                    'default_planned_revenue': amount_total,
+                    'default_partner_id': partner_id,
+                }"/>
             </xpath>
         </field>
     </record>

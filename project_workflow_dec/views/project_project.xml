@@ -23,7 +23,7 @@
         </field>
     </record>
 
-    <record id="view_project_kanban" model="ir.ui.view">
+    <record model="ir.ui.view" id="view_project_kanban">
         <field name="name">project.project.kanban</field>
         <field name="model">project.project</field>
         <field name="inherit_id" ref="project.view_project_kanban"/>
@@ -45,6 +45,22 @@
                 </div>
             </xpath>
         </field>
+    </record>
+
+    <record model="ir.ui.view" id="project_project_view_kanban_inherit_sale_timesheet">
+        <field name="name">project.project.kanban.inherit.sale.timesheet@project_workflow_dec</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="sale_timesheet.project_project_view_kanban_inherit_sale_timesheet"/>
+        <field name="arch" type="xml">
+            <!-- action_view_timesheet -->
+            <xpath expr="//a[@t-if='record.allow_timesheets.raw_value']" position="attributes">
+                <attribute name="groups">project.group_project_user</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="project.open_view_project_all">
+        <field name="context">{'search_default_followed_by_me': 1, 'search_default_my_projects': 1}</field>
     </record>
 
 </odoo>

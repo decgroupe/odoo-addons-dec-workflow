@@ -41,6 +41,11 @@
                 <attribute name="group_delete">false</attribute>
                 <attribute name="disable_sort_column">true</attribute>
             </kanban>
+            <xpath expr="//div[@role='menu']/a[1]" position="before">
+                <div t-if="record.project_id" class="">
+                    <a name="action_open_project_form" type="object" role="menuitem" class="dropdown-item">📂 Open Project</a>
+                </div>
+            </xpath>
         </field>
     </record>
 

@@ -6,10 +6,13 @@
     'summary': '''Custom views for project''',
     'depends': [
         'dec',
+        'hr_timesheet',
+        'sale_timesheet',
         'project_category',
         'web_kanban_draggable',
     ],
     'data': [
+        'views/assets.xml',
         'views/project_project.xml',
         'views/project_task.xml',
     ],

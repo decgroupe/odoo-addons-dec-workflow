@@ -1,0 +1,4 @@
+#. module: crm_workflow_dec
+#: model_terms:ir.ui.view,arch_db:crm_workflow_dec.view_crm_case_opportunities_filter
+msgid "Current year"
+msgstr "Année courante"

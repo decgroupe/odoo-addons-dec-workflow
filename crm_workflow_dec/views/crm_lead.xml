@@ -15,4 +15,36 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="view_crm_case_opportunities_filter">
+        <field name="name">crm.lead.search.opportunity@crm_workflow_dec</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter" />
+        <field name="arch" type="xml">
+
+            <filter name="assigned_to_me" position="after">
+                <separator/>
+                <filter 
+                    string="Current year" 
+                    name="filter_current_year" 
+                    domain="[
+                        ('|'),
+                        ('date_closed', '=', False),
+                        ('date_closed', '&gt;=', datetime.date.today().strftime('%Y-01-01') )
+                    ]"
+                    >
+                </filter>
+                <separator/>
+            </filter>
+
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="crm.crm_lead_opportunities_tree_view">
+        <field name="context">{
+            'default_type': 'opportunity',
+            'search_default_filter_current_year': 1,
+            'search_default_assigned_to_me': 1,
+        }</field>
+    </record>
+
 </odoo>

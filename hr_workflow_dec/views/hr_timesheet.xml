@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="hr_timesheet.timesheet_action_all" model="ir.actions.act_window">
+        <field name="context">{
+            'search_default_groupby_employee':1,
+            'search_default_groupby_project':1,
+        }</field>
+    </record>
+
+</odoo>

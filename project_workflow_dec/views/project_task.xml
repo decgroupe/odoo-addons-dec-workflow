@@ -24,7 +24,11 @@
         <field name="model">project.task</field>
         <field name="inherit_id" ref="project.view_task_tree2" />
         <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="sequence" groups="base.group_erp_manager"/>
+            </field>
             <field name="name" position="after">
+                <field name="create_date"/>
                 <field name="tag_ids" widget="many2many_tags"/>
             </field>
         </field>

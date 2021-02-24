@@ -8,6 +8,8 @@ from odoo import models, api, fields
 class ProjectTask(models.Model):
     _inherit = "project.task"
 
+    sequence = fields.Integer(default=0,)
+
     @api.multi
     def action_open_project_form(self):
         self.ensure_one()

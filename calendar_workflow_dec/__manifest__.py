@@ -8,6 +8,7 @@
         'calendar',
     ],
     'data': [
+        'views/assets.xml',
         'views/calendar.xml',
     ],
     'installable': True

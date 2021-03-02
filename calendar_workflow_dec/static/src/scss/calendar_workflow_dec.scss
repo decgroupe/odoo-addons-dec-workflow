@@ -1,9 +1,26 @@
 .fc-content {
-    > .fc-time {
+    >.fc-time {
         float: left;
         margin-right: 5px;
     }
-    > .o_fields {
+
+    >.o_fields {
         word-wrap: break-word;
+    }
+}
+
+
+.o_calendar_container {
+
+    .o_calendar_view {
+
+        .o_calendar_widget {
+
+            .o_field_type_many2one:first-child {
+                font-weight: bold;
+            }
+
+        }
+
     }
 }

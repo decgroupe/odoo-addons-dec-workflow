@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="stock.location" id="stock_location_stock_se">
+        <field name="name">Stock Schneider-Electric (sous-traitance)</field>
+        <field name="usage">internal</field>
+        <!-- <field name="location_id" ref="stock.stock_location_14"/> -->
+    </record>
+
+</odoo>

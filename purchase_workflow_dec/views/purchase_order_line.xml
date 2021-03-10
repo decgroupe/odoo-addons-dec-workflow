@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- /addons/base/rng/tree_view.rng
+            decoration-bf               shows the line in BOLD
+            decoration-it               shows the line in ITALICS
+            decoration-danger           shows the line in LIGHT RED
+            decoration-info             shows the line in LIGHT BLUE
+            decoration-muted            shows the line in LIGHT GRAY
+            decoration-primary          shows the line in LIGHT PURPLE
+            decoration-success          shows the line in LIGHT GREEN
+            decoration-warning          shows the line in LIGHT BROWN
+    -->
+
+    <record model="ir.ui.view" id="purchase_order_line_tree_view">
+        <field name="name">purchase.order.line.tree@purchase_workflow_dec</field>
+        <field name="model">purchase.order.line</field>
+        <field name="inherit_id" ref="purchase.purchase_order_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree/field[@name='date_planned']" position="after">
+                <field name="state"/>
+            </xpath>
+            <xpath expr="//tree" position="attributes">
+                <attribute name="decoration-success">state == 'draft'</attribute>
+                <attribute name="decoration-primary">state == 'to approve'</attribute>
+                <attribute name="decoration-info">state == 'confirmed'</attribute>
+                <attribute name="decoration-muted">state == 'done'</attribute>
+                <attribute name="decoration-muted-strike">state == 'cancel'</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

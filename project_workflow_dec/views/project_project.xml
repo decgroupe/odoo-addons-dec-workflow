@@ -59,6 +59,17 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="project_project_filter_view">
+        <field name="name">project.project.select@project_workflow_dec</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project_project_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='my_projects']/following-sibling::separator" position="replace">
+                <!-- Remove separator to make a logical OR between `my_projects` and `followed_by_me` -->
+            </xpath>
+        </field>
+    </record>
+
     <record model="ir.actions.act_window" id="project.open_view_project_all">
         <field name="context">{'search_default_followed_by_me': 1, 'search_default_my_projects': 1}</field>
     </record>

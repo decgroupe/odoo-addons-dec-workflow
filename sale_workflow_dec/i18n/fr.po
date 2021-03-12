@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-08 20:17+0000\n"
+"POT-Creation-Date: 2021-03-12 14:53+0000\n"
 "PO-Revision-Date: 2020-10-08 22:53+0200\n"
 "Last-Translator: Yann Papouin <y.papouin@dec-industrie.com>\n"
 "Language-Team: \n"
@@ -16,6 +16,45 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 2.3\n"
+
+#. module: sale_workflow_dec
+#: model:mail.template,report_name:sale_workflow_dec.email_template_edi_sale2
+msgid "${(object.name or '').replace('/','_')}"
+msgstr ""
+
+#. module: sale_workflow_dec
+#: model:mail.template,subject:sale_workflow_dec.email_template_edi_sale2
+msgid "${object.company_id.name} ${object.state in ('draft', 'sent') and 'Quotation' or 'Order'} (Ref ${object.name or 'n/a' })"
+msgstr ""
+
+#. module: sale_workflow_dec
+#: model:mail.template,body_html:sale_workflow_dec.email_template_edi_sale2
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"<p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"    % set doc_name = 'quotation' if object.state in ('draft', 'sent') else 'order'\n"
+"    Dear ${object.partner_id.name}\n"
+"    % if object.partner_id.parent_id:\n"
+"        (${object.partner_id.parent_id.name})\n"
+"    % endif\n"
+"    <br/><br/>\n"
+"    Here is\n"
+"    % if ctx.get('proforma')\n"
+"        in attachment your pro-forma invoice\n"
+"    % else\n"
+"        the ${doc_name} <strong>${object.name}</strong>\n"
+"    % endif\n"
+"    % if object.origin:\n"
+"        (with reference: ${object.origin} )\n"
+"    % endif\n"
+"    amounting in <strong>${format_amount(object.amount_total, object.pricelist_id.currency_id)}</strong>\n"
+"    from ${object.company_id.name}.\n"
+"    <br/><br/>\n"
+"    Do not hesitate to contact us if you have any question.\n"
+"</p>\n"
+"</div>\n"
+"        "
+msgstr ""
 
 #. module: sale_workflow_dec
 #: model_terms:ir.ui.view,arch_db:sale_workflow_dec.sale_order_form_view
@@ -28,9 +67,20 @@ msgid "Are you sure that you want to confirm this sale order?"
 msgstr "Êtes-vous sûr de vouloir confirmer cette commande ?"
 
 #. module: sale_workflow_dec
+#: model:ir.model.fields,field_description:sale_workflow_dec.field_sale_order__partner_image_small
+msgid "Partner Logo"
+msgstr ""
+
+#. module: sale_workflow_dec
 #: model:ir.model,name:sale_workflow_dec.model_sale_order
 msgid "Sale Order"
 msgstr "Commande de vente"
+
+#. module: sale_workflow_dec
+#: model:ir.model.fields,help:sale_workflow_dec.field_sale_order__partner_image_small
+#: model:ir.model.fields,help:sale_workflow_dec.field_sale_order__user_image_small
+msgid "Small-sized image of this contact. It is automatically resized as a 64x64px image, with aspect ratio preserved. Use this field anywhere a small image is required."
+msgstr ""
 
 #. module: sale_workflow_dec
 #: model_terms:ir.ui.view,arch_db:sale_workflow_dec.order_tree_view
@@ -45,51 +95,11 @@ msgid "Total Untaxed"
 msgstr "Total hors taxes"
 
 #. module: sale_workflow_dec
+#: model:ir.model.fields,field_description:sale_workflow_dec.field_sale_order__user_image_small
+msgid "User Avatar"
+msgstr ""
+
+#. module: sale_workflow_dec
 #: model:ir.model.fields,field_description:sale_workflow_dec.field_sale_order__partner_shipping_zip_id
 msgid "ZIP Location"
 msgstr "Code postal"
-
-#~ msgid "Enter order summary ..."
-#~ msgstr "Saisir un résumé pour cette commande ..."
-
-#~ msgid "Order summary to quickly identify this order in treeview"
-#~ msgstr "Résumé pour identifier rapidement cette commande en vue liste"
-
-#~ msgid "Sales Order Line"
-#~ msgstr "Ligne de commandes de vente"
-
-#~ msgid "Summary"
-#~ msgstr "Résumé"
-
-#~ msgid "Warranty delay in year(s)"
-#~ msgstr "Durée de garantie en année(s)"
-
-#~ msgid "Warranty period"
-#~ msgstr "Garantie"
-
-#~ msgid "Hide Line"
-#~ msgstr "Cacher la ligne"
-
-#~ msgid "Hide Price"
-#~ msgstr "Cacher le prix"
-
-#~ msgid "Hide Uom"
-#~ msgstr "Cacher l'unité"
-
-#~ msgid "Only hide price of this line (when equal to zero in most cases)"
-#~ msgstr "Cacher seulement le prix de cette ligne (quand égal à zéro dans la plupart des cas)"
-
-#~ msgid "Only hide units of this line"
-#~ msgstr "Cacher seulement l'unité de vente de cette ligne"
-
-#~ msgid "Report Name"
-#~ msgstr "Nom du rapport"
-
-#~ msgid "Report Note"
-#~ msgstr "Note du rapport"
-
-#~ msgid "Report Subtotal"
-#~ msgstr "Sous-total du rapport"
-
-#~ msgid "This allows the seller to hide the entire printed line"
-#~ msgstr "Ceci permet d'enlever complétement cette ligne du rapport"

@@ -11,9 +11,9 @@
         'sale_summary',
         'sale_warranty',
     ],
-    #'force_migration':'12.0.0.0.0',
     'data':
         [
+            'data/mail_template.xml',
             'views/assets.xml',
             'views/sale_order.xml',
         ],

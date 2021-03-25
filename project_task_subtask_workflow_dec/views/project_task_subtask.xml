@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="task_form_view" >
+        <field name="name">project.task.form@project_task_subtask_workflow_dec</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project_task_subtask.view_task_form2" />
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='subtask_ids']/tree" position="attributes">
+                <attribute name="decoration-success">state == 'todo'</attribute>
+                <attribute name="decoration-info">state == 'waiting'</attribute>
+                <attribute name="decoration-muted">state == 'done'</attribute>
+                <attribute name="decoration-muted-strike">state == 'cancelled'</attribute>
+                <attribute name="decoration-warning">recolor == True</attribute>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

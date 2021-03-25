@@ -1,0 +1,31 @@
+.o_kanban_view.o_kanban_dashboard.o_project_kanban {
+    .o_project_kanban_boxes {
+        font-size: x-small;
+        border: 1px solid rgba(96, 139, 168, 0.2);
+        background-color: #fbfbfb;
+
+        .o_project_kanban_box {
+            width: unset;
+            padding: 0 3px 0 3px;
+
+            &:first-child {
+                text-align: center;
+                padding: 0 3px 0 0;
+            }
+
+            &:last-child {
+                text-align: center;
+                padding: 0 0 0 3px;
+            }
+
+            &:nth-child(2) {
+                width: unset;
+            }
+
+        }
+
+        .o_project_timesheet_box {
+            width: unset !important;
+        }
+    }
+}

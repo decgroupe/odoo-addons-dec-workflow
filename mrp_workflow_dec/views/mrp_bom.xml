@@ -30,7 +30,7 @@
     </record>
 
     <record model="ir.ui.view" id="mrp_bom_filter_view">
-        <field name="name">mrp.bom.select</field>
+        <field name="name">mrp.bom.select@mrp_workflow_dec</field>
         <field name="model">mrp.bom</field>
         <field name="inherit_id" ref="mrp.view_mrp_bom_filter"/>
         <field name="arch" type="xml">

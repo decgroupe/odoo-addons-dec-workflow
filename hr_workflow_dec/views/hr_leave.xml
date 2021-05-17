@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="hr_holidays.hr_leave_action_action_approve_department" model="ir.actions.act_window">
+        <field name="context">{
+            'search_default_approve':1,
+        }</field>
+    </record>
+
+</odoo>

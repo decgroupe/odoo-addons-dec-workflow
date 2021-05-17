@@ -6,9 +6,12 @@
     'summary': '''Human resources Support''',
     'depends': [
         'hr_timesheet',
+        'hr_holidays',
     ],
     'data': [
         'views/hr_timesheet.xml',
+        'views/hr_leave.xml',
+        'views/hr_leave_allocation.xml',
     ],
     'installable': True
 }

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-20 22:48+0000\n"
-"PO-Revision-Date: 2020-10-08 22:53+0200\n"
+"POT-Creation-Date: 2021-05-11 17:14+0000\n"
+"PO-Revision-Date: 2021-05-11 19:19+0200\n"
 "Last-Translator: Yann Papouin <y.papouin@dec-industrie.com>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #. module: sale_workflow_dec
 #: model_terms:ir.ui.view,arch_db:sale_workflow_dec.sale_order_form_view
@@ -30,7 +30,7 @@ msgstr "Êtes-vous sûr de vouloir confirmer cette commande ?"
 #. module: sale_workflow_dec
 #: model:ir.model.fields,field_description:sale_workflow_dec.field_sale_order__partner_image_small
 msgid "Partner Logo"
-msgstr ""
+msgstr "Logo du partenaire"
 
 #. module: sale_workflow_dec
 #: model:ir.model,name:sale_workflow_dec.model_sale_order
@@ -41,7 +41,7 @@ msgstr "Commande de vente"
 #: model:ir.model.fields,help:sale_workflow_dec.field_sale_order__partner_image_small
 #: model:ir.model.fields,help:sale_workflow_dec.field_sale_order__user_image_small
 msgid "Small-sized image of this contact. It is automatically resized as a 64x64px image, with aspect ratio preserved. Use this field anywhere a small image is required."
-msgstr ""
+msgstr "Image de petite taille de ce contact. Elle est automatiquement redimensionnée en une image de 64x64px, avec un ratio d'aspect préservé. Utiliser ce champ partout où une petite image est nécessaire."
 
 #. module: sale_workflow_dec
 #: model_terms:ir.ui.view,arch_db:sale_workflow_dec.order_tree_view
@@ -58,9 +58,7 @@ msgstr "Total hors taxes"
 #. module: sale_workflow_dec
 #: model:ir.model.fields,field_description:sale_workflow_dec.field_sale_order__user_image_small
 msgid "User Avatar"
-msgstr ""
+msgstr "Avatar de l'utilisateur"
 
-#. module: sale_workflow_dec
-#: model:ir.model.fields,field_description:sale_workflow_dec.field_sale_order__partner_shipping_zip_id
-msgid "ZIP Location"
-msgstr "Code postal"
+#~ msgid "ZIP Location"
+#~ msgstr "Code postal"

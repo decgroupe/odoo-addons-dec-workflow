@@ -14,7 +14,6 @@
     'data':
         [
             'data/mail_template.xml',
-            'views/assets.xml',
             'views/sale_order.xml',
         ],
     'installable': True

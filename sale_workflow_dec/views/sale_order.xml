@@ -23,10 +23,6 @@
                 <!-- WARNING: the string character is a non-breakable space -->
                 <field name="partner_image_small" string=" " widget="image"/>
             </field>
-            <field name="partner_id" position="after">
-                <field name="partner_shipping_id"/>
-                <field name="partner_shipping_zip_id" class="d_partner_shipping_zip_id"/>
-            </field>
             <field name="user_id" position="before">
                 <!-- WARNING: the string character is a non-breakable space -->
                 <field name="user_image_small" string=" " widget="image"/>
@@ -63,10 +59,6 @@
                 <!-- WARNING: the string character is a non-breakable space -->
                 <field name="partner_image_small" string=" " widget="image"/>
             </field>
-            <field name="partner_id" position="after">
-                <field name="partner_shipping_id"/>
-                <field name="partner_shipping_zip_id" class="d_partner_shipping_zip_id"/>
-            </field>
             <field name="user_id" position="before">
                 <!-- WARNING: the string character is a non-breakable space -->
                 <field name="user_image_small" string=" " widget="image"/>
@@ -87,10 +79,6 @@
         <field name="arch" type="xml">
             <field name="name" position="after">
                 <field name="client_order_ref"/>
-            </field>
-            <field name="partner_id" position="after">
-                <field name="partner_shipping_id"/>
-                <field name="partner_shipping_zip_id"/>
             </field>
         </field>
     </record>

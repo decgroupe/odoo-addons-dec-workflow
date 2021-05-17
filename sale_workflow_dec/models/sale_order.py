@@ -8,12 +8,6 @@ from odoo import fields, models, api
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
-    partner_shipping_zip_id = fields.Many2one(
-        'res.city.zip',
-        'ZIP Location',
-        related='partner_shipping_id.zip_id',
-        readonly=True,
-    )
     partner_image_small = fields.Binary(
         related='partner_id.image_small',
         string='Partner Logo',

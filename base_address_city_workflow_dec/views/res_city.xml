@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record  model="ir.ui.view" id="city_filter_view">
+        <field name="model">res.city</field>
+        <field name="name">res.city.filter@base_address_city_workflow_dec</field>
+        <field name="inherit_id" ref="base_address_city.view_city_filter"/>
+        <field name="arch" type="xml">
+            <field name="name" position="replace">
+                <field name="zip_ids" string="Name or Zips"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

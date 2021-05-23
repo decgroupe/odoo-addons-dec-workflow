@@ -7,10 +7,3 @@ from odoo import fields, models
 
 class CrmLead(models.Model):
     _inherit = 'crm.lead'
-
-    partner_academy_id = fields.Many2one(
-        related='partner_id.academy_id',
-        string='Academy',
-        store=True,
-        oldname='partner_academy'
-    )

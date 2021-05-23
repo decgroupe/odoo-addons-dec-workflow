@@ -6,7 +6,6 @@
     'summary': '''Show links between leads and sale orders''',
     'depends': [
         'sale_crm',
-        'partner_academy',
     ],
     'data': [
         'views/crm_lead.xml',

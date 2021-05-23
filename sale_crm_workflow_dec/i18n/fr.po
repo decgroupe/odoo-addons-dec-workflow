@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-21 15:53+0000\n"
+"POT-Creation-Date: 2021-05-23 20:26+0000\n"
 "PO-Revision-Date: 2020-12-04 15:51+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
@@ -17,17 +17,6 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: sale_crm_workflow_dec
-#: model:ir.model.fields,field_description:sale_crm_workflow_dec.field_crm_lead__partner_academy_id
-#: model_terms:ir.ui.view,arch_db:sale_crm_workflow_dec.crm_case_opportunities_filter_view
-msgid "Academy"
-msgstr "Académie"
-
-#. module: sale_crm_workflow_dec
-#: model:ir.model.fields,help:sale_crm_workflow_dec.field_crm_lead__partner_academy_id
-msgid "Educational academy of the current partner."
-msgstr "Académie (EN) du partenaire actuel."
-
-#. module: sale_crm_workflow_dec
 #: model:ir.model,name:sale_crm_workflow_dec.model_crm_lead
 msgid "Lead/Opportunity"
 msgstr "Piste/opportunité"
@@ -36,3 +25,9 @@ msgstr "Piste/opportunité"
 #: model_terms:ir.ui.view,arch_db:sale_crm_workflow_dec.crm_case_oppor_form_view
 msgid "Sales"
 msgstr "Ventes"
+
+#~ msgid "Academy"
+#~ msgstr "Académie"
+
+#~ msgid "Educational academy of the current partner."
+#~ msgstr "Académie (EN) du partenaire actuel."

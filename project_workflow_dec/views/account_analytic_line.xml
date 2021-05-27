@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record model="ir.ui.view" id="hr_timesheet_line_form">
+        <field name="name">account.analytic.line.form@project_workflow_dec</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet//field[@name='ticket_id']" position="attributes">
+                <attribute name="context">
+                {
+                    'default_exclude_from_sale_order': True,
+                }
+                </attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -8,6 +8,7 @@
         'dec',
         'hr_timesheet',
         'sale_timesheet',
+        'sale_timesheet_line_exclude',
         'project_category',
         'web_kanban_draggable',
     ],

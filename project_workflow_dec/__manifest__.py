@@ -10,6 +10,7 @@
         'sale_timesheet',
         'sale_timesheet_line_exclude',
         'project_category',
+        'project_identification',
         'web_kanban_draggable',
     ],
     'data': [

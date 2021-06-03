@@ -71,7 +71,11 @@
     </record>
 
     <record model="ir.actions.act_window" id="project.open_view_project_all">
-        <field name="context">{'search_default_followed_by_me': 1, 'search_default_my_projects': 1}</field>
+        <field name="context">{
+            'search_default_is_not_contract': 1,
+            'search_default_followed_by_me': 1,
+            'search_default_my_projects': 1,
+        }</field>
     </record>
 
 </odoo>

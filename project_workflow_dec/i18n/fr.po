@@ -1,15 +1,26 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-03 15:15+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.3\n"
+
+#. module: project_workflow_dec
+#: model:ir.model.fields,field_description:project_workflow_dec.field_project_task__display_sale_order
+msgid "Display Sale Order"
+msgstr "Afficher la commande client"
+
+#. module: project_workflow_dec
+#: model:ir.model.fields,help:project_workflow_dec.field_project_task__sequence
+msgid "Gives the sequence order when displaying a list of tasks."
+msgstr "Donne la séquence (l'ordre) d'affichage d'une liste de tâches"
 
 #. module: project_workflow_dec
 #: model:ir.model.fields,help:project_workflow_dec.field_project_project__privacy_visibility
@@ -42,9 +53,9 @@ msgid "Project"
 msgstr "Projet"
 
 #. module: project_workflow_dec
-#: model:ir.actions.act_window,name:project_workflow_dec.action_open_view_project
-msgid "Projects"
-msgstr "Projets"
+#: model:ir.model.fields,field_description:project_workflow_dec.field_project_task__sequence
+msgid "Sequence"
+msgstr "Séquence"
 
 #. module: project_workflow_dec
 #: model:ir.model,name:project_workflow_dec.model_project_task
@@ -65,3 +76,6 @@ msgstr "Visible par les clients suiveurs"
 #: model_terms:ir.ui.view,arch_db:project_workflow_dec.view_task_kanban
 msgid "📂 Open Project"
 msgstr "📂 Ouvrir le projet"
+
+#~ msgid "Projects"
+#~ msgstr "Projets"

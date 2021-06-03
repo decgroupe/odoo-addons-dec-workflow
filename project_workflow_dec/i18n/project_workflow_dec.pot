@@ -6,14 +6,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-01 08:13+0000\n"
-"PO-Revision-Date: 2021-02-01 08:13+0000\n"
+"POT-Creation-Date: 2021-06-03 15:15+0000\n"
+"PO-Revision-Date: 2021-06-03 15:15+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: project_workflow_dec
+#: model:ir.model.fields,field_description:project_workflow_dec.field_project_task__display_sale_order
+msgid "Display Sale Order"
+msgstr ""
+
+#. module: project_workflow_dec
+#: model:ir.model.fields,help:project_workflow_dec.field_project_task__sequence
+msgid "Gives the sequence order when displaying a list of tasks."
+msgstr ""
 
 #. module: project_workflow_dec
 #: model:ir.model.fields,help:project_workflow_dec.field_project_project__privacy_visibility
@@ -24,46 +34,42 @@ msgid "Holds visibility of the tasks or issues that belong to the current projec
 "   if website is activated, portal users may see project, tasks or issues followed by\n"
 "   them or by someone of their company\n"
 ""
-msgstr "Détermine la visibilité des tâches ou anomalies qui dépendent du projet courant.\n"
-"- Sur invitation uniquement : les employés ne voient que les projets, tâches et anomalies qu'ils suivent ;\n"
-"- Visible par tous les salariés : les employés peuvent voir tous les projets, tâches et anomalies ;\n"
-"- Visible par les clients suivants : les employés voient tout ; si le site web est activé, les utilisateur du portail peuvent voir les projets, tâches et anomalies qu'eux ou un utilisateur appartenant à leur société, suivent.\n"
-""
+msgstr ""
 
 #. module: project_workflow_dec
 #: selection:project.project,privacy_visibility:0
 msgid "On invitation only"
-msgstr "Sur invitation uniquement"
+msgstr ""
 
 #. module: project_workflow_dec
 #: model:ir.model.fields,field_description:project_workflow_dec.field_project_project__privacy_visibility
 msgid "Privacy"
-msgstr "Confidentialité"
+msgstr ""
 
 #. module: project_workflow_dec
 #: model:ir.model,name:project_workflow_dec.model_project_project
 msgid "Project"
-msgstr "Projet"
+msgstr ""
 
 #. module: project_workflow_dec
-#: model:ir.actions.act_window,name:project_workflow_dec.action_open_view_project
-msgid "Projects"
-msgstr "Projets"
+#: model:ir.model.fields,field_description:project_workflow_dec.field_project_task__sequence
+msgid "Sequence"
+msgstr ""
 
 #. module: project_workflow_dec
 #: model:ir.model,name:project_workflow_dec.model_project_task
 msgid "Task"
-msgstr "Tâche"
+msgstr ""
 
 #. module: project_workflow_dec
 #: selection:project.project,privacy_visibility:0
 msgid "Visible by all employees"
-msgstr "Visible par tous les employés"
+msgstr ""
 
 #. module: project_workflow_dec
 #: selection:project.project,privacy_visibility:0
 msgid "Visible by following customers"
-msgstr "Visible par les clients suiveurs"
+msgstr ""
 
 #. module: project_workflow_dec
 #: model_terms:ir.ui.view,arch_db:project_workflow_dec.view_task_kanban

@@ -7,6 +7,7 @@ from odoo import models, api, fields
 
 class MrpProduction(models.Model):
     _inherit = "mrp.production"
+    _order = "name desc"
 
     product_id = fields.Many2one(domain=[('bom_count', '>', 0)], )
     finished_picking_ids = fields.Many2many(

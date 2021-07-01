@@ -25,6 +25,8 @@ class HelpdeskTicket(models.Model):
     @api.multi
     @api.depends('name', 'number')
     def name_get(self):
+        """ Custom naming to quickly identify a ticket
+        """
         result = []
         for rec in self:
             name = ('[%s] %s') % (rec.number, rec.name)
@@ -49,7 +51,6 @@ class HelpdeskTicket(models.Model):
                 name = ('%s %s') % (emoji, name)
             result.append((item[0], name))
         return result
-
 
     @api.model
     def _name_search(

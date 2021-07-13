@@ -77,6 +77,21 @@
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_sales_order_filter"/>
         <field name="arch" type="xml">
+            <field name="name" position="attributes">
+                <attribute name="filter_domain">
+                [
+                    '|',
+                        '|',
+                            '|',
+                                '|', 
+                                ('name', 'ilike', self), 
+                                ('client_order_ref', 'ilike', self), 
+                            ('partner_id', 'child_of', self),
+                        ('partner_shipping_id', 'child_of', self),
+                    ('summary', 'ilike', self)
+                ]
+                </attribute>
+            </field>
             <field name="name" position="after">
                 <field name="client_order_ref"/>
             </field>

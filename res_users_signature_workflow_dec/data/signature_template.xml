@@ -25,7 +25,7 @@ ${email}
         <table cellspacing="0" cellpadding="0" border="0" align="center">
         <tbody>
           <tr>
-          <td style="width: 120.0px;" width="120.0"> <img src="/res_users_signature_workflow_dec/static/img/logo.png" style="width: 120.0px; height: 120.0px; border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%;" width="120.0" height="120.0"/> </td>
+          <td style="width: 120.0px;" width="120.0"> <img src="/res_users_signature_workflow_dec/static/img/logo.png" style="min-width: 120.0px; width: 120.0px; height: 120.0px; border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%;" width="120.0" height="120.0"/> </td>
           </tr>
         </tbody>
         </table>

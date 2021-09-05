@@ -2,7 +2,7 @@
     'name': 'MRP Production Request Workflow',
     'version': '12.0.1.0.0',
     'author': 'DEC, Yann Papouin',
-    'website': 'http://www.dec-industrie.com',
+    'website': 'https://www.decgroupe.com',
     'summary': '''Group customization''',
     'depends': ['mrp_production_request', ],
     'data':

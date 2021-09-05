@@ -2,7 +2,7 @@
     'name': 'Project Task Subtask Workflow (DEC)',
     'version': '12.0.1.0.0',
     'author': 'DEC, Yann Papouin',
-    'website': 'http://www.dec-industrie.com',
+    'website': 'https://www.decgroupe.com',
     'summary': '''Custom behaviour for project subtask''',
     'depends': [
         'project_task_subtask',

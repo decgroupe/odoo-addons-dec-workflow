@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <function model="ir.model.data" name="write">
+        <value model="ir.model.data" search="[
+            ('module', '=', 'portal'),
+            ('name', '=', 'mail_template_data_portal_welcome'),
+        ]"/>
+        <value eval="{'noupdate': False}"/>
+    </function>
+
+    <record model="mail.template" id="portal.mail_template_data_portal_welcome">
+        <field name="subject">Your portal access to ${object.user_id.company_id.name}</field>
+    </record>
+
+</odoo>

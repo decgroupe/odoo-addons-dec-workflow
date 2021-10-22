@@ -1,0 +1,13 @@
+.form-group.required .control-label:after {
+    content: "*";
+    color: red;
+}
+
+.form-group {
+
+    input[required="1"],
+    input[required="True"],
+    input[required="true"] {
+        background-color: #F3F3FF;
+    }
+}

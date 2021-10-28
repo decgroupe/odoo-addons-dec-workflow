@@ -2,7 +2,8 @@
 <odoo>
 
     <record model="project.task" id="project_task_leave_sick">
-        <field name="name">😷 Sick Leave</field>
+        <!-- Name is not translatable -->
+        <field name="name">😷 Arrêts maladie</field>
         <field name="sequence">0</field>
         <field name="project_id" ref="project_internal_management"/>
         <field name="exclude_from_sale_order" eval="True"/>
@@ -11,7 +12,8 @@
     </record>
 
     <record model="project.task" id="project_task_leave_normal">
-        <field name="name">🌞 Leave</field>
+        <!-- Name is not translatable -->
+        <field name="name">🌞 Congés</field>
         <field name="sequence">1</field>
         <field name="project_id" ref="project_internal_management"/>
         <field name="exclude_from_sale_order" eval="True"/>
@@ -20,7 +22,8 @@
     </record>
 
     <record model="project.task" id="project_task_reporting_expense">
-        <field name="name">🍲 Expense report (Entry / Filling)</field>
+        <!-- Name is not translatable -->
+        <field name="name">🍲 Note de frais (Saisie / Remplissage)</field>
         <field name="sequence">2</field>
         <field name="project_id" ref="project_internal_management"/>
         <field name="exclude_from_sale_order" eval="False"/>
@@ -29,7 +32,8 @@
     </record>
 
     <record model="project.task" id="project_task_non_attendance">
-        <field name="name">💤 Non-attendance</field>
+        <!-- Name is not translatable -->
+        <field name="name">💤 Absences</field>
         <field name="sequence">3</field>
         <field name="project_id" ref="project_internal_management"/>
         <field name="exclude_from_sale_order" eval="True"/>
@@ -38,7 +42,8 @@
     </record>
 
     <record model="project.task" id="project_task_internal_training">
-        <field name="name">🎓 Internal Training</field>
+        <!-- Name is not translatable -->
+        <field name="name">🎓 Formation interne</field>
         <field name="sequence">4</field>
         <field name="project_id" ref="project_internal_management"/>
         <field name="exclude_from_sale_order" eval="True"/>
@@ -47,7 +52,8 @@
     </record>
 
     <record model="project.task" id="project_task_procedure_drafting">
-        <field name="name">🖊️ Drafting of a procedure</field>
+        <!-- Name is not translatable -->
+        <field name="name">🖊️ Rédaction de procédures</field>
         <field name="sequence">5</field>
         <field name="project_id" ref="project_internal_management"/>
         <field name="exclude_from_sale_order" eval="True"/>
@@ -56,7 +62,8 @@
     </record>
 
     <record model="project.task" id="project_task_household">
-        <field name="name">🧹 Household / Storage</field>
+        <!-- Name is not translatable -->
+        <field name="name">🧹 Ménage / Rangement</field>
         <field name="sequence">6</field>
         <field name="project_id" ref="project_internal_management"/>
         <field name="exclude_from_sale_order" eval="True"/>
@@ -65,7 +72,8 @@
     </record>
 
     <record model="project.task" id="project_task_timesheet_filling">
-        <field name="name">⏱️ Timesheet (Entry / Fill)</field>
+        <!-- Name is not translatable -->
+        <field name="name">⏱️ Feuille de temps (Saisie / Remplissage)</field>
         <field name="sequence">7</field>
         <field name="project_id" ref="project_internal_management"/>
         <field name="exclude_from_sale_order" eval="True"/>
@@ -74,7 +82,8 @@
     </record>
 
     <record model="project.task" id="project_task_vehicle_maintenance">
-        <field name="name">🚘 Vehicle Management and Maintenance</field>
+        <!-- Name is not translatable -->
+        <field name="name">🚘 Gestion &amp; Entretien Véhicules</field>
         <field name="sequence">8</field>
         <field name="project_id" ref="project_internal_management"/>
         <field name="exclude_from_sale_order" eval="True"/>
@@ -83,7 +92,8 @@
     </record>
 
     <record model="project.task" id="project_task_building_maintenance">
-        <field name="name">🏢 Building Management and Maintenance</field>
+        <!-- Name is not translatable -->
+        <field name="name">🏢 Gestion &amp; Entretien Bâtiment</field>
         <field name="sequence">9</field>
         <field name="project_id" ref="project_internal_management"/>
         <field name="exclude_from_sale_order" eval="True"/>

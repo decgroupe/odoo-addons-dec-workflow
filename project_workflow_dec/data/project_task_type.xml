@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="task_type_time_tracking" model="project.task.type">
+        <field name="name">⏱️ Time Tracking</field>
+        <field name="closed" eval="True"/>
+        <field name="case_default" eval="True"/>
+        <field name="sequence">100</field>
+    </record>
+
+</odoo>

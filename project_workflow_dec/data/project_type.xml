@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="project_type_internal" model="project.type">
+        <field name="name">🔰 Internal</field>
+        <field name="description">For internal use only</field>
+        <field name="project_ok" eval="True"/>
+        <field name="task_ok" eval="False"/>
+    </record>
+
+    <record id="project_type_marketing" model="project.type">
+        <field name="name">💰 Marketing</field>
+        <field name="project_ok" eval="True"/>
+        <field name="task_ok" eval="False"/>
+    </record>
+
+    <record id="project_type_support_functions" model="project.type">
+        <field name="name">💁 Support Functions</field>
+        <field name="project_ok" eval="True"/>
+        <field name="task_ok" eval="False"/>
+    </record>
+
+    <record id="project_type_design_office" model="project.type">
+        <field name="name">📚 Design Office</field>
+        <field name="project_ok" eval="True"/>
+        <field name="task_ok" eval="False"/>
+    </record>
+
+    <record id="project_type_design_office_equipment" model="project.type">
+        <field name="name">📗 Equipment</field>
+        <field name="parent_id" ref="project_workflow_dec.project_type_design_office"/>
+        <field name="project_ok" eval="True"/>
+        <field name="task_ok" eval="False"/>
+    </record>
+
+    <record id="project_type_design_office_digital" model="project.type">
+        <field name="name">📘 Digital</field>
+        <field name="parent_id" ref="project_workflow_dec.project_type_design_office"/>
+        <field name="project_ok" eval="True"/>
+        <field name="task_ok" eval="False"/>
+    </record>
+
+</odoo>

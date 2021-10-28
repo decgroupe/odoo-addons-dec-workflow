@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record model="project.task" id="project_task_leave_sick">
+        <field name="name">😷 Sick Leave</field>
+        <field name="sequence">0</field>
+        <field name="project_id" ref="project_internal_management"/>
+        <field name="exclude_from_sale_order" eval="True"/>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="stage_id" ref="task_type_time_tracking"/>
+    </record>
+
+    <record model="project.task" id="project_task_leave_normal">
+        <field name="name">🌞 Leave</field>
+        <field name="sequence">1</field>
+        <field name="project_id" ref="project_internal_management"/>
+        <field name="exclude_from_sale_order" eval="True"/>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="stage_id" ref="task_type_time_tracking"/>
+    </record>
+
+    <record model="project.task" id="project_task_reporting_expense">
+        <field name="name">🍲 Expense report (Entry / Filling)</field>
+        <field name="sequence">2</field>
+        <field name="project_id" ref="project_internal_management"/>
+        <field name="exclude_from_sale_order" eval="False"/>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="stage_id" ref="task_type_time_tracking"/>
+    </record>
+
+    <record model="project.task" id="project_task_non_attendance">
+        <field name="name">💤 Non-attendance</field>
+        <field name="sequence">3</field>
+        <field name="project_id" ref="project_internal_management"/>
+        <field name="exclude_from_sale_order" eval="True"/>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="stage_id" ref="task_type_time_tracking"/>
+    </record>
+
+    <record model="project.task" id="project_task_internal_training">
+        <field name="name">🎓 Internal Training</field>
+        <field name="sequence">4</field>
+        <field name="project_id" ref="project_internal_management"/>
+        <field name="exclude_from_sale_order" eval="True"/>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="stage_id" ref="task_type_time_tracking"/>
+    </record>
+
+    <record model="project.task" id="project_task_procedure_drafting">
+        <field name="name">🖊️ Drafting of a procedure</field>
+        <field name="sequence">5</field>
+        <field name="project_id" ref="project_internal_management"/>
+        <field name="exclude_from_sale_order" eval="True"/>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="stage_id" ref="task_type_time_tracking"/>
+    </record>
+
+    <record model="project.task" id="project_task_household">
+        <field name="name">🧹 Household / Storage</field>
+        <field name="sequence">6</field>
+        <field name="project_id" ref="project_internal_management"/>
+        <field name="exclude_from_sale_order" eval="True"/>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="stage_id" ref="task_type_time_tracking"/>
+    </record>
+
+    <record model="project.task" id="project_task_timesheet_filling">
+        <field name="name">⏱️ Timesheet (Entry / Fill)</field>
+        <field name="sequence">7</field>
+        <field name="project_id" ref="project_internal_management"/>
+        <field name="exclude_from_sale_order" eval="True"/>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="stage_id" ref="task_type_time_tracking"/>
+    </record>
+
+    <record model="project.task" id="project_task_vehicle_maintenance">
+        <field name="name">🚘 Vehicle Management and Maintenance</field>
+        <field name="sequence">8</field>
+        <field name="project_id" ref="project_internal_management"/>
+        <field name="exclude_from_sale_order" eval="True"/>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="stage_id" ref="task_type_time_tracking"/>
+    </record>
+
+    <record model="project.task" id="project_task_building_maintenance">
+        <field name="name">🏢 Building Management and Maintenance</field>
+        <field name="sequence">9</field>
+        <field name="project_id" ref="project_internal_management"/>
+        <field name="exclude_from_sale_order" eval="True"/>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="stage_id" ref="task_type_time_tracking"/>
+    </record>
+
+</odoo>

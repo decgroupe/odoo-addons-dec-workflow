@@ -3,10 +3,11 @@
     'version': '12.0.1.0.0',
     'author': 'DEC, Yann Papouin',
     'website': 'https://www.decgroupe.com',
-    'summary': '''Human resources Support''',
+    'summary': "Human resources Support",
     'depends': [
         'hr_timesheet',
         'hr_holidays',
+        'hr_timesheet_exclude',
     ],
     'data': [
         'views/hr_timesheet.xml',

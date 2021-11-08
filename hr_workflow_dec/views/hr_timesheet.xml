@@ -5,6 +5,7 @@
         <field name="context">{
             'search_default_groupby_employee':1,
             'search_default_groupby_project':1,
+            'search_default_filter_posted_in_timesheet':1,
         }</field>
     </record>
 

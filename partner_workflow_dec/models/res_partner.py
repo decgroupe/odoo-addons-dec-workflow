@@ -8,3 +8,10 @@ from odoo import _, api, models, fields
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
+    def write(self, vals):
+        # When linking a contact to a partner, change the adress type to
+        # `other`, otherwise existing address will be overriden with the
+        # the parent one
+        if 'parent_id' in vals and not 'type' in vals:
+            vals['type'] = 'other'
+        return super().write(vals)

@@ -11,6 +11,7 @@ from odoo.osv import expression
 
 class HelpdeskTicket(models.Model):
     _inherit = 'helpdesk.ticket'
+    _order = 'number desc'
 
     @api.model
     def create(self, vals):

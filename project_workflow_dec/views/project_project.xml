@@ -24,7 +24,7 @@
     </record>
 
     <record model="ir.ui.view" id="view_project_kanban">
-        <field name="name">project.project.kanban</field>
+        <field name="name">project.project.kanban@project_workflow_dec</field>
         <field name="model">project.project</field>
         <field name="inherit_id" ref="project.view_project_kanban"/>
         <field name="arch" type="xml">
@@ -43,6 +43,9 @@
                         <t t-esc="record.type_id.value"/>
                     </small>
                 </div>
+            </xpath>
+            <xpath expr="//t[@t-esc='record.name.value']" position="replace">
+                <a type="open">$0</a>
             </xpath>
         </field>
     </record>

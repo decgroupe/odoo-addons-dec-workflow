@@ -12,6 +12,7 @@
         [
             'views/assets.xml',
             'views/account_invoice.xml',
+            'views/account_invoice_line.xml',
         ],
     'installable': True
 }

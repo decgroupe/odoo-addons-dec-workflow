@@ -6,6 +6,18 @@
         <field name="model">account.invoice.line</field>
         <field name="inherit_id" ref="account.view_invoice_line_tree"/>
         <field name="arch" type="xml">
+            <xpath expr="//tree/field[@name='quantity']" position="attributes">
+                <attribute name="sum">1</attribute>
+            </xpath>
+            <xpath expr="//tree/field[@name='price_unit']" position="attributes">
+                <attribute name="sum">1</attribute>
+            </xpath>
+            <xpath expr="//tree/field[@name='price_subtotal']" position="attributes">
+                <attribute name="sum">1</attribute>
+            </xpath>
+            <xpath expr="//tree/field[@name='price_total']" position="attributes">
+                <attribute name="sum">1</attribute>
+            </xpath>
             <xpath expr="//tree" position="inside">
                 <field name="state" invisible="0" />
             </xpath>

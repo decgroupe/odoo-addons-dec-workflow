@@ -12,4 +12,26 @@
         }</field>
     </record>
 
+    <record model="ir.ui.view" id="document_page_form_view">
+        <field name="name">document.page.form@knowledge_workflow_dec</field>
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="document_page_reference.document_page_form_view"/>
+        <field name="arch" type="xml">
+            <field name="content_parsed" position="attributes">
+                <attribute name="class">oe_read_only oe_content_parsed</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="wiki_menu_form_view">
+        <field name="name">document.page.menu.form@knowledge_workflow_dec</field>
+        <field name="model">document.page</field>
+        <field name="inherit_id" ref="document_page_reference.view_wiki_menu_form"/>
+        <field name="arch" type="xml">
+            <field name="content_parsed" position="attributes">
+                <attribute name="class">oe_read_only oe_content_parsed</attribute>
+            </field>
+        </field>
+    </record>
+
 </odoo>

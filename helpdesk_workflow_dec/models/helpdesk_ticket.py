@@ -35,25 +35,6 @@ class HelpdeskTicket(models.Model):
         return result
 
     @api.model
-    def name_search(self, name, args=None, operator='ilike', limit=100):
-        # Make a search with default criteria
-        names = super().name_search(
-            name=name, args=args, operator=operator, limit=limit
-        )
-        # Add more details to quickly identify a ticket
-        result = []
-        for item in names:
-            rec = self.browse(item[0])[0]
-            name = item[1]
-            if rec.team_id:
-                name = ('%s (%s)') % (name, rec.team_id.name)
-            if rec.stage_id and not rec.stage_id.name[0].isalpha():
-                emoji = rec.stage_id.name[0]
-                name = ('%s %s') % (emoji, name)
-            result.append((item[0], name))
-        return result
-
-    @api.model
     def _name_search(
         self, name, args=None, operator='ilike', limit=100, name_get_uid=None
     ):

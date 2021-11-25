@@ -8,11 +8,13 @@
         'hr_timesheet',
         'hr_holidays',
         'hr_timesheet_exclude',
+        'hr_timesheet_task_stage',
     ],
     'data': [
         'views/hr_timesheet.xml',
         'views/hr_leave.xml',
         'views/hr_leave_allocation.xml',
+        'views/account_analytic_line.xml',
     ],
     'installable': True
 }

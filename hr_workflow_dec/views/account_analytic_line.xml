@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record model="ir.ui.view" id="hr_timesheet_line_form">
+        <field name="name">account.analytic.line.form@hr_workflow_dec</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_form"/>
+        <field name="priority">10</field>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/group" position="after">
+                <group name="subgroup">
+                    <group name="subgroup_details" colspan="4"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="group_task_hr_timesheet_line_form">
+        <field name="name">account.analytic.line.form#project@hr_workflow_dec</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="hr_timesheet_line_form"/>
+        <field name="arch" type="xml">
+            <group name="subgroup_details" position="inside">
+                <field name="task_id" position="move"/>
+            </group>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="title_hr_timesheet_line_form">
+        <field name="name">account.analytic.line.form.inherit@hr_timesheet_task_state</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="hr_timesheet_task_stage.account_analytic_line_form"/>
+        <field name="arch" type="xml">
+            <field name="name" position="attributes">
+                <attribute name="widget">text</attribute>
+            </field>
+        </field>
+    </record>
+
+</odoo>

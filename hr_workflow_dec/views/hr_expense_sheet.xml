@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- 
+    Set sequence higher than `hr_expense.menu_hr_expense_sheet_my_reports`
+    since we wants reports at first in the menu
+    -->
+    <record model="ir.ui.menu" id="hr_expense.menu_hr_expense_my_expenses_to_submit">
+        <field name="name">DEC</field>
+        <field name="sequence" eval="10" />
+    </record>
+
+    <record model="ir.ui.view" id="hr_expense_sheet_form_view">
+        <field name="name">hr.expense.sheet.form@hr_workflow_dec</field>
+        <field name="model">hr.expense.sheet</field>
+        <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form/sheet//group//field[@name='employee_id']" position="attributes">
+                <attribute name="options">{'no_create_edit': True, 'no_quick_create': True}</attribute>
+            </xpath>
+            <xpath expr="/form/sheet//group//field[@name='user_id']" position="attributes">
+                <attribute name="options">{'no_create_edit': True, 'no_quick_create': True}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='expense_line_ids']/tree/field[@name='analytic_account_id']" position="attributes">
+                <attribute name="options">{'no_create_edit': True, 'no_quick_create': True}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='expense_line_ids']/tree/field[@name='product_id']" position="attributes">
+                <attribute name="options">{'no_create_edit': True, 'no_quick_create': True}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="hr_expense_sheet_form_view_inherit_sale_expense">
+        <field name="name">hr.expense.sheet.form.inherit.sale.expense@hr_workflow_dec</field>
+        <field name="model">hr.expense.sheet</field>
+        <field name="inherit_id" ref="sale_expense.hr_expense_sheet_form_view_inherit_sale_expense"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='expense_line_ids']/tree/field[@name='sale_order_id']" position="attributes">
+                <attribute name="options">{'no_create_edit': True, 'no_quick_create': True}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

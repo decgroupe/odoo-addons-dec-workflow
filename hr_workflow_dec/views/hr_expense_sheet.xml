@@ -15,6 +15,9 @@
         <field name="model">hr.expense.sheet</field>
         <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_submit_sheet']" position="attributes">
+                <attribute name="confirm">Are you sure that you want to submit this sheet?</attribute>
+            </xpath>
             <xpath expr="/form/sheet//group//field[@name='employee_id']" position="attributes">
                 <attribute name="options">{'no_create_edit': True, 'no_quick_create': True}</attribute>
             </xpath>

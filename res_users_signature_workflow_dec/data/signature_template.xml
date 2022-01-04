@@ -12,7 +12,7 @@ Mobile: ${phone}
 ${email}
 % endfor
         </field>
-        <field name="logo_url">/res_users_signature_workflow_dec/static/img/logo.png</field>
+        <field name="logo_url">/res_users_signature_workflow_dec/static/img/logo_grey.png</field>
         <field name="color_suffix">_grey</field>
         <field name="primary_color">#404040</field>
         <field name="body_html" type="html">
@@ -22,16 +22,16 @@ ${email}
     <tr>
       <td rowspan="6" style="width:147px;">
         <span style="background:url(https://odoo.decgroupe.com/res_users_signature_workflow_dec/static/img/overlay_grey.png) center no-repeat; background-size:contain; width:123px; height:123px; display:block;">
-          <img src="/res_users_signature_workflow_dec/static/img/logo.png?w=87&amp;h=87"  width="87" height="87" style="margin-left:18px; border:none; border-radius:0 50% 50%; background:rgb(65,65,65);margin-top:18px;"></img>
+          <img src="/res_users_signature_workflow_dec/static/img/logo_grey.png?w=87&amp;h=87"  width="87" height="87" style="margin-left:18px; border:none; border-radius:0 50% 50%; background:rgb(65,65,65);margin-top:18px;"></img>
         </span>
       </td>
       <td colspan="2" style="font-weight:800;font-size:15px; color:#404040; line-height:12px;padding-right:10px;"><span>${firstname} ${lastname}<br/> <b style="font-weight:400; font-size:12px;color:rgb(65,65,65);">${job_title}</b></span></td>
-      % for email in emails:		
-      <td style="width:40px;"><a href="https://odoo.decgroupe.com/vcard/${email}.vcf"><img src="/res_users_signature_workflow_dec/static/img/button_add_user_grey.png" width="26" height="26"></img></a></td>
+      % for email in emails:
+      <td style="width:40px;"><a href="/vcard/${email}.vcf"><img src="/res_users_signature_workflow_dec/static/img/button_add_user_grey.png" width="26" height="26"></img></a></td>
       % endfor
       <td rowspan="6" style="text-align:center; width:120px;">
         <table>
-          <td rowspan="4" bgcolor="b0b0b" style="background-color: #b0b0b0;"></td>			
+          <td rowspan="4" bgcolor="b0b0b" style="background-color: #b0b0b0;"></td>
           <td rowspan="4" style="width:15px;"></td>
           <tr style="height:40px;">
             <td colspan="4"><img src="/res_users_signature_workflow_dec/static/img/logo_nosubtext_grey.png" width="85"></img></td>
@@ -54,13 +54,19 @@ ${email}
     <tr>
       <td colspan="3">
         <table style="font-size:10px;">
+          % if phone:
+          <tr style="height: 17px;">
+            <td colspan="1"><img src="/res_users_signature_workflow_dec/static/img/button_mobile.png" width="12" height="12" style="margin-right:5px;"></img> </td> 
+            <td colspan="2"> <a href="tel:${phone_callable}" style="color: rgb(65,65,65);"> ${phone}</a> </td>
+          </tr>
+          % endif
           <tr style="height: 17px;">
             <td colspan="1"><img src="/res_users_signature_workflow_dec/static/img/button_phone.png" width="12" height="12" style="margin-right:5px;"></img> </td> 
-            <td colspan="2"> <a href="tel:${company_phone}" style="color: rgb(65,65,65);"> ${company_phone}</a> <i style="font-weight:300;"> poste ${phone_ext}</i></td>
+            <td colspan="2"> <a href="tel:${company_phone_callable}" style="color: rgb(65,65,65);"> ${company_phone}</a> <i style="font-weight:300;"> poste ${phone_ext}</i></td>
           </tr>
           <tr style="height: 17px;">
             <td colspan="1" style="width:12px !important;" ><img src="/res_users_signature_workflow_dec/static/img/button_fax.png" width="12" height="12"></img> </td> 
-            <td colspan="2"> <a href="tel:${company_fax}" style="text-decoration:none; color: rgb(65,65,65); margin-right:5px;"> ${company_fax} </a> </td>		
+            <td colspan="2"> <a href="tel:${company_fax_callable}" style="text-decoration:none; color: rgb(65,65,65); margin-right:5px;"> ${company_fax} </a> </td>
           </tr>
           <tr style="height: 17px;">
             <td colspan="1"> <img src="/res_users_signature_workflow_dec/static/img/button_email.png" width="12" height="12" style="margin-right:5px;"></img></td> 

@@ -12,97 +12,82 @@ Mobile: ${phone}
 ${email}
 % endfor
         </field>
-        <field name="logo_url">/logo.png</field>
+        <field name="logo_url">/res_users_signature_workflow_dec/static/img/logo.png</field>
+        <field name="color_suffix">_grey</field>
         <field name="primary_color">#404040</field>
         <field name="body_html" type="html">
 
-<br/>
-<span style="color:#ffffff;">--</span><br/>
-<table style="width: 510px;" width="510" cellspacing="0" cellpadding="0" border="0">
-    <tbody>
-      <tr>
-      <td style="vertical-align: top; padding-right: 12px; border-right: 5px solid #404040; width: 120.0px;" width="120.0" valign="top">
-        <table cellspacing="0" cellpadding="0" border="0" align="center">
-        <tbody>
-          <tr>
-          <td style="width: 120.0px;" width="120.0"> <img src="/res_users_signature_workflow_dec/static/img/logo.png" style="min-width: 120.0px; width: 120.0px; height: 120.0px; border-radius: 50%; -webkit-border-radius: 50%; -moz-border-radius: 50%;" width="120.0" height="120.0"/> </td>
+<span style="width: 480px;">
+  <table style="color:rgb(65,65,65);font-size:10px;margin:0px; padding:0; font-family:Roboto,'Luxi sans','Lucida Grande',Lucida,'Lucida Sans Unicode',sans-serif;height:123px; line-height: 10px;max-width:500px;min-width:440px;">
+    <tr>
+      <td rowspan="6" style="width:147px;">
+        <span style="background:url(https://odoo.decgroupe.com/res_users_signature_workflow_dec/static/img/overlay_grey.png) center no-repeat; background-size:contain; width:123px; height:123px; display:block;">
+          <img src="/res_users_signature_workflow_dec/static/img/logo.png?w=87&amp;h=87"  width="87" height="87" style="margin-left:18px; border:none; border-radius:0 50% 50%; background:rgb(65,65,65);margin-top:18px;"></img>
+        </span>
+      </td>
+      <td colspan="2" style="font-weight:800;font-size:15px; color:#404040; line-height:12px;padding-right:10px;"><span>${firstname} ${lastname}<br/> <b style="font-weight:400; font-size:12px;color:rgb(65,65,65);">${job_title}</b></span></td>
+      % for email in emails:		
+      <td style="width:40px;"><a href="https://odoo.decgroupe.com/vcard/${email}.vcf"><img src="/res_users_signature_workflow_dec/static/img/button_add_user_grey.png" width="26" height="26"></img></a></td>
+      % endfor
+      <td rowspan="6" style="text-align:center; width:120px;">
+        <table>
+          <td rowspan="4" bgcolor="b0b0b" style="background-color: #b0b0b0;"></td>			
+          <td rowspan="4" style="width:15px;"></td>
+          <tr style="height:40px;">
+            <td colspan="4"><img src="/res_users_signature_workflow_dec/static/img/logo_nosubtext_grey.png" width="85"></img></td>
           </tr>
-        </tbody>
+          <tr style="height:25px;">
+            <td><a href="${company.social_facebook}"><img src="/res_users_signature_workflow_dec/static/img/button_facebook.png" width="15" height="15" style="margin-right:5px;"></img></a></td>
+            <td><a href="${company.social_youtube}"><img src="/res_users_signature_workflow_dec/static/img/button_youtube.png" width="15" height="15"></img></a></td>
+            <td><a href="${company.social_linkedin}"><img src="/res_users_signature_workflow_dec/static/img/button_linkedin.png" width="15" height="15" style="margin:0 5px;"></img></a></td>
+            <td><a href="${company.social_twitter}"><img src="/res_users_signature_workflow_dec/static/img/button_twitter.png" width="15" height="15"></img></a></td>
+          </tr>
+          <tr style="height:20px;">
+            <td colspan="4"><a href="https://www.decgroupe.com/" style="color:rgb(65,65,65); font-size:8px;">WWW.DECGROUPE.COM</a></td>
+          </tr>
         </table>
       </td>
-      <td style="vertical-align: top; padding-right: 7px; padding-left: 12px;" valign="top">
-        <table style="width: 100%;" width="100%" cellspacing="0" cellpadding="0" border="0">
-        <tbody>
-          <tr>
-          <td style="padding-bottom: 12px;">
-            <table style="padding-left: 2px; font-weight: normal; width: 100%;" width="100%" cellspacing="0" cellpadding="0" border="0">
-            <tbody>
-              <tr>
-              <td style="font-size: 11px; line-height: 21px; color: #4e4b4c;">
-                <span style="color: #404040; padding: 0px; margin: 0px; font-size: 16px; font-weight: bold; font-family: Arial, Helvetica, sans-serif;font-size:16px;">${firstname} ${lastname}
-                </span>
-                <br/>
-                <span style="font-family: Arial, Helvetica, sans-serif;font-size:14px;">${job_title}&#160;&#124;&#160;</span><span style="font-family: Arial, Helvetica, sans-serif;color:#404040;font-size:14px;">DEC</span>
-                <br/>
-                <br/>
-                <span style="color:#404040; font-weight: bold;font-family: Arial, Helvetica, sans-serif;">A&#160;</span><span style="text-decoration: none !important; color: #4e4b4c;font-family: Arial, Helvetica, sans-serif;">${street1} ${street2} ${zip} ${city.upper()}</span>
-                <br/>
-                % if phone:
-                <span style="color:#404040; font-weight: bold;font-family: Arial, Helvetica, sans-serif;">M&#160;</span><a href="tel:${phone_callable}" style="text-decoration: underline !important; color: #4e4b4c;font-family: Arial, Helvetica, sans-serif;" target="_blank">${phone}</a>&#160;<i style="color: #FFF;"> ­</i>
-                % endif
-                <span style="color:#404040; font-weight: bold;font-family: Arial, Helvetica, sans-serif;">T&#160;</span><a href="tel:${company_phone_callable}" style="text-decoration: underline !important; color: #4e4b4c;font-family: Arial, Helvetica, sans-serif;" target="_blank">${company_phone}&#160;ext&#160;${phone_ext}</a>&#160;<i style="color: #FFF;"> ­</i>
-                <span style="color:#404040; font-weight: bold;font-family: Arial, Helvetica, sans-serif;">F&#160;</span><a href="tel:${company_fax_callable}" style="text-decoration: underline !important; color: #4e4b4c;font-family: Arial, Helvetica, sans-serif;" target="_blank">${company_fax}</a>&#160;<i style="color: #FFF;"> ­</i>
-                
-                % for email in emails:
-                <span style="color:#404040; font-weight: bold;font-family: Arial, Helvetica, sans-serif;">E&#160;</span><a href="mailto:${email}" style="text-decoration: underline !important; color: #4e4b4c;font-family: Arial, Helvetica, sans-serif;" target="_blank">${email}</a><i style="color: #FFF;"> ­</i>
-                % endfor
-                % for website in websites:
-                <span style="color:#404040; font-weight: bold;font-family: Arial, Helvetica, sans-serif;">W&#160;</span><a href="${website}" style="text-decoration: underline !important; color: #4e4b4c;font-family: Arial, Helvetica, sans-serif;" target="_blank">${website.lstrip('http://').lstrip('https://')}</a><i style="color: #FFF;"> ­</i>
-                % endfor
-              </td>
-              </tr>
-            </tbody>
-            </table>
-          </td>
+    </tr>
+    <tr>
+      <td colspan="1" style="height:10px;"></td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <table style="font-size:10px;">
+          <tr style="height: 17px;">
+            <td colspan="1"><img src="/res_users_signature_workflow_dec/static/img/button_phone.png" width="12" height="12" style="margin-right:5px;"></img> </td> 
+            <td colspan="2"> <a href="tel:${company_phone}" style="color: rgb(65,65,65);"> ${company_phone}</a> <i style="font-weight:300;"> poste ${phone_ext}</i></td>
           </tr>
-          % if user.signature_social_buttons:
-          <tr>
-            <td style="padding-top: 12px"> 
-              <table cellspacing="0" cellpadding="0" border="0">
-                <tbody>
-                  <tr>
-                    % if company.social_facebook:
-                    <td style="padding-right: 4px;"><a href="${company.social_facebook}" style="text-decoration:none;" target="_blank">
-                      <img src="/res_users_signature/static/img/social_facebook.jpg" alt="facebook" style="height: 24px; width: 24px; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px;" width="24" height="24"/></a>
-                    </td>
-                    % endif
-                    % if company.social_linkedin:
-                    <td style="padding-right: 4px;"><a href="${company.social_linkedin}" style="text-decoration:none;" target="_blank">
-                      <img src="/res_users_signature/static/img/social_linkedin.jpg" alt="linkedin" style="height: 24px; width: 24px; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px;" width="24" height="24"/></a>
-                    </td>
-                    % endif
-                    % if company.social_twitter:
-                    <td style="padding-right: 4px;"><a href="${company.social_twitter}" style="text-decoration:none;" target="_blank">
-                      <img src="/res_users_signature/static/img/social_twitter.jpg" alt="twitter" style="height: 24px; width: 24px; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px;" width="24" height="24"/></a>
-                    </td>
-                    % endif
-                    % if company.social_youtube:
-                    <td style="padding-right: 4px;"><a href="${company.social_youtube}" style="text-decoration:none;" target="_blank">
-                      <img src="/res_users_signature/static/img/social_youtube.jpg" alt="youtube" style="height: 24px; width: 24px; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px;" width="24" height="24"/></a>
-                    </td>
-                    % endif
-                  </tr>
-                </tbody>
-              </table>
+          <tr style="height: 17px;">
+            <td colspan="1" style="width:12px !important;" ><img src="/res_users_signature_workflow_dec/static/img/button_fax.png" width="12" height="12"></img> </td> 
+            <td colspan="2"> <a href="tel:${company_fax}" style="text-decoration:none; color: rgb(65,65,65); margin-right:5px;"> ${company_fax} </a> </td>		
+          </tr>
+          <tr style="height: 17px;">
+            <td colspan="1"> <img src="/res_users_signature_workflow_dec/static/img/button_email.png" width="12" height="12" style="margin-right:5px;"></img></td> 
+            <td colspan="2">
+              % for email in emails:
+              <a href="mailto:${email}" style="text-decoration:none; color: rgb(65,65,65);">
+                ${email} ­
+                % endfor
+              </a>
             </td>
           </tr>
-          % endif
-        </tbody>
-      </table>
-    </td>
-  </tr>
-</tbody>
-</table>
+          <tr style="height: 17px;">
+            <td><img src="/res_users_signature_workflow_dec/static/img/button_map.png" width="12" height="12" style="margin-right:8px;margin-top:3px;float:left;"></img> </td> 
+            <td colspan="2"><a href="https://goo.gl/maps/b7TFag3UV1WUhA8aA" style="text-decoration:none; color: rgb(65,65,65);"><span>${street2} <br/> ${zip} ${city.upper()}</span></a></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+  <table>
+    <tr style="height:30px;"></tr>
+    <tr>
+      <td><a href="https://odoo.decgroupe.com/signature_mail/banniere"><img src="/res_users_signature_workflow_dec/static/img/banniere_nocache.png" width="480"></img></a></td>
+    </tr>
+  </table>
+</span>
 
         </field>
         <field name="body_lightweight_html" type="html">

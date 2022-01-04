@@ -36,12 +36,14 @@ ${email}
           <tr style="height:40px;">
             <td colspan="4"><img src="/res_users_signature_workflow_dec/static/img/logo_nosubtext_grey.png" width="85"></img></td>
           </tr>
+          % if user.signature_social_buttons:
           <tr style="height:25px;">
             <td><a href="${company.social_facebook}"><img src="/res_users_signature_workflow_dec/static/img/button_facebook.png" width="15" height="15" style="margin-right:5px;"></img></a></td>
             <td><a href="${company.social_youtube}"><img src="/res_users_signature_workflow_dec/static/img/button_youtube.png" width="15" height="15"></img></a></td>
             <td><a href="${company.social_linkedin}"><img src="/res_users_signature_workflow_dec/static/img/button_linkedin.png" width="15" height="15" style="margin:0 5px;"></img></a></td>
             <td><a href="${company.social_twitter}"><img src="/res_users_signature_workflow_dec/static/img/button_twitter.png" width="15" height="15"></img></a></td>
           </tr>
+          % endif
           <tr style="height:20px;">
             <td colspan="4"><a href="https://www.decgroupe.com/" style="color:rgb(65,65,65); font-size:8px;">WWW.DECGROUPE.COM</a></td>
           </tr>

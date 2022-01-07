@@ -62,7 +62,7 @@
 
                                         <div class="col align-self-center">
                                             <div class="float-right">
-                                                <a role="button" id="add_to_cart" class="btn btn-primary js_check_product a-submit" href="#">
+                                                <a role="button" id="add_to_cart" t-if="website.website_show_price" class="btn btn-primary js_check_product a-submit" href="#">
                                                     <i class="fa fa-fw fa-shopping-cart" role="img" aria-label="Shopping cart" title="Shopping cart"/>
                                                     Add to Cart
                                                 </a>

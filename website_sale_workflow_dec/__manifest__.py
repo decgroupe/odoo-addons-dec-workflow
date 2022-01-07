@@ -9,6 +9,7 @@
         'website_sale_main_category',
         'website_sale_tax_toggle',
         'website_megamenu',
+        'website_sale_hide_price',
     ],
     'data': [
         'views/assets.xml',

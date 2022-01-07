@@ -3,7 +3,7 @@
 
     <template id="product_price" inherit_id="website_sale.product_price">
         <xpath expr="//div[@itemprop='offers']" position="replace">
-            <div itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer" class="product_price">
+            <div itemprop="offers" t-if="website.website_show_price" itemscope="itemscope" itemtype="http://schema.org/Offer" class="product_price">
                 <h4 class="oe_price_h4 css_editable_mode_hidden mb0">
                     <div t-if="combination_info['has_discounted_price']">
                         <small>

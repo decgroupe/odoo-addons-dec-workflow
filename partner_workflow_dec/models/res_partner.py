@@ -14,4 +14,6 @@ class ResPartner(models.Model):
         # the parent one
         if 'parent_id' in vals and not 'type' in vals:
             vals['type'] = 'other'
+        if vals.get('type') == 'private':
+            vals['vat'] = False
         return super().write(vals)

@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
+    <record model="ir.ui.view" id="mail_activity_kanban_view">
+        <field name="name">mail.activity.boards.view.kanban@mail_activity_workflow_dec</field>
+        <field name="model">mail.activity</field>
+        <field name="inherit_id" ref="mail_activity_board.mail_activity_view_kanban"/>
+        <field name="arch" type="xml">
+            <field name="summary" position="after">
+                <field name="note"/>
+            </field>
+            <xpath expr="//strong[@class='o_kanban_record_title']" position="after">
+                <small t-if="record.note.value">
+                    <t t-raw="record.note.value"/>
+                </small>
+            </xpath>
+        </field>
+    </record>
+
     <record model="ir.actions.act_window" id="mail_activity_board.open_boards_activities">
         <field name="context">{
             'search_default_activities_my': 1,

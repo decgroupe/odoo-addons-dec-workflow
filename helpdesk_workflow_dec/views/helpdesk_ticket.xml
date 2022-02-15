@@ -5,4 +5,15 @@
         <field name="context" eval="{'default_project_id': ref('project_support'),}"/>
     </record>
 
+    <record model="ir.ui.view" id="ticket_noshare_form_view" >
+        <field name="name">helpdesk.ticket.view.form#noshare@helpdesk_workflow_dec</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="inherit_id" ref="helpdesk_mgmt.ticket_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='main']//field[@name='user_id']" position="attributes">
+                <attribute name="domain">[('share', '=', False)]</attribute>
+            </xpath>
+        </field>
+    </record>
+
 </odoo>

@@ -6,8 +6,12 @@
     'summary': "",
     'depends': [
         'product',
+        'stock',
         'product_reference_market',
     ],
-    'data': ['data/product_product.xml'],
+    'data': [
+        'data/product_product.xml',
+        'views/product_template.xml',
+    ],
     'installable': True
 }

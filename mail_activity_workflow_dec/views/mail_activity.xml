@@ -24,4 +24,15 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="mail_activity_form_view_popup">
+        <field name="name">mail.activity.view.form.popup@mail_activity_workflow_dec</field>
+        <field name="model">mail.activity</field>
+        <field name="inherit_id" ref="mail.mail_activity_view_form_popup"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="attributes">
+                <attribute name="domain">[('share', '=', False)]</attribute>
+            </xpath>
+        </field>
+    </record>
+
 </odoo>

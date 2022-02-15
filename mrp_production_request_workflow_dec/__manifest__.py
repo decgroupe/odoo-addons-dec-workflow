@@ -9,6 +9,7 @@
         [
             "security/model_security.xml",
             "security/ir.model.access.csv",
+            "views/mrp_production_request.xml",
         ],
     'installable': True
 }

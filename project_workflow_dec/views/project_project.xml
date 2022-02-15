@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+    <record model="ir.ui.view" id="edit_project_noshare_form_view">
+        <field name="name">project.project.form#noshare@project_workflow_dec</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='settings']//field[@name='user_id']" position="attributes">
+                <attribute name="domain">[('share', '=', False)]</attribute>
+            </xpath>
+        </field>
+    </record>
+
     <record model="ir.ui.view" id="view_project">
         <field name="name">project.project.tree.select@project_workflow_dec</field>
         <field name="model">project.project</field>

@@ -12,6 +12,17 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="invoice_noshare_form_view">
+        <field name="name">account.invoice.form#noshare@account_workflow_dec</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group/group/field[@name='user_id']" position="attributes">
+                <attribute name="domain">[('share', '=', False)]</attribute>
+            </xpath>
+        </field>
+    </record>
+
     <record model="ir.ui.view" id="invoice_supplier_form_view">
         <field name="name">account.invoice.supplier.form@account_workflow_dec</field>
         <field name="model">account.invoice</field>

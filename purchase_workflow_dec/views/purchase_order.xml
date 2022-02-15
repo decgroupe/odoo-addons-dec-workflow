@@ -15,6 +15,17 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="purchase_order_noshare_form_view">
+        <field name="name">purchase.order.form#noshare@purchase_workflow_dec</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='purchase_delivery_invoice']//field[@name='user_id']" position="attributes">
+                <attribute name="domain">[('share', '=', False)]</attribute>
+            </xpath>
+        </field>
+    </record>
+
     <record model="ir.ui.view" id="purchase_order_filter_view" >
         <field name="name">request.quotation.select@purchase_workflow_dec</field>
         <field name="model">purchase.order</field>

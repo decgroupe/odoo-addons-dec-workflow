@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record model="ir.ui.view" id="product_template_form_view_procurement_button">
+        <field name="name">product.template_procurement@mrp_production_request_workflow_dec</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="stock.product_template_form_view_procurement_button"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='responsible_id']" position="attributes">
+                <attribute name="domain">[('share', '=', False)]</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

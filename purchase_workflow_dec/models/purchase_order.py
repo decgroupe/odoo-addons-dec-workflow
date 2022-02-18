@@ -9,6 +9,7 @@ class PurchaseOrder(models.Model):
     _inherit = 'purchase.order'
     _order = "id desc"
 
+    # Deprecated since web_widget_many2one_avatar
     partner_image_small = fields.Binary(
         related='partner_id.image_small',
         string='Supplier Logo',

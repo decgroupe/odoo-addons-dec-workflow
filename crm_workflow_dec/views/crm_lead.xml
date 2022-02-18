@@ -47,4 +47,18 @@
         }</field>
     </record>
 
+    <record model="ir.ui.view" id="crm_case_oppor_tree_view">
+        <field name="name">crm.lead.tree.opportunity@crm_workflow_dec</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="attributes">
+                <attribute name="widget">many2one_avatar</attribute>
+            </field>
+            <field name="user_id" position="attributes">
+                <attribute name="widget">many2one_avatar_user</attribute>
+            </field>
+        </field>
+    </record>
+
 </odoo>

@@ -14,6 +14,7 @@
             'project_category',
             'project_identification',
             'web_kanban_draggable',
+            'web_widget_many2one_avatar',
         ],
     'data':
         [

@@ -4,12 +4,13 @@
     'author': 'DEC, Yann Papouin',
     'website': 'https://www.decgroupe.com',
     'category': 'Sales',
-    'summary': '''Custom views for sale order''',
+    'summary': "Custom views for sale order",
     'depends': [
         'dec',
         'sale',
         'sale_summary',
         'sale_warranty',
+        'web_widget_many2one_avatar',
     ],
     'data':
         [

@@ -8,6 +8,7 @@
         'dec',
         'purchase',
         'purchase_order_line_stock_available',
+        'web_widget_many2one_avatar',
     ],
     'data':
         [

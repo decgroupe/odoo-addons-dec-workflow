@@ -20,13 +20,11 @@
             <field name="expected_date" position="attributes">
                 <attribute name="invisible">1</attribute>
             </field>
-            <field name="partner_id" position="before">
-                <!-- WARNING: the string character is a non-breakable space -->
-                <field name="partner_image_small" string=" " widget="image"/>
+            <field name="partner_id" position="attributes">
+                <attribute name="widget">many2one_avatar</attribute>
             </field>
-            <field name="user_id" position="before">
-                <!-- WARNING: the string character is a non-breakable space -->
-                <field name="user_image_small" string=" " widget="image"/>
+            <field name="user_id" position="attributes">
+                <attribute name="widget">many2one_avatar_user</attribute>
             </field>
             <field name="amount_total" position="before">
                 <field name="amount_untaxed" sum="Total Untaxed" widget="monetary"/>
@@ -56,13 +54,11 @@
             <field name="expected_date" position="attributes">
                 <attribute name="widget">date</attribute>
             </field>
-            <field name="partner_id" position="before">
-                <!-- WARNING: the string character is a non-breakable space -->
-                <field name="partner_image_small" string=" " widget="image"/>
+            <field name="partner_id" position="attributes">
+                <attribute name="widget">many2one_avatar</attribute>
             </field>
-            <field name="user_id" position="before">
-                <!-- WARNING: the string character is a non-breakable space -->
-                <field name="user_image_small" string=" " widget="image"/>
+            <field name="user_id" position="attributes">
+                <attribute name="widget">many2one_avatar_user</attribute>
             </field>
             <field name="amount_total" position="before">
                 <field name="amount_untaxed" sum="Total Untaxed" widget="monetary"/>

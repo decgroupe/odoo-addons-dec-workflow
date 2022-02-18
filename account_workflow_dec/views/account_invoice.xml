@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
+    <record model="ir.ui.view" id="invoice_tree">
+        <field name="name">account.invoice.tree@account_workflow_dec</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_tree"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="attributes">
+                <attribute name="widget">many2one_avatar</attribute>
+            </field>
+            <field name="user_id" position="attributes">
+                <attribute name="widget">many2one_avatar_user</attribute>
+            </field>
+        </field>
+    </record>
+
     <record model="ir.ui.view" id="invoice_form_view">
         <field name="name">account.invoice.form@account_workflow_dec</field>
         <field name="model">account.invoice</field>
@@ -21,6 +35,25 @@
                 <attribute name="domain">[('share', '=', False)]</attribute>
             </xpath>
         </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_account_invoice_filter">
+        <field name="name">account.invoice.select@account_workflow_dec</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+        <field name="arch" type="xml">
+            <filter name="draft" position="before">
+                <filter name="filter_not_cancelled" string="Not Cancelled" domain="[('state', '!=', 'cancel')]"/>
+            </filter>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="account.action_invoice_tree1" >
+        <field name="context">{'type':'out_invoice', 'journal_type': 'sale', "search_default_filter_not_cancelled": 1}</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="account.action_vendor_bill_template" >
+        <field name="context">{'default_type': 'in_invoice', 'type': 'in_invoice', 'journal_type': 'purchase', "search_default_filter_not_cancelled": 1}</field>
     </record>
 
     <record model="ir.ui.view" id="invoice_supplier_form_view">

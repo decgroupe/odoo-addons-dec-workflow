@@ -8,10 +8,12 @@ from odoo import fields, models, api
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
+    # Deprecated since web_widget_many2one_avatar
     partner_image_small = fields.Binary(
         related='partner_id.image_small',
         string='Partner Logo',
     )
+    # Deprecated since web_widget_many2one_avatar
     user_image_small = fields.Binary(
         related='user_id.image_small',
         string='User Avatar',

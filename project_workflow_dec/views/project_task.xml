@@ -45,6 +45,9 @@
                 <field name="create_date"/>
                 <field name="tag_ids" widget="many2many_tags"/>
             </field>
+            <field name="user_id" position="attributes">
+                <attribute name="widget">many2one_avatar_user</attribute>
+            </field>
         </field>
     </record>
 

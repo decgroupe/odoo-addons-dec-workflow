@@ -12,6 +12,11 @@
             <xpath expr="//page[@name='page_invitations']" position="attributes">
                 <attribute name="page_misc"></attribute> <!-- Remove the res.group on the group-->
             </xpath>
+            <xpath expr="//field[@name='stop_datetime']" position="attributes">
+                <attribute name="invisible">0</attribute>
+                <attribute name="string">Ending at</attribute>
+                <attribute name="attrs">{'invisible': [('allday','=',True)], 'readonly': [('id', '!=', False), ('recurrency','=',True)]}</attribute>
+            </xpath>
         </field>
     </record>
 

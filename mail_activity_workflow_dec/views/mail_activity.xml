@@ -17,13 +17,6 @@
         </field>
     </record>
 
-    <record model="ir.actions.act_window" id="mail_activity_board.open_boards_activities">
-        <field name="context">{
-            'search_default_activities_my': 1,
-        }
-        </field>
-    </record>
-
     <record model="ir.ui.view" id="mail_activity_form_view_popup">
         <field name="name">mail.activity.view.form.popup@mail_activity_workflow_dec</field>
         <field name="model">mail.activity</field>
@@ -32,6 +25,25 @@
             <xpath expr="//field[@name='user_id']" position="attributes">
                 <attribute name="domain">[('share', '=', False)]</attribute>
             </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="mail_activity_view_search">
+        <field name="name">mail.activity.boards.view.search</field>
+        <field name="model">mail.activity</field>
+        <field name="inherit_id" ref="mail_activity_team.mail_activity_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr='//filter[@name="my_team_activities"]' position='before'>
+                <filter name="my_team_unassigned_activities" string="My Team Unassigned Activities" domain="[('team_id.member_ids', '=', uid), ('user_id', '=', False)]"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="mail_activity_board.open_boards_activities">
+        <field name="context">{
+            'search_default_activities_my': 1,
+            'search_default_my_team_unassigned_activities': 1,
+        }
         </field>
     </record>
 

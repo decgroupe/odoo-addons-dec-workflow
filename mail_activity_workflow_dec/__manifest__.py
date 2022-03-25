@@ -7,6 +7,7 @@
     'depends': [
         'mail',
         'mail_activity_board',
+        'mail_activity_team',
     ],
     'data': [
         'views/mail_activity.xml',

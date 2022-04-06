@@ -1,53 +1,52 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* hr_workflow_dec
+#	* hr_workflow_dec
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-04-06 07:52+0000\n"
-"PO-Revision-Date: 2022-04-06 09:59+0200\n"
+"PO-Revision-Date: 2022-04-06 07:52+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"X-Generator: Poedit 2.2.3\n"
 
 #. module: hr_workflow_dec
 #: model_terms:ir.ui.view,arch_db:hr_workflow_dec.hr_expense_sheet_form_view
 msgid "Are you sure that you want to submit this sheet?"
-msgstr "Êtes-vous sûr de vouloir soumettre ce rapport ?"
+msgstr ""
 
 #. module: hr_workflow_dec
 #: model:ir.model.fields,field_description:hr_workflow_dec.field_hr_expense_sheet__display_name
 msgid "Display Name"
-msgstr "Nom affiché"
+msgstr ""
 
 #. module: hr_workflow_dec
 #: model:ir.model,name:hr_workflow_dec.model_hr_expense_sheet
 msgid "Expense Report"
-msgstr "Rapport note de frais"
+msgstr ""
 
 #. module: hr_workflow_dec
 #: model:ir.model.fields,field_description:hr_workflow_dec.field_hr_expense_sheet__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: hr_workflow_dec
 #: model:ir.model.fields,field_description:hr_workflow_dec.field_hr_expense_sheet____last_update
 msgid "Last Modified on"
-msgstr "Dernière modification le"
+msgstr ""
 
 #. module: hr_workflow_dec
 #: model:ir.actions.act_window,name:hr_workflow_dec.open_all_employees_allocation_summary
 msgid "Leaves Summary"
-msgstr "Résumé des congés"
+msgstr ""
 
 #. module: hr_workflow_dec
 #: model:ir.ui.menu,name:hr_workflow_dec.menu_open_all_employees_allocation_summary
 msgid "Summary"
-msgstr "Résumé"
+msgstr ""
+

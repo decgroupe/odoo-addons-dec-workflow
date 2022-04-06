@@ -17,6 +17,7 @@
         'views/hr_timesheet.xml',
         'views/hr_leave.xml',
         'views/hr_leave_allocation.xml',
+        'views/hr_leave_report.xml',
         'views/hr_employee.xml',
         'views/account_analytic_line.xml',
     ],

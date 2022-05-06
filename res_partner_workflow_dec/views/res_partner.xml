@@ -10,6 +10,9 @@
             <xpath expr="//page[@name='sales_purchases']//field[@name='user_id']" position="attributes">
                 <attribute name="domain">[('share', '=', False)]</attribute>
             </xpath>
+            <xpath expr="//sheet/notebook//field[@name='child_ids']/form//field[@name='comment']" position="after">
+                <field name="category_id" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}" placeholder="Tags..."/>
+            </xpath>
         </field>
     </record>
 

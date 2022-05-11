@@ -1,16 +1,13 @@
 {
-    'name': 'Product workflow (DEC)',
+    'name': 'Product Reference Market workflow (DEC)',
     'version': '12.0.1.0.0',
     'author': 'DEC, Yann Papouin',
     'website': 'https://www.decgroupe.com',
     'summary': "",
     'depends': [
-        'product',
-        'stock',
+        'product_reference_market',
+        "product_workflow_dec",
     ],
-    'data': [
-        'data/product_product.xml',
-        'views/product_template.xml',
-    ],
+    'data': [],
     'installable': True
 }

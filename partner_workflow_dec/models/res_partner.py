@@ -8,6 +8,12 @@ from odoo import _, api, models, fields
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
+    @api.model_create_multi
+    def create(self, vals):
+        records = super().create(vals)
+        records._clear_vat()
+        return records
+
     def write(self, vals):
         # When linking a contact to a partner, change the adress type to
         # `other`, otherwise existing address will be overriden with the
@@ -16,4 +22,15 @@ class ResPartner(models.Model):
             vals['type'] = 'other'
         if vals.get('type') == 'private':
             vals['vat'] = False
-        return super().write(vals)
+        res = super().write(vals)
+        self._clear_vat()
+        return res
+
+    def _clear_vat(self):
+        if not self.env.context.get('clearing_vat'):
+            private_partners = self.filtered('vat').filtered(
+                lambda rec: rec.type == 'private'
+            )
+            private_partners.with_context(clearing_vat=True).write(
+                {'vat': False}
+            )

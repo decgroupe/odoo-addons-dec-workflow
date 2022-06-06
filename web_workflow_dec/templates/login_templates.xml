@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <!--  
+        You need to add this hook to View.apply_inheritance_specs
+        in ./odoo/addons/base/models/ir_ui_view.py
+
+          ...
+          elif pos == 'text':
+              node.text = spec.text 
+  -->
+
+  <template id="auth_unique_link_login3" inherit_id="auth_unique_link.login">
+    <xpath expr="//label[@for='login']" position="text">DEC-ID</xpath>
+    <xpath expr="//label[@for='email']" position="text">DEC-ID</xpath>
+  </template>
+
+  <template id="auth_signup_login" inherit_id="auth_signup.login">
+    <xpath expr="//a[@t-if='signup_enabled']" position="text">Don't have a DEC-ID ?</xpath>
+  </template>
+
+  <template id="auth_signup_signup" inherit_id="auth_signup.signup">
+    <xpath expr="//a[@t-attf-href='/web/login?{{ keep_query() }}']" position="text">Already have a DEC-ID ?</xpath>
+  </template>
+
+</odoo>

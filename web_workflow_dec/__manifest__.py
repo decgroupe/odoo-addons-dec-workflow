@@ -7,7 +7,12 @@
     'depends': [
         'web',
         'dec',
+        'auth_signup',
+        'auth_unique_link',
     ],
-    'data': ['views/assets.xml', ],
+    'data': [
+        'views/assets.xml',
+        'templates/login_templates.xml',
+    ],
     'installable': True
 }

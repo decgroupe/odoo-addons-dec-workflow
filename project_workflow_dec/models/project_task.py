@@ -31,3 +31,36 @@ class ProjectTask(models.Model):
             rec.display_sale_order = False
             if rec.sale_order_id and rec.sale_order_id.name != rec.project_id.name:
                 rec.display_sale_order = True
+
+    @api.multi
+    def create(self, vals):
+        rec = super().create(vals)
+        if vals.get('sale_line_id'):
+            rec._auto_tag_from_sale()
+        return rec
+
+    @api.multi
+    def write(self, vals):
+        res = super().write(vals)
+        if vals.get('sale_line_id'):
+            for rec in self:
+                rec._auto_tag_from_sale()
+        return res
+
+    def _auto_tag_from_sale(self):
+        self.ensure_one()
+        if self.sale_line_id:
+            code = self.sale_line_id.product_id.default_code
+            if code.startswith('BNU_'):
+                self._tag_with(
+                    "project_workflow_dec.project_tag_design_office_digital"
+                )
+            elif code.startswith('BEQ_'):
+                self._tag_with(
+                    "project_workflow_dec.project_tag_design_office_equipment"
+                )
+
+    def _tag_with(self, tag_ref):
+        tag = self.env.ref(tag_ref)
+        if tag:
+            self.write({'tag_ids': [(4, tag.id)]})

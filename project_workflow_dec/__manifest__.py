@@ -25,6 +25,7 @@
             'data/project.xml',
             'data/project_task_type.xml',
             'data/project_task.xml',
+            'data/project_tags.xml',
         ],
     'installable': True
 }

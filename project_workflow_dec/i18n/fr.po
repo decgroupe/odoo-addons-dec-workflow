@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-28 12:12+0000\n"
+"POT-Creation-Date: 2022-06-13 13:06+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.3\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #. module: project_workflow_dec
 #: model:project.task,legend_blocked:project_workflow_dec.project_task_building_maintenance
@@ -24,13 +24,44 @@ msgstr ""
 #: model:project.task,legend_blocked:project_workflow_dec.project_task_timesheet_filling
 #: model:project.task,legend_blocked:project_workflow_dec.project_task_vehicle_maintenance
 #: model:project.task.type,legend_blocked:project_workflow_dec.task_type_time_tracking
-msgid "Blocked"
-msgstr "Bloquée"
+msgid "Bloqué"
+msgstr ""
+
+#. module: project_workflow_dec
+#: model:project.type,description:project_workflow_dec.project_type_design_office
+msgid "Bureau d'études"
+msgstr ""
+
+#. module: project_workflow_dec
+#: model:ir.model.fields,field_description:project_workflow_dec.field_project_project__display_name
+#: model:ir.model.fields,field_description:project_workflow_dec.field_project_task__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
 
 #. module: project_workflow_dec
 #: model:ir.model.fields,field_description:project_workflow_dec.field_project_task__display_sale_order
 msgid "Display Sale Order"
 msgstr "Afficher la commande client"
+
+#. module: project_workflow_dec
+#: model:project.task,legend_normal:project_workflow_dec.project_task_building_maintenance
+#: model:project.task,legend_normal:project_workflow_dec.project_task_household
+#: model:project.task,legend_normal:project_workflow_dec.project_task_internal_training
+#: model:project.task,legend_normal:project_workflow_dec.project_task_leave_normal
+#: model:project.task,legend_normal:project_workflow_dec.project_task_leave_sick
+#: model:project.task,legend_normal:project_workflow_dec.project_task_non_attendance
+#: model:project.task,legend_normal:project_workflow_dec.project_task_procedure_drafting
+#: model:project.task,legend_normal:project_workflow_dec.project_task_reporting_expense
+#: model:project.task,legend_normal:project_workflow_dec.project_task_timesheet_filling
+#: model:project.task,legend_normal:project_workflow_dec.project_task_vehicle_maintenance
+#: model:project.task.type,legend_normal:project_workflow_dec.task_type_time_tracking
+msgid "En cours"
+msgstr ""
+
+#. module: project_workflow_dec
+#: model:project.project,label_productions:project_workflow_dec.project_internal_management
+msgid "Fabrications"
+msgstr ""
 
 #. module: project_workflow_dec
 #: model:project.type,description:project_workflow_dec.project_type_internal
@@ -58,19 +89,16 @@ msgstr ""
 "- Visible par les clients suivants : les employés voient tout ; si le site web est activé, les utilisateur du portail peuvent voir les projets, tâches et anomalies qu'eux ou un utilisateur appartenant à leur société, suivent.\n"
 
 #. module: project_workflow_dec
-#: model:project.task,legend_normal:project_workflow_dec.project_task_building_maintenance
-#: model:project.task,legend_normal:project_workflow_dec.project_task_household
-#: model:project.task,legend_normal:project_workflow_dec.project_task_internal_training
-#: model:project.task,legend_normal:project_workflow_dec.project_task_leave_normal
-#: model:project.task,legend_normal:project_workflow_dec.project_task_leave_sick
-#: model:project.task,legend_normal:project_workflow_dec.project_task_non_attendance
-#: model:project.task,legend_normal:project_workflow_dec.project_task_procedure_drafting
-#: model:project.task,legend_normal:project_workflow_dec.project_task_reporting_expense
-#: model:project.task,legend_normal:project_workflow_dec.project_task_timesheet_filling
-#: model:project.task,legend_normal:project_workflow_dec.project_task_vehicle_maintenance
-#: model:project.task.type,legend_normal:project_workflow_dec.task_type_time_tracking
-msgid "In Progress"
-msgstr "En cours"
+#: model:ir.model.fields,field_description:project_workflow_dec.field_project_project__id
+#: model:ir.model.fields,field_description:project_workflow_dec.field_project_task__id
+msgid "ID"
+msgstr "ID"
+
+#. module: project_workflow_dec
+#: model:ir.model.fields,field_description:project_workflow_dec.field_project_project____last_update
+#: model:ir.model.fields,field_description:project_workflow_dec.field_project_task____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
 
 #. module: project_workflow_dec
 #: selection:project.project,privacy_visibility:0
@@ -81,11 +109,6 @@ msgstr "Sur invitation uniquement"
 #: model:ir.model.fields,field_description:project_workflow_dec.field_project_project__privacy_visibility
 msgid "Privacy"
 msgstr "Confidentialité"
-
-#. module: project_workflow_dec
-#: model:project.project,label_productions:project_workflow_dec.project_internal_management
-msgid "Productions"
-msgstr "Fabrications"
 
 #. module: project_workflow_dec
 #: model:ir.model,name:project_workflow_dec.model_project_project
@@ -104,8 +127,8 @@ msgstr "Projet"
 #: model:project.task,legend_done:project_workflow_dec.project_task_timesheet_filling
 #: model:project.task,legend_done:project_workflow_dec.project_task_vehicle_maintenance
 #: model:project.task.type,legend_done:project_workflow_dec.task_type_time_tracking
-msgid "Ready for Next Stage"
-msgstr "Prête pour l'étape suivante"
+msgid "Prêt pour la prochaine étape"
+msgstr ""
 
 #. module: project_workflow_dec
 #: model:ir.model.fields,field_description:project_workflow_dec.field_project_task__sequence
@@ -116,11 +139,6 @@ msgstr "Séquence"
 #: model:ir.model,name:project_workflow_dec.model_project_task
 msgid "Task"
 msgstr "Tâche"
-
-#. module: project_workflow_dec
-#: model:project.project,label_tasks:project_workflow_dec.project_internal_management
-msgid "Tasks"
-msgstr "Tâches"
 
 #. module: project_workflow_dec
 #: model:project.project,label_tickets:project_workflow_dec.project_internal_management
@@ -136,6 +154,11 @@ msgstr "Tâches"
 #: model:project.task,label_tickets:project_workflow_dec.project_task_vehicle_maintenance
 msgid "Tickets"
 msgstr "Tickets"
+
+#. module: project_workflow_dec
+#: model:project.project,label_tasks:project_workflow_dec.project_internal_management
+msgid "Tâches"
+msgstr ""
 
 #. module: project_workflow_dec
 #: selection:project.project,privacy_visibility:0
@@ -186,6 +209,18 @@ msgstr "📚 BE"
 #: model:project.type,name:project_workflow_dec.project_type_internal
 msgid "🔰 Internal"
 msgstr "🔰 Interne"
+
+#~ msgid "Blocked"
+#~ msgstr "Bloquée"
+
+#~ msgid "In Progress"
+#~ msgstr "En cours"
+
+#~ msgid "Ready for Next Stage"
+#~ msgstr "Prête pour l'étape suivante"
+
+#~ msgid "Tasks"
+#~ msgstr "Tâches"
 
 #~ msgid "Projects"
 #~ msgstr "Projets"

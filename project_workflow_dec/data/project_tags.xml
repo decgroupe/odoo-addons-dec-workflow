@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="project_tag_marketing" model="project.tags">
+        <field name="name">💰 Marketing</field>
+    </record>
+
+    <record id="project_tag_support_functions" model="project.tags">
+        <field name="name">💁 Support Functions</field>
+    </record>
+
+    <record id="project_tag_design_office" model="project.tags">
+        <field name="name">📚 Design Office</field>
+    </record>
+
+    <record id="project_tag_design_office_equipment" model="project.tags">
+        <field name="name">📗 Equipment</field>
+        <field name="color" eval="10"/>
+    </record>
+    
+    <record id="project_tag_design_office_digital" model="project.tags">
+        <field name="name">📘 Digital</field>
+        <field name="color" eval="4"/>
+    </record>
+
+</odoo>

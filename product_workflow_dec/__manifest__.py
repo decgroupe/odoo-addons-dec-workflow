@@ -7,6 +7,8 @@
     'depends': [
         'product',
         'stock',
+        'sale',
+        'sale_stock',
     ],
     'data': [
         'data/product_product.xml',

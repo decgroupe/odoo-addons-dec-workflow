@@ -6,7 +6,6 @@
     'category': 'Sales',
     'summary': "Custom views for sale order",
     'depends': [
-        'dec',
         'sale',
         'sale_summary',
         'sale_warranty',

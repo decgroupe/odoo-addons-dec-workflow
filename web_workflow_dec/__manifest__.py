@@ -5,8 +5,6 @@
     'website': 'https://www.decgroupe.com',
     'summary': 'Web',
     'depends': [
-        'web',
-        'dec',
         'auth_signup',
         'auth_unique_link',
     ],

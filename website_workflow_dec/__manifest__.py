@@ -4,12 +4,7 @@
     'author': 'DEC, Yann Papouin',
     'website': 'https://www.decgroupe.com',
     'summary': 'Website',
-    'depends': [
-        'website',
-        'dec',
-    ],
-    'data': [
-        'security/model_security.xml'
-    ],
+    'depends': ['website', ],
+    'data': ['security/model_security.xml'],
     'installable': True
 }

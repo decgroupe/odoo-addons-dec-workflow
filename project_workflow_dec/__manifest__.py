@@ -6,7 +6,6 @@
     'summary': "Custom views for project",
     'depends':
         [
-            'dec',
             'hr_timesheet',
             'sale_timesheet',
             'sale_timesheet_line_exclude',

@@ -32,10 +32,10 @@ class ProjectTask(models.Model):
             if rec.sale_order_id and rec.sale_order_id.name != rec.project_id.name:
                 rec.display_sale_order = True
 
-    @api.multi
+    @api.model
     def create(self, vals):
         rec = super().create(vals)
-        if vals.get('sale_line_id'):
+        if vals and vals.get('sale_line_id'):
             rec._auto_tag_from_sale()
         return rec
 

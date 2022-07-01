@@ -64,3 +64,10 @@ class ProjectTask(models.Model):
         tag = self.env.ref(tag_ref)
         if tag:
             self.write({'tag_ids': [(4, tag.id)]})
+
+
+    def _compute_show_time_control(self):
+        result = super()._compute_show_time_control()
+        for rec in self:
+            rec.show_time_control = False
+        return result

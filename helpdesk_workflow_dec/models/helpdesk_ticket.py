@@ -106,3 +106,9 @@ class HelpdeskTicket(models.Model):
                 args, limit=limit, access_rights_uid=name_get_uid
             )
         return self.browse(record_ids).name_get()
+
+    def _compute_show_time_control(self):
+        result = super()._compute_show_time_control()
+        for rec in self:
+            rec.show_time_control = False
+        return result

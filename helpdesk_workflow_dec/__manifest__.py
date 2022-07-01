@@ -7,6 +7,7 @@
     'depends': [
         'project_identification',
         'helpdesk_mgmt_timesheet',
+        'helpdesk_mgmt_timesheet_time_control',
     ],
     'data': [
         'data/project.xml',

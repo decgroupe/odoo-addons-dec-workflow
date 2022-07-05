@@ -108,6 +108,7 @@ class HelpdeskTicket(models.Model):
         return self.browse(record_ids).name_get()
 
     def _compute_show_time_control(self):
+        # Defined in module helpdesk_mgmt_timesheet_time_control
         result = super()._compute_show_time_control()
         for rec in self:
             rec.show_time_control = False

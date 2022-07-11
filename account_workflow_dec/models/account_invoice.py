@@ -40,3 +40,12 @@ class AccountInvoice(models.Model):
         readonly=False,
         states={'draft': [('readonly', False)]}
     )
+
+    @api.model
+    def create(self, vals):
+        # Disable subscribe notify for invoices on create
+        invoice = super(
+            AccountInvoice,
+            self.with_context(mail_auto_subscribe_no_notify=True)
+        ).create(vals)
+        return invoice

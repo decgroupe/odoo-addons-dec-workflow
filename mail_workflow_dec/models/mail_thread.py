@@ -10,6 +10,8 @@ class MailThread(models.AbstractModel):
 
     def message_notify(self, partner_ids, body='', subject=False, **kwargs):
         if body:
+            if isinstance(body, bytes):
+                body = body.decode('utf-8')
             body = self.env['mail.template']._hard_replace(body)
         super().message_notify(
             partner_ids, body=body, subject=subject, **kwargs

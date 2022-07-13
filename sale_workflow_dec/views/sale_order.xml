@@ -111,7 +111,7 @@
             <button name="action_cancel" position="attributes">
                 <attribute name="confirm">Are you sure that you want to cancel this sale order?</attribute>
             </button>
-            <xpath expr="//field[@name='order_line']/form" position="attributes">
+            <xpath expr="//field[@name='order_line']/tree" position="attributes">
                 <attribute name="limit">1000</attribute>
             </xpath>
             <xpath expr="//field[@name='order_line']/form//field[@name='product_id']" position="attributes">

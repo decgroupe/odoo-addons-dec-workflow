@@ -8,6 +8,15 @@ from odoo import api, fields, models, _
 class HrExpenseSheet(models.Model):
     _inherit = "hr.expense.sheet"
 
+    @api.model
+    def create(self, vals):
+        # Disable subscribe notify for expense sheet on create
+        rec = super(
+            HrExpenseSheet,
+            self.with_context(mail_auto_subscribe_no_notify=True)
+        ).create(vals)
+        return rec
+
     @api.onchange('employee_id')
     def _onchange_employee_id(self):
         super()._onchange_employee_id()

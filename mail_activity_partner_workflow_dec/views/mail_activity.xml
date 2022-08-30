@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record model="ir.ui.view" id="mail_activity_view_search">
+        <field name="name">mail.activity.boards.view.search@mail_activity_partner_workflow_dec</field>
+        <field name="model">mail.activity</field>
+        <field name="inherit_id" ref="mail_activity_team.mail_activity_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr='//filter[@name="assigned_user"]' position='after'>
+                <filter string="Partner" name="group_commercial_partner" context="{'group_by': 'commercial_partner_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

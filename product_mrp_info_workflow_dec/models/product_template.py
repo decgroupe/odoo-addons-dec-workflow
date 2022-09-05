@@ -15,4 +15,6 @@ class ProductTemplate(models.Model):
         """
         super().action_view_mrp_productions()
         product_ids = self.mapped("product_variant_ids").ids
-        return self.env['mrp.production'].action_view_staged(product_ids)
+        return self.env['mrp.production'].action_view_staged_with_products(
+            product_ids
+        )

@@ -10,6 +10,7 @@
             'sale_timesheet',
             'sale_timesheet_line_exclude',
             'sale_timesheet_task_exclude',
+            'project_action_view',
             'project_category',
             'project_identification',
             'project_timesheet_time_control',

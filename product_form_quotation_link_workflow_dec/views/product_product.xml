@@ -2,13 +2,24 @@
 <odoo>
 
     <record model="ir.ui.view" id="product_normal_form_view">
-        <field name="name">product.product.form@product_form_quotation_link_workflow_dec</field>
+        <field name="name">product.product.form#purchases@product_form_quotation_link_workflow_dec</field>
         <field name="model">product.product</field>
         <field name="inherit_id" ref="product.product_normal_form_view" />
+        <field name="groups_id" eval="[(4, ref('purchase.group_purchase_user'))]"/>
+        <field name="arch" type="xml">
+            <!-- Remove useless stat buttons -->
+            <button name="action_view_po" position="replace"/>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="product_normal_form_view">
+        <field name="name">product.product.form#sales@product_form_quotation_link_workflow_dec</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view" />
+        <field name="groups_id" eval="[(4, ref('sales_team.group_sale_salesman'))]"/>
         <field name="arch" type="xml">
             <!-- Remove useless stat buttons -->
             <button name="action_view_sales" position="replace"/>
-            <button name="action_view_po" position="replace"/>
         </field>
     </record>
 

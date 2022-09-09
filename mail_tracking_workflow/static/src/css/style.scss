@@ -1,10 +1,50 @@
 .o_mail_thread .o_thread_message .o_thread_message_core {
 
+    .o_mail_tracking_container {
+        position: relative;
+    }
+
+    &:hover {
+        .o_mail_tracking {
+            opacity: 1;
+        }
+    }
+
     .o_mail_tracking {
-        margin: 0 0 1.2rem 0;
+        opacity: 0;
+        display: block;
+        position: absolute;
+        top: -5px;
+        right: 0px;
+        z-index: 1;
         font-size: 75%;
         padding: 5px;
-        background-color: #f0f0f0;
-        border-radius: 4px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 1px 10px #cecece;
+        border-radius: 10px;
+        transition-delay: 1s;
+        transition: opacity 0.25s ease-in;
     }
+
+    // &:hover {
+    //     .o_mail_tracking {
+    //         visibility: visible;
+    //         display: block;
+    //         position: absolute;
+    //         top: -5px;
+    //         right: 0px;
+    //         z-index: 1;
+    //     }
+    // }
+
+    // .o_mail_tracking {
+    //     visibility: hidden;
+    //     display: none;
+    //     font-size: 75%;
+    //     padding: 5px;
+    //     background-color: rgb(255, 255, 255);
+    //     box-shadow: 0 1px 10px #cecece;
+    //     border-radius: 10px;
+    //     transition: visibility 0s, opacity 0.5s linear;
+    // }
 }

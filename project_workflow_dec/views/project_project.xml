@@ -15,6 +15,10 @@
                     type="object">
                 </button>
             </xpath>
+            <field name="type_ids" position="attributes">
+                <attribute name="widget">many2many_tags</attribute>
+                <attribute name="options">{'no_create': True}</attribute>
+            </field>
         </field>
     </record>
 

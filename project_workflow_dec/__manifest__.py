@@ -14,6 +14,7 @@
             'project_category',
             'project_identification',
             'project_timesheet_time_control',
+            'project_task_default_stage',
             'web_kanban_draggable',
             'web_widget_many2one_avatar',
         ],

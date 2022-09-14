@@ -1,0 +1,67 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mail_activity_partner_workflow_dec
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-14 08:16+0000\n"
+"PO-Revision-Date: 2022-09-14 10:17+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 2.4.3\n"
+
+#. module: mail_activity_partner_workflow_dec
+#: model:ir.model.fields,field_description:mail_activity_partner_workflow_dec.field_account_invoice__display_name
+#: model:ir.model.fields,field_description:mail_activity_partner_workflow_dec.field_project_project__display_name
+#: model:ir.model.fields,field_description:mail_activity_partner_workflow_dec.field_project_task__display_name
+#: model:ir.model.fields,field_description:mail_activity_partner_workflow_dec.field_sale_order__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: mail_activity_partner_workflow_dec
+#: model:ir.model.fields,field_description:mail_activity_partner_workflow_dec.field_account_invoice__id
+#: model:ir.model.fields,field_description:mail_activity_partner_workflow_dec.field_project_project__id
+#: model:ir.model.fields,field_description:mail_activity_partner_workflow_dec.field_project_task__id
+#: model:ir.model.fields,field_description:mail_activity_partner_workflow_dec.field_sale_order__id
+msgid "ID"
+msgstr "ID"
+
+#. module: mail_activity_partner_workflow_dec
+#: model:ir.model,name:mail_activity_partner_workflow_dec.model_account_invoice
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: mail_activity_partner_workflow_dec
+#: model:ir.model.fields,field_description:mail_activity_partner_workflow_dec.field_account_invoice____last_update
+#: model:ir.model.fields,field_description:mail_activity_partner_workflow_dec.field_project_project____last_update
+#: model:ir.model.fields,field_description:mail_activity_partner_workflow_dec.field_project_task____last_update
+#: model:ir.model.fields,field_description:mail_activity_partner_workflow_dec.field_sale_order____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: mail_activity_partner_workflow_dec
+#: model_terms:ir.ui.view,arch_db:mail_activity_partner_workflow_dec.mail_activity_view_search
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: mail_activity_partner_workflow_dec
+#: model:ir.model,name:mail_activity_partner_workflow_dec.model_project_project
+msgid "Project"
+msgstr "Projet"
+
+#. module: mail_activity_partner_workflow_dec
+#: model:ir.model,name:mail_activity_partner_workflow_dec.model_sale_order
+msgid "Sale Order"
+msgstr "Bon de commande"
+
+#. module: mail_activity_partner_workflow_dec
+#: model:ir.model,name:mail_activity_partner_workflow_dec.model_project_task
+msgid "Task"
+msgstr "Tâche"

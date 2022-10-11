@@ -7,6 +7,7 @@
     'summary': "Custom views for sale order",
     'depends': [
         'sale',
+        'sale_margin',
         'sale_summary',
         'sale_warranty',
         'web_widget_many2one_avatar',

@@ -13,13 +13,14 @@ class MailTemplate(models.Model):
     @api.model
     def _hard_replace(self, html):
         #TODO: Create model/view with customizable before/after lines
+        # \s* == 0 or one or multiple spaces
         to_replace = [
             (r'#875A7B', r'#414141'),
-            (r'border-radius: 3px', r'border-radius: 0px'),
-            (r'border-radius: 5px', r'border-radius: 0px'),
+            (r'border-radius:\s*3px', r'border-radius: 0px'),
+            (r'border-radius:\s*5px', r'border-radius: 0px'),
         ]
         for before, after in to_replace:
-            html = re.sub(before, after, html)
+            html = re.sub(before, after, html, flags=re.IGNORECASE)
         return html
 
     @api.model

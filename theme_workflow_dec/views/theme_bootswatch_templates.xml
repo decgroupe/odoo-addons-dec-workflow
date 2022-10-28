@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="theme_customize" inherit_id="theme_bootswatch.theme_customize">
+        <xpath expr="//div//opt[1]" position="after">
+            <opt data-xmlid="theme_workflow_dec.theme_dec_bs_variables,theme_workflow_dec.theme_dec" data-icon="/theme_workflow_dec/static/src/img/dec_thumbnail.png"/>
+        </xpath>
+    </template>
+
+    <template id="theme_dec_bs_variables" name="DEC" inherit_id="web._assets_frontend_helpers" active="False">
+        <xpath expr="//link[last()]" position="after">
+            <link rel="stylesheet" type="text/scss" href="/theme_workflow_dec/static/lib/bootswatch/dec/_variables.scss"/>
+        </xpath>
+    </template>
+    <template id="theme_dec" name="DEC" inherit_id="website.assets_frontend" active="False">
+        <xpath expr="//link[last()]" position="after">
+            <link rel="stylesheet" type="text/scss" href="/theme_workflow_dec/static/lib/bootswatch/dec/_bootswatch.scss"/>
+            <link rel="stylesheet" type="text/scss" href="/theme_workflow_dec/static/src/scss/dec_fix.scss"/>
+        </xpath>
+    </template>
+
+</odoo>

@@ -10,6 +10,7 @@
         'sale_margin',
         'sale_summary',
         'sale_warranty',
+        'sale_delivery_rate',
         'web_widget_many2one_avatar',
     ],
     'data':

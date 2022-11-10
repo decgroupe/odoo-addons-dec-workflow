@@ -122,6 +122,12 @@
                 <field name="pack_modifiable" groups="base.group_erp_manager"/>
             </xpath>
             -->
+            <xpath expr="//field[@name='order_line']/tree/field[@name='invoice_status']" position="after">
+                <field name="delivery_status" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree" position="attributes">
+                <attribute name="decoration-primary">(delivery_status == 'todo') and (invoice_status in ['no', 'to invoice']) and (state not in ['done', 'cancel']) </attribute>
+            </xpath>
         </field>
     </record>
 

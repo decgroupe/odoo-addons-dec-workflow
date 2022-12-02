@@ -8,6 +8,6 @@ from odoo import _, api, models
 class MailTemplate(models.Model):
     _inherit = "mail.template"
 
-    @api.multi
+    
     def write(self, vals):
         return super().write(vals)

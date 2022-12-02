@@ -11,7 +11,7 @@ class ProjectTask(models.Model):
     sequence = fields.Integer(default=0, )
     display_sale_order = fields.Boolean(compute="_compute_display_sale_order", )
 
-    @api.multi
+    
     @api.depends('sale_order_id', 'project_id')
     def _compute_display_sale_order(self):
         for rec in self:
@@ -26,7 +26,7 @@ class ProjectTask(models.Model):
             rec._auto_tag_from_sale()
         return rec
 
-    @api.multi
+    
     def write(self, vals):
         res = super().write(vals)
         if vals.get('sale_line_id'):

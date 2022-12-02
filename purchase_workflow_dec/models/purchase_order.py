@@ -15,7 +15,7 @@ class PurchaseOrder(models.Model):
         string='Supplier Logo',
     )
 
-    @api.multi
+    
     def action_rfq_send(self):
         view = super().action_rfq_send()
         # Do not set layout to "mail.mail_notification_paynow" since we

@@ -12,7 +12,7 @@ class ProjectTask(models.Model):
 
     default_user = fields.Many2one("res.users", compute="_compute_default_user")
 
-    @api.multi
+    
     def send_subtask_email(
         self,
         subtask_name,
@@ -31,7 +31,7 @@ class ProjectTask(models.Model):
                 old_name=old_name,
             )
 
-    @api.multi
+    
     @api.returns('mail.message', lambda value: value.id)
     def message_post(self, **kwargs):
         subtype = kwargs.get('subtype', False)
@@ -39,7 +39,7 @@ class ProjectTask(models.Model):
             kwargs.pop('partner_ids', False)
         return super().message_post(**kwargs)
 
-    @api.multi
+    
     def _compute_default_user(self):
         """ Override default compute since nothing is logic in original module
             computation

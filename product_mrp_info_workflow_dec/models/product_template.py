@@ -8,7 +8,7 @@ from odoo import api, fields, models
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 
-    @api.multi
+    
     def action_view_mrp_productions(self):
         """ Override `action_view_mrp_productions` from `product_mrp_info`
             to use the kanban view from `mrp_stage`

@@ -23,7 +23,7 @@ class HelpdeskTicket(models.Model):
         ticket_id = super().create(vals)
         return ticket_id
 
-    @api.multi
+    
     @api.depends('name', 'number')
     def name_get(self):
         """ Custom naming to quickly identify a ticket

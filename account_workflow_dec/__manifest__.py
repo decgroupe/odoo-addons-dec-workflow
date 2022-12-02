@@ -5,7 +5,6 @@
     'website': 'https://www.decgroupe.com',
     'depends': [
         'account',
-        'account_cancel',
     ],
     #'force_migration':'12.0.0.0.0',
     'data':

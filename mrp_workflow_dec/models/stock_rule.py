@@ -11,7 +11,7 @@ _logger = logging.getLogger(__name__)
 class StockRule(models.Model):
     _inherit = 'stock.rule'
 
-    @api.multi
+    
     def _run_buy(self, product_id, product_qty, product_uom, location_id, \
         name, origin, values):
         # Ignore consumable when sourcing from production location

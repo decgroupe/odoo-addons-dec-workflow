@@ -8,7 +8,7 @@ from odoo import fields, models, api
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
-    @api.multi
+    
     def action_view_project_ids(self):
         """ In default behaviour a kanban view is returned even if there is
             only one project (unbillable but with billable tasks). Our

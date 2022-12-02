@@ -19,7 +19,7 @@ class SaleOrder(models.Model):
         string='User Avatar',
     )
 
-    @api.multi
+    
     def copy(self, default=None):
         if self.origin:
             origin = ('%s:%s') % (

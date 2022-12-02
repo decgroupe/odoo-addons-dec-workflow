@@ -28,7 +28,7 @@ class MrpProduction(models.Model):
         'Moves on pickings associated with this manufacturing order output',
     )
 
-    @api.multi
+    
     def _compute_finished_picking(self):
         def get_pickings(move):
             # We need to return moves and pickings so we are creating
@@ -60,7 +60,7 @@ class MrpProduction(models.Model):
             production.finished_picking_ids = all_picking_ids.ids
             production.finished_picking_move_ids = all_move_ids.ids
 
-    @api.multi
+    
     def _generate_moves(self):
         super(MrpProduction, self)._generate_moves()
         for production in self:

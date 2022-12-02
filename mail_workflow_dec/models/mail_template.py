@@ -28,7 +28,7 @@ class MailTemplate(models.Model):
         html = super().render_post_process(html)
         return self._hard_replace(html)
 
-    @api.multi
+    
     def send_mail(
         self,
         res_id,
@@ -47,7 +47,7 @@ class MailTemplate(models.Model):
             res_id, force_send, raise_exception, email_values, notif_layout
         )
 
-    @api.multi
+    
     def generate_email(self, res_ids, fields=None):
         res = super().generate_email(res_ids, fields)
         if self.env.context.get('hard_replace_generate_email'

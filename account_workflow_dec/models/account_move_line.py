@@ -8,7 +8,7 @@ from odoo import api, models
 class AccountMoveLine(models.Model):
     _inherit = 'account.move.line'
 
-    @api.multi
+    
     @api.depends('ref', 'move_id')
     def name_get(self):
         """ Override name_get to print company_invoice_number for quicker line

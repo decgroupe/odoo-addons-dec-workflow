@@ -9,7 +9,7 @@ from odoo.tools.float_utils import float_round
 class ProductProduct(models.Model):
     _inherit = "product.product"
 
-    @api.multi
+    
     def _compute_purchased_product_qty(self):
         # Override default implementation to remove the 365 days domain filter
         # from ./odoo/addons/purchase/models/product.py

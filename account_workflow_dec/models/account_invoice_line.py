@@ -1,9 +1,7 @@
-# -*- coding: utf-8 -*-
 # Copyright (C) DEC SARL, Inc - All Rights Reserved.
 # Written by Yann Papouin <ypa at decgroupe.com>, May 2020
 
 from odoo import api, fields, models
-from odoo.addons import decimal_precision as dp
 
 
 class AccountInvoiceLine(models.Model):
@@ -17,7 +15,7 @@ class AccountInvoiceLine(models.Model):
     price_reduce = fields.Float(
         compute='_compute_price_reduce',
         string='Price Reduce',
-        digits=dp.get_precision('Product Price'),
+        digits='Product Price',
         readonly=True,
         store=False,
     )

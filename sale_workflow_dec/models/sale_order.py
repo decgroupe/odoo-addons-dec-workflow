@@ -9,12 +9,12 @@ class SaleOrder(models.Model):
 
     # Deprecated since web_widget_many2one_avatar
     partner_image_small = fields.Binary(
-        related='partner_id.image_small',
+        related='partner_id.image_128',
         string='Partner Logo',
     )
     # Deprecated since web_widget_many2one_avatar
     user_image_small = fields.Binary(
-        related='user_id.image_small',
+        related='user_id.image_128',
         string='User Avatar',
     )
 

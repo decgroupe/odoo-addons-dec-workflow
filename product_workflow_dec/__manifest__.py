@@ -10,6 +10,9 @@
         'sale',
         'sale_stock',
     ],
+    "external_dependencies": {
+        "python": ["numpy", ]
+    },
     'data': [
         'data/product_product.xml',
         'views/product_template.xml',

@@ -4,8 +4,8 @@
 from odoo import api, models, fields
 
 
-class AccountInvoice(models.Model):
-    _inherit = "account.invoice"
+class AccountMove(models.Model):
+    _inherit = "account.move"
 
     @api.model
     def _get_partner_field_name(self):

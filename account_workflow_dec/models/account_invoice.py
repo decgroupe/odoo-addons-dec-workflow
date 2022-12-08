@@ -4,31 +4,34 @@
 from odoo import api, fields, models
 
 
-class AccountInvoice(models.Model):
-    _inherit = 'account.invoice'
+class AccountMove(models.Model):
+    _inherit = "account.move"
 
-    @api.depends('origin')
-    def _compute_client_order_ref(self):
-        SaleOrder = self.env['sale.order']
-        for invoice in self:
-            res = []
-            if invoice.origin:
-                res.append(invoice.origin)
-                for order in SaleOrder.search([('name', '=', invoice.origin)]):
-                    if order.client_order_ref:
-                        res.append(order.client_order_ref)
-                invoice.client_order_ref = ' '.join(res)
-            else:
-                invoice.client_order_ref = False
+    # TODO: [MIG] 13.0
+    # @api.depends('origin')
+    # def _compute_client_order_ref(self):
+    #     SaleOrder = self.env['sale.order']
+    #     for invoice in self:
+    #         res = []
+    #         if invoice.origin:
+    #             res.append(invoice.origin)
+    #             for order in SaleOrder.search([('name', '=', invoice.origin)]):
+    #                 if order.client_order_ref:
+    #                     res.append(order.client_order_ref)
+    #             invoice.client_order_ref = ' '.join(res)
+    #         else:
+    #             invoice.client_order_ref = False
 
     # Legacy field used to get the client reference stored in the sale order.
     # Note that this value should be accessible from 'reference' or 'name'
     # field now
-    client_order_ref = fields.Char(
-        string='Customer Reference',
-        compute='_compute_client_order_ref',
-        readonly=True,
-    )
+    
+    # TODO: [MIG] 13.0
+    # client_order_ref = fields.Char(
+    #     string='Customer Reference',
+    #     compute='_compute_client_order_ref',
+    #     readonly=True,
+    # )
 
     # This field is only used to match the old procedure where the invoice is
     # set by a stamp on the paper stored in a cabinet, so the ERP must keep a
@@ -44,7 +47,7 @@ class AccountInvoice(models.Model):
     def create(self, vals):
         # Disable subscribe notify for invoices on create
         invoice = super(
-            AccountInvoice,
+            AccountMove,
             self.with_context(mail_auto_subscribe_no_notify=True)
         ).create(vals)
         return invoice

@@ -2,8 +2,8 @@
 <odoo>
 
     <record model="ir.ui.view" id="invoice_line_tree_view">
-        <field name="name">account.invoice.line.tree@account_workflow_dec</field>
-        <field name="model">account.invoice.line</field>
+        <field name="name">account.move.line.tree@account_workflow_dec</field>
+        <field name="model">account.move.line</field>
         <field name="inherit_id" ref="account.view_invoice_line_tree"/>
         <field name="arch" type="xml">
             <xpath expr="//tree/field[@name='quantity']" position="attributes">

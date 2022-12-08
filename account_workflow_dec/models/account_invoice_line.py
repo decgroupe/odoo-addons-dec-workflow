@@ -4,8 +4,8 @@
 from odoo import api, fields, models
 
 
-class AccountInvoiceLine(models.Model):
-    _inherit = 'account.invoice.line'
+class AccountMoveLine(models.Model):
+    _inherit = 'account.move.line'
 
     @api.depends('price_unit', 'discount')
     def _compute_price_reduce(self):
@@ -20,29 +20,30 @@ class AccountInvoiceLine(models.Model):
         store=False,
     )
 
-    # Following code is copied from:
-    # akretion/odoo-usability/account_usability/account.py
-    invoice_type = fields.Selection(store=True, )
-    date_invoice = fields.Date(
-        related='invoice_id.date_invoice',
-        store=True,
-        readonly=True,
-    )
-    commercial_partner_id = fields.Many2one(
-        related='invoice_id.partner_id.commercial_partner_id',
-        store=True,
-        readonly=True,
-        compute_sudo=True,
-    )
-    state = fields.Selection(
-        related='invoice_id.state',
-        store=True,
-        readonly=True,
-        string='Invoice State',
-    )
-    invoice_number = fields.Char(
-        related='invoice_id.move_id.name',
-        store=True,
-        readonly=True,
-        string='Invoice Number',
-    )
+    # TODO: [MIG] 13.0
+    # date_invoice = fields.Date(
+    #     related='invoice_id.date_invoice',
+    #     store=True,
+    #     readonly=True,
+    # )
+    # TODO: [MIG] 13.0
+    # commercial_partner_id = fields.Many2one(
+    #     related='invoice_id.partner_id.commercial_partner_id',
+    #     store=True,
+    #     readonly=True,
+    #     compute_sudo=True,
+    # )
+    # TODO: [MIG] 13.0
+    # state = fields.Selection(
+    #     related='invoice_id.state',
+    #     store=True,
+    #     readonly=True,
+    #     string='Invoice State',
+    # )
+    # TODO: [MIG] 13.0
+    # invoice_number = fields.Char(
+    #     related='invoice_id.move_id.name',
+    #     store=True,
+    #     readonly=True,
+    #     string='Invoice Number',
+    # )

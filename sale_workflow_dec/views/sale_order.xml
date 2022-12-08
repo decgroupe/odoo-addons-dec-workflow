@@ -45,9 +45,6 @@
                 <attribute name="decoration-success">invoice_status in ('invoiced')</attribute>
                 <attribute name="decoration-info">invoice_status in ('to invoice')</attribute>
             </xpath>
-            <field name="confirmation_date" position="attributes">
-                <attribute name="widget">date</attribute>
-            </field>
             <field name="commitment_date" position="attributes">
                 <attribute name="widget">date</attribute>
             </field>

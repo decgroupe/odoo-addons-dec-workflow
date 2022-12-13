@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
 
+    <!-- TODO: [MIG] 13.0 DEL
     <record model="ir.actions.act_window" id="hr_holidays.open_company_allocation">
         <field name="context">{
             'search_default_group_type': 1,
@@ -9,11 +10,12 @@
             'search_default_validated': 1,
         }</field>
     </record>
+    -->
 
     <record id="open_all_employees_allocation_summary" model="ir.actions.act_window">
         <field name="name">Leaves Summary</field>
         <field name="res_model">hr.leave.report</field>
-        <field name="binding_model">hr.employee</field>
+        <field name="binding_model_id" ref="hr.model_hr_employee"/>
         <field name="view_mode">tree,kanban,form</field>
         <field name="view_id" ref="hr_holidays.hr_leave_report_tree"/>
         <field name="context">{

@@ -11,7 +11,7 @@
                 <attribute name="class">d_sale_quotation</attribute>
                 <attribute name="decoration-primary">state in ('sale','locked')</attribute>
             </xpath>
-            <field name="date_order" position="attributes">
+            <field name="create_date" position="attributes">
                 <attribute name="widget">date</attribute>
             </field>
             <field name="commitment_date" position="attributes">

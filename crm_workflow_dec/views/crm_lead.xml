@@ -59,9 +59,6 @@
             <field name="partner_id" position="attributes">
                 <attribute name="widget">many2one_avatar</attribute>
             </field>
-            <field name="user_id" position="attributes">
-                <attribute name="widget">many2one_avatar_user</attribute>
-            </field>
         </field>
     </record>
 

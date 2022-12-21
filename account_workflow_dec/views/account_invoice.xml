@@ -1,45 +1,39 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-<!-- TODO: [MIG] 13.0
-    <record model="ir.ui.view" id="invoice_tree">
+
+    <record model="ir.ui.view" id="invoice_tree_view">
         <field name="name">account.invoice.tree@account_workflow_dec</field>
-        <field name="model">account.invoice</field>
-        <field name="inherit_id" ref="account.invoice_tree"/>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_invoice_tree"/>
         <field name="arch" type="xml">
             <field name="partner_id" position="attributes">
                 <attribute name="widget">many2one_avatar</attribute>
-            </field>
-            <field name="user_id" position="attributes">
-                <attribute name="widget">many2one_avatar_user</attribute>
+                <attribute name="optional">hide</attribute>
+                <attribute name="invisible">0</attribute>
             </field>
         </field>
     </record>
 
     <record model="ir.ui.view" id="invoice_form_view">
         <field name="name">account.invoice.form@account_workflow_dec</field>
-        <field name="model">account.invoice</field>
-        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//button[@name='action_invoice_open']" position="attributes">
+            <xpath expr="//button[@name='action_post'][1]" position="attributes">
                 <attribute name="confirm">Are you sure that you want to validate this invoice?</attribute>
             </xpath>
-        </field>
-    </record>
-
-    <record model="ir.ui.view" id="invoice_noshare_form_view">
-        <field name="name">account.invoice.form#noshare@account_workflow_dec</field>
-        <field name="model">account.invoice</field>
-        <field name="inherit_id" ref="account.invoice_form"/>
-        <field name="arch" type="xml">
-            <xpath expr="//sheet/group/group/field[@name='user_id']" position="attributes">
-                <attribute name="domain">[('share', '=', False)]</attribute>
+            <xpath expr="//button[@name='action_post'][2]" position="attributes">
+                <attribute name="confirm">Are you sure that you want to validate this invoice?</attribute>
+            </xpath>
+            <xpath expr="//button[@name='button_cancel']" position="attributes">
+                <attribute name="confirm">Are you sure that you want to cancel this invoice?</attribute>
             </xpath>
         </field>
     </record>
 
-    <record model="ir.ui.view" id="view_account_invoice_filter">
+    <record model="ir.ui.view" id="account_invoice_filter_view">
         <field name="name">account.invoice.select@account_workflow_dec</field>
-        <field name="model">account.invoice</field>
+        <field name="model">account.move</field>
         <field name="inherit_id" ref="account.view_account_invoice_filter"/>
         <field name="arch" type="xml">
             <filter name="draft" position="before">
@@ -48,61 +42,35 @@
         </field>
     </record>
 
-    <record model="ir.actions.act_window" id="account.action_invoice_tree1" >
-        <field name="context">{'type':'out_invoice', 'journal_type': 'sale', "search_default_filter_not_cancelled": 1}</field>
+    <record model="ir.actions.act_window" id="account.action_move_out_invoice_type" >
+        <field name="context">{'default_move_type':'out_invoice', "search_default_filter_not_cancelled": 1}</field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="account.action_move_in_invoice_type" >
+        <field name="context">{'default_move_type': 'in_invoice', "search_default_filter_not_cancelled": 1}</field>
     </record>
 
-    <record model="ir.actions.act_window" id="account.action_vendor_bill_template" >
-        <field name="context">{'default_type': 'in_invoice', 'type': 'in_invoice', 'journal_type': 'purchase', "search_default_filter_not_cancelled": 1}</field>
-    </record>
-
-    <record model="ir.ui.view" id="invoice_supplier_form_view">
+    <record model="ir.ui.view" id="invoice_form_view">
         <field name="name">account.invoice.supplier.form@account_workflow_dec</field>
-        <field name="model">account.invoice</field>
-        <field name="type">form</field>
-        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//button[@name='action_invoice_open']" position="attributes">
-                <attribute name="confirm">Are you sure that you want to validate this invoice?</attribute>
-            </xpath>
-            <field name="reference" position="after">
-                <field name="company_invoice_number"/>
+            <field name="ref" position="after">
+                <field name="company_invoice_number" attrs="{'invisible':[('move_type', 'not in', ('in_invoice', 'in_refund'))]}" />
             </field>
         </field>
-    </record> 
+    </record>
 
     <record model="ir.ui.view" id="invoice_supplier_tree_view">
         <field name="name">account.invoice.tree@account_workflow_dec</field>
-        <field name="model">account.invoice</field>
+        <field name="model">account.move</field>
         <field name="type">tree</field>
-        <field name="inherit_id" ref="account.invoice_supplier_tree"/>
+        <field name="inherit_id" ref="account.view_in_invoice_tree"/>
         <field name="arch" type="xml">
-            <field name="number" position="after">
+            <field name="ref" position="after">
                 <field name="company_invoice_number"/>
             </field>
         </field>
     </record>
 
-    <record model="ir.ui.view" id="cancel_invoice_form">
-        <field name="name">invoice.form.cancel.inherit@account_workflow_dec</field>
-        <field name="model">account.invoice</field>
-        <field name="inherit_id" ref="account_cancel.invoice_form_cancel_inherit"/>
-        <field name="arch" type="xml">
-            <xpath expr="//button[@name='action_invoice_cancel']" position="attributes">
-                <attribute name="confirm">Are you sure that you want to cancel this invoice?</attribute>
-            </xpath>
-        </field>
-    </record>
-
-    <record model="ir.ui.view" id="cancel_invoice_supplier_form">
-        <field name="name">invoice.supplier.cancel.form.inherit@account_workflow_dec</field>
-        <field name="model">account.invoice</field>
-        <field name="inherit_id" ref="account_cancel.invoice_supplier_cancel_form_inherit"/>
-        <field name="arch" type="xml">
-            <xpath expr="//button[@name='action_invoice_cancel']" position="attributes">
-                <attribute name="confirm">Are you sure that you want to cancel this invoice?</attribute>
-            </xpath>
-        </field>
-    </record>
--->
 </odoo>

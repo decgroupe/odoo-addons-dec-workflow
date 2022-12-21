@@ -5,13 +5,6 @@
         <field name="groups_id" eval="[(4, ref('base.group_erp_manager'))]"/>
     </record>
 
-    <record model="ir.actions.act_window" id="document_page.action_page">
-        <field name="context">{
-            'default_type': 'content',
-            'search_default_group_by_category': True,
-        }</field>
-    </record>
-
     <record model="ir.ui.view" id="document_page_form_view">
         <field name="name">document.page.form@knowledge_workflow_dec</field>
         <field name="model">document.page</field>

@@ -55,6 +55,7 @@
         </field>
     </record>
 
+    <!-- While migrating to 14.0, maybe remove this view -> update -> re-add it > update -->
     <record model="ir.ui.view" id="view_project_kanban">
         <field name="name">project.project.kanban@project_workflow_dec</field>
         <field name="model">project.project</field>
@@ -87,8 +88,8 @@
         <field name="model">project.project</field>
         <field name="inherit_id" ref="sale_timesheet.project_project_view_kanban_inherit_sale_timesheet"/>
         <field name="arch" type="xml">
-            <!-- action_view_timesheet -->
-            <xpath expr="//a[@t-if='record.allow_timesheets.raw_value']" position="attributes">
+            <!-- Replace `group_project_manager` with `group_project_user` -->
+            <xpath expr="//a[@name='action_view_timesheet']" position="attributes">
                 <attribute name="groups">project.group_project_user</attribute>
             </xpath>
         </field>

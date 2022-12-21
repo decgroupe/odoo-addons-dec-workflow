@@ -43,11 +43,11 @@ class HelpdeskTicket(models.Model):
             positive_operators = ['=', 'ilike', '=ilike', 'like', '=like']
             record_ids = []
             if operator in positive_operators:
-                record_ids = self._search(
+                record_ids = list(self._search(
                     [('number', '=', name)] + args,
                     limit=limit,
                     access_rights_uid=name_get_uid
-                )
+                ))
             if not record_ids and operator not in expression.NEGATIVE_TERM_OPERATORS:
                 # Do not merge the 2 next lines into one single search, SQL
                 # search performance would be abysmal on a database with
@@ -56,21 +56,21 @@ class HelpdeskTicket(models.Model):
                 # 'name' lookup results come from the ir.translation table
                 # Performing a quick memory merge of ids in Python will give
                 # much better performance
-                record_ids = self._search(
+                record_ids = list(self._search(
                     args + [('number', operator, name)], limit=limit
-                )
+                ))
                 if not limit or len(record_ids) < limit:
                     # we may underrun the limit because of dupes in the
                     # results, that's fine
                     limit2 = (limit - len(record_ids)) if limit else False
-                    product2_ids = self._search(
+                    product2_ids = list(self._search(
                         args + [
                             ('name', operator, name),
                             ('id', 'not in', record_ids)
                         ],
                         limit=limit2,
                         access_rights_uid=name_get_uid
-                    )
+                    ))
                     record_ids.extend(product2_ids)
             elif not record_ids and operator in expression.NEGATIVE_TERM_OPERATORS:
                 domain = expression.OR(
@@ -88,23 +88,23 @@ class HelpdeskTicket(models.Model):
                     ]
                 )
                 domain = expression.AND([args, domain])
-                record_ids = self._search(
+                record_ids = list(self._search(
                     domain, limit=limit, access_rights_uid=name_get_uid
-                )
+                ))
             if not record_ids and operator in positive_operators:
                 ptrn = re.compile('(\[(.*?)\])')
                 res = ptrn.search(name)
                 if res:
-                    record_ids = self._search(
+                    record_ids = list(self._search(
                         [('number', '=', res.group(2))] + args,
                         limit=limit,
                         access_rights_uid=name_get_uid
-                    )
+                    ))
         else:
-            record_ids = self._search(
+            record_ids = list(self._search(
                 args, limit=limit, access_rights_uid=name_get_uid
-            )
-        return self.browse(record_ids).name_get()
+            ))
+        return record_ids
 
     def _compute_show_time_control(self):
         # Defined in module helpdesk_mgmt_timesheet_time_control

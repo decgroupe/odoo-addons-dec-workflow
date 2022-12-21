@@ -8,13 +8,6 @@ class PurchaseOrder(models.Model):
     _inherit = 'purchase.order'
     _order = "id desc"
 
-    # Deprecated since web_widget_many2one_avatar
-    partner_image_small = fields.Binary(
-        related='partner_id.image_128',
-        string='Supplier Logo',
-    )
-
-    
     def action_rfq_send(self):
         view = super().action_rfq_send()
         # Do not set layout to "mail.mail_notification_paynow" since we

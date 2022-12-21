@@ -78,10 +78,19 @@
             <field name="partner_id" position="attributes">
                 <attribute name="widget">many2one_avatar</attribute>
             </field>
-            <field name="user_id" position="attributes">
-                <attribute name="widget">many2one_avatar_user</attribute>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="purchase_order_kpis_tree_view" >
+        <field name="name">purchase.order.tree#kpis@purchase_workflow_dec</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_kpis_tree"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="attributes">
+                <attribute name="widget">many2one_avatar</attribute>
             </field>
         </field>
     </record>
+
 
 </odoo>

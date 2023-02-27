@@ -3,7 +3,7 @@
 
   <!--  
         You need to add this hook to View.apply_inheritance_specs
-        in ./odoo/addons/base/models/ir_ui_view.py
+        in ./odoo/tools/template_inheritance.py
 
           ...
           elif pos == 'text':

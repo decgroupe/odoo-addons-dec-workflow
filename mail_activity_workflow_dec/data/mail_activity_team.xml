@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record model="mail.activity.team" id="team_design_office_digital">
+        <field name="name">📘 Team Digital</field>
+    </record>
+
+    <record model="mail.activity.team" id="team_design_office_equipment">
+        <field name="name">📗 Team Equipment</field>
+    </record>
+
+    <record model="mail.activity.team" id="team_support_functions">
+        <field name="name">💁 Team Support Functions</field>
+    </record>
+
+    <record model="mail.activity.team" id="team_trading">
+        <field name="name">📈 Team Trading</field>
+    </record>
+
+</odoo>

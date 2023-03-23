@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-01 14:48+0000\n"
+"POT-Creation-Date: 2023-03-23 12:14+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.3\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #. module: project_workflow_dec
 #: model:project.task,legend_blocked:project_workflow_dec.project_task_building_maintenance
@@ -181,14 +181,16 @@ msgid "⏱️ Time Tracking"
 msgstr "⏱️ Suivi du temps"
 
 #. module: project_workflow_dec
+#: model:project.type,complete_name:project_workflow_dec.project_type_support_functions
 #: model:project.type,name:project_workflow_dec.project_type_support_functions
-msgid "💁 Support Functions"
-msgstr "💁 Fonctions support"
+msgid "💁 Fonctions support"
+msgstr ""
 
 #. module: project_workflow_dec
+#: model:project.type,complete_name:project_workflow_dec.project_type_marketing
 #: model:project.type,name:project_workflow_dec.project_type_marketing
-msgid "💰 Marketing"
-msgstr "💰 Commerce"
+msgid "💰 Commerce"
+msgstr ""
 
 #. module: project_workflow_dec
 #: model_terms:ir.ui.view,arch_db:project_workflow_dec.view_task_kanban
@@ -206,14 +208,41 @@ msgid "📘 Digital"
 msgstr "📘 Numérique"
 
 #. module: project_workflow_dec
+#: model:project.type,complete_name:project_workflow_dec.project_type_design_office
 #: model:project.type,name:project_workflow_dec.project_type_design_office
-msgid "📚 Design Office"
-msgstr "📚 BE"
+msgid "📚 BE"
+msgstr ""
 
 #. module: project_workflow_dec
+#: model:project.type,complete_name:project_workflow_dec.project_type_design_office_equipment
+msgid "📚 BE / 📗 Equipment"
+msgstr "📚 BE / 📗 Équipements"
+
+#. module: project_workflow_dec
+#: model:project.type,complete_name:project_workflow_dec.project_type_design_office_digital
+msgid "📚 BE / 📘 Digital"
+msgstr "📚 BE / 📘 Numérique"
+
+#. module: project_workflow_dec
+#: model:project.type,complete_name:project_workflow_dec.project_type_internal
 #: model:project.type,name:project_workflow_dec.project_type_internal
-msgid "🔰 Internal"
-msgstr "🔰 Interne"
+msgid "🔰 Interne"
+msgstr ""
+
+#. module: project_workflow_dec
+#: code:addons/project_workflow_dec/models/project_task.py:80
+#, python-format
+msgid "🚨 Auto: To Assign and to Plan"
+msgstr "🚨 Auto : À assigner et planifier"
+
+#~ msgid "💁 Support Functions"
+#~ msgstr "💁 Fonctions support"
+
+#~ msgid "💰 Marketing"
+#~ msgstr "💰 Commerce"
+
+#~ msgid "📚 Design Office"
+#~ msgstr "📚 BE"
 
 #~ msgid "Blocked"
 #~ msgstr "Bloquée"

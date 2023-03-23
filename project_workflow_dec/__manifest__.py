@@ -16,6 +16,7 @@
         "project_task_default_stage",
         "web_kanban_draggable",
         "web",
+        "mail_activity_workflow_dec",
     ],
     "data": [
         "views/assets.xml",

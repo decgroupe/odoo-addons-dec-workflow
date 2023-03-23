@@ -1,99 +1,361 @@
-// DEC
+// Yeti 5.2.2
 // Bootswatch
 
 
-@mixin btn-shadow($color){
-  @include gradient-y-three-colors(lighten($color, 8%), $color, 60%, darken($color, 4%));
+// Variables
+
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+:root {
+  color-scheme: light;
 }
 
-$text-shadow: 0 1px 0 rgba(0, 0, 0, 0.05) !default;
+// Navbar
 
-// Navbar ======================================================================
+.navbar {
+  font-weight: $headings-font-weight;
+}
 
 .bg-primary {
-  @include btn-shadow($primary);
+  .dropdown-menu {
+    background-color: $primary;
+
+    .dropdown-item,
+    .dropdown-item:focus {
+      color: $navbar-dark-color;
+    }
+
+    .dropdown-item.active,
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+      color: $white;
+      background-color: shade-color($primary, 10%);
+    }
+  }
 }
 
 .bg-dark {
-  @include btn-shadow($blue);
+  background-color: $gray-800 !important;
+
+  .dropdown-menu {
+    background-color: $gray-800;
+
+    .dropdown-item,
+    .dropdown-item:focus {
+      color: $navbar-dark-color;
+    }
+
+    .dropdown-item.active,
+    .dropdown-item:hover,
+    .dropdown-item:focus  {
+      color: $white;
+      background-color: shade-color($gray-800, 10%);
+    }
+  }
 }
 
 .bg-light {
-  @include gradient-y-three-colors(lighten($gray-200, 8%), $gray-200, 60%, darken($gray-200, 2%));
+  .dropdown-menu {
+    background-color: $gray-200;
+
+    .dropdown-item,
+    .dropdown-item:focus {
+      color: $navbar-light-color;
+    }
+
+    .dropdown-item.active,
+    .dropdown-item:hover,
+    .dropdown-item:focus  {
+      color: $navbar-light-hover-color;
+      background-color: tint-color($gray-200, 10%);
+    }
+  }
 }
 
-.navbar-brand,
-.nav-link {
-  text-shadow: $text-shadow
-}
-
-// Buttons =====================================================================
+// Buttons
 
 .btn {
-  text-shadow: $text-shadow
-}
+  &-primary {
+    border-color: shade-color($primary, 10%);
+  }
 
-.btn-primary {
-  @include btn-shadow($primary);
-}
+  &-secondary {
+    border-color: shade-color($secondary, 10%);
+  }
 
-.btn-secondary {
-  @include btn-shadow($secondary);
-  color: $gray-700;
-}
+  &-success {
+    border-color: shade-color($success, 10%);
+  }
 
-.btn-success {
-  @include btn-shadow($success);
-}
-
-.btn-info {
-  @include btn-shadow($info);
-}
-
-.btn-warning {
-  @include btn-shadow($warning);
-}
-
-.btn-danger {
-  @include btn-shadow($danger);
-}
-
-.btn-light {
-  @include btn-shadow($light);
-}
-
-.btn-dark {
-  @include btn-shadow($dark);
-}
-
-
-// Typography ==================================================================
-
-.bg-primary,
-.bg-success,
-.bg-info,
-.bg-warning,
-.bg-danger,
-.bg-dark {
-  h1, h2, h3, h4, h5, h6 {
+  &-info {
     color: $white;
+    border-color: shade-color($info, 10%);
+  }
+
+  &-danger {
+    border-color: shade-color($danger, 10%);
+  }
+
+  &-warning {
+    color: $white;
+    border-color: shade-color($warning, 10%);
+  }
+
+  &-light {
+    border-color: shade-color($light, 10%);
+  }
+
+  &-dark {
+    border-color: shade-color($dark, 10%);
   }
 }
 
-// Tables ======================================================================
+.btn-outline-secondary {
+  color: $black;
+}
 
-// Forms =======================================================================
+.btn-group {
+  .dropdown-menu {
+    border-top-width: 0;
+  }
 
-// Navs ========================================================================
+  .dropdown-toggle {
+    &.btn-primary ~ .dropdown-menu {
+      background-color: $primary;
+      border-color: shade-color($primary, 10%);
 
-.dropdown-menu {
-  .dropdown-header {
-    color: $gray-600;
+      .dropdown-item {
+        color: $white;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: shade-color($primary, 16%);
+      }
+    }
+
+    &.btn-secondary ~ .dropdown-menu {
+      background-color: $secondary;
+      border-color: shade-color($secondary, 10%);
+
+      .dropdown-item {
+        color: $body-color;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: shade-color($secondary, 16%);
+      }
+    }
+
+    &.btn-success ~ .dropdown-menu {
+      background-color: $success;
+      border-color: shade-color($success, 10%);
+
+      .dropdown-item {
+        color: $white;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: shade-color($success, 16%);
+      }
+    }
+
+    &.btn-info ~ .dropdown-menu {
+      background-color: $info;
+      border-color: shade-color($info, 10%);
+
+      .dropdown-item {
+        color: $white;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: shade-color($info, 16%);
+      }
+    }
+
+    &.btn-warning ~ .dropdown-menu {
+      background-color: $warning;
+      border-color: shade-color($warning, 10%);
+
+      .dropdown-item {
+        color: $white;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: shade-color($warning, 16%);
+      }
+    }
+
+    &.btn-danger ~ .dropdown-menu {
+      background-color: $danger;
+      border-color: shade-color($danger, 10%);
+
+      .dropdown-item {
+        color: $white;
+      }
+
+      .dropdown-item:hover,
+      .dropdown-item:focus {
+        background-color: shade-color($danger, 16%);
+      }
+    }
   }
 }
 
-// Indicators ==================================================================
+// Typography
 
-// Progress bars ===============================================================
+.text-secondary {
+  color: $gray-700 !important;
+}
 
-// Containers ==================================================================
+.blockquote-footer {
+  color: $gray-600;
+}
+
+// Tables
+
+table {
+  font-size: $font-size-sm;
+}
+
+// Forms
+
+label,
+.control-label,
+.help-block,
+.checkbox,
+.radio,
+.form-control-feedback {
+  font-size: $font-size-sm;
+}
+
+// Navs
+
+.dropdown-item {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: $font-size-sm;
+  font-weight: 300;
+}
+
+.nav-tabs {
+  .nav-link,
+  .nav-link.disabled,
+  .nav-link.disabled:hover,
+  .nav-link.disabled:focus {
+    background-color: $gray-200;
+    border-color: $nav-tabs-border-color;
+  }
+
+  .nav-item + .nav-item {
+    .nav-link {
+      border-left: none;
+    }
+  }
+}
+
+.nav-pills {
+  .active {
+    border: 1px solid shade-color($primary, 10%);
+  }
+}
+
+.breadcrumb {
+  font-size: $font-size-sm;
+  font-weight: 300;
+  text-transform: uppercase;
+  border: 1px solid $dropdown-border-color;
+}
+
+.pagination {
+  font-weight: 300;
+
+  .page-link {
+    margin-right: .1em;
+    margin-left: .1em;
+    border-color: transparent;
+    border-radius: 3px;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  .page-item.disabled {
+    .page-link {
+      border-color: transparent;
+    }
+  }
+}
+
+.pagination,
+.pagination-lg,
+.pagination-sm {
+  .page-item:first-child,
+  .page-item:last-child {
+    .page-link {
+      border-radius: 3px;
+    }
+  }
+}
+
+.list-group {
+  font-size: $font-size-sm;
+  font-weight: 300;
+}
+
+// Indicators
+
+.alert {
+  font-size: $font-size-sm;
+  font-weight: 300;
+  color: $white;
+
+  .alert-link {
+    color: $white;
+    text-decoration: underline;
+  }
+
+  &:not(.alert-secondary):not(.alert-light) .btn-close {
+    background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$white}'><path d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/></svg>"));
+  }
+
+  &-secondary,
+  &-light {
+    &,
+    a:not(.btn),
+    .alert-link {
+      color: $body-color;
+    }
+  }
+}
+
+.badge {
+  &.bg-secondary,
+  &.bg-light {
+    color: $dark;
+  }
+}
+
+// Progress bars
+
+.progress[value] {
+  height: 22px;
+  padding: 2px;
+  background-color: #f6f6f6;
+  border: 1px solid #ccc;
+  @include box-shadow(none);
+}
+
+// Popovers
+
+.popover-header {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

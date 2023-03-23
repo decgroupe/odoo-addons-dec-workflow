@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-25 12:37+0000\n"
-"PO-Revision-Date: 2022-03-25 13:38+0100\n"
+"POT-Creation-Date: 2023-03-23 12:14+0000\n"
+"PO-Revision-Date: 2023-03-23 13:21+0100\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -14,9 +14,29 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #. module: mail_activity_workflow_dec
 #: model_terms:ir.ui.view,arch_db:mail_activity_workflow_dec.mail_activity_view_search
 msgid "My Team Unassigned Activities"
 msgstr "Activités de mon équipe non assignées"
+
+#. module: mail_activity_workflow_dec
+#: model:mail.activity.team,name:mail_activity_workflow_dec.team_support_functions
+msgid "💁 Team Support Functions"
+msgstr "💁 pôle-administratif"
+
+#. module: mail_activity_workflow_dec
+#: model:mail.activity.team,name:mail_activity_workflow_dec.team_trading
+msgid "📈 Team Trading"
+msgstr "📈 pôle-commerce"
+
+#. module: mail_activity_workflow_dec
+#: model:mail.activity.team,name:mail_activity_workflow_dec.team_design_office_equipment
+msgid "📗 Team Equipment"
+msgstr "📗 pôle-équipement"
+
+#. module: mail_activity_workflow_dec
+#: model:mail.activity.team,name:mail_activity_workflow_dec.team_design_office_digital
+msgid "📘 Team Digital"
+msgstr "📘 pôle-numerique"

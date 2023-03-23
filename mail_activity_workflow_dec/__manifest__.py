@@ -11,6 +11,7 @@
     ],
     'data': [
         'views/mail_activity.xml',
+        'data/mail_activity_team.xml',
     ],
     'installable': True
 }

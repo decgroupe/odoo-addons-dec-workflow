@@ -17,6 +17,7 @@
             'project_task_default_stage',
             'web_kanban_draggable',
             'web_widget_many2one_avatar',
+            'mail_activity_workflow_dec',
         ],
     'data':
         [

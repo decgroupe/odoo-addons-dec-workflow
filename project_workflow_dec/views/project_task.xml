@@ -62,6 +62,15 @@
             <xpath expr="//kanban/field[@name='user_id']" position="after">
                 <field name="sale_order_id"/>
                 <field name="display_sale_order"/>
+                <field name="project_id"/>
+            </xpath>
+            <xpath expr="//kanban//div[hasclass('o_kanban_record_headings')]//span" position="replace">
+            </xpath>
+            <xpath expr="//kanban//div[hasclass('o_kanban_record_headings')]/t[@t-if='record.partner_id.value']//span[1]" position="attributes">
+                <attribute name="class">text-muted small</attribute>
+            </xpath>
+            <xpath expr="//kanban//div[hasclass('o_kanban_record_headings')]/t[@t-if='record.partner_id.value']//span[2]" position="attributes">
+                <attribute name="class">text-muted small</attribute>
             </xpath>
             <xpath expr="//div[hasclass('o_kanban_record_top')]" position="before">
                 <div name="supertop" class="o_kanban_record_supertop">

@@ -10,24 +10,19 @@ _logger = logging.getLogger(__name__)
 class StockRule(models.Model):
     _inherit = 'stock.rule'
 
-    
-    def _run_buy(self, product_id, product_qty, product_uom, location_id, \
-        name, origin, values):
+    def _run_buy(self, procurements):
+        alt_procurements = []
         # Ignore consumable when sourcing from production location
-        prod_location = location_id.get_warehouse()._get_production_location()
-        if product_id.is_consumable and location_id == prod_location:
-            _logger.info(
-                _("Ignore consumable stock.rule for {}").format(
-                    product_id.display_name,
+        for procurement, rule in procurements:
+            prod_location = procurement.location_id.get_warehouse().\
+                _get_production_location()
+            if procurement.product_id.is_consumable \
+            and procurement.location_id == prod_location:
+                _logger.info(
+                    _("Ignore consumable stock.rule for {}").format(
+                        procurement.product_id.display_name,
+                    )
                 )
-            )
-        else:
-            super()._run_buy(
-                product_id,
-                product_qty,
-                product_uom,
-                location_id,
-                name,
-                origin,
-                values,
-            )
+            else:
+                alt_procurements.append((procurement, rule))
+        return super()._run_buy(alt_procurements)

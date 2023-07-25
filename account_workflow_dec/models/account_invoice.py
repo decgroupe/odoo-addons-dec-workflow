@@ -7,30 +7,6 @@ from odoo import api, fields, models
 class AccountMove(models.Model):
     _inherit = "account.move"
 
-    @api.depends("invoice_origin")
-    def _compute_client_order_ref(self):
-        SaleOrder = self.env["sale.order"]
-        for invoice in self:
-            res = []
-            if invoice.invoice_origin:
-                res.append(invoice.invoice_origin)
-                for order in SaleOrder.search([("name", "=", invoice.invoice_origin)]):
-                    if order.client_order_ref:
-                        res.append(order.client_order_ref)
-                invoice.client_order_ref = " ".join(res)
-            else:
-                invoice.client_order_ref = False
-
-    # Legacy field used to get the client reference stored in the sale order.
-    # Note that this value should be accessible from 'reference' or 'name'
-    # field now
-
-    client_order_ref = fields.Char(
-        string="Customer Reference",
-        compute="_compute_client_order_ref",
-        readonly=True,
-    )
-
     # This field is only used to match the old procedure where the invoice is
     # set by a stamp on the paper stored in a cabinet, so the ERP must keep a
     # trace for this value

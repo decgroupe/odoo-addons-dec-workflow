@@ -5,6 +5,8 @@
     "website": "https://www.decgroupe.com",
     "depends": [
         "base",
+        "base_module_search", # Optional dependency
+        "base_module_path", # Optional dependency
     ],
     "data": [
         "views/ir_module.xml",

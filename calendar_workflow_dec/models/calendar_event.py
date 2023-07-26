@@ -5,11 +5,9 @@ from odoo import _, api, models
 
 
 class CalendarEvent(models.Model):
-    _inherit = 'calendar.event'
+    _inherit = "calendar.event"
 
-    @api.onchange('stop_datetime')
+    @api.onchange("stop_datetime")
     def _onchange_stop_datetime(self):
         if self.start_datetime and self.stop_datetime:
-            self.duration = self._get_duration(
-                self.start_datetime, self.stop_datetime
-            )
+            self.duration = self._get_duration(self.start_datetime, self.stop_datetime)

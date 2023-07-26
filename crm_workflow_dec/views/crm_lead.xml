@@ -10,7 +10,7 @@
                 <attribute name="group_create">false</attribute>
                 <attribute name="group_edit">false</attribute>
                 <attribute name="group_delete">false</attribute>
-                <attribute name="disable_sort_column">true</attribute>
+                <attribute name="columns_draggable">false</attribute>
             </kanban>
         </field>
     </record>
@@ -22,28 +22,28 @@
         <field name="arch" type="xml">
 
             <filter name="assigned_to_me" position="after">
-                <separator/>
-                <filter 
-                    string="Current year" 
-                    name="filter_current_year" 
+                <separator />
+                <filter
+                    string="Current year"
+                    name="filter_current_year"
                     domain="[
                         ('|'),
                         ('date_closed', '=', False),
                         ('date_closed', '&gt;=', datetime.date.today().strftime('%Y-01-01') )
                     ]"
-                    >
+                >
                 </filter>
-                <separator/>
+                <separator />
             </filter>
 
         </field>
     </record>
 
-    <record model="ir.actions.act_window" id="crm.crm_lead_opportunities_tree_view">
+    <record model="ir.actions.act_window" id="crm.crm_lead_action_pipeline">
         <field name="context">{
             'default_type': 'opportunity',
-            'search_default_filter_current_year': 1,
             'search_default_assigned_to_me': 1,
+            'search_default_filter_current_year': 1,
         }</field>
     </record>
 
@@ -54,7 +54,7 @@
     <record model="ir.ui.view" id="crm_case_oppor_tree_view">
         <field name="name">crm.lead.tree.opportunity@crm_workflow_dec</field>
         <field name="model">crm.lead</field>
-        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor" />
         <field name="arch" type="xml">
             <field name="partner_id" position="attributes">
                 <attribute name="widget">many2one_avatar</attribute>
@@ -65,10 +65,10 @@
     <record id="quick_create_opportunity_form" model="ir.ui.view">
         <field name="name">crm.lead.form.quick_create@crm_workflow_dec</field>
         <field name="model">crm.lead</field>
-        <field name="inherit_id" ref="crm.quick_create_opportunity_form"/>
+        <field name="inherit_id" ref="crm.quick_create_opportunity_form" />
         <field name="arch" type="xml">
             <field name="partner_id" position="before">
-                <field name="user_id" domain="[('share', '=', False)]"/>
+                <field name="user_id" domain="[('share', '=', False)]" />
             </field>
         </field>
     </record>

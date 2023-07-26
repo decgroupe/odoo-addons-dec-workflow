@@ -1,7 +1,7 @@
 # Copyright (C) DEC SARL, Inc - All Rights Reserved.
 # Written by Yann Papouin <ypa at decgroupe.com>, Jul 2022
 
-from odoo import models, api, fields
+from odoo import models
 
 
 class CrmLead(models.Model):

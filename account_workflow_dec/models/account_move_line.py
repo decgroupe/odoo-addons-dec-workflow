@@ -18,7 +18,7 @@ class AccountMoveLine(models.Model):
             value = line.move_id.name or ""
             if line.ref:
                 value += "({})".format(line.ref)
-                if line.invoice_id.company_invoice_number:
-                    value += "[{}]".format(line.invoice_id.company_invoice_number)
+                if line.move_id.company_invoice_number:
+                    value += "[{}]".format(line.move_id.company_invoice_number)
             result.append((line.id, value))
         return result

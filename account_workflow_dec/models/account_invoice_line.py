@@ -12,6 +12,7 @@ class AccountMoveLine(models.Model):
         for line in self:
             line.price_reduce = line.price_unit * (1.0 - line.discount / 100.0)
 
+    #COMMENT: Used for aeroo report
     price_reduce = fields.Float(
         compute="_compute_price_reduce",
         string="Price Reduce",

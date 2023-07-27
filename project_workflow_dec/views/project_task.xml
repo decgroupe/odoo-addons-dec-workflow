@@ -23,7 +23,7 @@
         </field>
     </record>
 
-    <!-- 
+    <!--
     <record model="ir.ui.view" id="project_task_search">
         <field name="name">project.task.search.form@project_workflow_dec</field>
         <field name="model">project.task</field>
@@ -57,7 +57,7 @@
                 <attribute name="group_create">false</attribute>
                 <attribute name="group_edit">false</attribute>
                 <attribute name="group_delete">false</attribute>
-                <attribute name="disable_sort_column">true</attribute>
+                <attribute name="columns_draggable">false</attribute>
             </kanban>
             <xpath expr="//kanban/field[@name='user_id']" position="after">
                 <field name="sale_order_id"/>

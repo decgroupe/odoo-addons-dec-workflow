@@ -1,10 +1,10 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <odoo>
 
     <record id="project_internal_management" model="project.project">
         <!-- Name is not translatable -->
         <field name="name">🌌 Gestion Interne</field>
-        <field name="type_id" ref="project_workflow_dec.project_type_internal"/>
+        <field name="type_id" ref="project_workflow_dec.project_type_internal" />
     </record>
 
 </odoo>

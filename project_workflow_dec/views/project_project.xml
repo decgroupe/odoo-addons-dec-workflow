@@ -7,10 +7,10 @@
         <field name="inherit_id" ref="project.edit_project"/>
         <field name="arch" type="xml">
             <xpath expr="//header/*[1]" position="before">
-                <button 
+                <button
                     string="Overview"
                     class="btn btn-primary"
-                    icon="fa-puzzle-piece" 
+                    icon="fa-puzzle-piece"
                     name="action_view_timesheet"
                     type="object">
                 </button>
@@ -65,7 +65,7 @@
                 <attribute name="group_create">false</attribute>
                 <attribute name="group_edit">false</attribute>
                 <attribute name="group_delete">false</attribute>
-                <attribute name="disable_sort_column">true</attribute>
+                <attribute name="columns_draggable">false</attribute>
             </kanban>
             <field name="name" position="after">
                 <field name="type_id"/>

@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <odoo>
 
     <record id="project_tag_marketing" model="project.tags">
@@ -15,12 +15,12 @@
 
     <record id="project_tag_design_office_equipment" model="project.tags">
         <field name="name">📗 Equipment</field>
-        <field name="color" eval="10"/>
+        <field name="color" eval="10" />
     </record>
-    
+
     <record id="project_tag_design_office_digital" model="project.tags">
         <field name="name">📘 Digital</field>
-        <field name="color" eval="4"/>
+        <field name="color" eval="4" />
     </record>
 
 </odoo>

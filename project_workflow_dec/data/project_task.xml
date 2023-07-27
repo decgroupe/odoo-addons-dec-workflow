@@ -1,104 +1,104 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <odoo>
 
     <record model="project.task" id="project_task_leave_sick">
         <!-- Name is not translatable -->
         <field name="name">😷 Arrêts maladie</field>
         <field name="sequence">0</field>
-        <field name="project_id" ref="project_internal_management"/>
-        <field name="exclude_from_sale_order" eval="True"/>
-        <field name="user_id" ref="base.user_admin"/>
-        <field name="stage_id" ref="task_type_time_tracking"/>
+        <field name="project_id" ref="project_internal_management" />
+        <field name="exclude_from_sale_order" eval="True" />
+        <field name="user_id" ref="base.user_admin" />
+        <field name="stage_id" ref="task_type_time_tracking" />
     </record>
 
     <record model="project.task" id="project_task_leave_normal">
         <!-- Name is not translatable -->
         <field name="name">🌞 Congés</field>
         <field name="sequence">1</field>
-        <field name="project_id" ref="project_internal_management"/>
-        <field name="exclude_from_sale_order" eval="True"/>
-        <field name="user_id" ref="base.user_admin"/>
-        <field name="stage_id" ref="task_type_time_tracking"/>
+        <field name="project_id" ref="project_internal_management" />
+        <field name="exclude_from_sale_order" eval="True" />
+        <field name="user_id" ref="base.user_admin" />
+        <field name="stage_id" ref="task_type_time_tracking" />
     </record>
 
     <record model="project.task" id="project_task_reporting_expense">
         <!-- Name is not translatable -->
         <field name="name">🍲 Note de frais (Saisie / Remplissage)</field>
         <field name="sequence">2</field>
-        <field name="project_id" ref="project_internal_management"/>
-        <field name="exclude_from_sale_order" eval="False"/>
-        <field name="user_id" ref="base.user_admin"/>
-        <field name="stage_id" ref="task_type_time_tracking"/>
+        <field name="project_id" ref="project_internal_management" />
+        <field name="exclude_from_sale_order" eval="False" />
+        <field name="user_id" ref="base.user_admin" />
+        <field name="stage_id" ref="task_type_time_tracking" />
     </record>
 
     <record model="project.task" id="project_task_non_attendance">
         <!-- Name is not translatable -->
         <field name="name">💤 Absences</field>
         <field name="sequence">3</field>
-        <field name="project_id" ref="project_internal_management"/>
-        <field name="exclude_from_sale_order" eval="True"/>
-        <field name="user_id" ref="base.user_admin"/>
-        <field name="stage_id" ref="task_type_time_tracking"/>
+        <field name="project_id" ref="project_internal_management" />
+        <field name="exclude_from_sale_order" eval="True" />
+        <field name="user_id" ref="base.user_admin" />
+        <field name="stage_id" ref="task_type_time_tracking" />
     </record>
 
     <record model="project.task" id="project_task_internal_training">
         <!-- Name is not translatable -->
         <field name="name">🎓 Formation interne</field>
         <field name="sequence">4</field>
-        <field name="project_id" ref="project_internal_management"/>
-        <field name="exclude_from_sale_order" eval="True"/>
-        <field name="user_id" ref="base.user_admin"/>
-        <field name="stage_id" ref="task_type_time_tracking"/>
+        <field name="project_id" ref="project_internal_management" />
+        <field name="exclude_from_sale_order" eval="True" />
+        <field name="user_id" ref="base.user_admin" />
+        <field name="stage_id" ref="task_type_time_tracking" />
     </record>
 
     <record model="project.task" id="project_task_procedure_drafting">
         <!-- Name is not translatable -->
         <field name="name">🖊️ Rédaction de procédures</field>
         <field name="sequence">5</field>
-        <field name="project_id" ref="project_internal_management"/>
-        <field name="exclude_from_sale_order" eval="True"/>
-        <field name="user_id" ref="base.user_admin"/>
-        <field name="stage_id" ref="task_type_time_tracking"/>
+        <field name="project_id" ref="project_internal_management" />
+        <field name="exclude_from_sale_order" eval="True" />
+        <field name="user_id" ref="base.user_admin" />
+        <field name="stage_id" ref="task_type_time_tracking" />
     </record>
 
     <record model="project.task" id="project_task_household">
         <!-- Name is not translatable -->
         <field name="name">🧹 Ménage / Rangement</field>
         <field name="sequence">6</field>
-        <field name="project_id" ref="project_internal_management"/>
-        <field name="exclude_from_sale_order" eval="True"/>
-        <field name="user_id" ref="base.user_admin"/>
-        <field name="stage_id" ref="task_type_time_tracking"/>
+        <field name="project_id" ref="project_internal_management" />
+        <field name="exclude_from_sale_order" eval="True" />
+        <field name="user_id" ref="base.user_admin" />
+        <field name="stage_id" ref="task_type_time_tracking" />
     </record>
 
     <record model="project.task" id="project_task_timesheet_filling">
         <!-- Name is not translatable -->
         <field name="name">⏱️ Feuille de temps (Saisie / Remplissage)</field>
         <field name="sequence">7</field>
-        <field name="project_id" ref="project_internal_management"/>
-        <field name="exclude_from_sale_order" eval="True"/>
-        <field name="user_id" ref="base.user_admin"/>
-        <field name="stage_id" ref="task_type_time_tracking"/>
+        <field name="project_id" ref="project_internal_management" />
+        <field name="exclude_from_sale_order" eval="True" />
+        <field name="user_id" ref="base.user_admin" />
+        <field name="stage_id" ref="task_type_time_tracking" />
     </record>
 
     <record model="project.task" id="project_task_vehicle_maintenance">
         <!-- Name is not translatable -->
         <field name="name">🚘 Gestion &amp; Entretien Véhicules</field>
         <field name="sequence">8</field>
-        <field name="project_id" ref="project_internal_management"/>
-        <field name="exclude_from_sale_order" eval="True"/>
-        <field name="user_id" ref="base.user_admin"/>
-        <field name="stage_id" ref="task_type_time_tracking"/>
+        <field name="project_id" ref="project_internal_management" />
+        <field name="exclude_from_sale_order" eval="True" />
+        <field name="user_id" ref="base.user_admin" />
+        <field name="stage_id" ref="task_type_time_tracking" />
     </record>
 
     <record model="project.task" id="project_task_building_maintenance">
         <!-- Name is not translatable -->
         <field name="name">🏢 Gestion &amp; Entretien Bâtiment</field>
         <field name="sequence">9</field>
-        <field name="project_id" ref="project_internal_management"/>
-        <field name="exclude_from_sale_order" eval="True"/>
-        <field name="user_id" ref="base.user_admin"/>
-        <field name="stage_id" ref="task_type_time_tracking"/>
+        <field name="project_id" ref="project_internal_management" />
+        <field name="exclude_from_sale_order" eval="True" />
+        <field name="user_id" ref="base.user_admin" />
+        <field name="stage_id" ref="task_type_time_tracking" />
     </record>
 
 </odoo>

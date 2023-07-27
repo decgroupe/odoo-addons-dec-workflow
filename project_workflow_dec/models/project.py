@@ -7,7 +7,9 @@ from odoo import models, api, fields
 class Project(models.Model):
     _inherit = "project.project"
 
-    privacy_visibility = fields.Selection(default='employees', )
+    privacy_visibility = fields.Selection(
+        default="employees",
+    )
 
     def _compute_show_time_control(self):
         result = super()._compute_show_time_control()

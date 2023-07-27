@@ -7,9 +7,6 @@
         "document_page",
         "document_page_reference",
     ],
-    "data": [
-        "views/assets.xml",
-        "views/document_page.xml",
-    ],
+    "data": [],
     "installable": True,
 }

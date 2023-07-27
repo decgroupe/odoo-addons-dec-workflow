@@ -1,17 +1,28 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <odoo>
 
     <record model="ir.ui.view" id="view_partner_form">
         <field name="name">res.partner.form@res_partner_workflow_dec</field>
         <field name="model">res.partner</field>
         <field name="type">form</field>
-        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
-            <xpath expr="//page[@name='sales_purchases']//field[@name='user_id']" position="attributes">
+            <xpath
+                expr="//page[@name='sales_purchases']//field[@name='user_id']"
+                position="attributes"
+            >
                 <attribute name="domain">[('share', '=', False)]</attribute>
             </xpath>
-            <xpath expr="//sheet/notebook//field[@name='child_ids']/form//field[@name='comment']" position="after">
-                <field name="category_id" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}" placeholder="Tags..."/>
+            <xpath
+                expr="//sheet/notebook//field[@name='child_ids']/form//field[@name='comment']"
+                position="after"
+            >
+                <field
+                    name="category_id"
+                    widget="many2many_tags"
+                    options="{'color_field': 'color', 'no_create_edit': True}"
+                    placeholder="Tags..."
+                />
             </xpath>
         </field>
     </record>

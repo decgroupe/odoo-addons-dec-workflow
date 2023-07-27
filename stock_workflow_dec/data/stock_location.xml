@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <record model="stock.location" id="stock_location_stock_se">
@@ -10,7 +10,7 @@
     <record model="stock.location" id="stock_location_production_rd">
         <field name="name">Recherche &amp; Développement</field>
         <field name="usage">production</field>
-        <field name="location_id" ref="stock.stock_location_locations_virtual"/>
+        <field name="location_id" ref="stock.stock_location_locations_virtual" />
     </record>
 
 </odoo>

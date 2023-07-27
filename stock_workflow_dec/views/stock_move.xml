@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <!-- /addons/base/rng/tree_view.rng
@@ -15,13 +15,15 @@
     <record model="ir.ui.view" id="stock_move_tree_view">
         <field name="name">stock.move.tree@stock_workflow_dec</field>
         <field name="model">stock.move</field>
-        <field name="inherit_id" ref="stock.view_move_tree"/>
+        <field name="inherit_id" ref="stock.view_move_tree" />
         <field name="arch" type="xml">
             <xpath expr="//tree" position="attributes">
                 <attribute name="decoration-success">state == 'draft'</attribute>
                 <attribute name="decoration-primary">state == 'waiting'</attribute>
                 <attribute name="decoration-info">state == 'confirmed'</attribute>
-                <attribute name="decoration-warning">state == 'partially_available'</attribute>
+                <attribute
+                    name="decoration-warning"
+                >state == 'partially_available'</attribute>
                 <attribute name="decoration-bf">state == 'available'</attribute>
                 <attribute name="decoration-muted">state == 'done'</attribute>
                 <attribute name="decoration-muted-strike">state == 'cancel'</attribute>
@@ -29,16 +31,18 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="stock_move_receipt_picking_tree_view" >
+    <record model="ir.ui.view" id="stock_move_receipt_picking_tree_view">
         <field name="name">stock.move.tree2@stock_workflow_dec</field>
         <field name="model">stock.move</field>
-        <field name="inherit_id" ref="stock.view_move_tree_receipt_picking"/>
+        <field name="inherit_id" ref="stock.view_move_tree_receipt_picking" />
         <field name="arch" type="xml">
             <xpath expr="//tree" position="attributes">
                 <attribute name="decoration-success">state == 'draft'</attribute>
                 <attribute name="decoration-primary">state == 'waiting'</attribute>
                 <attribute name="decoration-info">state == 'confirmed'</attribute>
-                <attribute name="decoration-warning">state == 'partially_available'</attribute>
+                <attribute
+                    name="decoration-warning"
+                >state == 'partially_available'</attribute>
                 <attribute name="decoration-bf">state == 'available'</attribute>
                 <attribute name="decoration-muted">state == 'done'</attribute>
                 <attribute name="decoration-muted-strike">state == 'cancel'</attribute>
@@ -49,13 +53,15 @@
     <record model="ir.ui.view" id="stock_move_form_view">
         <field name="name">stock.move.form@stock_workflow_dec</field>
         <field name="model">stock.move</field>
-        <field name="inherit_id" ref="stock.view_move_form"/>
+        <field name="inherit_id" ref="stock.view_move_form" />
         <field name="arch" type="xml">
             <xpath expr="//group[@name='linked_group']//tree" position="attributes">
                 <attribute name="decoration-success">state == 'draft'</attribute>
                 <attribute name="decoration-primary">state == 'waiting'</attribute>
                 <attribute name="decoration-info">state == 'confirmed'</attribute>
-                <attribute name="decoration-warning">state == 'partially_available'</attribute>
+                <attribute
+                    name="decoration-warning"
+                >state == 'partially_available'</attribute>
                 <attribute name="decoration-bf">state == 'available'</attribute>
                 <attribute name="decoration-muted">state == 'done'</attribute>
                 <attribute name="decoration-muted-strike">state == 'cancel'</attribute>

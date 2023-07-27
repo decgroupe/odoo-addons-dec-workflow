@@ -1,7 +1,7 @@
 # Copyright (C) DEC SARL, Inc - All Rights Reserved.
 # Written by Yann Papouin <ypa at decgroupe.com>, Aug 2022
 
-from odoo import api, models, fields
+from odoo import api, models
 
 
 class AccountMove(models.Model):
@@ -9,4 +9,4 @@ class AccountMove(models.Model):
 
     @api.model
     def _get_partner_field_name(self):
-        return 'partner_shipping_id'
+        return "partner_shipping_id"

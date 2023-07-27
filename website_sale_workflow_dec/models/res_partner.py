@@ -7,4 +7,6 @@ from odoo import fields, models
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    website_show_price = fields.Boolean(default=False)
+    website_show_price = fields.Boolean(
+        default=False,
+    )

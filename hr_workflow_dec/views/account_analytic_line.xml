@@ -7,11 +7,8 @@
         <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_form" />
         <field name="priority">10</field>
         <field name="arch" type="xml">
-            <xpath expr="//form/sheet/group" position="after">
-                <group name="subgroup">
-                    <group name="subgroup_details" colspan="4" />
-                </group>
-            </xpath>
+            <!-- To remove, replaced with `hr_timesheet_autofill.hr_timesheet_line_form_view` -->
+            <data />
         </field>
     </record>
 
@@ -20,9 +17,8 @@
         <field name="model">account.analytic.line</field>
         <field name="inherit_id" ref="hr_timesheet_line_form" />
         <field name="arch" type="xml">
-            <group name="subgroup_details" position="inside">
-                <field name="task_id" position="move" />
-            </group>
+            <!-- To remove, replaced with `hr_timesheet_autofill.hr_timesheet_line_form_view` -->
+            <data />
         </field>
     </record>
 

@@ -10,7 +10,6 @@
         "product_small_supply",
     ],
     "data": [
-        "data/stock_data.xml",
         "views/mrp_production.xml",
         "views/mrp_bom.xml",
         "views/mrp_workcenter.xml",

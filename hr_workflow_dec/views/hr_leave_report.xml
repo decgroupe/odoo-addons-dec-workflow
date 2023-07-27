@@ -1,17 +1,6 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <odoo>
 
-    <!-- TODO: [MIG] 13.0 DEL
-    <record model="ir.actions.act_window" id="hr_holidays.open_company_allocation">
-        <field name="context">{
-            'search_default_group_type': 1,
-            'search_default_year': 1 ,
-            'search_default_my_leaves': 1,
-            'search_default_validated': 1,
-        }</field>
-    </record>
-    -->
-
     <record id="open_all_employees_allocation_summary" model="ir.actions.act_window">
         <field name="name">Leaves Summary</field>
         <field name="res_model">hr.leave.report</field>

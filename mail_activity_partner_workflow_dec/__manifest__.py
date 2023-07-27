@@ -7,6 +7,7 @@
         "mail_activity_workflow_dec",
         "mail_activity_partner",
         "account_partner_location",
+        "crm_lead_partner_location",
         "project_partner_location",
         "sale_partner_location",
     ],

@@ -7,18 +7,18 @@
         <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
             <xpath
-        expr="//group[@name='technical']/field[@name='opportunity_id']"
-        position="replace"
-      />
+                expr="//group[@name='technical']/field[@name='opportunity_id']"
+                position="replace"
+            />
             <xpath expr="//field[@name='partner_id']" position="before">
                 <field
-          name="opportunity_id"
-          context="{
-                    'default_type': 'opportunity',
-                    'default_planned_revenue': amount_total,
-                    'default_partner_id': partner_id,
-                }"
-        />
+                    name="opportunity_id"
+                    context="{
+                        'default_type': 'opportunity',
+                        'default_planned_revenue': amount_total,
+                        'default_partner_id': partner_id,
+                    }"
+                />
             </xpath>
         </field>
     </record>

@@ -1,7 +1,7 @@
 # Copyright (C) DEC SARL, Inc - All Rights Reserved.
 # Written by Yann Papouin <ypa at decgroupe.com>, Mar 2021
 
-from odoo import models, api, fields
+from odoo import api, fields, models
 
 SUBTASKS_SUBTYPE = "project_task_subtask.subtasks_subtype"
 
@@ -11,7 +11,6 @@ class ProjectTask(models.Model):
 
     default_user = fields.Many2one("res.users", compute="_compute_default_user")
 
-    
     def send_subtask_email(
         self,
         subtask_name,
@@ -30,18 +29,16 @@ class ProjectTask(models.Model):
                 old_name=old_name,
             )
 
-    
-    @api.returns('mail.message', lambda value: value.id)
+    @api.returns("mail.message", lambda value: value.id)
     def message_post(self, **kwargs):
-        subtype = kwargs.get('subtype', False)
+        subtype = kwargs.get("subtype", False)
         if subtype and SUBTASKS_SUBTYPE in subtype:
-            kwargs.pop('partner_ids', False)
+            kwargs.pop("partner_ids", False)
         return super().message_post(**kwargs)
 
-    
     def _compute_default_user(self):
-        """ Override default compute since nothing is logic in original module
-            computation
+        """Override default compute since nothing is logic in original module
+        computation
         """
         for record in self:
             record.default_user = self.env.user

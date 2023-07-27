@@ -1,16 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
     <record model="ir.ui.view" id="purchase_order_form_view">
         <field name="name">purchase.order.form@purchase_workflow_dec</field>
         <field name="model">purchase.order</field>
-        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="inherit_id" ref="purchase.purchase_order_form" />
         <field name="arch" type="xml">
             <button name="button_cancel" position="attributes">
-                <attribute name="confirm">Are you sure that you want to cancel this purchase order?</attribute>
+                <attribute
+                    name="confirm"
+                >Are you sure that you want to cancel this purchase order?</attribute>
             </button>
-            <xpath expr="//field[@name='order_line']/tree//field[@name='product_id']" position="attributes">
-                <attribute name="options">{'no_create': True, 'no_create_edit':True}</attribute>
+            <xpath
+                expr="//field[@name='order_line']/tree//field[@name='product_id']"
+                position="attributes"
+            >
+                <attribute
+                    name="options"
+                >{'no_create': True, 'no_create_edit':True}</attribute>
             </xpath>
         </field>
     </record>
@@ -18,43 +25,56 @@
     <record model="ir.ui.view" id="purchase_order_noshare_form_view">
         <field name="name">purchase.order.form#noshare@purchase_workflow_dec</field>
         <field name="model">purchase.order</field>
-        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="inherit_id" ref="purchase.purchase_order_form" />
         <field name="arch" type="xml">
-            <xpath expr="//page[@name='purchase_delivery_invoice']//field[@name='user_id']" position="attributes">
+            <xpath
+                expr="//page[@name='purchase_delivery_invoice']//field[@name='user_id']"
+                position="attributes"
+            >
                 <attribute name="domain">[('share', '=', False)]</attribute>
             </xpath>
         </field>
     </record>
 
-    <record model="ir.ui.view" id="purchase_order_filter_view" >
+    <record model="ir.ui.view" id="purchase_order_filter_view">
         <field name="name">request.quotation.select@purchase_workflow_dec</field>
         <field name="model">purchase.order</field>
-        <field name="inherit_id" ref="purchase.view_purchase_order_filter"/>
+        <field name="inherit_id" ref="purchase.view_purchase_order_filter" />
         <field name="arch" type="xml">
             <filter name="draft" position="before">
-                <filter name="filter_not_cancelled" string="Not Cancelled" domain="[('state', '!=', 'cancel')]"/>
+                <filter
+                    name="filter_not_cancelled"
+                    string="Not Cancelled"
+                    domain="[('state', '!=', 'cancel')]"
+                />
             </filter>
             <field name="name" position="after">
-                <field name="origin"/>
-                <field name="group_id"/>
+                <field name="origin" />
+                <field name="group_id" />
             </field>
         </field>
     </record>
 
-    <record model="ir.actions.act_window" id="purchase.purchase_rfq" >
+    <record model="ir.actions.act_window" id="purchase.purchase_rfq">
         <field name="context">{"search_default_filter_not_cancelled":1}</field>
     </record>
 
 
-    <record model="ir.ui.view" id="purchase_order_view_form_inherit" >
+    <record model="ir.ui.view" id="purchase_order_view_form_inherit">
         <field name="name">purchase.order.form.inherit@purchase_workflow_dec</field>
         <field name="model">purchase.order</field>
-        <field name="inherit_id" ref="purchase_stock.purchase_order_view_form_inherit"/>
+        <field
+            name="inherit_id"
+            ref="purchase_stock.purchase_order_view_form_inherit"
+        />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='order_line']/form//field[@name='move_ids']" position="before">
-                <separator string="Reservation"/>
-                <field name="move_dest_ids"/>
-                <separator string="Reception"/>
+            <xpath
+                expr="//field[@name='order_line']/form//field[@name='move_ids']"
+                position="before"
+            >
+                <separator string="Reservation" />
+                <field name="move_dest_ids" />
+                <separator string="Reception" />
             </xpath>
         </field>
     </record>
@@ -62,7 +82,10 @@
     <record model="ir.ui.view" id="purchase_order_form_view_stock">
         <field name="name">purchase.order.form.view.stock@purchase_workflow_dec</field>
         <field name="model">purchase.order</field>
-        <field name="inherit_id" ref="purchase_order_line_stock_available.purchase_order_form_view_stock"/>
+        <field
+            name="inherit_id"
+            ref="purchase_order_line_stock_available.purchase_order_form_view_stock"
+        />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='virtual_available']" position="attributes">
                 <attribute name="class">d_purchase_line_virtual_available</attribute>
@@ -70,10 +93,10 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="purchase_order_tree_view" >
+    <record model="ir.ui.view" id="purchase_order_tree_view">
         <field name="name">purchase.order.tree@purchase_workflow_dec</field>
         <field name="model">purchase.order</field>
-        <field name="inherit_id" ref="purchase.purchase_order_tree"/>
+        <field name="inherit_id" ref="purchase.purchase_order_tree" />
         <field name="arch" type="xml">
             <field name="partner_id" position="attributes">
                 <attribute name="widget">many2one_avatar</attribute>
@@ -81,10 +104,10 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="purchase_order_kpis_tree_view" >
+    <record model="ir.ui.view" id="purchase_order_kpis_tree_view">
         <field name="name">purchase.order.tree#kpis@purchase_workflow_dec</field>
         <field name="model">purchase.order</field>
-        <field name="inherit_id" ref="purchase.purchase_order_kpis_tree"/>
+        <field name="inherit_id" ref="purchase.purchase_order_kpis_tree" />
         <field name="arch" type="xml">
             <field name="partner_id" position="attributes">
                 <attribute name="widget">many2one_avatar</attribute>

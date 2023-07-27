@@ -12,7 +12,6 @@
     "data": [
         "views/mrp_production.xml",
         "views/mrp_bom.xml",
-        "views/mrp_workcenter.xml",
         "views/product_template.xml",
         "views/product_product.xml",
     ],

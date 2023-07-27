@@ -1,7 +1,7 @@
 # Copyright (C) DEC SARL, Inc - All Rights Reserved.
 # Written by Yann Papouin <ypa at decgroupe.com>, Jul 2022
 
-from odoo import _, api, models
+from odoo import models
 
 
 class MailThread(models.AbstractModel):
@@ -16,14 +16,14 @@ class MailThread(models.AbstractModel):
         res_id=False,
         author_id=None,
         email_from=None,
-        body='',
+        body="",
         subject=False,
         **kwargs
     ):
         if body:
             if isinstance(body, bytes):
-                body = body.decode('utf-8')
-            body = self.env['mail.template']._hard_replace(body)
+                body = body.decode("utf-8")
+            body = self.env["mail.template"]._hard_replace(body)
         super().message_notify(
             partner_ids=partner_ids,
             parent_id=parent_id,

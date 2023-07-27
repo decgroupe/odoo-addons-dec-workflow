@@ -1,12 +1,11 @@
 # Copyright (C) DEC SARL, Inc - All Rights Reserved.
 # Written by Yann Papouin <ypa@decgroupe.com>, Oct 2021
 
-from odoo import _, api, models
+from odoo import models
 
 
 class MailTemplate(models.Model):
     _inherit = "mail.template"
 
-    
     def write(self, vals):
         return super().write(vals)

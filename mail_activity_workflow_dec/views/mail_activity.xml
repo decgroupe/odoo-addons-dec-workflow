@@ -40,6 +40,13 @@
         <field name="inherit_id" ref="mail_activity_team.mail_activity_view_search" />
         <field name="arch" type="xml">
             <xpath expr='//filter[@name="my_team_activities"]' position='before'>
+                <separator />
+                <!-- Reintroducing my activities filter removed in Odoo 13.0 -->
+                <filter
+                    string="My Activities"
+                    name="activities_my"
+                    domain="[('user_id', '=', uid)]"
+                />
                 <filter
                     name="my_team_unassigned_activities"
                     string="My Team Unassigned Activities"

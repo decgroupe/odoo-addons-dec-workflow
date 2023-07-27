@@ -4,12 +4,14 @@
     <record model="ir.ui.view" id="quotation_tree_view">
         <field name="name">sale.order.tree@sale_workflow_dec</field>
         <field name="model">sale.order</field>
-        <field name="inherit_id" ref="sale.view_quotation_tree"/>
+        <field name="inherit_id" ref="sale.view_quotation_tree" />
         <field name="arch" type="xml">
             <xpath expr="//tree" position="attributes">
                 <attribute name="create">0</attribute>
                 <attribute name="class">d_sale_quotation</attribute>
-                <attribute name="decoration-primary">state in ('sale','locked')</attribute>
+                <attribute
+                    name="decoration-primary"
+                >state in ('sale','locked')</attribute>
             </xpath>
             <field name="create_date" position="attributes">
                 <attribute name="widget">date</attribute>
@@ -24,10 +26,10 @@
                 <attribute name="widget">many2one_avatar</attribute>
             </field>
             <field name="amount_total" position="before">
-                <field name="amount_untaxed" sum="Total Untaxed" widget="monetary"/>
+                <field name="amount_untaxed" sum="Total Untaxed" widget="monetary" />
             </field>
             <field name="amount_total" position="after">
-                <field name="margin" sum="Total Margin" widget="monetary"/>
+                <field name="margin" sum="Total Margin" widget="monetary" />
             </field>
         </field>
     </record>
@@ -35,12 +37,16 @@
     <record model="ir.ui.view" id="order_tree_view">
         <field name="name">sale.order.tree@sale_workflow_dec</field>
         <field name="model">sale.order</field>
-        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="inherit_id" ref="sale.view_order_tree" />
         <field name="arch" type="xml">
             <xpath expr="//tree" position="attributes">
                 <attribute name="class">d_sale_order</attribute>
-                <attribute name="decoration-success">invoice_status in ('invoiced')</attribute>
-                <attribute name="decoration-info">invoice_status in ('to invoice')</attribute>
+                <attribute
+                    name="decoration-success"
+                >invoice_status in ('invoiced')</attribute>
+                <attribute
+                    name="decoration-info"
+                >invoice_status in ('to invoice')</attribute>
             </xpath>
             <field name="commitment_date" position="attributes">
                 <attribute name="widget">date</attribute>
@@ -52,10 +58,10 @@
                 <attribute name="widget">many2one_avatar</attribute>
             </field>
             <field name="amount_total" position="before">
-                <field name="amount_untaxed" sum="Total Untaxed" widget="monetary"/>
+                <field name="amount_untaxed" sum="Total Untaxed" widget="monetary" />
             </field>
             <field name="amount_total" position="after">
-                <field name="margin" sum="Total Margin" widget="monetary"/>
+                <field name="margin" sum="Total Margin" widget="monetary" />
             </field>
         </field>
     </record>
@@ -63,7 +69,7 @@
     <record model="ir.ui.view" id="sales_order_filter_view">
         <field name="name">sale.order.list.select@sale_workflow_dec</field>
         <field name="model">sale.order</field>
-        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+        <field name="inherit_id" ref="sale.view_sales_order_filter" />
         <field name="arch" type="xml">
             <field name="name" position="attributes">
                 <attribute name="filter_domain">
@@ -71,9 +77,9 @@
                     '|',
                         '|',
                             '|',
-                                '|', 
-                                ('name', 'ilike', self), 
-                                ('client_order_ref', 'ilike', self), 
+                                '|',
+                                ('name', 'ilike', self),
+                                ('client_order_ref', 'ilike', self),
                             ('partner_id', 'child_of', self),
                         ('partner_shipping_id', 'child_of', self),
                     ('summary', 'ilike', self)
@@ -81,7 +87,7 @@
                 </attribute>
             </field>
             <field name="name" position="after">
-                <field name="client_order_ref"/>
+                <field name="client_order_ref" />
             </field>
         </field>
     </record>
@@ -89,35 +95,51 @@
     <record model="ir.ui.view" id="sale_order_form_view">
         <field name="name">sale.order.form@sale_workflow_dec</field>
         <field name="model">sale.order</field>
-        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
             <xpath expr="//button[@name='action_confirm'][1]" position="attributes">
-                <attribute name="confirm">Are you sure that you want to confirm this sale order?</attribute>
+                <attribute
+                    name="confirm"
+                >Are you sure that you want to confirm this sale order?</attribute>
                 <attribute name="context">{'send_email': True}</attribute>
             </xpath>
             <xpath expr="//button[@name='action_confirm'][2]" position="attributes">
-                <attribute name="confirm">Are you sure that you want to confirm this sale order?</attribute>
+                <attribute
+                    name="confirm"
+                >Are you sure that you want to confirm this sale order?</attribute>
                 <attribute name="context">{'send_email': True}</attribute>
             </xpath>
             <button name="action_cancel" position="attributes">
-                <attribute name="confirm">Are you sure that you want to cancel this sale order?</attribute>
+                <attribute
+                    name="confirm"
+                >Are you sure that you want to cancel this sale order?</attribute>
             </button>
             <xpath expr="//field[@name='order_line']/tree" position="attributes">
                 <attribute name="limit">1000</attribute>
             </xpath>
-            <xpath expr="//field[@name='order_line']/form//field[@name='product_id']" position="attributes">
-                <attribute name="options">{'no_create': True, 'no_create_edit':True}</attribute>
+            <xpath
+                expr="//field[@name='order_line']/form//field[@name='product_id']"
+                position="attributes"
+            >
+                <attribute
+                    name="options"
+                >{'no_create': True, 'no_create_edit':True}</attribute>
             </xpath>
             <!--
             <xpath expr="//field[@name='order_line']/form//field[@name='product_id']" position="after">
                 <field name="pack_modifiable" groups="base.group_erp_manager"/>
             </xpath>
             -->
-            <xpath expr="//field[@name='order_line']/tree/field[@name='invoice_status']" position="after">
-                <field name="delivery_status" invisible="1"/>
+            <xpath
+                expr="//field[@name='order_line']/tree/field[@name='invoice_status']"
+                position="after"
+            >
+                <field name="delivery_status" invisible="1" />
             </xpath>
             <xpath expr="//field[@name='order_line']/tree" position="attributes">
-                <attribute name="decoration-primary">(delivery_status == 'todo') and (invoice_status in ['no', 'to invoice']) and (state not in ['done', 'cancel']) </attribute>
+                <attribute
+                    name="decoration-primary"
+                >(delivery_status == 'todo') and (invoice_status in ['no', 'to invoice']) and (state not in ['done', 'cancel']) </attribute>
             </xpath>
         </field>
     </record>
@@ -125,9 +147,12 @@
     <record model="ir.ui.view" id="sale_order_noshare_form_view">
         <field name="name">sale.order.form#noshare@sale_workflow_dec</field>
         <field name="model">sale.order</field>
-        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">
-            <xpath expr="//page[@name='other_information']//field[@name='user_id']" position="attributes">
+            <xpath
+                expr="//page[@name='other_information']//field[@name='user_id']"
+                position="attributes"
+            >
                 <attribute name="domain">[('share', '=', False)]</attribute>
             </xpath>
         </field>

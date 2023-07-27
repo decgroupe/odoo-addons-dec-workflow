@@ -1,15 +1,15 @@
 # Copyright (C) DEC SARL, Inc - All Rights Reserved.
 # Written by Yann Papouin <ypa at decgroupe.com>, Mar 2020
 
-from odoo import fields, models, api
+from odoo import models
 
 
 class SaleOrder(models.Model):
-    _inherit = 'sale.order'
+    _inherit = "sale.order"
 
     def copy(self, default=None):
         if self.origin:
-            origin = ('%s:%s') % (
+            origin = ("%s:%s") % (
                 self.origin,
                 self.name,
             )

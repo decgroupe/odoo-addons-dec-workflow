@@ -1,6 +1,24 @@
 <?xml version='1.0' encoding='utf-8' ?>
 <odoo>
 
+    <record model="ir.ui.view" id="timesheet_search_view">
+        <field name="name">account.analytic.line.search@hr_workflow_dec</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_search" />
+        <field name="arch" type="xml">
+            <!-- Move employee filter before to ensure filters are enabled in the right
+            order: « Employee > Project ».
+            That's because of web/static/src/js/control_panel/control_panel_model_extension.js
+            and `_activateDefaultFilters`. Filters are parsed from the view in the
+            same order they are displayed and they are toggled if `isDefault` == True.
+            Context order is totally ignored (because unordered dictionnary ?).
+            -->
+            <xpath expr="//filter[@name='groupby_project']" position="before">
+                <filter name="groupby_employee" position="move" />
+            </xpath>
+        </field>
+    </record>
+
     <record id="hr_timesheet.timesheet_action_all" model="ir.actions.act_window">
         <field name="context">{
             'search_default_groupby_employee':1,

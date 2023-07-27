@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <odoo>
 
     <record model="ir.ui.view" id="product_template_only_form_view">
@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="product.product_template_only_form_view" />
         <field name="arch" type="xml">
             <!-- Remove useless stat button -->
-            <button name="action_view_mos" position="replace"/>
+            <button name="action_view_mos" position="replace" />
         </field>
     </record>
 

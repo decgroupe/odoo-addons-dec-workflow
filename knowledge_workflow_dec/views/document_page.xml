@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
-    <record model="ir.ui.view" id="document_page_reference.document_page_tree_view">
-        <field name="groups_id" eval="[(4, ref('base.group_erp_manager'))]" />
-    </record>
-
     <record model="ir.ui.view" id="document_page_form_view">
         <field name="name">document.page.form@knowledge_workflow_dec</field>
         <field name="model">document.page</field>

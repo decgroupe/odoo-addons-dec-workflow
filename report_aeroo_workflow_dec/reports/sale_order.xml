@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <function model="ir.actions.report" name="unlink_action">
+        <value eval="[ref('sale.action_report_saleorder')]" />
+    </function>
+
+    <function model="ir.actions.report" name="unlink_action">
+        <value eval="[ref('sale.action_report_pro_forma_invoice')]" />
+    </function>
+
+    <function model="mail.template" name="write">
+        <value
+            model="mail.template"
+            search="[('id', '=', ref('sale.email_template_edi_sale'))]"
+        />
+        <value eval="{'report_template': ref('sale_report_aeroo.sale_order_report')}" />
+    </function>
+
+</odoo>

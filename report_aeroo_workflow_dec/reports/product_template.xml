@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <function model="ir.actions.report" name="unlink_action">
+        <value eval="[ref('product.report_product_template_label')]"/>
+    </function>
+
+    <function model="ir.actions.report" name="unlink_action">
+        <value eval="[ref('product.report_product_template_barcode')]"/>
+    </function>
+
+</odoo>

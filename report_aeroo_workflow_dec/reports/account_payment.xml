@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <function model="ir.actions.report" name="unlink_action">
+        <value eval="[ref('account.action_report_payment_receipt')]" />
+    </function>
+
+    <function model="mail.template" name="write">
+        <value
+            model="mail.template"
+            search="
+        [('id', '=', ref('account.mail_template_data_payment_receipt'))]"
+        />
+        <value
+            eval="{'report_template': ref('account_payment_report_aeroo.account_payment_report')}"
+        />
+    </function>
+
+</odoo>

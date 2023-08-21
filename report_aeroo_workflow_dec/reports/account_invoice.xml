@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!--
+    <function model="ir.actions.report" name="unlink_action">
+        <value eval="[ref('account.account_invoices')]"/>
+    </function>
+
+    <function model="ir.actions.report" name="unlink_action">
+        <value eval="[ref('account.account_invoices_without_payment')]"/>
+    </function>
+
+     TODO: [MIG] 13.0: see `account_report_aeroo/report/account_invoice.xml`
+    <function model="mail.template" name="write">
+        <value model="mail.template" search="
+        [('id', '=', ref('account.email_template_edi_invoice'))]"/>
+        <value eval="{'report_template': ref('account_report_aeroo.account_invoice_report')}"/>
+    </function>
+-->
+
+</odoo>

@@ -1,0 +1,26 @@
+{
+    "name": "Aeroo reports (DEC)",
+    "version": "14.0.1.0.0",
+    "author": "DEC",
+    "website": "https://www.decgroupe.com",
+    "depends": [
+        "sale_report_aeroo",
+        "purchase_report_aeroo",
+        "account_report_aeroo",
+        "mrp_report_aeroo",
+        "stock_report_aeroo",
+        "product_report_aeroo",
+    ],
+    "data": [
+        "reports/sale_order.xml",
+        "reports/purchase_order.xml",
+        "reports/account_invoice.xml",
+        "reports/account_payment.xml",
+        "reports/mrp_production.xml",
+        "reports/mrp_bom.xml",
+        "reports/stock_picking.xml",
+        "reports/product_template.xml",
+        "reports/product_product.xml",
+    ],
+    "installable": True,
+}

@@ -4,7 +4,7 @@
     <record model="ir.ui.view" id="task_form_view">
         <field name="name">project.task.form@project_task_subtask_workflow_dec</field>
         <field name="model">project.task</field>
-        <field name="inherit_id" ref="project_task_subtask.view_task_form2" />
+        <field name="inherit_id" ref="project_task_subtask.project_task_form_view" />
         <field name="arch" type="xml">
 
             <xpath expr="//field[@name='subtask_ids']/tree" position="attributes">

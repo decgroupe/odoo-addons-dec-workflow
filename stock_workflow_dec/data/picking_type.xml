@@ -7,7 +7,8 @@
         <field name="sequence_id" ref="stock.seq_picking_internal" />
         <field name="code">internal</field>
         <field name="default_location_src_id" ref="stock.stock_location_stock" />
-        <field name="default_location_dest_id" ref="stock.location_production" />
+        <!-- This field is now set in the post_init_hook -->
+        <!-- <field name="default_location_dest_id" ref="stock.location_production" /> -->
     </record>
 
     <!-- Create a picking type to return product from Production to
@@ -16,7 +17,8 @@
         <field name="name">Returns</field>
         <field name="sequence_id" ref="stock.seq_picking_internal" />
         <field name="code">internal</field>
-        <field name="default_location_src_id" ref="stock.location_production" />
+        <!-- This field is now set in the post_init_hook -->
+        <!-- <field name="default_location_src_id" ref="stock.location_production" /> -->
         <field name="default_location_dest_id" ref="stock.stock_location_stock" />
     </record>
 
@@ -28,8 +30,9 @@
         <field name="name">Exceeds</field>
         <field name="sequence_id" ref="stock.seq_picking_internal" />
         <field name="code">internal</field>
-        <field name="default_location_src_id" ref="stock.location_production" />
-        <field name="default_location_dest_id" eval="14" />
+        <!-- This field is now set in the post_init_hook -->
+        <!-- <field name="default_location_src_id" ref="stock.location_production" /> -->
+        <field name="default_location_dest_id" ref="stock_workflow_dec.stock_location_stock_se" />
     </record>
 
 </odoo>

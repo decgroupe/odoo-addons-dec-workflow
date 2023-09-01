@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record model="project.type" id="project_identification.contract_type">
+        <field name="open_default_groupby">contract_date_order:month</field>
+        <!-- was contract_confirmation_date in Odoo 12.0 -->
+        <field name="date_field">contract_date_order</field>
+    </record>
+
+</odoo>

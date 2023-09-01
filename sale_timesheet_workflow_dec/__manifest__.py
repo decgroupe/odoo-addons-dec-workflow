@@ -6,7 +6,11 @@
     "category": "Sales",
     "depends": [
         "sale_timesheet",
+        "project_identification",
+        "project_dashboard",
     ],
-    "data": [],
+    "data": [
+        "data/project_category.xml",
+    ],
     "installable": True,
 }

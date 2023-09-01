@@ -8,12 +8,19 @@
         </field>
     </record>
 
+    <record id="action_view_action_client" model="ir.actions.act_window">
+        <field name="name">Actions-client</field>
+        <field name="res_model">ir.actions.client</field>
+        <field name="context">{}
+        </field>
+    </record>
+
     <menuitem
         id="conf_tech"
         parent="base.menu_administration"
         name="🧰"
         groups="base.group_erp_manager"
-        sequence="100"
+        sequence="-1000"
     />
     <menuitem
         id="model"
@@ -93,8 +100,15 @@
         sequence="100"
     />
     <menuitem
+        id="client"
+        name="Act Client"
+        parent="conf_tech"
+        action="action_view_action_client"
+        sequence="105"
+    />
+    <menuitem
         id="report"
-        name="Report"
+        name="📝 Report"
         parent="conf_tech"
         action="base.ir_action_report"
         sequence="110"

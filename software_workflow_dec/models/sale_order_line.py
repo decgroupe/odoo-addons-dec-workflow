@@ -2,7 +2,7 @@
 # Copyright (C) DEC SARL, Inc - All Rights Reserved.
 # Written by Yann Papouin <ypa at decgroupe.com>, Mar 2023
 
-from odoo import _, api, fields, models
+from odoo import _, models
 
 
 class SaleOrderLine(models.Model):
@@ -17,9 +17,9 @@ class SaleOrderLine(models.Model):
             pass_id.with_context(
                 mail_activity_noautofollow=True,
             ).activity_schedule(
-                act_type_xmlid='mail.mail_activity_data_todo',
+                act_type_xmlid="mail.mail_activity_data_todo",
                 note=_("🚨 Auto: To Send"),
                 user_id=digital_team_id.user_id.id,
-                team_id=digital_team_id.id
+                team_id=digital_team_id.id,
             )
         return pass_id

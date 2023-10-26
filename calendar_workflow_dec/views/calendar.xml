@@ -39,16 +39,16 @@
         <field name="model">calendar.event</field>
         <field name="inherit_id" ref="calendar.view_calendar_event_calendar" />
         <field name="arch" type="xml">
+            <xpath expr="//calendar//field[@name='attendee_status']" position="before">
+                <field name="partner_ids" position="move" />
+            </xpath>
             <xpath
                 expr="//calendar//field[@name='attendee_status']"
                 position="attributes"
             >
                 <attribute name="invisible">1</attribute>
             </xpath>
-            <xpath
-                expr="//calendar//field[@name='privacy']"
-                position="attributes"
-            >
+            <xpath expr="//calendar//field[@name='privacy']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
         </field>

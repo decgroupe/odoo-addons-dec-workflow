@@ -15,4 +15,26 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="employee_leave_inherit_form_view">
+        <field name="name">hr.employee.leave.form.inherit@hr_workflow_dec</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr_holidays.view_employee_form_leave_inherit" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//button[@name='%(hr_holidays.act_hr_employee_holiday_request)d']/div/span[hasclass('o_stat_value')]"
+                position="replace"
+            >
+                <span class="o_stat_value">
+                    <field name="leaves_count" /> Days
+                </span>
+            </xpath>
+            <xpath
+                expr="//button[@name='%(hr_holidays.act_hr_employee_holiday_request)d']/div/span[hasclass('o_stat_text')]"
+                position="text"
+            >
+                Remaining leaves
+            </xpath>
+        </field>
+    </record>
+
 </odoo>

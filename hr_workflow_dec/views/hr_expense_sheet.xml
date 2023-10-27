@@ -2,12 +2,14 @@
 <odoo>
 
     <!--
-    Set sequence higher than `hr_expense.menu_hr_expense_sheet_my_reports`
-    since we wants reports at first in the menu
+    Set sequences higher than `hr_expense.menu_hr_expense_sheet_my_reports` that have
+    its sequence set to 3, since we wants these reports at first in the menu
     -->
     <record model="ir.ui.menu" id="hr_expense.menu_hr_expense_my_expenses_to_submit">
-        <field name="name">DEC</field>
         <field name="sequence" eval="10" />
+    </record>
+    <record model="ir.ui.menu" id="hr_expense.menu_hr_expense_my_expenses_all">
+        <field name="sequence" eval="20" />
     </record>
 
     <record model="ir.ui.view" id="hr_expense_sheet_form_view">

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates>
+
+    <t t-inherit="hr_expense.ExpensesListView.buttons" t-inherit-mode="extension">
+        <!-- Remove "Upload" button -->
+        <xpath
+            expr="//button[hasclass('o_button_upload_expense')]"
+            position="replace"
+        >
+        </xpath>
+    </t>
+
+    <t t-inherit="hr_expense.ExpensesKanbanView.buttons" t-inherit-mode="extension">
+        <!-- Remove "Upload" button -->
+        <xpath
+            expr="//button[hasclass('o_button_upload_expense')]"
+            position="replace"
+        >
+        </xpath>
+    </t>
+
+</templates>

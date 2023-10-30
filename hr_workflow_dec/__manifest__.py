@@ -20,5 +20,8 @@
         "views/hr_employee.xml",
         "views/account_analytic_line.xml",
     ],
+    "qweb": [
+        "static/src/xml/documents_upload_views.xml",
+    ],
     "installable": True,
 }

@@ -1,14 +1,14 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* account_workflow_dec
+# 	* account_workflow_dec
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0\n"
+"Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-22 11:27+0000\n"
-"PO-Revision-Date: 2021-11-22 11:27+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2023-10-30 14:45+0000\n"
+"PO-Revision-Date: 2023-10-30 14:45+0000\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,40 +16,63 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: account_workflow_dec
-#: model_terms:ir.ui.view,arch_db:account_workflow_dec.cancel_invoice_form
-#: model_terms:ir.ui.view,arch_db:account_workflow_dec.cancel_invoice_supplier_form
+#: model_terms:ir.ui.view,arch_db:account_workflow_dec.invoice_form_view
 msgid "Are you sure that you want to cancel this invoice?"
 msgstr ""
 
 #. module: account_workflow_dec
 #: model_terms:ir.ui.view,arch_db:account_workflow_dec.invoice_form_view
-#: model_terms:ir.ui.view,arch_db:account_workflow_dec.invoice_supplier_form_view
 msgid "Are you sure that you want to validate this invoice?"
 msgstr ""
 
 #. module: account_workflow_dec
-#: model:ir.model.fields,field_description:account_workflow_dec.field_account_invoice__company_invoice_number
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_move_line__commercial_partner_id
+msgid "Commercial Entity"
+msgstr ""
+
+#. module: account_workflow_dec
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_bank_statement_line__company_invoice_number
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_move__company_invoice_number
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_payment__company_invoice_number
 msgid "Company invoice number"
 msgstr ""
 
 #. module: account_workflow_dec
-#: model:ir.model.fields,field_description:account_workflow_dec.field_account_invoice__client_order_ref
-msgid "Customer Reference"
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_move__display_name
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_move_line__display_name
+msgid "Display Name"
 msgstr ""
 
 #. module: account_workflow_dec
-#: model:ir.model,name:account_workflow_dec.model_account_invoice
-msgid "Invoice"
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_move__id
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_move_line__id
+msgid "ID"
 msgstr ""
 
 #. module: account_workflow_dec
-#: model:ir.model,name:account_workflow_dec.model_account_invoice_line
-msgid "Invoice Line"
+#: model:ir.model.fields,help:account_workflow_dec.field_account_move__xid
+#: model:ir.model.fields,help:account_workflow_dec.field_account_move_line__xid
+msgid "ID of the record defined in xml file"
 msgstr ""
 
 #. module: account_workflow_dec
-#: model:ir.model.fields,field_description:account_workflow_dec.field_account_invoice_line__invoice_number
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_move_line__invoice_number
 msgid "Invoice Number"
+msgstr ""
+
+#. module: account_workflow_dec
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_move_line__state
+msgid "Invoice State"
+msgstr ""
+
+#. module: account_workflow_dec
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_move_line__date_invoice
+msgid "Invoice/Bill Date"
+msgstr ""
+
+#. module: account_workflow_dec
+#: model:ir.model,name:account_workflow_dec.model_account_move
+msgid "Journal Entry"
 msgstr ""
 
 #. module: account_workflow_dec
@@ -58,7 +81,23 @@ msgid "Journal Item"
 msgstr ""
 
 #. module: account_workflow_dec
-#: model:ir.model.fields,field_description:account_workflow_dec.field_account_invoice_line__price_reduce
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_move____last_update
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_move_line____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: account_workflow_dec
+#: model_terms:ir.ui.view,arch_db:account_workflow_dec.account_invoice_filter_view
+msgid "Not Cancelled"
+msgstr ""
+
+#. module: account_workflow_dec
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_move_line__price_reduce
 msgid "Price Reduce"
 msgstr ""
 
+#. module: account_workflow_dec
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_move__xid
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_move_line__xid
+msgid "XML-ID"
+msgstr ""

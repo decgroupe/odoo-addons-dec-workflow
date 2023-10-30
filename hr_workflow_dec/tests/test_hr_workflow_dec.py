@@ -12,7 +12,7 @@ class TestHrWorkflowDec(TestExpenseCommon):
         super().setUp()
         self.sheet_model = self.env["hr.expense.sheet"]
 
-    def test_01_(self):
+    def test_01_manager(self):
         self.assertFalse(
             self.expense_employee.expense_manager_id,
             "Expense manager should not be set for this employee",

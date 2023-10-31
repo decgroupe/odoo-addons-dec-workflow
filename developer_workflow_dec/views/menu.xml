@@ -15,6 +15,13 @@
         </field>
     </record>
 
+    <record id="action_view_ir_ui_view_custom" model="ir.actions.act_window">
+        <field name="name">Custom Views</field>
+        <field name="res_model">ir.ui.view.custom</field>
+        <field name="context">{}
+        </field>
+    </record>
+
     <menuitem
         id="conf_tech"
         parent="base.menu_administration"
@@ -24,112 +31,119 @@
     />
     <menuitem
         id="model"
-        name="Model"
+        name="💃 Model (ir.model)"
         parent="conf_tech"
         action="base.action_model_model"
         sequence="10"
     />
     <menuitem
         id="export"
-        name="Export"
+        name="📤 Export (ir.exports)"
         parent="conf_tech"
         action="action_view_ir_export"
         sequence="15"
     />
     <menuitem
         id="view"
-        name="View"
+        name="👀 View (ir.ui.view)"
         parent="conf_tech"
         action="base.action_ui_view"
         sequence="20"
     />
     <menuitem
         id="rec_rule"
-        name="Record Rule"
+        name="🔞 Record Rule (ir.rule)"
         parent="conf_tech"
         action="base.action_rule"
         sequence="30"
     />
     <menuitem
         id="menu"
-        name="Menu"
+        name="☰ Menu (ir.ui.menu)"
         parent="conf_tech"
         action="base.grant_menu_access"
         sequence="40"
     />
     <menuitem
+        id="boards"
+        name="🎬 Dashboards (ir.ui.view.custom)"
+        parent="conf_tech"
+        action="action_view_ir_ui_view_custom"
+        sequence="45"
+    />
+    <menuitem
         id="seq"
-        name="Sequence"
+        name="🔢 Sequence (ir.sequence)"
         parent="conf_tech"
         action="base.ir_sequence_form"
         sequence="50"
     />
     <menuitem
         id="model_data"
-        name="Model Data"
+        name="🔰 XML-ID (ir.model.data)"
         parent="conf_tech"
         action="base.action_model_data"
         sequence="60"
     />
     <menuitem
         id="param"
-        name="Param"
+        name="📊 ICP (ir.config_parameter)"
         parent="conf_tech"
         action="base.ir_config_list_action"
         sequence="70"
     />
     <menuitem
         id="cron"
-        name="Cron"
+        name="🕘 Scheduled Actions (ir.cron)"
         parent="conf_tech"
         action="base.ir_cron_act"
         sequence="80"
     />
     <menuitem
         id="window"
-        name="Act Window"
+        name="🪟 Window Actions (ir.actions.act_window)"
         parent="conf_tech"
         action="base.ir_action_window"
         sequence="90"
     />
     <menuitem
         id="server"
-        name="Act Server"
+        name="🌐 Server Actions (ir.actions.server)"
         parent="conf_tech"
         action="base.action_server_action"
         sequence="100"
     />
     <menuitem
         id="client"
-        name="Act Client"
+        name="👨‍💻 Client Actions (ir.actions.client)"
         parent="conf_tech"
         action="action_view_action_client"
         sequence="105"
     />
     <menuitem
         id="report"
-        name="📝 Report"
+        name="📝 Report (ir.actions.report)"
         parent="conf_tech"
         action="base.ir_action_report"
         sequence="110"
     />
     <menuitem
         id="mail_tmpl"
-        name="Mail Tmpl"
+        name="💌 Mail Templates (mail.template)"
         parent="conf_tech"
         action="mail.action_email_template_tree_all"
         sequence="120"
     />
     <menuitem
         id="mail_alias"
-        name="Mail Alias"
+        name="🏷️ Mail Aliases (mail.alias)"
         parent="conf_tech"
         action="mail.action_view_mail_alias"
         sequence="125"
     />
     <menuitem
         id="property"
-        name="Property"
+        name="🛠️ Properties (ir.property)"
         parent="conf_tech"
         action="base.ir_property_form"
         sequence="130"

@@ -25,11 +25,11 @@
             <field name="partner_id" position="attributes">
                 <attribute name="widget">many2one_avatar</attribute>
             </field>
-            <field name="amount_total" position="before">
-                <field name="amount_untaxed" sum="Total Untaxed" widget="monetary" />
+            <field name="amount_untaxed" position="attributes">
+                <attribute name="optional">show</attribute>
             </field>
             <field name="amount_total" position="after">
-                <field name="margin" sum="Total Margin" widget="monetary" />
+                <field name="margin" optional="hide" sum="Total Margin" widget="monetary" />
             </field>
         </field>
     </record>
@@ -57,11 +57,11 @@
             <field name="partner_id" position="attributes">
                 <attribute name="widget">many2one_avatar</attribute>
             </field>
-            <field name="amount_total" position="before">
-                <field name="amount_untaxed" sum="Total Untaxed" widget="monetary" />
+            <field name="amount_untaxed" position="attributes">
+                <attribute name="optional">show</attribute>
             </field>
             <field name="amount_total" position="after">
-                <field name="margin" sum="Total Margin" widget="monetary" />
+                <field name="margin" optional="hide" sum="Total Margin" widget="monetary" />
             </field>
         </field>
     </record>

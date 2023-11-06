@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-30 14:45+0000\n"
-"PO-Revision-Date: 2023-10-30 15:46+0100\n"
+"POT-Creation-Date: 2023-11-06 09:05+0000\n"
+"PO-Revision-Date: 2023-11-06 10:05+0100\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -16,6 +16,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 "X-Generator: Poedit 2.4.3\n"
+
+#. module: account_workflow_dec
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_move__amount_residual
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_payment__amount_residual
+#: model_terms:ir.ui.view,arch_db:account_workflow_dec.invoice_tree_view
+msgid "Amount Due (including taxes)"
+msgstr "Montant dû (TTC)"
+
+#. module: account_workflow_dec
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_bank_statement_line__amount_residual_signed
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_move__amount_residual_signed
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_payment__amount_residual_signed
+msgid "Amount Due (including taxes) ±"
+msgstr "Montant dû (TTC) ±"
 
 #. module: account_workflow_dec
 #: model_terms:ir.ui.view,arch_db:account_workflow_dec.invoice_form_view
@@ -99,10 +113,67 @@ msgid "Price Reduce"
 msgstr "Réduction de Prix"
 
 #. module: account_workflow_dec
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_bank_statement_line__amount_tax
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_move__amount_tax
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_payment__amount_tax
+#: model_terms:ir.ui.view,arch_db:account_workflow_dec.invoice_tree_view
+msgid "Taxes"
+msgstr "Taxes"
+
+#. module: account_workflow_dec
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_bank_statement_line__amount_tax_signed
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_move__amount_tax_signed
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_payment__amount_tax_signed
+msgid "Taxes ±"
+msgstr "Taxes ±"
+
+#. module: account_workflow_dec
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_bank_statement_line__amount_untaxed
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_move__amount_untaxed
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_payment__amount_untaxed
+#: model_terms:ir.ui.view,arch_db:account_workflow_dec.invoice_tree_view
+msgid "Total Amount (excluding taxes)"
+msgstr "Montant total (HT)"
+
+#. module: account_workflow_dec
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_bank_statement_line__amount_untaxed_signed
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_move__amount_untaxed_signed
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_payment__amount_untaxed_signed
+msgid "Total Amount (excluding taxes) ±"
+msgstr "Montant total (HT) ±"
+
+#. module: account_workflow_dec
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_bank_statement_line__amount_total
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_move__amount_total
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_payment__amount_total
+#: model_terms:ir.ui.view,arch_db:account_workflow_dec.invoice_tree_view
+msgid "Total Amount (including taxes)"
+msgstr "Montant total (TTC)"
+
+#. module: account_workflow_dec
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_bank_statement_line__amount_total_signed
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_move__amount_total_signed
+#: model:ir.model.fields,field_description:account_workflow_dec.field_account_payment__amount_total_signed
+msgid "Total Amount (including taxes) ±"
+msgstr "Montant total (TTC) ±"
+
+#. module: account_workflow_dec
 #: model:ir.model.fields,field_description:account_workflow_dec.field_account_move__xid
 #: model:ir.model.fields,field_description:account_workflow_dec.field_account_move_line__xid
 msgid "XML-ID"
 msgstr "XML-ID"
+
+#~ msgid "± Amount Due (including taxes)"
+#~ msgstr "± Montant dû (TTC)"
+
+#~ msgid "± Taxes"
+#~ msgstr "± Taxes"
+
+#~ msgid "± Total Amount (excluding taxes)"
+#~ msgstr "± Montant total (HT)"
+
+#~ msgid "± Total Amount (including taxes)"
+#~ msgstr "± Montant total (TTC)"
 
 #~ msgid "Customer Reference"
 #~ msgstr "Référence client"

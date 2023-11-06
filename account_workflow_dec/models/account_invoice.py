@@ -16,6 +16,30 @@ class AccountMove(models.Model):
         readonly=False,
         states={"draft": [("readonly", False)]},
     )
+    amount_untaxed = fields.Monetary(
+        string="Total Amount (excluding taxes)",
+    )
+    amount_tax = fields.Monetary(
+        string="Taxes",
+    )
+    amount_total = fields.Monetary(
+        string="Total Amount (including taxes)",
+    )
+    amount_residual = fields.Monetary(
+        string="Amount Due (including taxes)",
+    )
+    amount_untaxed_signed = fields.Monetary(
+        string="Total Amount (excluding taxes) ±",
+    )
+    amount_tax_signed = fields.Monetary(
+        string="Taxes ±",
+    )
+    amount_total_signed = fields.Monetary(
+        string="Total Amount (including taxes) ±",
+    )
+    amount_residual_signed = fields.Monetary(
+        string="Amount Due (including taxes) ±",
+    )
 
     @api.model
     def create(self, vals):

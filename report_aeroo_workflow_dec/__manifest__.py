@@ -15,7 +15,6 @@
         "reports/sale_order.xml",
         "reports/purchase_order.xml",
         "reports/account_invoice.xml",
-        "reports/account_payment.xml",
         "reports/mrp_production.xml",
         "reports/mrp_bom.xml",
         "reports/stock_picking.xml",

@@ -9,8 +9,7 @@
         <field name="inherit_id" ref="product.product_template_only_form_view" />
         <field name="groups_id" eval="[(4, ref('purchase.group_purchase_user'))]" />
         <field name="arch" type="xml">
-            <!-- Remove useless stat buttons -->
-            <button name="action_view_po" position="replace" />
+            <data />
         </field>
     </record>
 

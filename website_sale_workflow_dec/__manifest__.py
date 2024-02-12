@@ -9,7 +9,7 @@
         "website_sale_tax_toggle",
         "website",
         "website_sale_hide_price",
-        "website_sale_product_public_code",
+        # "website_sale_product_public_code", # disable for migration
     ],
     "data": [
         "views/assets.xml",

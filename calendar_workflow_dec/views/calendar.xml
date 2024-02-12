@@ -9,8 +9,8 @@
             <xpath expr="//page[@name='page_invitations']" position="attributes">
                 <attribute name="groups" /> <!-- Remove the res.group on the group-->
             </xpath>
-            <xpath expr="//page[@name='page_invitations']" position="attributes">
-                <attribute name="page_misc" /> <!-- Remove the res.group on the group-->
+            <xpath expr="//page[@name='page_misc']" position="attributes">
+                <attribute name="groups" /> <!-- Remove the res.group on the group-->
             </xpath>
             <xpath expr="//field[@name='stop']" position="attributes">
                 <attribute name="invisible">0</attribute>
@@ -41,6 +41,7 @@
         <field name="arch" type="xml">
             <xpath expr="//calendar//field[@name='attendee_status']" position="before">
                 <field name="partner_ids" position="move" />
+                <field name="name"/>
             </xpath>
             <xpath
                 expr="//calendar//field[@name='attendee_status']"

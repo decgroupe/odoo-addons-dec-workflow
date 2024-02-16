@@ -42,8 +42,7 @@
                 <field name="sequence" groups="base.group_erp_manager"/>
             </field>
             <field name="name" position="after">
-                <field name="create_date"/>
-                <field name="tag_ids" widget="many2many_tags"/>
+                <field name="create_date" optional="show"/>
             </field>
         </field>
     </record>

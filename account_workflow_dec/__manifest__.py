@@ -5,6 +5,7 @@
     "website": "https://www.decgroupe.com",
     "depends": [
         "account",
+        "account_move_name_sequence", # OCA
     ],
     "data": [
         "views/account_invoice.xml",

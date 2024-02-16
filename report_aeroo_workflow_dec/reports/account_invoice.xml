@@ -1,21 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
-<!--
     <function model="ir.actions.report" name="unlink_action">
-        <value eval="[ref('account.account_invoices')]"/>
+        <value eval="[ref('account.account_invoices')]" />
     </function>
 
     <function model="ir.actions.report" name="unlink_action">
-        <value eval="[ref('account.account_invoices_without_payment')]"/>
+        <value eval="[ref('account.account_invoices_without_payment')]" />
     </function>
 
-     TODO: [MIG] 13.0: see `account_report_aeroo/report/account_invoice.xml`
+    <record model="ir.actions.report" id="account.account_invoices">
+        <field name="attachment_use" eval="False" />
+    </record>
+
+    <!--
+    Register our aeroo report to be automatically added to emails sent to customer
+    We cannot use `record` because no_update is set to True
+
+    <record model="mail.template" id="account.email_template_edi_invoice">
+        <field name="report_template" ref="account_report_aeroo.account_invoice_report"/>
+    </record>
+    -->
     <function model="mail.template" name="write">
-        <value model="mail.template" search="
-        [('id', '=', ref('account.email_template_edi_invoice'))]"/>
-        <value eval="{'report_template': ref('account_report_aeroo.account_invoice_report')}"/>
+        <value eval="[ref('account.email_template_edi_invoice')]" />
+        <value
+            eval="{'report_template': ref('account_report_aeroo.account_invoice_report')}"
+        />
     </function>
--->
+
+    <!--
+    Replace default `from` to use activer user
+    -->
+    <function model="mail.template" name="write">
+        <value eval="[ref('account.email_template_edi_invoice')]" />
+        <value eval="{'email_from': '${object.user_id.email_formatted |safe}'}" />
+    </function>
 
 </odoo>

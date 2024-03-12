@@ -4,7 +4,7 @@
 import re
 
 from odoo import _, api, models, fields
-from werkzeug import url_encode
+from werkzeug.urls import url_encode
 from odoo.osv import expression
 
 

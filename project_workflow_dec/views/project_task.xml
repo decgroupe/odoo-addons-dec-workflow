@@ -62,6 +62,7 @@
                 <field name="sale_order_id"/>
                 <field name="display_sale_order"/>
                 <field name="project_id"/>
+                <field name="create_uid"/>
             </xpath>
             <xpath expr="//kanban//div[hasclass('o_kanban_record_headings')]//span" position="replace">
             </xpath>
@@ -70,6 +71,9 @@
             </xpath>
             <xpath expr="//kanban//div[hasclass('o_kanban_record_headings')]/t[@t-if='record.partner_id.value']//span[2]" position="attributes">
                 <attribute name="class">text-muted small</attribute>
+            </xpath>
+            <xpath expr="//div[hasclass('o_kanban_record_top')]" position="inside">
+                <img t-att-src="kanban_image('res.users', 'image_128', record.create_uid.raw_value)" t-att-title="record.create_uid.value" t-att-alt="record.create_uid.value" width="24" height="24" class="oe_kanban_avatar"/>
             </xpath>
             <xpath expr="//div[hasclass('o_kanban_record_top')]" position="before">
                 <div name="supertop" class="o_kanban_record_supertop">

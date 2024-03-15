@@ -154,12 +154,12 @@
 
                     <div class="col-md-8">
                         <h2 itemprop="name" t-field="product.name">Product Name</h2>
-                        <div class="badge badge-dark">
+                        <!-- <div class="badge badge-dark">
                             Ref: <span
                                 itemprop="website_public_code"
                                 t-field="product.website_public_code"
                             />
-                        </div>
+                        </div> -->
                         <hr t-if="product.description_sale" />
                         <div>
                             <div class="o_not_editable">

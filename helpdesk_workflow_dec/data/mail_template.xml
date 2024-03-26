@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- Replace default template -->
+    <record model="mail.template" id="helpdesk_mgmt.created_ticket_template">
+        <field name="body_type">qweb</field>
+        <field name="body_view_id" ref="view_email_template_created_ticket_template" />
+    </record>
+
+</odoo>

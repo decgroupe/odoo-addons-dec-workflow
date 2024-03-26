@@ -4,12 +4,12 @@
     <template id="portal_workflow_dec.view_mail_template_data_portal_welcome">
         <t t-call="mail_qweb.view_email_template_notification">
             <t t-set="notify_account_changes" t-value="True" />
-            <t t-set="user" t-value="object.user_id" />
+            <t t-set="notified_user" t-value="object.user_id" />
             <t t-set="content_message">
                 <div>
                     <h1>Welcome to <t
                             t-esc="object.user_id.company_id.name"
-                        >YourCompany</t>'s Portal</h1>
+                        />'s Portal</h1>
                     <p>
                         An account has been created for you with the following login:
                         <p>

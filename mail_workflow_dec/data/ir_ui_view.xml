@@ -5,7 +5,8 @@
         <field name="inherit_id" ref="mail.message_notification_email" />
         <field name="mode">extension</field>
         <field name="arch" type="xml">
-
+            <data></data>
+<!--
             <xpath expr="//td[@t-if='has_button_access']" position="attributes">
                 <attribute
                     name="style"
@@ -34,7 +35,7 @@
                 <attribute
                     name="style"
                 >text-decoration:none; color: #414141;</attribute>
-            </xpath>
+            </xpath> -->
 
         </field>
     </record>

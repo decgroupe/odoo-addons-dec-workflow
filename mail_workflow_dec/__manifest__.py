@@ -5,7 +5,7 @@
     "website": "https://www.decgroupe.com",
     "category": "Discuss",
     "depends": [
-        "mail",
+        "mail_qweb",
     ],
     "data": [
         "data/ir_ui_view.xml",

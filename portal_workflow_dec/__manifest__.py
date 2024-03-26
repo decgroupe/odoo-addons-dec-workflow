@@ -6,8 +6,10 @@
     "summary": "Portal",
     "depends": [
         "portal",
+        "mail_workflow_dec",
     ],
     "data": [
+        "data/ir_ui_view.xml",
         "data/portal.xml",
     ],
     "installable": True,

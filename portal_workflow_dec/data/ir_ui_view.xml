@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="portal_workflow_dec.view_mail_template_data_portal_welcome">
+        <t t-call="mail_qweb.view_email_template_notification">
+            <t t-set="notify_account_changes" t-value="True" />
+            <t t-set="user" t-value="object.user_id" />
+            <t t-set="content_message">
+                <div>
+                    <h1>Welcome to <t
+                            t-esc="object.user_id.company_id.name"
+                        >YourCompany</t>'s Portal</h1>
+                    <p>
+                        An account has been created for you with the following login:
+                        <p>
+                            <strong>
+                                <t t-esc="object.user_id.login" />
+                            </strong>
+                        </p>
+                    </p>
+
+                    <p>
+                        Click on the button below to pick a password and activate your account.
+                    </p>
+                </div>
+            </t>
+            <t t-set="content_message_action">
+                <a t-att-href="object.user_id.signup_url">
+                    Activate My Account
+                </a>
+            </t>
+            <t t-set="content_message_bottom" t-if="object.wizard_id.welcome_message">
+                <p t-esc="object.wizard_id.welcome_message" />
+            </t>
+        </t>
+    </template>
+
+</odoo>

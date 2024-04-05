@@ -13,6 +13,7 @@
         "web",
     ],
     "data": [
+        "data/ir_ui_view.xml",
         "data/mail_template.xml",
         "views/sale_order.xml",
     ],

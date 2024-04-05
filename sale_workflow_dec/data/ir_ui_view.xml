@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template
+        id="sale_workflow_dec.view_email_template_edi_sale_composer_layout"
+        inherit_id="mail.mail_notification_paynow"
+        primary="True"
+    >
+        <xpath expr="//t" position="inside">
+            <t t-set="content_message_bottom">
+                Do not hesitate to contact us if you have any questions.<br />
+                (You can directly reply to this e-mail)
+            </t>
+        </xpath>
+    </template>
+
+    <template id="sale_workflow_dec.view_email_template_edi_sale">
+        <style>
+            .bold {
+                font-weight: bold;
+            }
+        </style>
+
+        <t t-if="object.state in ('draft', 'sent')">
+            <t t-set="doc_name">Quotation</t>
+        </t>
+        <t t-else="">
+            <t t-set="doc_name">Order</t>
+        </t>
+
+        <t t-set="content_message">
+            <div>
+                <p>Hello <t
+                        t-esc="object.partner_id.name or object.partner_name or ''"
+                    />,
+                </p>
+                <p>
+                    <t t-if="env.context.get('proforma')">
+                        Pro forma invoice for <t t-esc="doc_name" /> <span
+                            class="bold"
+                            t-esc="object.name"
+                        />
+                        <t t-set="state">available</t>
+                    </t>
+                    <t t-else="">
+                        Your <t t-esc="doc_name" /> <span
+                            class="bold"
+                            t-esc="object.name"
+                        />
+                        <t t-set="state">ready for review</t>
+                    </t>
+
+                    <t t-if="object.client_order_ref">
+                        (with reference: <t t-esc="object.client_order_ref or ''" />)
+                    </t>
+                    amounting in <span
+                        class="bold"
+                        t-esc="format_amount(object.amount_total, object.pricelist_id.currency_id) or ''"
+                    /> is <t t-esc="state" />.
+                </p>
+            </div>
+        </t>
+
+        <!-- If a custom layout is set, ignore our default template -->
+        <t t-if="env.context.get('custom_layout')">
+            <t t-raw="content_message" />
+        </t>
+        <t t-else="">
+
+            <t t-set="content_subject">
+                <t t-esc="email_subject" />
+            </t>
+
+            <t t-set="content_message_action">
+
+            </t>
+
+            <t t-set="content_message_bottom">
+                Do not hesitate to contact us if you have any questions.<br />
+                (You can directly reply to this e-mail)
+            </t>
+
+            <t t-set="content_message_signature">
+                <t t-if="not is_html_empty(user.signature)">
+                    <t t-raw="user.signature or ''" />
+                </t>
+            </t>
+
+            <t t-call="mail_qweb.view_email_template_notification" />
+        </t>
+    </template>
+
+</odoo>

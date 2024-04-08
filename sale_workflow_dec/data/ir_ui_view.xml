@@ -72,12 +72,6 @@
             </t>
 
             <t t-set="content_message_action">
-
-            </t>
-
-            <t t-set="content_message_bottom">
-                Do not hesitate to contact us if you have any questions.<br />
-                (You can directly reply to this e-mail)
             </t>
 
             <t t-set="content_message_signature">

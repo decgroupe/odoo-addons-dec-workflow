@@ -31,3 +31,12 @@ class SaleOrder(models.Model):
             origin=origin,
         )
         return super().copy(default)
+
+    def action_quotation_send(self):
+        view = super().action_quotation_send()
+        # replace default "mail.mail_notification_paynow" layout with an extended one
+        # with more variables. (note that this function is called for both rfq/order)
+        view["context"][
+            "custom_layout"
+        ] = "sale_workflow_dec.view_email_template_edi_sale_composer_layout"
+        return view

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record model="ir.ui.view" id="view_email_template_search">
+        <field name="name">email.template.search@mail_workflow_dec</field>
+        <field name="model">mail.template</field>
+        <field name="inherit_id" ref="mail.view_email_template_search" />
+        <field name="arch" type="xml">
+            <xpath expr="//group/filter[@name='model']" position="after">
+                <filter
+                    string="Body Type"
+                    name="groupby_body_type"
+                    domain="[]"
+                    context="{'group_by':'body_type'}"
+                />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

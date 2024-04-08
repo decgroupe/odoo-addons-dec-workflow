@@ -9,6 +9,7 @@
     ],
     "data": [
         "data/ir_ui_view.xml",
+        "views/mail_template.xml",
     ],
     "installable": True,
 }

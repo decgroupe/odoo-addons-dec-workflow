@@ -10,10 +10,11 @@
         "web",
     ],
     "data": [
+        "data/ir_ui_view.xml",
+        "data/mail_template.xml",
         "views/assets.xml",
         "views/purchase_order.xml",
         "views/purchase_order_line.xml",
-        "templates/mail.xml",
     ],
     "installable": True,
 }

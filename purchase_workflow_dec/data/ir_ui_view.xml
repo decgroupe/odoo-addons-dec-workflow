@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template
+        id="purchase_workflow_dec.view_email_template_edi_purchase_composer_layout"
+        inherit_id="mail.mail_notification_paynow"
+        primary="True"
+    >
+        <xpath expr="//t" position="inside">
+            <t t-set="content_message_bottom">
+                Do not hesitate to contact us if you have any questions.<br />
+                (You can directly reply to this e-mail)
+            </t>
+        </xpath>
+    </template>
+
+    <!-- RFQ -->
+    <template id="purchase_workflow_dec.view_email_template_edi_purchase">
+        <style>
+            .bold {
+                font-weight: bold;
+            }
+        </style>
+
+        <t t-set="content_message">
+            <div>
+                <p>Dear <t
+                        t-esc="object.partner_id.name or object.partner_name or ''"
+                    />
+                    <t t-if="object.partner_id.parent_id">
+                        (<t
+                            t-esc="object.partner_id.parent_id.name or object.partner_id.parent_id.partner_name or ''"
+                        />)
+                    </t>,
+                </p>
+                <p>
+                    Here is in attachment a request for quotation <span
+                        class="bold"
+                        t-esc="object.name"
+                    />
+                    <t t-if="object.partner_ref">
+                        (with reference: <t t-esc="object.partner_ref or ''" />)
+                    </t> from <t t-esc="object.company_id.name or ''" />.
+                </p>
+            </div>
+        </t>
+
+
+        <!-- If a custom layout is set, ignore our default template -->
+        <t t-if="env.context.get('custom_layout')">
+            <t t-raw="content_message" />
+        </t>
+        <t t-else="">
+
+            <t t-set="content_subject">
+                <t t-esc="email_subject" />
+            </t>
+
+            <t t-set="content_message_action">
+            </t>
+
+            <t t-set="content_message_signature">
+                <t t-if="not is_html_empty(user.signature)">
+                    <t t-raw="user.signature or ''" />
+                </t>
+            </t>
+
+            <t t-call="mail_qweb.view_email_template_notification" />
+        </t>
+    </template>
+
+    <!-- Order -->
+    <template id="purchase_workflow_dec.view_email_template_edi_purchase_done">
+        <style>
+            .bold {
+                font-weight: bold;
+            }
+        </style>
+
+        <t t-set="content_message">
+            <div>
+                <p>Dear <t
+                        t-esc="object.partner_id.name or object.partner_name or ''"
+                    />
+                    <t t-if="object.partner_id.parent_id">
+                        (<t
+                            t-esc="object.partner_id.parent_id.name or object.partner_id.parent_id.partner_name or ''"
+                        />)
+                    </t>,
+                </p>
+                <p>
+                    Here is in attachment a purchase order <span
+                        class="bold"
+                        t-esc="object.name"
+                    />
+                    <t t-if="object.partner_ref">
+                        (with reference: <t t-esc="object.partner_ref or ''" />)
+                    </t>
+                    amounting in <span
+                        class="bold"
+                        t-esc="format_amount(object.amount_total, object.currency_id) or ''"
+                    /> from <t t-esc="object.company_id.name or ''" />.
+                </p>
+                <p t-if="object.date_planned">
+                    The receipt is expected for <span
+                        class="bold"
+                        t-esc="format_date(object.date_planned) or ''"
+                    />.
+                    <br />
+                    Could you please acknowledge the receipt of this order?
+                </p>
+            </div>
+        </t>
+
+        <!-- If a custom layout is set, ignore our default template -->
+        <t t-if="env.context.get('custom_layout')">
+            <t t-raw="content_message" />
+        </t>
+        <t t-else="">
+
+            <t t-set="content_subject">
+                <t t-esc="email_subject" />
+            </t>
+
+            <t t-set="content_message_action">
+            </t>
+
+            <t t-set="content_message_signature">
+                <t t-if="not is_html_empty(user.signature)">
+                    <t t-raw="user.signature or ''" />
+                </t>
+            </t>
+
+            <t t-call="mail_qweb.view_email_template_notification" />
+        </t>
+    </template>
+
+</odoo>

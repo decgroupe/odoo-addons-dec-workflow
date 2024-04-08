@@ -10,9 +10,9 @@ class PurchaseOrder(models.Model):
 
     def action_rfq_send(self):
         view = super().action_rfq_send()
-        # Do not set layout to "mail.mail_notification_paynow" since we
-        # don't want that our supplier access our portal
+        # replace default "mail.mail_notification_paynow" layout with an extended one
+        # with more variables. (note that this function is called for both rfq/order)
         view["context"][
             "custom_layout"
-        ] = "purchase_workflow_dec.mail_notification_paynow_nobutton"
+        ] = "purchase_workflow_dec.view_email_template_edi_purchase_composer_layout"
         return view

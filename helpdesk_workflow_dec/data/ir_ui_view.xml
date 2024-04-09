@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
-    <template id="view_email_template_created_ticket_template">
-        <t t-call="mail_qweb.view_email_template_notification">
-            <t t-set="content_message">
-                <div>
-                    <p>Hello <t
-                            t-esc="object.partner_id.name or object.partner_name or ''"
-                        />,</p>
-                    <p>The ticket « <small
-                            t-esc="object.display_name or 'n/a'"
-                        /> » has been created.</p>
-                    <p>You can reply to this email to add information to the ticket.</p>
-                </div>
-            </t>
-            <t t-set="content_message_action">
-                <t t-if="object.partner_can_access()">
-                    <a t-attf-href="{{object.get_access_link()}}" target="_blank">
-                    View Ticket
-                    </a>
-                </t>
-            </t>
-            <!-- <t t-set="content_message_bottom">
-                __ footer __
-            </t> -->
-            <t t-set="content_message_signature">
-                <t t-if="user.signature">
-                    <t t-raw="user.signature or ''" />
-                </t>
-            </t>
-        </t>
+    <template id="helpdesk_workflow_dec.view_email_template_created_ticket_template">
+        <p t-if="object.partner_id.name or object.partner_name">Hello <t
+                t-esc="object.partner_id.name or object.partner_name or ''"
+            />,</p>
+        <p>The ticket « <small
+                t-esc="object.display_name or 'n/a'"
+            /> » has been created.</p>
+        <p
+            class="content_message_bottom"
+        >You can reply to this email to add information to the ticket.</p>
+    </template>
+
+    <template id="helpdesk_workflow_dec.view_email_template_changed_stage_template">
+        <p t-if="object.partner_id.name or object.partner_name">Hello <t
+                t-esc="object.partner_id.name or object.partner_name or ''"
+            />,</p>
+        <p>The ticket « <small
+                t-esc="object.display_name or 'n/a'"
+            /> » stage has changed to <b t-esc="object.stage_id.name" />.</p>
+        <p
+            class="content_message_bottom"
+        >You can still reply to this email to add information to the ticket.</p>
+    </template>
+
+    <template id="helpdesk_workflow_dec.view_email_template_closed_ticket_template">
+        <p t-if="object.partner_id.name or object.partner_name">Hello <t
+                t-esc="object.partner_id.name or object.partner_name or ''"
+            />,</p>
+        <p>The ticket « <small t-esc="object.display_name or 'n/a'" /> » is now <b
+            >closed.</b></p>
+        <p
+            class="content_message_bottom"
+        >If your issue still happens or reappears, or if you think this ticket has been wrongly closed, please reply to this email to request that the ticket be reopened.</p>
     </template>
 
 </odoo>

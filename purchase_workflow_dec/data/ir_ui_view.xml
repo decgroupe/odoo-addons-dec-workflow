@@ -24,9 +24,7 @@
 
         <t t-set="content_message">
             <div>
-                <p>Dear <t
-                        t-esc="object.partner_id.name or object.partner_name or ''"
-                    />
+                <p>Dear <t t-esc="object.partner_id.name or ''" />
                     <t t-if="object.partner_id.parent_id">
                         (<t
                             t-esc="object.partner_id.parent_id.name or object.partner_id.parent_id.partner_name or ''"
@@ -79,9 +77,7 @@
 
         <t t-set="content_message">
             <div>
-                <p>Dear <t
-                        t-esc="object.partner_id.name or object.partner_name or ''"
-                    />
+                <p>Dear <t t-esc="object.partner_id.name or ''" />
                     <t t-if="object.partner_id.parent_id">
                         (<t
                             t-esc="object.partner_id.parent_id.name or object.partner_id.parent_id.partner_name or ''"

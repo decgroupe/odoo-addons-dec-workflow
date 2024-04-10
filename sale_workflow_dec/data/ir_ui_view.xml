@@ -30,8 +30,8 @@
 
         <t t-set="content_message">
             <div>
-                <p>Hello <t
-                        t-esc="object.partner_id.name or object.partner_name or ''"
+                <p t-if="object.partner_id.name">Hello <t
+                        t-esc="object.partner_id.name or ''"
                     />,
                 </p>
                 <p>

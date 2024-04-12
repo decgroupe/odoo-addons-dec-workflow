@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template
+        id="software_workflow_dec.mail_notification_layout"
+        inherit_id="software_license_pass.mail_notification_layout"
+    >
+        <xpath expr="//div[@name='extra']" position="inside">
+            <h1>e-space DEC</h1>
+            <p class="figure alert alert-info">
+                The simplified use of this application requires access to the DEC's portal
+                in the form of an account (e-mail and password). See below.
+            </p>
+            <p>
+                All your licences, subscriptions and applications are managed via the
+                new "e-space DEC" launcher. You can find the software and documentation
+                at this address :
+            </p>
+            <a
+                class="action-link"
+                href="https://public-support.decgroupe.com/launcher-v2/launcher_classic.exe"
+            >Download e-space DEC</a>
+            <p>
+                The e-space DEC software user guide is freely available at :
+            </p>
+            <a
+                class="action-link"
+                href="https://vr.docs.decgroupe.com/applications/launcher-userguide"
+            >Download guide</a>
+
+            <h1>DEC's Portal</h1>
+            <p class="figure alert alert-info">
+                If you did not previously have access to the portal,
+                then you should have received a second e-mail,
+                entitled "Your access to the DEC portal",
+                alongside the e-mail accompanying this document,
+                which asks you to create your password.
+            </p>
+            <p>TODO: Add image of the new welcome mail</p>
+            <p>
+                Our portal allows you to view your orders and invoices, as well as
+                manage your licences and subscriptions or those of your establishment.
+                You can also create a support ticket for an after-sales service request.
+            </p>
+            <p>
+                The link ❶ allows you to choose your password, while the link ❷ is a
+                shortcut to log in to your account.
+            </p>
+            <p>
+                To delegate the management of your licences and subscriptions, you can
+                send your employees the following link, which will enable them to
+                create an individual account linked to your organisation via a form
+                (child of the <t
+                    t-esc="record.partner_contact_id and record.partner_contact_id.name"
+                /> account).
+                <p>
+                    <a
+                        t-att-href="record and record.partner_contact_id and record.partner_contact_id.get_delegate_signup_url()"
+                    >
+                        <t
+                            t-esc="record and record.partner_contact_id and record.partner_contact_id.get_delegate_signup_url()"
+                        />
+                    </a>
+                </p>
+                <p class="figure alert alert-danger">
+                    Please note that you must not share this link with the public!
+                </p>
+            </p>
+            <h1>Application documentation</h1>
+            <p>
+                You can find the various documents at the following addresses:
+            </p>
+            <p>
+                TODO: Generate list of resources fron linked apps
+            </p>
+            <h1>General information</h1>
+            <p class="figure alert alert-success">
+                If your system computer hasn't been turned on for a long time, don't
+                forget to update Windows and Oculus/Vive depending on your hardware.
+            </p>
+        </xpath>
+    </template>
+
+    <template
+        id="software_workflow_dec.view_email_template_pass_send"
+        inherit_id="software_license_pass.view_email_template_pass_send"
+    >
+
+        <xpath expr="//p[@name='contact']" position="inside">
+            <t
+                t-if="object.partner_contact_id.unfenced_commercial_partner_id and object.partner_contact_id.unfenced_commercial_partner_id != object.partner_contact_id"
+            >
+                (<t
+                    t-esc="object.partner_contact_id.unfenced_commercial_partner_id.name"
+                />)
+            </t>
+        </xpath>
+
+    </template>
+
+</odoo>

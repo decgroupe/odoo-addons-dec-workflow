@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="software_license_pass.email_template_pass_send" model="mail.template">
+        <field
+            name="subject"
+        >e-space ${object.company_id.name} ${ctx['model_description']} (Ref ${object.name or 'n/a' })</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="calendar_workflow_dec.view_calendar_template_meeting_base">
+        <t
+            t-set="colors"
+            t-value="{'needsAction': 'grey', 'accepted': 'green', 'tentative': '#FFFF00', 'declined': 'red'}"
+        />
+        <t
+            t-set="is_online"
+            t-value="'appointment_type_id' in object.event_id and object.event_id.appointment_type_id"
+        />
+        <t t-set="customer" t-value=" object.event_id.find_partner_customer()" />
+        <t
+            t-set="target_responsible"
+            t-value="object.partner_id == object.event_id.partner_id"
+        />
+        <t t-set="target_customer" t-value="object.partner_id == customer" />
+        <t
+            t-set="recurrent"
+            t-value="object.recurrence_id and not ctx.get('calendar_template_ignore_recurrence')"
+        />
+    </template>
+
+    <template id="calendar_workflow_dec.view_calendar_template_meeting_layout">
+
+        <t t-set="content_message_action">
+            <t t-if="not is_online or object.state != 'accepted'">
+                <a
+                    t-attf-href="/calendar/{{ 'recurrence' if recurrent else 'meeting' }}/accept?token={{ object.access_token }}&amp;id={{ object.event_id.id }}"
+                >
+                Accept</a>
+                <a
+                    t-attf-href="/calendar/{{ 'recurrence' if recurrent else 'meeting' }}/decline?token={{ object.access_token }}&amp;id={{ object.event_id.id }}"
+                >
+                Decline</a>
+            </t>
+            <a
+                t-attf-href="/calendar/meeting/view?token={{ object.access_token }}&amp;id={{ object.event_id.id }}"
+            >
+            <t
+                    t-esc="'Reschedule' if is_online and target_customer else 'View'"
+                >View</t>
+            </a>
+        </t>
+
+        <t t-set="content_message_signature">
+            <t t-if="not is_html_empty(object.event_id.user_id.signature)">
+                <t t-raw="object.event_id.user_id.signature or ''" />
+            </t>
+        </t>
+
+        <t t-call="mail_qweb.view_email_template_part_content_message" />
+
+    </template>
+
+
+    <template id="calendar_workflow_dec.view_calendar_template_meeting_part_hello">
+        <p>
+            Hello <t t-esc="object.common_name or ''" />,
+        </p>
+    </template>
+
+    <template
+        id="calendar_workflow_dec.view_calendar_template_meeting_part_strip_calendar"
+    >
+        <style>
+            .calendarbox {
+                width: 130px;
+            }
+            .calendarbox_dayname {
+                border-start-start-radius: 3px;
+                border-start-end-radius: 3px;
+                border-collapse: separate;
+                font-size: 12px;
+                font-weight: bold;
+                text-align: center;
+                min-height: 18px;
+                color: #ffffff;
+                background-color: #414141;
+                border: 1px solid #414141;
+            }
+            .calendarbox_daynumber {
+                line-height: 48px;
+                font-size: 48px;
+                font-weight: bold;
+                text-align: center;
+                min-height: auto;
+                color: #414141;
+                background-color: #F8F8F8;
+                border: 1px solid #414141;
+            }
+            .calendarbox_monthyear {
+                font-size: 12px;
+                text-align: center;
+                font-weight: bold;
+                color: #ffffff;
+                background-color: #414141;
+            }
+            .calendarbox_hoursminutes {
+                border-end-start-radius: 3px;
+                border-end-end-radius: 3px;
+                border-collapse: separate;
+                font-size: 12px;
+                font-weight: bold;
+                text-align: center;
+                color: #414141;
+                border: 1px solid #414141;
+            }
+            .calendarbox_timezone {
+                font-size: 10px;
+                font-weight: normal;
+            }
+        </style>
+        <div class="calendarbox">
+            <div class="calendarbox_dayname">
+                <t
+                    t-esc='format_datetime(dt=object.event_id.start, tz=object.mail_tz if not object.event_id.allday else None, dt_format="EEEE", lang_code=object.env.lang) or ""'
+                />
+            </div>
+            <div class="calendarbox_daynumber">
+                <t t-esc="str(object.event_id.start.day) or ''" />
+            </div>
+            <div class="calendarbox_monthyear">
+                <t
+                    t-esc='format_datetime(dt=object.event_id.start, tz=object.mail_tz if not object.event_id.allday else None, dt_format="MMMM y", lang_code=object.env.lang) or ""'
+                />
+            </div>
+            <div class="calendarbox_hoursminutes">
+                <t t-if="not object.event_id.allday">
+                    <div>
+                        <t
+                            t-esc='format_time(time=object.event_id.start, tz=object.mail_tz, time_format="short", lang_code=object.env.lang) or ""'
+                        />
+                    </div>
+                    <t t-if="object.mail_tz">
+                        <div class="calendarbox_timezone">
+                            (<t t-esc="object.mail_tz or ''" />)
+                        </div>
+                    </t>
+                </t>
+            </div>
+        </div>
+    </template>
+
+    <template id="calendar_workflow_dec.view_calendar_template_meeting_part_details">
+        <style>
+            .details-table {
+                width:100%;
+                align:center;
+            }
+            .calendar-cell {
+                width:130px;
+                min-width:130px;
+            }
+            .separator-cell {
+                width:5px;
+            }
+            .details-cell {
+                padding-top:5px;
+            }
+            .details-list {
+                margin-top: 0px;
+            }
+            .attendee-state {
+                display:inline-block;
+                border-radius:50%;
+                width:10px;
+                height:10px;
+            }
+            .attendee-name {
+                margin-left:5px;
+            }
+        </style>
+        <p><strong>Details of the event</strong></p>
+        <table border="0" cellpadding="0" cellspacing="0" class="details-table">
+            <tr>
+                <td class="calendar-cell">
+                    <t
+                        t-call="calendar_workflow_dec.view_calendar_template_meeting_part_strip_calendar"
+                    />
+                </td>
+                <td class="details-cell">
+                    <ul class="details-list">
+                        <t t-if="is_online">
+                            <li>Appointment Type: <t
+                                    t-esc="object.event_id.appointment_type_id.name or ''"
+                                /></li>
+                        </t>
+                        <t t-if="object.event_id.location">
+                            <li>Location: <t t-esc="object.event_id.location or ''" />
+                                (<a
+                                    target="_blank"
+                                    t-attf-href="http://maps.google.com/maps?oi=map&amp;q={{ object.event_id.location }}"
+                                >View Map</a>)
+                            </li>
+                        </t>
+                        <t t-if="recurrent">
+                            <li>When: <t t-esc="object.recurrence_id.name or ''" /></li>
+                        </t>
+                        <t
+                            t-if="not object.event_id.allday and object.event_id.duration"
+                        >
+                            <li>Duration: <t
+                                    t-esc="('%dH%02d' % (object.event_id.duration,round(object.event_id.duration*60)%60)) or ''"
+                                /></li>
+                        </t>
+                        <li>Attendees
+                        <ul>
+                            <li
+                                    t-foreach="object.event_id.attendee_ids"
+                                    t-as="attendee"
+                                >
+                                <div
+                                        class="attendee-state"
+                                        t-attf-style=" background: {{ colors.get(attendee.state) or 'white' }};"
+                                    > </div>
+                                <t t-if="attendee.common_name != object.common_name">
+                                    <span
+                                            class="attendee-name"
+                                            t-esc="attendee.common_name or ''"
+                                        />
+                                </t>
+                                <t t-else="">
+                                    <span class="attendee-name">You</span>
+                                </t>
+                            </li>
+                        </ul></li>
+                        <li
+                            t-if="is_online and object.event_id.appointment_type_id.resource_manage_capacity"
+                        >
+                            For: <t
+                                t-esc="object.event_id.resource_total_capacity_reserved"
+                            /> people
+                        </li>
+                        <li
+                            t-if="is_online and object.event_id.appointment_type_id.assign_method != 'time_auto_assign'"
+                        >
+                            Resources
+                            <ul>
+                                <li
+                                    t-foreach="object.event_id.appointment_resource_ids"
+                                    t-as="resource"
+                                >
+                                    <span
+                                        class="attendee-name"
+                                        t-esc="resource.name or ''"
+                                    />
+                                </li>
+                            </ul>
+                        </li>
+                        <t t-if="not is_html_empty(object.event_id.description)">
+                            <li>Description of the event:
+                            <t t-esc="object.event_id.description" /></li>
+                        </t>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+    </template>
+
+    <template
+        id="calendar_workflow_dec.view_calendar_template_meeting_part_message_invitation"
+        inherit_id="calendar_workflow_dec.view_calendar_template_meeting_base"
+        primary="True"
+    >
+        <xpath expr="//t" position="inside">
+            <p>
+                <t t-if="is_online and target_customer">
+                    Your appointment <strong
+                        t-esc="object.event_id.appointment_type_id.name or ''"
+                    /> <t
+                        t-if="object.event_id.appointment_type_id.category != 'custom'"
+                    > with <t
+                            t-esc="object.event_id.user_id.name or ''"
+                        /></t> has been booked.
+                    <t
+                        t-if="is_online and object.state != 'accepted' and object.event_id.appointment_type_id.resource_manual_confirmation"
+                    >
+                        You will receive a mail of confirmation with more details when your appointment will be confirmed.
+                    </t>
+                </t>
+                <t t-elif="is_online and target_responsible">
+                    <t t-if="customer">
+                        <t
+                            t-esc="customer.name or ''"
+                        /> scheduled the following appointment <strong
+                            t-esc="object.event_id.appointment_type_id.name or ''"
+                        /> with you.
+                    </t>
+                    <t t-else="">
+                        Your appointment <strong
+                            t-esc="object.event_id.appointment_type_id.name or ''"
+                        /> has been booked.
+                    </t>
+                </t>
+                <t t-elif="not target_responsible">
+                    <t
+                        t-esc="object.event_id.user_id.partner_id.name or ''"
+                    /> invited you for the <strong
+                        t-esc="object.event_id.name or ''"
+                    /> meeting.
+                </t>
+                <t t-else="">
+                    Your meeting <strong
+                        t-esc="object.event_id.name or ''"
+                    /> has been booked.
+                </t>
+            </p>
+            <t
+                t-call="calendar_workflow_dec.view_calendar_template_meeting_part_details"
+            />
+        </xpath>
+    </template>
+
+    <template id="calendar_workflow_dec.view_calendar_template_meeting_invitation">
+        <t t-call="calendar_workflow_dec.view_calendar_template_meeting_part_hello" />
+        <t t-set="content_message">
+            <t
+                t-call="calendar_workflow_dec.view_calendar_template_meeting_part_message_invitation"
+            />
+        </t>
+        <t t-call="calendar_workflow_dec.view_calendar_template_meeting_layout" />
+    </template>
+
+    <template
+        id="calendar_workflow_dec.view_calendar_template_meeting_part_message_changedate"
+        inherit_id="calendar_workflow_dec.view_calendar_template_meeting_base"
+        primary="True"
+    >
+        <xpath expr="//t" position="inside">
+            <p>
+                <t t-if="is_online and target_responsible">
+                    <t t-if="customer">
+                        The date of your appointment with <t
+                            t-esc="customer.name or ''"
+                        /> has been updated.
+                    </t>
+                    <t t-else="">
+                        Your appointment has been updated.
+                    </t>
+                    The appointment <strong
+                        t-esc="object.event_id.appointment_type_id.name or ''"
+                    /> is now scheduled for
+                    <t
+                        t-esc="object.event_id.get_display_time_tz(tz=object.partner_id.tz) or ''"
+                    />
+                </t>
+                <t t-elif="is_online and target_customer">
+                    The date of your appointment with <t
+                        t-esc="object.event_id.user_id.partner_id.name or ''"
+                    /> has been updated.
+                    The appointment <strong
+                        t-esc="object.event_id.appointment_type_id.name or ''"
+                    /> is now scheduled for
+                    <t
+                        t-esc="object.event_id.get_display_time_tz(tz=object.partner_id.tz) or ''"
+                    />.
+                </t>
+                <t t-else="">
+                    The date of the meeting has been updated.
+                    The meeting <strong
+                        t-esc="object.event_id.name or ''"
+                    /> owned by <t
+                        t-esc="object.event_id.user_id.partner_id.name or ''"
+                    /> is now scheduled for
+                    <t
+                        t-esc="object.event_id.get_display_time_tz(tz=object.partner_id.tz) or ''"
+                    />.
+                </t>
+            </p>
+            <t
+                t-call="calendar_workflow_dec.view_calendar_template_meeting_part_details"
+            />
+        </xpath>
+    </template>
+
+    <template id="calendar_workflow_dec.view_calendar_template_meeting_changedate">
+        <t t-call="calendar_workflow_dec.view_calendar_template_meeting_part_hello" />
+        <t t-set="content_message">
+            <t
+                t-call="calendar_workflow_dec.view_calendar_template_meeting_part_message_changedate"
+            />
+        </t>
+        <t t-call="calendar_workflow_dec.view_calendar_template_meeting_layout" />
+    </template>
+
+    <template
+        id="calendar_workflow_dec.view_calendar_template_meeting_part_message_reminder"
+        inherit_id="calendar_workflow_dec.view_calendar_template_meeting_base"
+        primary="True"
+    >
+        <xpath expr="//t" position="inside">
+            <p>
+                This is a reminder for the below event:
+            </p>
+            <t
+                t-call="calendar_workflow_dec.view_calendar_template_meeting_part_details"
+            />
+        </xpath>
+    </template>
+
+    <template id="calendar_workflow_dec.view_calendar_template_meeting_reminder">
+        <t t-call="calendar_workflow_dec.view_calendar_template_meeting_part_hello" />
+        <t t-set="content_message">
+            <t
+                t-call="calendar_workflow_dec.view_calendar_template_meeting_part_message_reminder"
+            />
+        </t>
+        <t t-call="calendar_workflow_dec.view_calendar_template_meeting_layout" />
+    </template>
+
+</odoo>

@@ -5,8 +5,11 @@
     "website": "https://www.decgroupe.com",
     "depends": [
         "calendar",
+        "mail_qweb",
     ],
     "data": [
+        "data/ir_ui_view.xml",
+        "data/mail_template.xml",
         "views/assets.xml",
         "views/calendar.xml",
     ],

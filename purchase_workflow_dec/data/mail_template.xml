@@ -3,14 +3,12 @@
 
     <!-- Quotation -->
     <record id="purchase.email_template_edi_purchase" model="mail.template">
-        <field name="subject">${object.company_id.name} RFQ (Ref ${object.name or 'n/a' })</field>
         <field name="body_type">qweb</field>
         <field name="body_view_id" ref="view_email_template_edi_purchase" />
     </record>
 
     <!-- Order -->
     <record id="purchase.email_template_edi_purchase_done" model="mail.template">
-        <field name="subject">${object.company_id.name} Order (Ref ${object.name or 'n/a' })</field>
         <field name="body_type">qweb</field>
         <field name="body_view_id" ref="view_email_template_edi_purchase_done" />
     </record>

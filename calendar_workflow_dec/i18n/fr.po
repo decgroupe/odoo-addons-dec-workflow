@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0\n"
+"Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-24 13:04+0000\n"
-"PO-Revision-Date: 2022-03-24 14:04+0100\n"
+"POT-Creation-Date: 2024-04-17 12:51+0000\n"
+"PO-Revision-Date: 2024-04-17 14:56+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -18,9 +18,80 @@ msgstr ""
 "X-Generator: Poedit 2.4.3\n"
 
 #. module: calendar_workflow_dec
+#: code:addons/calendar_workflow_dec/__init__.py:0
+#, python-format
+msgid ""
+"${'Invitation' if object.state != 'accepted' else 'Meeting'} reminder: "
+"${object.event_id.name}"
+msgstr ""
+"${'Invitation' if object.state != 'accepted' else 'Réunion'} rappel: "
+"${object.event_id.name}"
+
+#. module: calendar_workflow_dec
+#: code:addons/calendar_workflow_dec/__init__.py:0
+#, python-format
+msgid ""
+"${'Invitation' if object.state != 'accepted' else 'Meeting'} updated: "
+"${object.event_id.name}"
+msgstr ""
+"${'Invitation' if object.state != 'accepted' else 'Réunion'} mise à jour: "
+"${object.event_id.name}"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_details
+msgid "<span class=\"attendee-name\">You</span>"
+msgstr "<span class=\"attendee-name\">Vous</span>"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_details
+msgid "<strong>Details of the event</strong>"
+msgstr "<strong>Détails de l'événement</strong>"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_layout
+msgid "Accept"
+msgstr "Accepter"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_details
+msgid "Appointment Type:"
+msgstr "Type de rendez-vous:"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_details
+msgid "Attendees"
+msgstr "Participants"
+
+#. module: calendar_workflow_dec
+#: model:ir.model,name:calendar_workflow_dec.model_calendar_attendee
+msgid "Calendar Attendee Information"
+msgstr "Informations des participants au calendrier"
+
+#. module: calendar_workflow_dec
+#: model:ir.model,name:calendar_workflow_dec.model_calendar_event
+msgid "Calendar Event"
+msgstr "Évènement du calendrier"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_layout
+msgid "Decline"
+msgstr "Refuser"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_details
+msgid "Description of the event:"
+msgstr "Description de l'événement :"
+
+#. module: calendar_workflow_dec
+#: model:ir.model.fields,field_description:calendar_workflow_dec.field_calendar_attendee__display_name
 #: model:ir.model.fields,field_description:calendar_workflow_dec.field_calendar_event__display_name
 msgid "Display Name"
 msgstr "Nom affiché"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_details
+msgid "Duration:"
+msgstr "Durée :"
 
 #. module: calendar_workflow_dec
 #: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.calendar_event_form_view
@@ -28,16 +99,181 @@ msgid "Ending at"
 msgstr "Heure de fin"
 
 #. module: calendar_workflow_dec
-#: model:ir.model,name:calendar_workflow_dec.model_calendar_event
-msgid "Event"
-msgstr "Évènement"
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_details
+msgid "For:"
+msgstr "Pour :"
 
 #. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_hello
+msgid "Hello"
+msgstr "Bonjour"
+
+#. module: calendar_workflow_dec
+#: model:ir.model.fields,field_description:calendar_workflow_dec.field_calendar_attendee__id
 #: model:ir.model.fields,field_description:calendar_workflow_dec.field_calendar_event__id
 msgid "ID"
 msgstr "ID"
 
 #. module: calendar_workflow_dec
+#: code:addons/calendar_workflow_dec/__init__.py:0
+#, python-format
+msgid "Invitation: ${object.event_id.name}"
+msgstr "Invitation: ${object.event_id.name}"
+
+#. module: calendar_workflow_dec
+#: model:ir.model.fields,field_description:calendar_workflow_dec.field_calendar_attendee____last_update
 #: model:ir.model.fields,field_description:calendar_workflow_dec.field_calendar_event____last_update
 msgid "Last Modified on"
 msgstr "Dernière modification le"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_details
+msgid "Location:"
+msgstr "Lieu :"
+
+#. module: calendar_workflow_dec
+#: model:ir.model.fields,field_description:calendar_workflow_dec.field_calendar_attendee__mail_tz
+msgid "Mail Tz"
+msgstr "Fuseau horaire"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_details
+msgid "Resources"
+msgstr "Ressources"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_message_changedate
+msgid "The appointment"
+msgstr "Le rendez-vous"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_message_changedate
+msgid ""
+"The date of the meeting has been updated.\n"
+"                    The meeting"
+msgstr ""
+"La date de la réunion a été mise à jour.\n"
+"                    La réunion"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_message_changedate
+msgid "The date of your appointment with"
+msgstr "La date de votre rendez-vous avec"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_message_reminder
+msgid "This is a reminder for the below event:"
+msgstr "Ceci est un rappel de l'événement suivant :"
+
+#. module: calendar_workflow_dec
+#: model:ir.model.fields,help:calendar_workflow_dec.field_calendar_attendee__mail_tz
+msgid "Timezone used for displaying time in the mail template"
+msgstr ""
+"Fuseau horaire utilisé pour afficher l'heure dans le modèle de courrier"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_layout
+msgid "View"
+msgstr "Voir"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_details
+msgid "View Map"
+msgstr "Voir la carte"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_details
+msgid "When:"
+msgstr "Quand :"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_message_invitation
+msgid ""
+"You will receive a mail of confirmation with more details when your "
+"appointment will be confirmed."
+msgstr ""
+"Vous recevrez un courrier de confirmation avec plus de détails lorsque "
+"votre rendez-vous sera confirmé."
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_message_invitation
+msgid "Your appointment"
+msgstr "Votre rendez-vous"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_message_changedate
+msgid "Your appointment has been updated."
+msgstr "Votre rendez-vous a été mis à jour."
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_message_invitation
+msgid "Your meeting"
+msgstr "Votre réunion"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_message_invitation
+msgid "has been booked."
+msgstr "a été réservé(e)."
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_message_changedate
+msgid "has been updated."
+msgstr "a été mis(e) à jour."
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_message_changedate
+msgid ""
+"has been updated.\n"
+"                    The appointment"
+msgstr ""
+"a été mis à jour.\n"
+"                    Le rendez-vous"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_message_invitation
+msgid "invited you for the"
+msgstr "vous a invité pour le"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_message_changedate
+msgid "is now scheduled for"
+msgstr "est désormais prévue pour"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_message_invitation
+msgid "meeting."
+msgstr "réunion."
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_message_changedate
+msgid "owned by"
+msgstr "appartenant à"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_details
+msgid "people"
+msgstr "personnes"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_message_invitation
+msgid "scheduled the following appointment"
+msgstr "a fixé le rendez-vous suivant"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_message_invitation
+msgid "with"
+msgstr "avec"
+
+#. module: calendar_workflow_dec
+#: model_terms:ir.ui.view,arch_db:calendar_workflow_dec.view_calendar_template_meeting_part_message_invitation
+msgid "with you."
+msgstr "avec vous."
+
+#~ msgid "ID of the record defined in xml file"
+#~ msgstr "ID de l'enregistrement défini dans le fichier xml"
+
+#~ msgid "XML-ID"
+#~ msgstr "XML-ID"
+
+#~ msgid "Event"
+#~ msgstr "Évènement"

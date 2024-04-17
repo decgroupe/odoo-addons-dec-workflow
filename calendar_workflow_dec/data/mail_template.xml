@@ -3,16 +3,12 @@
 
     <!-- Replace default template -->
     <record model="mail.template" id="calendar.calendar_template_meeting_invitation">
-        <field name="subject">Invitation: ${object.event_id.name}</field>
         <field name="body_type">qweb</field>
         <field name="body_view_id" ref="view_calendar_template_meeting_invitation" />
     </record>
 
     <!-- Replace default template -->
     <record model="mail.template" id="calendar.calendar_template_meeting_changedate">
-        <field
-            name="subject"
-        >${'Invitation' if object.state != 'accepted' else 'Meeting'} updated: ${object.event_id.name}</field>
         <field name="body_type">qweb</field>
         <field name="body_view_id" ref="view_calendar_template_meeting_changedate" />
     </record>
@@ -20,9 +16,6 @@
 
     <!-- Replace default template -->
     <record model="mail.template" id="calendar.calendar_template_meeting_reminder">
-        <field
-            name="subject"
-        >${'Invitation' if object.state != 'accepted' else 'Meeting'} reminder: ${object.event_id.name}</field>
         <field name="body_type">qweb</field>
         <field name="body_view_id" ref="view_calendar_template_meeting_reminder" />
     </record>

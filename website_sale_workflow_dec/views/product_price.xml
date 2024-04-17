@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
-    <template id="product_price" inherit_id="website_sale.product_price">
+    <template
+        id="website_sale_workflow_dec.product_price"
+        inherit_id="website_sale.product_price"
+    >
         <xpath expr="//div[@itemprop='offers']" position="replace">
             <div
                 itemprop="offers"

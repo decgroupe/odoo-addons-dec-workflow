@@ -2,7 +2,7 @@
 <odoo>
 
     <template
-        id="shop_product_carousel"
+        id="website_sale_workflow_dec.shop_product_carousel"
         inherit_id="website_sale.shop_product_carousel"
         name="Shop Product Carousel"
     >

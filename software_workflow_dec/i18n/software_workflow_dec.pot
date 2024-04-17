@@ -1,0 +1,140 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* software_workflow_dec
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-17 12:51+0000\n"
+"PO-Revision-Date: 2024-04-17 12:51+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: software_workflow_dec
+#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
+msgid ""
+"All your licences, subscriptions and applications are managed via the\n"
+"                new \"e-space DEC\" launcher. You can find the software and documentation\n"
+"                at this address :"
+msgstr ""
+
+#. module: software_workflow_dec
+#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
+msgid "Application documentation"
+msgstr ""
+
+#. module: software_workflow_dec
+#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
+msgid "DEC's Portal"
+msgstr ""
+
+#. module: software_workflow_dec
+#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
+msgid "Download e-space DEC"
+msgstr ""
+
+#. module: software_workflow_dec
+#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
+msgid "Download guide"
+msgstr ""
+
+#. module: software_workflow_dec
+#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
+msgid "General information"
+msgstr ""
+
+#. module: software_workflow_dec
+#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
+msgid ""
+"If you did not previously have access to the portal,\n"
+"                then you should have received a second e-mail,\n"
+"                entitled \"Your access to the DEC portal\",\n"
+"                alongside the e-mail accompanying this document,\n"
+"                which asks you to create your password."
+msgstr ""
+
+#. module: software_workflow_dec
+#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
+msgid ""
+"If your system computer hasn't been turned on for a long time, don't\n"
+"                forget to update Windows and Oculus/Vive depending on your hardware."
+msgstr ""
+
+#. module: software_workflow_dec
+#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
+msgid ""
+"Our portal allows you to view your orders and invoices, as well as\n"
+"                manage your licences and subscriptions or those of your establishment.\n"
+"                You can also create a support ticket for an after-sales service request."
+msgstr ""
+
+#. module: software_workflow_dec
+#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
+msgid "Please note that you must not share this link with the public!"
+msgstr ""
+
+#. module: software_workflow_dec
+#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
+msgid "TODO: Add image of the new welcome mail"
+msgstr ""
+
+#. module: software_workflow_dec
+#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
+msgid "TODO: Generate list of resources fron linked apps"
+msgstr ""
+
+#. module: software_workflow_dec
+#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
+msgid "The e-space DEC software user guide is freely available at :"
+msgstr ""
+
+#. module: software_workflow_dec
+#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
+msgid ""
+"The link ❶ allows you to choose your password, while the link ❷ is a\n"
+"                shortcut to log in to your account."
+msgstr ""
+
+#. module: software_workflow_dec
+#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
+msgid ""
+"The simplified use of this application requires access to the DEC's portal\n"
+"                in the form of an account (e-mail and password). See below."
+msgstr ""
+
+#. module: software_workflow_dec
+#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
+msgid ""
+"To delegate the management of your licences and subscriptions, you can\n"
+"                send your employees the following link, which will enable them to\n"
+"                create an individual account linked to your organisation via a form\n"
+"                (child of the"
+msgstr ""
+
+#. module: software_workflow_dec
+#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
+msgid "You can find the various documents at the following addresses:"
+msgstr ""
+
+#. module: software_workflow_dec
+#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
+msgid "account)."
+msgstr ""
+
+#. module: software_workflow_dec
+#: code:addons/software_workflow_dec/__init__.py:0
+#, python-format
+msgid ""
+"e-space ${object.company_id.name} ${ctx['model_description']} (Ref "
+"${object.name or 'n/a' })"
+msgstr ""
+
+#. module: software_workflow_dec
+#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
+msgid "e-space DEC"
+msgstr ""

@@ -9,7 +9,8 @@
     ],
     "data": [
         "data/ir_ui_view.xml",
-        "data/mail_template.xml",
     ],
     "installable": True,
+    "force_post_init_hook": True,
+    "post_init_hook": "post_init_hook",
 }

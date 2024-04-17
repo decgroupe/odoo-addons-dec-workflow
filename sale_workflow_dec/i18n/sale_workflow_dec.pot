@@ -6,14 +6,28 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-06 08:31+0000\n"
-"PO-Revision-Date: 2023-11-06 08:31+0000\n"
+"POT-Creation-Date: 2024-04-17 12:51+0000\n"
+"PO-Revision-Date: 2024-04-17 12:51+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: sale_workflow_dec
+#: code:addons/sale_workflow_dec/__init__.py:0
+#, python-format
+msgid ""
+"${object.company_id.name} ${object.state in ('draft', 'sent') and "
+"(ctx.get('proforma') and 'Proforma' or 'Quotation') or 'Order'} "
+"${object.name} (Ref ${object.client_order_ref or 'n/a' })"
+msgstr ""
+
+#. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_email_template_edi_sale
+msgid "(with reference:"
+msgstr ""
 
 #. module: sale_workflow_dec
 #: model_terms:ir.ui.view,arch_db:sale_workflow_dec.sale_order_form_view
@@ -32,15 +46,21 @@ msgid "Display Name"
 msgstr ""
 
 #. module: sale_workflow_dec
-#: model:ir.model.fields,field_description:sale_workflow_dec.field_product_product__id
-#: model:ir.model.fields,field_description:sale_workflow_dec.field_sale_order__id
-msgid "ID"
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_email_template_edi_sale_composer_layout
+msgid ""
+"Do not hesitate to contact us if you have any questions.<br/>\n"
+"                (You can directly reply to this e-mail)"
 msgstr ""
 
 #. module: sale_workflow_dec
-#: model:ir.model.fields,help:sale_workflow_dec.field_product_product__xid
-#: model:ir.model.fields,help:sale_workflow_dec.field_sale_order__xid
-msgid "ID of the record defined in xml file"
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_email_template_edi_sale
+msgid "Hello"
+msgstr ""
+
+#. module: sale_workflow_dec
+#: model:ir.model.fields,field_description:sale_workflow_dec.field_product_product__id
+#: model:ir.model.fields,field_description:sale_workflow_dec.field_sale_order__id
+msgid "ID"
 msgstr ""
 
 #. module: sale_workflow_dec
@@ -55,8 +75,23 @@ msgid "Margin (excluding taxes)"
 msgstr ""
 
 #. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_email_template_edi_sale
+msgid "Order"
+msgstr ""
+
+#. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_email_template_edi_sale
+msgid "Pro forma invoice for"
+msgstr ""
+
+#. module: sale_workflow_dec
 #: model:ir.model,name:sale_workflow_dec.model_product_product
 msgid "Product"
+msgstr ""
+
+#. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_email_template_edi_sale
+msgid "Quotation"
 msgstr ""
 
 #. module: sale_workflow_dec
@@ -81,7 +116,26 @@ msgid "Total Margin"
 msgstr ""
 
 #. module: sale_workflow_dec
-#: model:ir.model.fields,field_description:sale_workflow_dec.field_product_product__xid
-#: model:ir.model.fields,field_description:sale_workflow_dec.field_sale_order__xid
-msgid "XML-ID"
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_email_template_edi_sale
+msgid "Your"
+msgstr ""
+
+#. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_email_template_edi_sale
+msgid "amounting in"
+msgstr ""
+
+#. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_email_template_edi_sale
+msgid "available"
+msgstr ""
+
+#. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_email_template_edi_sale
+msgid "is"
+msgstr ""
+
+#. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_email_template_edi_sale
+msgid "ready for review"
 msgstr ""

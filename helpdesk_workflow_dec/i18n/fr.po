@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0\n"
+"Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-08 10:20+0000\n"
-"PO-Revision-Date: 2021-02-08 10:34+0100\n"
+"POT-Creation-Date: 2024-04-17 08:15+0000\n"
+"PO-Revision-Date: 2024-04-16 14:02+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -15,7 +15,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: helpdesk_workflow_dec
+#: model:ir.model.fields,field_description:helpdesk_workflow_dec.field_helpdesk_ticket__display_name
+msgid "Display Name"
+msgstr "Intitulé"
+
+#. module: helpdesk_workflow_dec
+#: model_terms:ir.ui.view,arch_db:helpdesk_workflow_dec.view_email_template_changed_stage_template
+#: model_terms:ir.ui.view,arch_db:helpdesk_workflow_dec.view_email_template_closed_ticket_template
+#: model_terms:ir.ui.view,arch_db:helpdesk_workflow_dec.view_email_template_created_ticket_template
+msgid "Hello"
+msgstr "Bonjour"
 
 #. module: helpdesk_workflow_dec
 #: model:ir.model,name:helpdesk_workflow_dec.model_helpdesk_ticket
@@ -23,9 +35,25 @@ msgid "Helpdesk Ticket"
 msgstr "Ticket d'assistance"
 
 #. module: helpdesk_workflow_dec
-#: model:project.project,label_productions:helpdesk_workflow_dec.project_support
-msgid "Productions"
-msgstr "Fabrications"
+#: model:ir.model.fields,field_description:helpdesk_workflow_dec.field_helpdesk_ticket__id
+msgid "ID"
+msgstr "ID"
+
+#. module: helpdesk_workflow_dec
+#: model_terms:ir.ui.view,arch_db:helpdesk_workflow_dec.view_email_template_closed_ticket_template
+msgid ""
+"If your issue still happens or reappears, or if you think this ticket has "
+"been wrongly closed, please reply to this email to request that the ticket "
+"be reopened."
+msgstr ""
+"Si votre problème persiste ou réapparaît, ou si vous pensez que ce ticket a "
+"été fermé à tort, veuillez répondre à cet e-mail pour demander la "
+"réouverture du ticket."
+
+#. module: helpdesk_workflow_dec
+#: model:ir.model.fields,field_description:helpdesk_workflow_dec.field_helpdesk_ticket____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
 
 #. module: helpdesk_workflow_dec
 #: model:project.project,label_tasks:helpdesk_workflow_dec.project_support
@@ -33,6 +61,47 @@ msgid "Tasks"
 msgstr "Tâches"
 
 #. module: helpdesk_workflow_dec
+#: model_terms:ir.ui.view,arch_db:helpdesk_workflow_dec.view_email_template_changed_stage_template
+#: model_terms:ir.ui.view,arch_db:helpdesk_workflow_dec.view_email_template_closed_ticket_template
+#: model_terms:ir.ui.view,arch_db:helpdesk_workflow_dec.view_email_template_created_ticket_template
+msgid "The ticket «"
+msgstr "Le ticket «"
+
+#. module: helpdesk_workflow_dec
 #: model:project.project,label_tickets:helpdesk_workflow_dec.project_support
 msgid "Tickets"
 msgstr "Tickets"
+
+#. module: helpdesk_workflow_dec
+#: model_terms:ir.ui.view,arch_db:helpdesk_workflow_dec.view_email_template_created_ticket_template
+msgid "You can reply to this email to add information to the ticket."
+msgstr ""
+"Vous pouvez répondre à cet e-mail pour ajouter des informations au ticket."
+
+#. module: helpdesk_workflow_dec
+#: model_terms:ir.ui.view,arch_db:helpdesk_workflow_dec.view_email_template_changed_stage_template
+msgid "You can still reply to this email to add information to the ticket."
+msgstr ""
+"Vous pouvez toujours répondre à cet e-mail pour ajouter des informations au "
+"ticket."
+
+#. module: helpdesk_workflow_dec
+#: model_terms:ir.ui.view,arch_db:helpdesk_workflow_dec.view_email_template_created_ticket_template
+msgid "» has been created."
+msgstr "» a été créé."
+
+#. module: helpdesk_workflow_dec
+#: model_terms:ir.ui.view,arch_db:helpdesk_workflow_dec.view_email_template_closed_ticket_template
+msgid "» is now <b>closed.</b>"
+msgstr "» est maintenant <b>fermé.</b>"
+
+#. module: helpdesk_workflow_dec
+#: model_terms:ir.ui.view,arch_db:helpdesk_workflow_dec.view_email_template_changed_stage_template
+msgid "» stage has changed to"
+msgstr "» l'étape a été modifiée en"
+
+#~ msgid "ID of the record defined in xml file"
+#~ msgstr "ID de l'enregistrement défini dans le fichier xml"
+
+#~ msgid "XML-ID"
+#~ msgstr "XML-ID"

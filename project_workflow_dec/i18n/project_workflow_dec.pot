@@ -1,14 +1,14 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* project_workflow_dec
+# 	* project_workflow_dec
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0\n"
+"Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-23 12:14+0000\n"
-"PO-Revision-Date: 2023-03-23 12:14+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2024-04-17 12:51+0000\n"
+"PO-Revision-Date: 2024-04-17 12:51+0000\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,12 +27,7 @@ msgstr ""
 #: model:project.task,legend_blocked:project_workflow_dec.project_task_timesheet_filling
 #: model:project.task,legend_blocked:project_workflow_dec.project_task_vehicle_maintenance
 #: model:project.task.type,legend_blocked:project_workflow_dec.task_type_time_tracking
-msgid "Bloqué"
-msgstr ""
-
-#. module: project_workflow_dec
-#: model:project.type,description:project_workflow_dec.project_type_design_office
-msgid "Bureau d'études"
+msgid "Blocked"
 msgstr ""
 
 #. module: project_workflow_dec
@@ -47,6 +42,22 @@ msgid "Display Sale Order"
 msgstr ""
 
 #. module: project_workflow_dec
+#: model:project.type,description:project_workflow_dec.project_type_internal
+msgid "For internal use only"
+msgstr ""
+
+#. module: project_workflow_dec
+#: model:ir.model.fields,help:project_workflow_dec.field_project_task__sequence
+msgid "Gives the sequence order when displaying a list of tasks."
+msgstr ""
+
+#. module: project_workflow_dec
+#: model:ir.model.fields,field_description:project_workflow_dec.field_project_project__id
+#: model:ir.model.fields,field_description:project_workflow_dec.field_project_task__id
+msgid "ID"
+msgstr ""
+
+#. module: project_workflow_dec
 #: model:project.task,legend_normal:project_workflow_dec.project_task_building_maintenance
 #: model:project.task,legend_normal:project_workflow_dec.project_task_household
 #: model:project.task,legend_normal:project_workflow_dec.project_task_internal_training
@@ -58,39 +69,7 @@ msgstr ""
 #: model:project.task,legend_normal:project_workflow_dec.project_task_timesheet_filling
 #: model:project.task,legend_normal:project_workflow_dec.project_task_vehicle_maintenance
 #: model:project.task.type,legend_normal:project_workflow_dec.task_type_time_tracking
-msgid "En cours"
-msgstr ""
-
-#. module: project_workflow_dec
-#: model:project.project,label_productions:project_workflow_dec.project_internal_management
-msgid "Fabrications"
-msgstr ""
-
-#. module: project_workflow_dec
-#: model:project.type,description:project_workflow_dec.project_type_internal
-msgid "For internal use only"
-msgstr ""
-
-#. module: project_workflow_dec
-#: model:ir.model.fields,help:project_workflow_dec.field_project_task__sequence
-msgid "Gives the sequence order when displaying a list of tasks."
-msgstr ""
-
-#. module: project_workflow_dec
-#: model:ir.model.fields,help:project_workflow_dec.field_project_project__privacy_visibility
-msgid "Holds visibility of the tasks or issues that belong to the current project:\n"
-"- On invitation only: Employees may only see the followed project, tasks or issues\n"
-"- Visible by all employees: Employees may see all project, tasks or issues\n"
-"- Visible by following customers: employees see everything;\n"
-"   if website is activated, portal users may see project, tasks or issues followed by\n"
-"   them or by someone of their company\n"
-""
-msgstr ""
-
-#. module: project_workflow_dec
-#: model:ir.model.fields,field_description:project_workflow_dec.field_project_project__id
-#: model:ir.model.fields,field_description:project_workflow_dec.field_project_task__id
-msgid "ID"
+msgid "In Progress"
 msgstr ""
 
 #. module: project_workflow_dec
@@ -100,18 +79,22 @@ msgid "Last Modified on"
 msgstr ""
 
 #. module: project_workflow_dec
-#: selection:project.project,privacy_visibility:0
-msgid "On invitation only"
-msgstr ""
-
-#. module: project_workflow_dec
 #: model_terms:ir.ui.view,arch_db:project_workflow_dec.edit_project_form_view
 msgid "Overview"
 msgstr ""
 
 #. module: project_workflow_dec
-#: model:ir.model.fields,field_description:project_workflow_dec.field_project_project__privacy_visibility
-msgid "Privacy"
+#: model:ir.model.fields,help:project_workflow_dec.field_project_project__privacy_visibility
+msgid ""
+"People to whom this project and its tasks will be visible.\n"
+"\n"
+"- Invited internal users: when following a project, internal users will get access to all of its tasks without distinction. Otherwise, they will only get access to the specific tasks they are following.\n"
+" A user with the project > administrator access right level can still access this project and its tasks, even if they are not explicitly part of the followers.\n"
+"\n"
+"- All internal users: all internal users can access the project and all of its tasks without distinction.\n"
+"\n"
+"- Invited portal users and all internal users: all internal users can access the project and all of its tasks without distinction.\n"
+"When following a project, portal users will get access to all of its tasks without distinction. Otherwise, they will only get access to the specific tasks they are following."
 msgstr ""
 
 #. module: project_workflow_dec
@@ -131,7 +114,7 @@ msgstr ""
 #: model:project.task,legend_done:project_workflow_dec.project_task_timesheet_filling
 #: model:project.task,legend_done:project_workflow_dec.project_task_vehicle_maintenance
 #: model:project.task.type,legend_done:project_workflow_dec.task_type_time_tracking
-msgid "Prêt pour la prochaine étape"
+msgid "Ready"
 msgstr ""
 
 #. module: project_workflow_dec
@@ -142,6 +125,11 @@ msgstr ""
 #. module: project_workflow_dec
 #: model:ir.model,name:project_workflow_dec.model_project_task
 msgid "Task"
+msgstr ""
+
+#. module: project_workflow_dec
+#: model:project.project,label_tasks:project_workflow_dec.project_internal_management
+msgid "Tasks"
 msgstr ""
 
 #. module: project_workflow_dec
@@ -160,18 +148,8 @@ msgid "Tickets"
 msgstr ""
 
 #. module: project_workflow_dec
-#: model:project.project,label_tasks:project_workflow_dec.project_internal_management
-msgid "Tâches"
-msgstr ""
-
-#. module: project_workflow_dec
-#: selection:project.project,privacy_visibility:0
-msgid "Visible by all employees"
-msgstr ""
-
-#. module: project_workflow_dec
-#: selection:project.project,privacy_visibility:0
-msgid "Visible by following customers"
+#: model:ir.model.fields,field_description:project_workflow_dec.field_project_project__privacy_visibility
+msgid "Visibility"
 msgstr ""
 
 #. module: project_workflow_dec
@@ -180,15 +158,13 @@ msgid "⏱️ Time Tracking"
 msgstr ""
 
 #. module: project_workflow_dec
-#: model:project.type,complete_name:project_workflow_dec.project_type_support_functions
 #: model:project.type,name:project_workflow_dec.project_type_support_functions
-msgid "💁 Fonctions support"
+msgid "💁 Support Functions"
 msgstr ""
 
 #. module: project_workflow_dec
-#: model:project.type,complete_name:project_workflow_dec.project_type_marketing
 #: model:project.type,name:project_workflow_dec.project_type_marketing
-msgid "💰 Commerce"
+msgid "💰 Marketing"
 msgstr ""
 
 #. module: project_workflow_dec
@@ -207,30 +183,17 @@ msgid "📘 Digital"
 msgstr ""
 
 #. module: project_workflow_dec
-#: model:project.type,complete_name:project_workflow_dec.project_type_design_office
 #: model:project.type,name:project_workflow_dec.project_type_design_office
-msgid "📚 BE"
+msgid "📚 Design Office"
 msgstr ""
 
 #. module: project_workflow_dec
-#: model:project.type,complete_name:project_workflow_dec.project_type_design_office_equipment
-msgid "📚 BE / 📗 Equipment"
-msgstr ""
-
-#. module: project_workflow_dec
-#: model:project.type,complete_name:project_workflow_dec.project_type_design_office_digital
-msgid "📚 BE / 📘 Digital"
-msgstr ""
-
-#. module: project_workflow_dec
-#: model:project.type,complete_name:project_workflow_dec.project_type_internal
 #: model:project.type,name:project_workflow_dec.project_type_internal
-msgid "🔰 Interne"
+msgid "🔰 Internal"
 msgstr ""
 
 #. module: project_workflow_dec
-#: code:addons/project_workflow_dec/models/project_task.py:80
+#: code:addons/project_workflow_dec/models/project_task.py:0
 #, python-format
 msgid "🚨 Auto: To Assign and to Plan"
 msgstr ""
-

@@ -1,8 +1,9 @@
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-23 12:14+0000\n"
+"POT-Creation-Date: 2024-04-17 08:15+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 2.4.3\n"
 
 #. module: project_workflow_dec
 #: model:project.task,legend_blocked:project_workflow_dec.project_task_building_maintenance
@@ -24,13 +25,8 @@ msgstr ""
 #: model:project.task,legend_blocked:project_workflow_dec.project_task_timesheet_filling
 #: model:project.task,legend_blocked:project_workflow_dec.project_task_vehicle_maintenance
 #: model:project.task.type,legend_blocked:project_workflow_dec.task_type_time_tracking
-msgid "Bloqué"
-msgstr ""
-
-#. module: project_workflow_dec
-#: model:project.type,description:project_workflow_dec.project_type_design_office
-msgid "Bureau d'études"
-msgstr ""
+msgid "Blocked"
+msgstr "Bloquée"
 
 #. module: project_workflow_dec
 #: model:ir.model.fields,field_description:project_workflow_dec.field_project_project__display_name
@@ -44,6 +40,22 @@ msgid "Display Sale Order"
 msgstr "Afficher la commande client"
 
 #. module: project_workflow_dec
+#: model:project.type,description:project_workflow_dec.project_type_internal
+msgid "For internal use only"
+msgstr "Pour usage interne uniquement"
+
+#. module: project_workflow_dec
+#: model:ir.model.fields,help:project_workflow_dec.field_project_task__sequence
+msgid "Gives the sequence order when displaying a list of tasks."
+msgstr "Donne la séquence (l'ordre) d'affichage d'une liste de tâches."
+
+#. module: project_workflow_dec
+#: model:ir.model.fields,field_description:project_workflow_dec.field_project_project__id
+#: model:ir.model.fields,field_description:project_workflow_dec.field_project_task__id
+msgid "ID"
+msgstr "ID"
+
+#. module: project_workflow_dec
 #: model:project.task,legend_normal:project_workflow_dec.project_task_building_maintenance
 #: model:project.task,legend_normal:project_workflow_dec.project_task_household
 #: model:project.task,legend_normal:project_workflow_dec.project_task_internal_training
@@ -55,44 +67,8 @@ msgstr "Afficher la commande client"
 #: model:project.task,legend_normal:project_workflow_dec.project_task_timesheet_filling
 #: model:project.task,legend_normal:project_workflow_dec.project_task_vehicle_maintenance
 #: model:project.task.type,legend_normal:project_workflow_dec.task_type_time_tracking
-msgid "En cours"
-msgstr ""
-
-#. module: project_workflow_dec
-#: model:project.project,label_productions:project_workflow_dec.project_internal_management
-msgid "Fabrications"
-msgstr ""
-
-#. module: project_workflow_dec
-#: model:project.type,description:project_workflow_dec.project_type_internal
-msgid "For internal use only"
-msgstr "Pour usage interne uniquement"
-
-#. module: project_workflow_dec
-#: model:ir.model.fields,help:project_workflow_dec.field_project_task__sequence
-msgid "Gives the sequence order when displaying a list of tasks."
-msgstr "Donne la séquence (l'ordre) d'affichage d'une liste de tâches."
-
-#. module: project_workflow_dec
-#: model:ir.model.fields,help:project_workflow_dec.field_project_project__privacy_visibility
-msgid ""
-"Holds visibility of the tasks or issues that belong to the current project:\n"
-"- On invitation only: Employees may only see the followed project, tasks or issues\n"
-"- Visible by all employees: Employees may see all project, tasks or issues\n"
-"- Visible by following customers: employees see everything;\n"
-"   if website is activated, portal users may see project, tasks or issues followed by\n"
-"   them or by someone of their company\n"
-msgstr ""
-"Détermine la visibilité des tâches ou anomalies qui dépendent du projet courant.\n"
-"- Sur invitation uniquement : les employés ne voient que les projets, tâches et anomalies qu'ils suivent ;\n"
-"- Visible par tous les salariés : les employés peuvent voir tous les projets, tâches et anomalies ;\n"
-"- Visible par les clients suivants : les employés voient tout ; si le site web est activé, les utilisateur du portail peuvent voir les projets, tâches et anomalies qu'eux ou un utilisateur appartenant à leur société, suivent.\n"
-
-#. module: project_workflow_dec
-#: model:ir.model.fields,field_description:project_workflow_dec.field_project_project__id
-#: model:ir.model.fields,field_description:project_workflow_dec.field_project_task__id
-msgid "ID"
-msgstr "ID"
+msgid "In Progress"
+msgstr "En cours"
 
 #. module: project_workflow_dec
 #: model:ir.model.fields,field_description:project_workflow_dec.field_project_project____last_update
@@ -101,19 +77,32 @@ msgid "Last Modified on"
 msgstr "Dernière modification le"
 
 #. module: project_workflow_dec
-#: selection:project.project,privacy_visibility:0
-msgid "On invitation only"
-msgstr "Sur invitation uniquement"
-
-#. module: project_workflow_dec
 #: model_terms:ir.ui.view,arch_db:project_workflow_dec.edit_project_form_view
 msgid "Overview"
 msgstr "Vue d'ensemble"
 
 #. module: project_workflow_dec
-#: model:ir.model.fields,field_description:project_workflow_dec.field_project_project__privacy_visibility
-msgid "Privacy"
-msgstr "Confidentialité"
+#: model:ir.model.fields,help:project_workflow_dec.field_project_project__privacy_visibility
+msgid ""
+"People to whom this project and its tasks will be visible.\n"
+"\n"
+"- Invited internal users: when following a project, internal users will get access to all of its tasks without distinction. Otherwise, they will only get access to the specific tasks they are following.\n"
+" A user with the project > administrator access right level can still access this project and its tasks, even if they are not explicitly part of the followers.\n"
+"\n"
+"- All internal users: all internal users can access the project and all of its tasks without distinction.\n"
+"\n"
+"- Invited portal users and all internal users: all internal users can access the project and all of its tasks without distinction.\n"
+"When following a project, portal users will get access to all of its tasks without distinction. Otherwise, they will only get access to the specific tasks they are following."
+msgstr ""
+"Personnes pour lesquelles ce projet et ses tâches seront visibles.\n"
+"\n"
+"- Utilisateurs internes invités : lorsqu'ils sont abonnés à un projet, les utilisateurs internes auront accès à toutes ses tâches sans distinction. Autrement, ils auront uniquement accès aux tâches spécifiques auxquelles ils sont abonnés.\n"
+" Un utilisateur avec le niveau de droits d'accès projet > administrateur peut toujours accéder au projet et à ses tâches, même s'il ne fait pas explicitement partie des abonnés.\n"
+"\n"
+"- Tous les utilisateurs internes : tous les utilisateurs internes peuvent accéder au projet et à toutes ses tâches sans distinction.\n"
+"\n"
+"- Les utilisateurs portail invités et tous les utilisateurs internes : tous les utilisateurs internes peuvent accéder au projet et à toutes ses tâches sans distinction.\n"
+"Quand ils suivent un projet, les utilisateurs portail auront accès à toutes ses tâches sans distinction. Autrement, ils auront uniquement accès aux tâches spécifiques auxquelles ils sont abonnés."
 
 #. module: project_workflow_dec
 #: model:ir.model,name:project_workflow_dec.model_project_project
@@ -132,8 +121,8 @@ msgstr "Projet"
 #: model:project.task,legend_done:project_workflow_dec.project_task_timesheet_filling
 #: model:project.task,legend_done:project_workflow_dec.project_task_vehicle_maintenance
 #: model:project.task.type,legend_done:project_workflow_dec.task_type_time_tracking
-msgid "Prêt pour la prochaine étape"
-msgstr ""
+msgid "Ready"
+msgstr "Prêt"
 
 #. module: project_workflow_dec
 #: model:ir.model.fields,field_description:project_workflow_dec.field_project_task__sequence
@@ -144,6 +133,11 @@ msgstr "Séquence"
 #: model:ir.model,name:project_workflow_dec.model_project_task
 msgid "Task"
 msgstr "Tâche"
+
+#. module: project_workflow_dec
+#: model:project.project,label_tasks:project_workflow_dec.project_internal_management
+msgid "Tasks"
+msgstr "Tâches"
 
 #. module: project_workflow_dec
 #: model:project.project,label_tickets:project_workflow_dec.project_internal_management
@@ -161,19 +155,9 @@ msgid "Tickets"
 msgstr "Tickets"
 
 #. module: project_workflow_dec
-#: model:project.project,label_tasks:project_workflow_dec.project_internal_management
-msgid "Tâches"
-msgstr ""
-
-#. module: project_workflow_dec
-#: selection:project.project,privacy_visibility:0
-msgid "Visible by all employees"
-msgstr "Visible par tous les employés"
-
-#. module: project_workflow_dec
-#: selection:project.project,privacy_visibility:0
-msgid "Visible by following customers"
-msgstr "Visible par les clients suiveurs"
+#: model:ir.model.fields,field_description:project_workflow_dec.field_project_project__privacy_visibility
+msgid "Visibility"
+msgstr "Visibilité"
 
 #. module: project_workflow_dec
 #: model:project.task.type,name:project_workflow_dec.task_type_time_tracking
@@ -181,16 +165,14 @@ msgid "⏱️ Time Tracking"
 msgstr "⏱️ Suivi du temps"
 
 #. module: project_workflow_dec
-#: model:project.type,complete_name:project_workflow_dec.project_type_support_functions
 #: model:project.type,name:project_workflow_dec.project_type_support_functions
-msgid "💁 Fonctions support"
-msgstr ""
+msgid "💁 Support Functions"
+msgstr "💁 Fonctions support"
 
 #. module: project_workflow_dec
-#: model:project.type,complete_name:project_workflow_dec.project_type_marketing
 #: model:project.type,name:project_workflow_dec.project_type_marketing
-msgid "💰 Commerce"
-msgstr ""
+msgid "💰 Marketing"
+msgstr "💰 Commerce"
 
 #. module: project_workflow_dec
 #: model_terms:ir.ui.view,arch_db:project_workflow_dec.view_task_kanban
@@ -208,53 +190,60 @@ msgid "📘 Digital"
 msgstr "📘 Numérique"
 
 #. module: project_workflow_dec
-#: model:project.type,complete_name:project_workflow_dec.project_type_design_office
 #: model:project.type,name:project_workflow_dec.project_type_design_office
-msgid "📚 BE"
-msgstr ""
+msgid "📚 Design Office"
+msgstr "📚 BE"
 
 #. module: project_workflow_dec
-#: model:project.type,complete_name:project_workflow_dec.project_type_design_office_equipment
-msgid "📚 BE / 📗 Equipment"
-msgstr "📚 BE / 📗 Équipements"
-
-#. module: project_workflow_dec
-#: model:project.type,complete_name:project_workflow_dec.project_type_design_office_digital
-msgid "📚 BE / 📘 Digital"
-msgstr "📚 BE / 📘 Numérique"
-
-#. module: project_workflow_dec
-#: model:project.type,complete_name:project_workflow_dec.project_type_internal
 #: model:project.type,name:project_workflow_dec.project_type_internal
-msgid "🔰 Interne"
-msgstr ""
+msgid "🔰 Internal"
+msgstr "🔰 Interne"
 
 #. module: project_workflow_dec
-#: code:addons/project_workflow_dec/models/project_task.py:80
+#: code:addons/project_workflow_dec/models/project_task.py:0
 #, python-format
 msgid "🚨 Auto: To Assign and to Plan"
-msgstr "🚨 Auto : À assigner et planifier"
+msgstr "🚨 Auto: À assigner et planifier"
 
-#~ msgid "💁 Support Functions"
-#~ msgstr "💁 Fonctions support"
+#~ msgid "ID of the record defined in xml file"
+#~ msgstr "ID de l'enregistrement défini dans le fichier xml"
 
-#~ msgid "💰 Marketing"
-#~ msgstr "💰 Commerce"
+#~ msgid "XML-ID"
+#~ msgstr "XML-ID"
 
-#~ msgid "📚 Design Office"
-#~ msgstr "📚 BE"
+#~ msgid ""
+#~ "Holds visibility of the tasks or issues that belong to the current project:\n"
+#~ "- On invitation only: Employees may only see the followed project, tasks or issues\n"
+#~ "- Visible by all employees: Employees may see all project, tasks or issues\n"
+#~ "- Visible by following customers: employees see everything;\n"
+#~ "   if website is activated, portal users may see project, tasks or issues followed by\n"
+#~ "   them or by someone of their company\n"
+#~ msgstr ""
+#~ "Détermine la visibilité des tâches ou anomalies qui dépendent du projet courant.\n"
+#~ "- Sur invitation uniquement : les employés ne voient que les projets, tâches et anomalies qu'ils suivent ;\n"
+#~ "- Visible par tous les salariés : les employés peuvent voir tous les projets, tâches et anomalies ;\n"
+#~ "- Visible par les clients suivants : les employés voient tout ; si le site web est activé, les utilisateur du portail peuvent voir les projets, tâches et anomalies qu'eux ou un utilisateur appartenant à leur société, suivent.\n"
 
-#~ msgid "Blocked"
-#~ msgstr "Bloquée"
+#~ msgid "On invitation only"
+#~ msgstr "Sur invitation uniquement"
 
-#~ msgid "In Progress"
-#~ msgstr "En cours"
+#~ msgid "Privacy"
+#~ msgstr "Confidentialité"
+
+#~ msgid "Visible by all employees"
+#~ msgstr "Visible par tous les employés"
+
+#~ msgid "Visible by following customers"
+#~ msgstr "Visible par les clients suiveurs"
+
+#~ msgid "📚 BE / 📗 Equipment"
+#~ msgstr "📚 BE / 📗 Équipements"
+
+#~ msgid "📚 BE / 📘 Digital"
+#~ msgstr "📚 BE / 📘 Numérique"
 
 #~ msgid "Ready for Next Stage"
 #~ msgstr "Prête pour l'étape suivante"
-
-#~ msgid "Tasks"
-#~ msgstr "Tâches"
 
 #~ msgid "Projects"
 #~ msgstr "Projets"

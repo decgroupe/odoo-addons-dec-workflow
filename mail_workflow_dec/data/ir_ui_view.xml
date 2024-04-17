@@ -1,42 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
-    <record id="message_notification_email" model="ir.ui.view">
-        <field name="inherit_id" ref="mail.message_notification_email" />
+    <record id="mail_workflow_dec.view_email_template_notification" model="ir.ui.view">
+        <field name="inherit_id" ref="mail_qweb.view_email_template_notification" />
         <field name="mode">extension</field>
         <field name="arch" type="xml">
-            <data></data>
-<!--
-            <xpath expr="//td[@t-if='has_button_access']" position="attributes">
+            <xpath expr="//div[@id='content_border']" position="attributes">
                 <attribute
                     name="style"
-                >padding: 8px 12px; background-color: #414141; border: 0px solid #414141; border-radius:0px;</attribute>
+                >background-image: url(/mail_workflow_dec/static/img/footer.png);background-size: contain;background-position: center bottom;background-repeat: no-repeat;</attribute>
             </xpath>
-
-            <xpath expr="//td[@t-if='has_button_access']/a" position="attributes">
-                <attribute
-                    name="style"
-                >font-size: 12px; color: #FFFFFF; text-decoration: none !important; font-weight: 400; font-variant: small-caps;</attribute>
-            </xpath>
-
-            <xpath expr="//t[@t-as='action']//a" position="attributes">
-                <attribute
-                    name="style"
-                >color: #414141; text-decoration:none !important; font-variant: small-caps;</attribute>
-            </xpath>
-
-            <xpath expr="//p[@t-if='subtype.internal']" position="attributes">
-                <attribute
-                    name="style"
-                >color: #FFFFFF; font-size: 10px; background-color: #414141; padding: 5px; margin-bottom: 16px;</attribute>
-            </xpath>
-
-            <xpath expr="//a[@t-if='website_url']" position="attributes">
-                <attribute
-                    name="style"
-                >text-decoration:none; color: #414141;</attribute>
-            </xpath> -->
-
         </field>
     </record>
 

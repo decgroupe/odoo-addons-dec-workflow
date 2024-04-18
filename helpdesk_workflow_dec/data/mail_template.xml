@@ -3,18 +3,33 @@
 
     <!-- Replace default template -->
     <record model="mail.template" id="helpdesk_mgmt.created_ticket_template">
+        <field
+            name="email_from"
+        >${(user.email_formatted or object.user_id.email_formatted or object.company_id.partner_id.email_formatted)|safe}</field>
+        <field name="email_to">${object.email_to|safe}</field>
+        <field name="partner_to">${object.partner_to|safe}</field>
         <field name="body_type">qweb</field>
         <field name="body_view_id" ref="view_email_template_created_ticket_template" />
     </record>
 
     <!-- Replace default template -->
     <record model="mail.template" id="helpdesk_mgmt.changed_stage_template">
+        <field
+            name="email_from"
+        >${(user.email_formatted or object.user_id.email_formatted or object.company_id.partner_id.email_formatted)|safe}</field>
+        <field name="email_to">${object.email_to|safe}</field>
+        <field name="partner_to">${object.partner_to|safe}</field>
         <field name="body_type">qweb</field>
         <field name="body_view_id" ref="view_email_template_changed_stage_template" />
     </record>
 
     <!-- Replace default template -->
     <record model="mail.template" id="helpdesk_mgmt.closed_ticket_template">
+        <field
+            name="email_from"
+        >${(user.email_formatted or object.user_id.email_formatted or object.company_id.partner_id.email_formatted)|safe}</field>
+        <field name="email_to">${object.email_to|safe}</field>
+        <field name="partner_to">${object.partner_to|safe}</field>
         <field name="body_type">qweb</field>
         <field name="body_view_id" ref="view_email_template_closed_ticket_template" />
     </record>

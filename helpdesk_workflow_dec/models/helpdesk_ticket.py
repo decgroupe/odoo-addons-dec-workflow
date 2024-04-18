@@ -4,13 +4,21 @@
 import re
 
 from odoo import _, api, models, fields
-from werkzeug.urls import url_encode
 from odoo.osv import expression
 
 
 class HelpdeskTicket(models.Model):
     _inherit = "helpdesk.ticket"
     _order = "number desc"
+
+    email_to = fields.Char(
+        string="To",
+        compute="_compute_to",
+    )
+    partner_to = fields.Char(
+        string="To (Partners)",
+        compute="_compute_to",
+    )
 
     @api.model
     def create(self, vals):
@@ -112,3 +120,21 @@ class HelpdeskTicket(models.Model):
         for rec in self:
             rec.show_time_control = False
         return result
+
+    def _track_template(self, tracking):
+        res = super()._track_template(tracking)
+        for field_name, (_template, post_kwargs) in res.items():
+            if field_name == "stage_id" and "email_layout_xmlid" in post_kwargs:
+                # use full layout for our custom templates
+                post_kwargs["email_layout_xmlid"] = "mail.message_notification_email"
+        return res
+
+    def _compute_to(self):
+        self.email_to = False
+        self.partner_to = False
+        for rec in self:
+            if rec.partner_id and rec.partner_id.email:
+                if rec.partner_id.email == rec.partner_email or not rec.partner_email:
+                    rec.partner_to = rec.partner_id.id
+            if not rec.partner_to:
+                rec.email_to = rec.partner_email

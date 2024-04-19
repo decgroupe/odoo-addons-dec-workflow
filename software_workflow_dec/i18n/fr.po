@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-17 12:48+0000\n"
-"PO-Revision-Date: 2024-04-17 14:58+0200\n"
+"POT-Creation-Date: 2024-04-19 11:04+0000\n"
+"PO-Revision-Date: 2024-04-19 13:06+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -19,133 +19,89 @@ msgstr ""
 
 #. module: software_workflow_dec
 #: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
-msgid ""
-"All your licences, subscriptions and applications are managed via the\n"
-"                new \"e-space DEC\" launcher. You can find the software and documentation\n"
-"                at this address :"
+msgid ", which asks you to create activate your account."
+msgstr "qui vous demande d'activer votre compte."
+
+#. module: software_workflow_dec
+#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
+msgid "All software and hardware manuals and user guides will be available in the DEC e-space."
 msgstr ""
-"Toutes vos licences, abonnements et applications sont gérés via le.\n"
-"                nouveau lanceur \"e-space DEC\". Vous trouverez le logiciel et sa documentation\n"
-"                à cette adresse :"
-
-#. module: software_workflow_dec
-#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
-msgid "Application documentation"
-msgstr "Documentation des applications"
-
-#. module: software_workflow_dec
-#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
-msgid "DEC's Portal"
-msgstr "Portail DEC"
-
-#. module: software_workflow_dec
-#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
-msgid "Download e-space DEC"
-msgstr "Télécharger l'e-space DEC"
-
-#. module: software_workflow_dec
-#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
-msgid "Download guide"
-msgstr "Télécharger le manuel"
-
-#. module: software_workflow_dec
-#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
-msgid "General information"
-msgstr "Informations générales"
+"Tous les manuels et guides d'utilisation des logiciels et du matériel sont disponibles dans l'e-space "
+"DEC."
 
 #. module: software_workflow_dec
 #: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
 msgid ""
-"If you did not previously have access to the portal,\n"
-"                then you should have received a second e-mail,\n"
-"                entitled \"Your access to the DEC portal\",\n"
-"                alongside the e-mail accompanying this document,\n"
-"                which asks you to create your password."
+"All your licences, subscriptions and applications are managed via the new <b>« DEC e-space »</b> "
+"launcher. You can find the software and documentation at this address :"
 msgstr ""
-"Si vous n'aviez pas encore accès au portail,\n"
-"                vous avez reçu un deuxième e-mail,\n"
-"                intitulé \"Votre accès au portail DEC\",\n"
-"                en même temps que l'e-mail accompagnant ce document,\n"
-"                qui vous demande de créer votre mot de passe."
+"Toutes vos licences, abonnements et applications sont gérés via le nouveau lanceur <b>« e-space DEC »</"
+"b>. Vous trouverez le logiciel et sa documentation à cette adresse :"
+
+#. module: software_workflow_dec
+#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
+msgid "DEC e-space"
+msgstr "e-space DEC"
+
+#. module: software_workflow_dec
+#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
+msgid "Documentation"
+msgstr "Documentation"
+
+#. module: software_workflow_dec
+#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
+msgid "Download our launcher"
+msgstr "Télécharger notre lanceur"
 
 #. module: software_workflow_dec
 #: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
 msgid ""
-"If your system computer hasn't been turned on for a long time, don't\n"
-"                forget to update Windows and Oculus/Vive depending on your hardware."
+"If you did not previously have access to the portal, then you should have received a second email, "
+"entitled"
 msgstr ""
-"Si votre ordinateur n'a pas été allumé depuis longtemps,\n"
-"                n'oubliez pas de mettre à jour Windows et Oculus/Vive en fonction de votre matériel."
+"Si vous n'aviez pas encore accès au portail, vous devriez avoir reçu un deuxième courriel, intitulé"
 
 #. module: software_workflow_dec
 #: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
 msgid ""
-"Our portal allows you to view your orders and invoices, as well as\n"
-"                manage your licences and subscriptions or those of your establishment.\n"
-"                You can also create a support ticket for an after-sales service request."
+"Our portal allows you to view your orders and invoices, as well as manage your licenses and "
+"subscriptions or those of your establishment. You can also create a support ticket for an after-sales "
+"service request."
 msgstr ""
-"Notre portail vous permet de consulter vos commandes et vos factures, ainsi que de\n"
-"                gérer vos licences et abonnements ou ceux de votre établissement.\n"
-"                Vous pouvez également créer un ticket d'assistance pour une demande de service après-vente."
+"Notre portail vous permet de consulter vos commandes et vos factures, ainsi que de gérer vos licences "
+"et abonnements ou ceux de votre établissement. Vous pouvez également créer un ticket d'assistance pour "
+"une demande de service après-vente."
 
 #. module: software_workflow_dec
 #: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
 msgid "Please note that you must not share this link with the public!"
-msgstr "Veuillez noter que vous ne devez pas partager ce lien publiquement !"
+msgstr "Veuillez noter que vous ne devez pas partager ce lien publiquement !"
 
 #. module: software_workflow_dec
 #: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
-msgid "TODO: Add image of the new welcome mail"
-msgstr ""
+msgid "Read the user guide"
+msgstr "Lire le manuel d'utilisation"
 
 #. module: software_workflow_dec
 #: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
-msgid "TODO: Generate list of resources fron linked apps"
-msgstr ""
+msgid "The DEC e-space software user guide is freely available at :"
+msgstr "Le guide de l'utilisateur du logiciel e-space DEC est accessible à l'adresse suivante :"
 
 #. module: software_workflow_dec
 #: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
-msgid "The e-space DEC software user guide is freely available at :"
-msgstr "Le guide de l'utilisateur du logiciel e-space DEC est disponible gratuitement à l'adresse suivante :"
-
-#. module: software_workflow_dec
-#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
-msgid ""
-"The link ❶ allows you to choose your password, while the link ❷ is a\n"
-"                shortcut to log in to your account."
-msgstr ""
+msgid "The simplified use of this application requires access to the"
+msgstr "L'utilisation simplifiée de cette application nécessite l'accès à l'application"
 
 #. module: software_workflow_dec
 #: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
 msgid ""
-"The simplified use of this application requires access to the DEC's portal\n"
-"                in the form of an account (e-mail and password). See below."
+"To delegate the management of your licenses and subscriptions, you can use the following link to "
+"access a form that allows you to create an account for each of your collaborators, which will be "
+"attached to your organization. (as a child of your account:"
 msgstr ""
-"L'utilisation simplifiée de cette application nécessite un accès au portail DEC\n"
-"                sous la forme d'un compte (e-mail et mot de passe). Voir ci-dessous."
-
-#. module: software_workflow_dec
-#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
-msgid ""
-"To delegate the management of your licences and subscriptions, you can\n"
-"                send your employees the following link, which will enable them to\n"
-"                create an individual account linked to your organisation via a form\n"
-"                (child of the"
-msgstr ""
-"Pour déléguer la gestion de vos licences et abonnements, vous pouvez\n"
-"                envoyer à vos employés le lien suivant, qui leur permettra de\n"
-"                créer un compte individuel lié à votre organisation via un formulaire\n"
-"                (enfant de"
-
-#. module: software_workflow_dec
-#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
-msgid "You can find the various documents at the following addresses:"
-msgstr "Vous pouvez trouver les différents documents aux adresses suivantes :"
-
-#. module: software_workflow_dec
-#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
-msgid "account)."
-msgstr "compte)."
+"Pour déléguer la gestion de vos licences et abonnements, vous pouvez utiliser le lien suivant pour "
+"accéder à un formulaire qui vous permet de créer un compte pour chacun de vos collaborateurs, qui sera "
+"rattaché à votre organisation. (en tant qu'enfant du compte :"
 
 #. module: software_workflow_dec
 #: code:addons/software_workflow_dec/__init__.py:0
@@ -155,5 +111,55 @@ msgstr "e-space ${object.company_id.name} ${ctx['model_description']} (Ref ${obj
 
 #. module: software_workflow_dec
 #: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
-msgid "e-space DEC"
-msgstr "e-space DEC"
+msgid "in the form of an account (e-mail and password). See below."
+msgstr "sous la forme d'un compte (e-mail et mot de passe). Voir ci-dessous."
+
+#. module: software_workflow_dec
+#: model_terms:ir.ui.view,arch_db:software_workflow_dec.mail_notification_layout
+msgid "« Your access to"
+msgstr "« Votre accès au"
+
+#~ msgid ", alongside the e-mail accompanying this document, which asks you to create your password."
+#~ msgstr ", qui vous demande d'activer votre compte."
+
+#~ msgid "DEC's Portal"
+#~ msgstr "Portail DEC"
+
+#~ msgid "Download e-space DEC"
+#~ msgstr "Télécharger l'e-space DEC"
+
+#~ msgid "General information"
+#~ msgstr "Informations générales"
+
+#~ msgid ""
+#~ "If you did not previously have access to the portal,\n"
+#~ "                then you should have received a second e-mail,\n"
+#~ "                entitled \"Your access to the DEC portal\",\n"
+#~ "                alongside the e-mail accompanying this document,\n"
+#~ "                which asks you to create your password."
+#~ msgstr ""
+#~ "Si vous n'aviez pas encore accès au portail,\n"
+#~ "                vous avez reçu un deuxième e-mail,\n"
+#~ "                intitulé \"Votre accès au portail DEC\",\n"
+#~ "                en même temps que l'e-mail accompagnant ce document,\n"
+#~ "                qui vous demande de créer votre mot de passe."
+
+#~ msgid ""
+#~ "If your system computer hasn't been turned on for a long time, don't\n"
+#~ "                forget to update Windows and Oculus/Vive depending on your hardware."
+#~ msgstr ""
+#~ "Si votre ordinateur n'a pas été allumé depuis longtemps,\n"
+#~ "                n'oubliez pas de mettre à jour Windows et Oculus/Vive en fonction de votre matériel."
+
+#~ msgid ""
+#~ "The simplified use of this application requires access to the DEC's portal\n"
+#~ "                in the form of an account (e-mail and password). See below."
+#~ msgstr ""
+#~ "L'utilisation simplifiée de cette application nécessite un accès au portail DEC\n"
+#~ "                sous la forme d'un compte (e-mail et mot de passe). Voir ci-dessous."
+
+#~ msgid "You can find the various documents at the following addresses:"
+#~ msgstr "Vous pouvez trouver les différents documents aux adresses suivantes :"
+
+#~ msgid "account)."
+#~ msgstr "compte)."

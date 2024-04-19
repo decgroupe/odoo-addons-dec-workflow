@@ -6,8 +6,10 @@
     "depends": [
         "software_license_pass",
         "auth_signup_delegate_fencing",  # for pass email template
+        "portal_workflow_dec", # for portal_name
     ],
     "data": [
+        "data/mail_template.xml",
         "data/ir_ui_view.xml",
     ],
     "installable": True,

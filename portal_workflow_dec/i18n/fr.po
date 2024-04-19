@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-17 12:47+0000\n"
-"PO-Revision-Date: 2024-04-17 14:47+0200\n"
+"POT-Creation-Date: 2024-04-19 08:23+0000\n"
+"PO-Revision-Date: 2024-04-19 11:40+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -17,9 +17,10 @@ msgstr ""
 "X-Generator: Poedit 2.4.3\n"
 
 #. module: portal_workflow_dec
-#: model_terms:ir.ui.view,arch_db:portal_workflow_dec.view_mail_template_data_portal_welcome
-msgid "'s Portal"
-msgstr "Portail"
+#: code:addons/portal_workflow_dec/models/res_company.py:0
+#, python-format
+msgid "%s's Portal"
+msgstr "Portail %s"
 
 #. module: portal_workflow_dec
 #: model_terms:ir.ui.view,arch_db:portal_workflow_dec.view_mail_template_data_portal_welcome
@@ -40,24 +41,34 @@ msgstr ""
 "votre compte."
 
 #. module: portal_workflow_dec
-#: model:ir.model.fields,field_description:portal_workflow_dec.field_mail_template__display_name
+#: model:ir.model,name:portal_workflow_dec.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: portal_workflow_dec
+#: model:ir.model.fields,field_description:portal_workflow_dec.field_res_company__display_name
 msgid "Display Name"
 msgstr "Nom affiché"
 
 #. module: portal_workflow_dec
-#: model:ir.model,name:portal_workflow_dec.model_mail_template
-msgid "Email Templates"
-msgstr "Modèles de courriels"
-
-#. module: portal_workflow_dec
-#: model:ir.model.fields,field_description:portal_workflow_dec.field_mail_template__id
+#: model:ir.model.fields,field_description:portal_workflow_dec.field_res_company__id
 msgid "ID"
 msgstr "ID"
 
 #. module: portal_workflow_dec
-#: model:ir.model.fields,field_description:portal_workflow_dec.field_mail_template____last_update
+#: model:ir.model.fields,help:portal_workflow_dec.field_res_company__xid
+msgid "ID of the record defined in xml file"
+msgstr "ID de l'enregistrement défini dans le fichier xml"
+
+#. module: portal_workflow_dec
+#: model:ir.model.fields,field_description:portal_workflow_dec.field_res_company____last_update
 msgid "Last Modified on"
 msgstr "Dernière Modification le"
+
+#. module: portal_workflow_dec
+#: model:ir.model.fields,field_description:portal_workflow_dec.field_res_company__portal_name
+msgid "Portal Name"
+msgstr "Nom du portail"
 
 #. module: portal_workflow_dec
 #: model_terms:ir.ui.view,arch_db:portal_workflow_dec.view_mail_template_data_portal_welcome
@@ -65,17 +76,19 @@ msgid "Welcome to"
 msgstr "Bienvenue au"
 
 #. module: portal_workflow_dec
+#: model:ir.model.fields,field_description:portal_workflow_dec.field_res_company__xid
+msgid "XML-ID"
+msgstr "XML-ID"
+
+#. module: portal_workflow_dec
 #: code:addons/portal_workflow_dec/__init__.py:0
 #, python-format
-msgid "Your portal access to ${object.user_id.company_id.name}"
-msgstr "Votre accès au portail ${object.user_id.company_id.name}"
+msgid "Your access to ${object.user_id.company_id.portal_name}"
+msgstr "Votre accès au ${object.user_id.company_id.portal_name}"
+
+#~ msgid "Email Templates"
+#~ msgstr "Modèles de courriels"
 
 #, fuzzy, python-format
 #~ msgid "Your Extra portal access to ${object.user_id.company_id.name}"
 #~ msgstr "Votre accès au portail ${object.user_id.company_id.name}"
-
-#~ msgid "ID of the record defined in xml file"
-#~ msgstr "ID de l'enregistrement défini dans le fichier xml"
-
-#~ msgid "XML-ID"
-#~ msgstr "XML-ID"

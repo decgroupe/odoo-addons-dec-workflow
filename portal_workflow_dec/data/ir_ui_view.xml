@@ -8,8 +8,8 @@
             <t t-set="content_message">
                 <div>
                     <h1>Welcome to <t
-                            t-esc="object.user_id.company_id.name"
-                        />'s Portal</h1>
+                            t-esc="object.user_id.company_id.portal_name"
+                        /></h1>
                     <p>
                         An account has been created for you with the following login:
                         <p>

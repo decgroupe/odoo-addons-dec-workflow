@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-17 12:51+0000\n"
-"PO-Revision-Date: 2024-04-17 12:51+0000\n"
+"POT-Creation-Date: 2024-04-19 11:04+0000\n"
+"PO-Revision-Date: 2024-04-19 11:04+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,8 +16,9 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: portal_workflow_dec
-#: model_terms:ir.ui.view,arch_db:portal_workflow_dec.view_mail_template_data_portal_welcome
-msgid "'s Portal"
+#: code:addons/portal_workflow_dec/models/res_company.py:0
+#, python-format
+msgid "%s's Portal"
 msgstr ""
 
 #. module: portal_workflow_dec
@@ -37,23 +38,33 @@ msgid ""
 msgstr ""
 
 #. module: portal_workflow_dec
-#: model:ir.model.fields,field_description:portal_workflow_dec.field_mail_template__display_name
+#: model:ir.model,name:portal_workflow_dec.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: portal_workflow_dec
+#: model:ir.model.fields,field_description:portal_workflow_dec.field_res_company__display_name
 msgid "Display Name"
 msgstr ""
 
 #. module: portal_workflow_dec
-#: model:ir.model,name:portal_workflow_dec.model_mail_template
-msgid "Email Templates"
-msgstr ""
-
-#. module: portal_workflow_dec
-#: model:ir.model.fields,field_description:portal_workflow_dec.field_mail_template__id
+#: model:ir.model.fields,field_description:portal_workflow_dec.field_res_company__id
 msgid "ID"
 msgstr ""
 
 #. module: portal_workflow_dec
-#: model:ir.model.fields,field_description:portal_workflow_dec.field_mail_template____last_update
+#: model:ir.model.fields,help:portal_workflow_dec.field_res_company__xid
+msgid "ID of the record defined in xml file"
+msgstr ""
+
+#. module: portal_workflow_dec
+#: model:ir.model.fields,field_description:portal_workflow_dec.field_res_company____last_update
 msgid "Last Modified on"
+msgstr ""
+
+#. module: portal_workflow_dec
+#: model:ir.model.fields,field_description:portal_workflow_dec.field_res_company__portal_name
+msgid "Portal Name"
 msgstr ""
 
 #. module: portal_workflow_dec
@@ -62,7 +73,12 @@ msgid "Welcome to"
 msgstr ""
 
 #. module: portal_workflow_dec
+#: model:ir.model.fields,field_description:portal_workflow_dec.field_res_company__xid
+msgid "XML-ID"
+msgstr ""
+
+#. module: portal_workflow_dec
 #: code:addons/portal_workflow_dec/__init__.py:0
 #, python-format
-msgid "Your portal access to ${object.user_id.company_id.name}"
+msgid "Your access to ${object.user_id.company_id.portal_name}"
 msgstr ""

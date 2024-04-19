@@ -9,5 +9,5 @@ def post_init_hook(cr, registry):
     update_translation(
         env,
         "portal.mail_template_data_portal_welcome",
-        {"subject": _("Your portal access to ${object.user_id.company_id.name}")},
+        {"subject": _("Your access to ${object.user_id.company_id.portal_name}")},
     )

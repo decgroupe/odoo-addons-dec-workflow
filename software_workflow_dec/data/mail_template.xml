@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record model="ir.attachment" id="software_installation_process">
+        <field name="name">Procédure d'installation e-space DEC.pdf</field>
+        <field name="res_model">ir.ui.view</field>
+        <field
+            name="datas"
+            type="base64"
+            file="software_workflow_dec/static/pdf/dec_espace_install_process.pdf"
+        />
+    </record>
+
+    <record model="mail.template" id="software_license_pass.email_template_pass_send">
+        <field
+            name="attachment_ids"
+            eval="[(6, 0, [ref('software_installation_process')])]"
+        />
+    </record>
+
+</odoo>

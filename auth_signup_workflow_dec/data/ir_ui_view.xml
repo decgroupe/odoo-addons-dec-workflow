@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+    <template
+        id="auth_signup_workflow_dec.view_mail_template_user_signup_account_created"
+    >
+        <t t-call="mail_qweb.view_email_template_notification">
+            <t t-set="notify_account_changes" t-value="True" />
+            <t t-set="notified_user" t-value="object" />
+            <t t-set="content_message">
+                <div>
+                    <h1><t t-esc="object.company_id.portal_name" /></h1>
+                    <p t-if="object.name">Hello <t t-esc="object.name or ''" />,
+                    </p>
+                    <p>
+                        Your account for <t
+                            t-esc="object.company_id.portal_name"
+                        /> has been successfully activated!<br />
+                        Your login is <strong t-esc="object.email" />
+                    </p>
+                    <p>
+                        Click on the button below to gain access to your account.
+                    </p>
+                </div>
+            </t>
+
+            <t t-set="content_subject">
+                <t t-esc="email_subject" />
+            </t>
+
+            <t t-set="content_message_action">
+                <a t-attf-href="/web/login?auth_login={{object.email}}">
+                    Go to My Account
+                </a>
+            </t>
+
+            <t t-set="content_message_bottom">
+
+            </t>
+
+            <t t-set="content_message_signature">
+                <t t-if="not is_html_empty(user.signature)">
+                    <t t-raw="user.signature or ''" />
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

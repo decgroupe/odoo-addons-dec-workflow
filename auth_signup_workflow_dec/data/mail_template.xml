@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record
+        model="mail.template"
+        id="auth_signup.mail_template_user_signup_account_created"
+    >
+    <field name="body_type">qweb</field>
+    <field name="body_view_id" ref="view_mail_template_user_signup_account_created" />
+    </record>
+
+</odoo>

@@ -12,5 +12,5 @@
     "data": [
         "views/theme_bootswatch_templates.xml",
     ],
-    "installable": True,
+    "installable": False,
 }

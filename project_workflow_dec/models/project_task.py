@@ -43,9 +43,9 @@ class ProjectTask(models.Model):
         self.ensure_one()
         if self.sale_line_id:
             code = self.sale_line_id.product_id.default_code
-            if code.startswith("DO_DIGITAL_PREFIX"):
+            if code and code.startswith("DO_DIGITAL_PREFIX"):
                 self._tag_with("project_workflow_dec.project_tag_design_office_digital")
-            elif code.startswith("DO_EQUIPMENT_PREFIX"):
+            elif code and code.startswith("DO_EQUIPMENT_PREFIX"):
                 self._tag_with(
                     "project_workflow_dec.project_tag_design_office_equipment"
                 )
@@ -59,11 +59,11 @@ class ProjectTask(models.Model):
         self.ensure_one()
         if self.sale_line_id:
             code = self.sale_line_id.product_id.default_code
-            if code.startswith(DO_DIGITAL_PREFIX):
+            if code and code.startswith(DO_DIGITAL_PREFIX):
                 self._activity_todo_for(
                     "mail_activity_workflow_dec.team_design_office_digital"
                 )
-            elif code.startswith(DO_EQUIPMENT_PREFIX):
+            elif code and code.startswith(DO_EQUIPMENT_PREFIX):
                 self._activity_todo_for(
                     "mail_activity_workflow_dec.team_design_office_equipment"
                 )

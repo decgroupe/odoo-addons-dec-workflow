@@ -1,0 +1,49 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* auth_signup_workflow_dec
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-05 07:41+0000\n"
+"PO-Revision-Date: 2024-06-05 07:41+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: auth_signup_workflow_dec
+#: code:addons/auth_signup_workflow_dec/__init__.py:0
+#, python-format
+msgid "Account activated for ${object.user_id.company_id.portal_name}"
+msgstr ""
+
+#. module: auth_signup_workflow_dec
+#: model_terms:ir.ui.view,arch_db:auth_signup_workflow_dec.view_mail_template_user_signup_account_created
+msgid "Click on the button below to gain access to your account."
+msgstr ""
+
+#. module: auth_signup_workflow_dec
+#: model_terms:ir.ui.view,arch_db:auth_signup_workflow_dec.view_mail_template_user_signup_account_created
+msgid "Go to My Account"
+msgstr ""
+
+#. module: auth_signup_workflow_dec
+#: model_terms:ir.ui.view,arch_db:auth_signup_workflow_dec.view_mail_template_user_signup_account_created
+msgid "Hello"
+msgstr ""
+
+#. module: auth_signup_workflow_dec
+#: model_terms:ir.ui.view,arch_db:auth_signup_workflow_dec.view_mail_template_user_signup_account_created
+msgid "Your account for"
+msgstr ""
+
+#. module: auth_signup_workflow_dec
+#: model_terms:ir.ui.view,arch_db:auth_signup_workflow_dec.view_mail_template_user_signup_account_created
+msgid ""
+"has been successfully activated!<br/>\n"
+"                        Your login is"
+msgstr ""

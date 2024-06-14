@@ -9,8 +9,8 @@
         "stock_mts_mto_rule",
     ],
     "data": [
-        "data/picking_type.xml",
         "data/stock_location.xml",
+        "data/picking_type.xml",
         "data/stock_warehouse.xml",
         "views/assets.xml",
         "views/stock_move.xml",

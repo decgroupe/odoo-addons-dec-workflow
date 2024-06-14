@@ -6,6 +6,7 @@
         <field name="name">Adds</field>
         <field name="sequence_id" ref="stock.seq_picking_internal" />
         <field name="code">internal</field>
+        <field name="sequence_code">ADD</field>
         <field name="default_location_src_id" ref="stock.stock_location_stock" />
         <!-- This field is now set in the post_init_hook -->
         <!-- <field name="default_location_dest_id" ref="stock.location_production" /> -->
@@ -17,6 +18,7 @@
         <field name="name">Returns</field>
         <field name="sequence_id" ref="stock.seq_picking_internal" />
         <field name="code">internal</field>
+        <field name="sequence_code">RET</field>
         <!-- This field is now set in the post_init_hook -->
         <!-- <field name="default_location_src_id" ref="stock.location_production" /> -->
         <field name="default_location_dest_id" ref="stock.stock_location_stock" />
@@ -30,9 +32,13 @@
         <field name="name">Exceeds</field>
         <field name="sequence_id" ref="stock.seq_picking_internal" />
         <field name="code">internal</field>
+        <field name="sequence_code">EXC</field>
         <!-- This field is now set in the post_init_hook -->
         <!-- <field name="default_location_src_id" ref="stock.location_production" /> -->
-        <field name="default_location_dest_id" ref="stock_workflow_dec.stock_location_stock_se" />
+        <field
+            name="default_location_dest_id"
+            ref="stock_workflow_dec.stock_location_stock_se"
+        />
     </record>
 
 </odoo>

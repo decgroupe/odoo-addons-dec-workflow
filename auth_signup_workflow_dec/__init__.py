@@ -7,5 +7,5 @@ def post_init_hook(cr, registry):
     update_translation(
         env,
         "auth_signup.mail_template_user_signup_account_created",
-        {"subject": _("Account activated for ${object.user_id.company_id.portal_name}")},
+        {"subject": _("Account activated for ${object.company_id.portal_name}")},
     )

@@ -6,4 +6,9 @@
         <field name="body_view_id" ref="view_email_template_edi_sale" />
     </record>
 
+    <record model="mail.template" id="sale.mail_template_sale_confirmation">
+        <field name="body_type">qweb</field>
+        <field name="body_view_id" ref="view_mail_template_sale_confirmation" />
+    </record>
+
 </odoo>

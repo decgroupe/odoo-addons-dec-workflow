@@ -6,6 +6,7 @@
         id="auth_signup_workflow_dec.view_mail_template_user_signup_account_created"
     >
         <t t-call="mail_qweb.view_email_template_notification">
+            <t t-set="do_not_reply" t-value="True" />
             <t t-set="notify_account_changes" t-value="True" />
             <t t-set="notified_user" t-value="object" />
             <t t-set="content_message">

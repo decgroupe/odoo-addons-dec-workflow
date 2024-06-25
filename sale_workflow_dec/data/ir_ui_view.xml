@@ -120,13 +120,6 @@
                     />
                 </div>
             </t>
-            <t t-else="">
-                <div class="website_details">
-                    <t
-                        t-call="sale_workflow_dec.view_mail_template_sale_confirmation_website"
-                    />
-                </div>
-            </t>
         </t>
 
         <!-- If a custom layout is set, ignore our default template -->

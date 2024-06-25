@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-17 12:48+0000\n"
-"PO-Revision-Date: 2024-04-17 14:57+0200\n"
+"POT-Creation-Date: 2024-06-25 14:07+0000\n"
+"PO-Revision-Date: 2024-06-25 16:12+0200\n"
 "Last-Translator: Yann Papouin <y.papouin@dec-industrie.com>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.4.3\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #. module: sale_workflow_dec
 #: code:addons/sale_workflow_dec/__init__.py:0
@@ -30,9 +30,64 @@ msgstr ""
 "${object.client_order_ref or 'n/a' })"
 
 #. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_mail_template_sale_confirmation_website
+msgid "(Free)"
+msgstr "(Offert)"
+
+#. module: sale_workflow_dec
 #: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_email_template_edi_sale
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_mail_template_sale_confirmation
 msgid "(with reference:"
 msgstr "(avec référence :"
+
+#. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_mail_template_sale_confirmation_website
+msgid ""
+"<br/>\n"
+"                        <span class=\"bold\">Ship to:</span>"
+msgstr ""
+"<br/>\n"
+"                        <span class=\"bold\">Expédiée à :</span>"
+
+#. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_mail_template_sale_confirmation_website
+msgid "<span class=\"bold\">Bill to:</span>"
+msgstr "<span class=\"bold\">Facturée à :</span>"
+
+#. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_mail_template_sale_confirmation_website
+msgid "<span class=\"bold\">Delivery:</span>"
+msgstr "<span class=\"bold\">Livraison :</span>"
+
+#. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_mail_template_sale_confirmation_website
+msgid "<span class=\"bold\">Payment Method:</span>"
+msgstr "<span class=\"bold\">Méthode de paiement :</span>"
+
+#. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_mail_template_sale_confirmation_website
+msgid "<span class=\"bold\">Shipping Description:</span>"
+msgstr "<span class=\"bold\">Description de l'envoi :</span>"
+
+#. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_mail_template_sale_confirmation_website
+msgid "<span class=\"bold\">Shipping Method:</span>"
+msgstr "<span class=\"bold\">Méthode d'expédition :</span>"
+
+#. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_mail_template_sale_confirmation_website
+msgid "<span class=\"bold\">SubTotal:</span>"
+msgstr "<span class=\"bold\">Sous-total :</span>"
+
+#. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_mail_template_sale_confirmation_website
+msgid "<span class=\"bold\">Taxes:</span>"
+msgstr "<span class=\"bold\">Taxes :</span>"
+
+#. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_mail_template_sale_confirmation_website
+msgid "<span class=\"bold\">Total:</span>"
+msgstr "<span class=\"bold\">Total :</span>"
 
 #. module: sale_workflow_dec
 #: model_terms:ir.ui.view,arch_db:sale_workflow_dec.sale_order_form_view
@@ -61,6 +116,7 @@ msgstr ""
 
 #. module: sale_workflow_dec
 #: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_email_template_edi_sale
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_mail_template_sale_confirmation
 msgid "Hello"
 msgstr "Bonjour"
 
@@ -69,6 +125,12 @@ msgstr "Bonjour"
 #: model:ir.model.fields,field_description:sale_workflow_dec.field_sale_order__id
 msgid "ID"
 msgstr "ID"
+
+#. module: sale_workflow_dec
+#: model:ir.model.fields,help:sale_workflow_dec.field_product_product__xid
+#: model:ir.model.fields,help:sale_workflow_dec.field_sale_order__xid
+msgid "ID of the record defined in xml file"
+msgstr "ID de l'enregistrement défini dans le fichier xml"
 
 #. module: sale_workflow_dec
 #: model:ir.model.fields,field_description:sale_workflow_dec.field_product_product____last_update
@@ -97,6 +159,21 @@ msgid "Product"
 msgstr "Article"
 
 #. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_mail_template_sale_confirmation_website
+msgid "Product image"
+msgstr "Image de l'article"
+
+#. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_mail_template_sale_confirmation_website
+msgid "Products"
+msgstr "Articles"
+
+#. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_mail_template_sale_confirmation_website
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: sale_workflow_dec
 #: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_email_template_edi_sale
 msgid "Quotation"
 msgstr "Devis"
@@ -123,12 +200,34 @@ msgid "Total Margin"
 msgstr "Marge totale"
 
 #. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_mail_template_sale_confirmation_website
+msgid "VAT Excl."
+msgstr "TVA exclue"
+
+#. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_mail_template_sale_confirmation_website
+msgid "VAT Incl."
+msgstr "TVA incluse"
+
+#. module: sale_workflow_dec
+#: model:ir.model.fields,field_description:sale_workflow_dec.field_product_product__xid
+#: model:ir.model.fields,field_description:sale_workflow_dec.field_sale_order__xid
+msgid "XML-ID"
+msgstr "XML-ID"
+
+#. module: sale_workflow_dec
 #: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_email_template_edi_sale
 msgid "Your"
 msgstr "Votre"
 
 #. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_mail_template_sale_confirmation
+msgid "Your order"
+msgstr "Votre commande"
+
+#. module: sale_workflow_dec
 #: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_email_template_edi_sale
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_mail_template_sale_confirmation
 msgid "amounting in"
 msgstr "d'un montant de"
 
@@ -143,15 +242,14 @@ msgid "is"
 msgstr "est"
 
 #. module: sale_workflow_dec
+#: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_mail_template_sale_confirmation
+msgid "is confirmed."
+msgstr "est confirmée."
+
+#. module: sale_workflow_dec
 #: model_terms:ir.ui.view,arch_db:sale_workflow_dec.view_email_template_edi_sale
 msgid "ready for review"
 msgstr "prêt pour consultation"
-
-#~ msgid "ID of the record defined in xml file"
-#~ msgstr "ID de l'enregistrement défini dans le fichier xml"
-
-#~ msgid "XML-ID"
-#~ msgstr "XML-ID"
 
 #~ msgid "Total Untaxed"
 #~ msgstr "Total hors taxes"

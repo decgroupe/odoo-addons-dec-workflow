@@ -38,6 +38,9 @@
         <field name="model">project.project</field>
         <field name="inherit_id" ref="project.view_project"/>
         <field name="arch" type="xml">
+            <field name="sequence" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </field>
             <field name="name" position="before">
                 <field name="type_id"/>
             </field>

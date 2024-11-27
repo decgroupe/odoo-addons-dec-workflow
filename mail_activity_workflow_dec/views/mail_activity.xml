@@ -50,7 +50,7 @@
                 <filter
                     name="my_team_unassigned_activities"
                     string="My Team Unassigned Activities"
-                    domain="[('team_id.member_ids', '=', uid), ('user_id', '=', False)]"
+                    domain="[('team_id.member_ids', '=', uid), '|', ('user_id', '=', False), ('user_id.active', '=', False)]"
                 />
             </xpath>
         </field>

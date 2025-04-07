@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <record id="service_bnu_sdd" model="product.product">
+        <field name="name">Specific design &amp; development</field>
+        <field name="default_code">BNU_SDD</field>
+        <field name="type">service</field>
+        <field name="service_tracking">task_in_project</field>
+        <field name="uom_id" ref="uom.product_uom_hour"/>
+        <field name="uom_po_id" ref="uom.product_uom_hour"/>
+        <field name="list_price">100.00</field>
+        <field name="standard_price">50.00</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+    </record>
+
+    <record id="service_bnu_ost" model="product.product">
+        <field name="name">On-site training</field>
+        <field name="default_code">BNU_OST</field>
+        <field name="type">service</field>
+        <field name="service_tracking">task_in_project</field>
+        <field name="uom_id" ref="uom.product_uom_day"/>
+        <field name="uom_po_id" ref="uom.product_uom_day"/>
+        <field name="list_price">1500.00</field>
+        <field name="standard_price">1500.00</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+    </record>
+
+    <record id="service_beq_sdd" model="product.product">
+        <field name="name">Specific design &amp; development</field>
+        <field name="default_code">BEQ_SDD</field>
+        <field name="type">service</field>
+        <field name="service_tracking">task_in_project</field>
+        <field name="uom_id" ref="uom.product_uom_hour"/>
+        <field name="uom_po_id" ref="uom.product_uom_hour"/>
+        <field name="list_price">100.00</field>
+        <field name="standard_price">50.00</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+    </record>
+
+    <record id="service_beq_adooi" model="product.product">
+        <field name="name">Additional day of on-site intervention</field>
+        <field name="default_code">BEQ_ADOOI</field>
+        <field name="type">service</field>
+        <field name="service_tracking">task_in_project</field>
+        <field name="uom_id" ref="uom.product_uom_hour"/>
+        <field name="uom_po_id" ref="uom.product_uom_hour"/>
+        <field name="list_price">550.00</field>
+        <field name="standard_price">550.00</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+    </record>
+
+</odoo>

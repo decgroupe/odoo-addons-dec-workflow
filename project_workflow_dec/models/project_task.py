@@ -1,7 +1,7 @@
 # Copyright (C) DEC SARL, Inc - All Rights Reserved.
 # Written by Yann Papouin <ypa at decgroupe.com>, Jan 2021
 
-from odoo import _, models, api, fields
+from odoo import _, api, fields, models
 
 DO_DIGITAL_PREFIX = "BNU_"
 DO_EQUIPMENT_PREFIX = "BEQ_"
@@ -27,59 +27,82 @@ class ProjectTask(models.Model):
     @api.model
     def create(self, vals):
         rec = super().create(vals)
-        if vals and vals.get("sale_line_id"):
-            rec._auto_tag_from_sale()
-            rec._auto_activity_from_sale()
+        if self._need_auto_tag(vals):
+            rec._auto_tag()
+        if self._need_auto_activity(vals):
+            rec._auto_activity()
         return rec
 
     def write(self, vals):
         res = super().write(vals)
-        if vals.get("sale_line_id"):
+        if self._need_auto_tag(vals):
             for rec in self:
-                rec._auto_tag_from_sale()
+                rec._auto_tag()
         return res
 
-    def _auto_tag_from_sale(self):
+    @api.model
+    def _need_auto_tag(self, vals):
+        return vals.get("sale_line_id")
+
+    def _get_auto_tag(self):
         self.ensure_one()
+        tag_id = False
         if self.sale_line_id:
-            code = self.sale_line_id.product_id.default_code
-            if code and code.startswith("DO_DIGITAL_PREFIX"):
-                self._tag_with("project_workflow_dec.project_tag_design_office_digital")
-            elif code and code.startswith("DO_EQUIPMENT_PREFIX"):
-                self._tag_with(
+            # use sudo() to avoid ACL issues
+            code = self.sudo().sale_line_id.product_id.default_code
+            if code and code.startswith(DO_DIGITAL_PREFIX):
+                tag_id = self.env.ref(
+                    "project_workflow_dec.project_tag_design_office_digital"
+                )
+            elif code and code.startswith(DO_EQUIPMENT_PREFIX):
+                tag_id = self.env.ref(
                     "project_workflow_dec.project_tag_design_office_equipment"
                 )
+            else:
+                tag_id = False
+        return tag_id
 
-    def _tag_with(self, tag_ref):
-        tag = self.env.ref(tag_ref)
-        if tag:
-            self.write({"tag_ids": [(4, tag.id)]})
+    def _auto_tag(self):
+        self.ensure_one()
+        # avoid infinite loop
+        if self.env.context.get("apply_auto_tag", False):
+            return
+        tag_id = self._get_auto_tag()
+        if tag_id:
+            self.with_context(apply_auto_tag=True).write(
+                {"tag_ids": [(4, tag_id.id)]},
+            )
 
-    def _auto_activity_from_sale(self):
+    @api.model
+    def _need_auto_activity(self, vals):
+        return vals.get("sale_line_id")
+
+    def _auto_activity(self):
         self.ensure_one()
         if self.sale_line_id:
-            code = self.sale_line_id.product_id.default_code
+            # use sudo() to avoid ACL issues
+            code = self.sudo().sale_line_id.product_id.default_code
             if code and code.startswith(DO_DIGITAL_PREFIX):
-                self._activity_todo_for(
+                team_id = self.env.ref(
                     "mail_activity_workflow_dec.team_design_office_digital"
                 )
             elif code and code.startswith(DO_EQUIPMENT_PREFIX):
-                self._activity_todo_for(
+                team_id = self.env.ref(
                     "mail_activity_workflow_dec.team_design_office_equipment"
                 )
-
-    def _activity_todo_for(self, team_ref):
-        self.ensure_one()
-        team_id = self.env.ref(team_ref)
-        if team_id:
-            self.with_context(
-                mail_activity_noautofollow=True,
-            ).activity_schedule(
-                act_type_xmlid="mail.mail_activity_data_todo",
-                note=_("🚨 Auto: To Assign and to Plan"),
-                user_id=team_id.user_id.id,
-                team_id=team_id.id,
-            )
+            else:
+                team_id = False
+            if team_id:
+                self.create_to_assign_activity(
+                    origin=self.sale_line_id,
+                    user_id=team_id.user_id.id,
+                    team_id=team_id.id,
+                )
+                self.create_to_plan_activity(
+                    origin=self.sale_line_id,
+                    user_id=team_id.user_id.id,
+                    team_id=team_id.id,
+                )
 
     def _compute_show_time_control(self):
         result = super()._compute_show_time_control()

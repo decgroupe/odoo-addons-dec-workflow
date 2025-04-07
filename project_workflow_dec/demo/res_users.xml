@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+
+    <!-- Users for 📘 Team Digital -->
+
+        <record id="partner_jd" model="res.partner">
+            <field name="name">Jane Doe</field>
+            <field name="company_id" ref="base.main_company" />
+            <field name="street">1234 Elm Street</field>
+            <field name="city">Springfield</field>
+            <field
+                name="state_id"
+                model="res.country.state"
+                search="[('code','ilike','IL')]"
+            />
+            <field name="zip">62704</field>
+            <field name="country_id" ref="base.us" />
+            <field name="tz">America/Chicago</field>
+            <field name="email">jane.doe@example.com</field>
+            <field name="phone">(555)-123-4567</field>
+        </record>
+
+        <record id="user_jd" model="res.users">
+            <field name="partner_id" ref="project_workflow_dec.partner_jd" />
+            <field name="login">jdoe</field>
+            <field name="password">jdoe</field>
+            <field name="signature" type="xml"><span>-- <br />+Jane Doe</span></field>
+            <field
+                name="groups_id"
+                eval="[(6,0,[
+                    ref('base.group_user'),
+                    ref('base.group_partner_manager'),
+                    ref('base.group_allow_export'),
+                    ref('project.group_project_user')
+                ])]"
+            />
+            <field
+                name="image_1920"
+                type="base64"
+                file="project_workflow_dec/static/img/user_jdoe.jpg"
+            />
+            <field
+                name="activity_team_ids"
+                eval="[(6,0,[
+                    ref('mail_activity_workflow_dec.team_design_office_digital')
+                ])]"
+            />
+        </record>
+
+        <record id="partner_rb" model="res.partner">
+            <field name="name">Robert Brown</field>
+            <field name="company_id" ref="base.main_company" />
+            <field name="street">7890 Cedar Street</field>
+            <field name="city">Smallville</field>
+            <field
+                name="state_id"
+                model="res.country.state"
+                search="[('code','ilike','IL')]"
+            />
+            <field name="zip">62705</field>
+            <field name="country_id" ref="base.us" />
+            <field name="tz">America/Chicago</field>
+            <field name="email">robert.brown@example.com</field>
+            <field name="phone">(555)-234-5678</field>
+        </record>
+
+        <record id="user_rb" model="res.users">
+            <field name="partner_id" ref="project_workflow_dec.partner_rb" />
+            <field name="login">rbrown</field>
+            <field name="password">rbrown</field>
+            <field name="signature" type="xml"><span>-- <br
+                    />+Robert Brown</span></field>
+            <field
+                name="groups_id"
+                eval="[(6,0,[
+                    ref('base.group_user'),
+                    ref('base.group_partner_manager'),
+                    ref('project.group_project_user')
+                ])]"
+            />
+            <field
+                name="image_1920"
+                type="base64"
+                file="project_workflow_dec/static/img/user_rbrown.jpg"
+            />
+            <field
+                name="activity_team_ids"
+                eval="[(6,0,[
+                    ref('mail_activity_workflow_dec.team_design_office_digital')]
+                )]"
+            />
+        </record>
+
+    <!-- Users for 📗 Team Equipment -->
+
+        <record id="partner_mw" model="res.partner">
+            <field name="name">Michael White</field>
+            <field name="company_id" ref="base.main_company" />
+            <field name="street">4321 Maple Drive</field>
+            <field name="city">Star City</field>
+            <field
+                name="state_id"
+                model="res.country.state"
+                search="[('code','ilike','TX')]"
+            />
+            <field name="zip">73301</field>
+            <field name="country_id" ref="base.us" />
+            <field name="tz">America/Chicago</field>
+            <field name="email">michael.white@example.com</field>
+            <field name="phone">(555)-321-9876</field>
+        </record>
+
+        <record id="user_mw" model="res.users">
+            <field name="partner_id" ref="project_workflow_dec.partner_mw" />
+            <field name="login">mwhite</field>
+            <field name="password">mwhite</field>
+            <field name="signature" type="xml"><span>-- <br
+                    />+Michael White</span></field>
+            <field
+                name="groups_id"
+                eval="[(6,0,[
+                    ref('base.group_user'),
+                    ref('base.group_partner_manager'),
+                    ref('project.group_project_user')
+                ])]"
+            />
+            <field
+                name="image_1920"
+                type="base64"
+                file="project_workflow_dec/static/img/user_mwhite.jpg"
+            />
+            <field
+                name="activity_team_ids"
+                eval="[(6,0,[
+                    ref('mail_activity_workflow_dec.team_design_office_equipment')
+                ])]"
+            />
+        </record>
+
+        <record id="partner_em" model="res.partner">
+            <field name="name">Emily Moore</field>
+            <field name="company_id" ref="base.main_company" />
+            <field name="street">3456 Birch Road</field>
+            <field name="city">Central City</field>
+            <field
+                name="state_id"
+                model="res.country.state"
+                search="[('code','ilike','TX')]"
+            />
+            <field name="zip">73302</field>
+            <field name="country_id" ref="base.us" />
+            <field name="tz">America/Chicago</field>
+            <field name="email">emily.moore@example.com</field>
+            <field name="phone">(555)-432-8765</field>
+        </record>
+
+        <record id="user_em" model="res.users">
+            <field name="partner_id" ref="project_workflow_dec.partner_em" />
+            <field name="login">emoore</field>
+            <field name="password">emoore</field>
+            <field name="signature" type="xml"><span>-- <br
+                    />+Emily Moore</span></field>
+            <field
+                name="groups_id"
+                eval="[(6,0,[
+                    ref('base.group_user'),
+                    ref('base.group_partner_manager'),
+                    ref('project.group_project_user')
+                ])]"
+            />
+            <field
+                name="image_1920"
+                type="base64"
+                file="project_workflow_dec/static/img/user_emoore.jpg"
+            />
+            <field
+                name="activity_team_ids"
+                eval="[(6,0,[
+                    ref('mail_activity_workflow_dec.team_design_office_equipment')
+                ])]"
+            />
+        </record>
+
+    <!-- Users for 💁 Team Support Functions -->
+
+        <record id="partner_js" model="res.partner">
+            <field name="name">John Smith</field>
+            <field name="company_id" ref="base.main_company" />
+            <field name="street">5678 Oak Avenue</field>
+            <field name="city">Metropolis</field>
+            <field
+                name="state_id"
+                model="res.country.state"
+                search="[('code','ilike','NY')]"
+            />
+            <field name="zip">10001</field>
+            <field name="country_id" ref="base.us" />
+            <field name="tz">America/New_York</field>
+            <field name="email">john.smith@example.com</field>
+            <field name="phone">(555)-987-6543</field>
+        </record>
+
+        <record id="user_js" model="res.users">
+            <field name="partner_id" ref="project_workflow_dec.partner_js" />
+            <field name="login">jsmith</field>
+            <field name="password">jsmith</field>
+            <field name="signature" type="xml"><span>-- <br />+John Smith</span></field>
+            <field
+                name="groups_id"
+                eval="[(6,0,[
+                    ref('base.group_user'),
+                    ref('base.group_partner_manager'),
+                    ref('project.group_project_user'),
+                    ref('sales_team.group_sale_manager')
+                ])]"
+            />
+            <field
+                name="image_1920"
+                type="base64"
+                file="project_workflow_dec/static/img/user_jsmith.jpg"
+            />
+            <field
+                name="activity_team_ids"
+                eval="[(6,0,[
+                    ref('mail_activity_workflow_dec.team_support_functions')
+                ])]"
+            />
+        </record>
+
+        <record id="partner_dj" model="res.partner">
+            <field name="name">David Johnson</field>
+            <field name="company_id" ref="base.main_company" />
+            <field name="street">6789 Spruce Lane</field>
+            <field name="city">Coast City</field>
+            <field
+                name="state_id"
+                model="res.country.state"
+                search="[('code','ilike','NY')]"
+            />
+            <field name="zip">10002</field>
+            <field name="country_id" ref="base.us" />
+            <field name="tz">America/New_York</field>
+            <field name="email">david.johnson@example.com</field>
+            <field name="phone">(555)-876-5432</field>
+        </record>
+
+        <record id="user_dj" model="res.users">
+            <field name="partner_id" ref="project_workflow_dec.partner_dj" />
+            <field name="login">djohnson</field>
+            <field name="password">djohnson</field>
+            <field name="signature" type="xml"><span>-- <br
+                    />+David Johnson</span></field>
+            <field
+                name="groups_id"
+                eval="[(6,0,[
+                    ref('base.group_user'),
+                    ref('base.group_partner_manager'),
+                    ref('project.group_project_user'),
+                    ref('sales_team.group_sale_manager')
+                ])]"
+            />
+            <field
+                name="image_1920"
+                type="base64"
+                file="project_workflow_dec/static/img/user_djohnson.jpg"
+            />
+            <field
+                name="activity_team_ids"
+                eval="[(6,0,[
+                    ref('mail_activity_workflow_dec.team_support_functions')
+                ])]"
+            />
+        </record>
+
+    <!-- Users for 📈 Team Trading -->
+
+        <record id="partner_ab" model="res.partner">
+            <field name="name">Alice Brown</field>
+            <field name="company_id" ref="base.main_company" />
+            <field name="street">9101 Pine Lane</field>
+            <field name="city">Gotham</field>
+            <field
+                name="state_id"
+                model="res.country.state"
+                search="[('code','ilike','CA')]"
+            />
+            <field name="zip">90210</field>
+            <field name="country_id" ref="base.us" />
+            <field name="tz">America/Los_Angeles</field>
+            <field name="email">alice.brown@example.com</field>
+            <field name="phone">(555)-654-3210</field>
+        </record>
+
+        <record id="user_ab" model="res.users">
+            <field name="partner_id" ref="project_workflow_dec.partner_ab" />
+            <field name="login">abrown</field>
+            <field name="password">abrown</field>
+            <field name="signature" type="xml"><span>-- <br
+                    />+Alice Brown</span></field>
+            <field
+                name="groups_id"
+                eval="[(6,0,[
+                    ref('base.group_user'),
+                    ref('base.group_partner_manager'),
+                    ref('project.group_project_user'),
+                    ref('sales_team.group_sale_salesman')
+                ])]"
+            />
+            <field
+                name="image_1920"
+                type="base64"
+                file="project_workflow_dec/static/img/user_abrown.jpg"
+            />
+            <field
+                name="activity_team_ids"
+                eval="[(6,0,[
+                    ref('mail_activity_workflow_dec.team_trading')
+                ])]"
+            />
+        </record>
+
+        <record id="partner_cl" model="res.partner">
+            <field name="name">Charlotte Lee</field>
+            <field name="company_id" ref="base.main_company" />
+            <field name="street">1234 Redwood Drive</field>
+            <field name="city">Blüdhaven</field>
+            <field
+                name="state_id"
+                model="res.country.state"
+                search="[('code','ilike','CA')]"
+            />
+            <field name="zip">90211</field>
+            <field name="country_id" ref="base.us" />
+            <field name="tz">America/Los_Angeles</field>
+            <field name="email">charlotte.lee@example.com</field>
+            <field name="phone">(555)-543-2109</field>
+        </record>
+
+        <record id="user_cl" model="res.users">
+            <field name="partner_id" ref="project_workflow_dec.partner_cl" />
+            <field name="login">clee</field>
+            <field name="password">clee</field>
+            <field name="signature" type="xml"><span>-- <br
+                    />+Charlotte Lee</span></field>
+            <field
+                name="groups_id"
+                eval="[(6,0,[
+                    ref('base.group_user'),
+                    ref('base.group_partner_manager'),
+                    ref('project.group_project_user'),
+                    ref('sales_team.group_sale_salesman')
+                ])]"
+            />
+            <field
+                name="image_1920"
+                type="base64"
+                file="project_workflow_dec/static/img/user_clee.jpg"
+            />
+            <field
+                name="activity_team_ids"
+                eval="[(6,0,[
+                    ref('mail_activity_workflow_dec.team_trading')
+                ])]"
+            />
+        </record>
+
+        <!-- Team leaders -->
+
+        <record model="mail.activity.team" id="mail_activity_workflow_dec.team_trading">
+            <field name="user_id" ref="project_workflow_dec.user_cl" />
+        </record>
+
+        <record
+            model="mail.activity.team"
+            id="mail_activity_workflow_dec.team_support_functions"
+        >
+            <field name="user_id" ref="project_workflow_dec.user_dj" />
+        </record>
+
+    </data>
+</odoo>

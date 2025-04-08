@@ -40,26 +40,33 @@ class ProjectTask(models.Model):
                 rec._auto_tag()
         return res
 
+    def _get_tag_for_product_code(self, product_code):
+        self.ensure_one()
+        if product_code and product_code.startswith(DO_DIGITAL_PREFIX):
+            return self.env.ref(
+                "project_workflow_dec.project_tag_design_office_digital"
+            )
+        elif product_code and product_code.startswith(DO_EQUIPMENT_PREFIX):
+            return self.env.ref(
+                "project_workflow_dec.project_tag_design_office_equipment"
+            )
+        else:
+            return False
+
     @api.model
     def _need_auto_tag(self, vals):
         return vals.get("sale_line_id")
 
-    def _get_auto_tag(self):
+    def _get_auto_tag_data(self):
         self.ensure_one()
         tag_id = False
         if self.sale_line_id:
             # use sudo() to avoid ACL issues
-            code = self.sudo().sale_line_id.product_id.default_code
-            if code and code.startswith(DO_DIGITAL_PREFIX):
-                tag_id = self.env.ref(
-                    "project_workflow_dec.project_tag_design_office_digital"
-                )
-            elif code and code.startswith(DO_EQUIPMENT_PREFIX):
-                tag_id = self.env.ref(
-                    "project_workflow_dec.project_tag_design_office_equipment"
-                )
-            else:
-                tag_id = False
+            tag_id = self._get_tag_for_product_code(
+                self.sudo().sale_line_id.product_id.default_code
+            )
+        else:
+            tag_id = False
         return tag_id
 
     def _auto_tag(self):
@@ -67,42 +74,57 @@ class ProjectTask(models.Model):
         # avoid infinite loop
         if self.env.context.get("apply_auto_tag", False):
             return
-        tag_id = self._get_auto_tag()
+        tag_id = self._get_auto_tag_data()
         if tag_id:
             self.with_context(apply_auto_tag=True).write(
                 {"tag_ids": [(4, tag_id.id)]},
             )
 
+    def _get_team_for_product_code(self, product_code):
+        self.ensure_one()
+        if product_code and product_code.startswith(DO_DIGITAL_PREFIX):
+            return self.env.ref("mail_activity_workflow_dec.team_design_office_digital")
+        elif product_code and product_code.startswith(DO_EQUIPMENT_PREFIX):
+            return self.env.ref(
+                "mail_activity_workflow_dec.team_design_office_equipment"
+            )
+        else:
+            return False
+
     @api.model
     def _need_auto_activity(self, vals):
         return vals.get("sale_line_id")
 
-    def _auto_activity(self):
+    def _get_auto_activity_data(self):
         self.ensure_one()
         if self.sale_line_id:
+            origin = self.sale_line_id
             # use sudo() to avoid ACL issues
-            code = self.sudo().sale_line_id.product_id.default_code
-            if code and code.startswith(DO_DIGITAL_PREFIX):
-                team_id = self.env.ref(
-                    "mail_activity_workflow_dec.team_design_office_digital"
-                )
-            elif code and code.startswith(DO_EQUIPMENT_PREFIX):
-                team_id = self.env.ref(
-                    "mail_activity_workflow_dec.team_design_office_equipment"
-                )
-            else:
-                team_id = False
-            if team_id:
-                self.create_to_assign_activity(
-                    origin=self.sale_line_id,
-                    user_id=team_id.user_id.id,
-                    team_id=team_id.id,
-                )
-                self.create_to_plan_activity(
-                    origin=self.sale_line_id,
-                    user_id=team_id.user_id.id,
-                    team_id=team_id.id,
-                )
+            team_id = self._get_team_for_product_code(
+                self.sudo().sale_line_id.product_id.default_code
+            )
+        else:
+            origin = False
+            team_id = False
+        return origin, team_id
+
+    def _auto_activity(self):
+        self.ensure_one()
+        # avoid infinite loop
+        if self.env.context.get("apply_auto_activity", False):
+            return
+        origin, team_id = self._get_auto_activity_data()
+        if team_id:
+            self.with_context(apply_auto_activity=True).create_to_assign_activity(
+                origin=origin,
+                user_id=team_id.user_id.id,
+                team_id=team_id.id,
+            )
+            self.with_context(apply_auto_activity=True).create_to_plan_activity(
+                origin=origin,
+                user_id=team_id.user_id.id,
+                team_id=team_id.id,
+            )
 
     def _compute_show_time_control(self):
         result = super()._compute_show_time_control()

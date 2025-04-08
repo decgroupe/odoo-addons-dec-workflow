@@ -163,6 +163,7 @@ class TestProjectWorkflowDec(TransactionCase):
 
 
     def test_40_(self):
+        pass
         #TODO: set date_deadline
         #TODO: set check assigned team
 

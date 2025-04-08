@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-17 08:15+0000\n"
+"POT-Creation-Date: 2025-04-08 09:14+0000\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -11,7 +11,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.3\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#. module: project_workflow_dec
+#: model:product.product,name:project_workflow_dec.service_beq_adooi
+#: model:product.template,name:project_workflow_dec.service_beq_adooi_product_template
+msgid "Additional day of on-site intervention"
+msgstr "Journée supplémentaire d'intervention sur site"
 
 #. module: project_workflow_dec
 #: model:project.task,legend_blocked:project_workflow_dec.project_task_building_maintenance
@@ -27,6 +33,12 @@ msgstr ""
 #: model:project.task.type,legend_blocked:project_workflow_dec.task_type_time_tracking
 msgid "Blocked"
 msgstr "Bloquée"
+
+#. module: project_workflow_dec
+#: model:product.product,uom_name:project_workflow_dec.service_bnu_ost
+#: model:product.template,uom_name:project_workflow_dec.service_bnu_ost_product_template
+msgid "Days"
+msgstr "Jours"
 
 #. module: project_workflow_dec
 #: model:ir.model.fields,field_description:project_workflow_dec.field_project_project__display_name
@@ -48,6 +60,16 @@ msgstr "Pour usage interne uniquement"
 #: model:ir.model.fields,help:project_workflow_dec.field_project_task__sequence
 msgid "Gives the sequence order when displaying a list of tasks."
 msgstr "Donne la séquence (l'ordre) d'affichage d'une liste de tâches."
+
+#. module: project_workflow_dec
+#: model:product.product,uom_name:project_workflow_dec.service_beq_adooi
+#: model:product.product,uom_name:project_workflow_dec.service_beq_sdd
+#: model:product.product,uom_name:project_workflow_dec.service_bnu_sdd
+#: model:product.template,uom_name:project_workflow_dec.service_beq_adooi_product_template
+#: model:product.template,uom_name:project_workflow_dec.service_beq_sdd_product_template
+#: model:product.template,uom_name:project_workflow_dec.service_bnu_sdd_product_template
+msgid "Hours"
+msgstr "Heures"
 
 #. module: project_workflow_dec
 #: model:ir.model.fields,field_description:project_workflow_dec.field_project_project__id
@@ -75,6 +97,12 @@ msgstr "En cours"
 #: model:ir.model.fields,field_description:project_workflow_dec.field_project_task____last_update
 msgid "Last Modified on"
 msgstr "Dernière modification le"
+
+#. module: project_workflow_dec
+#: model:product.product,name:project_workflow_dec.service_bnu_ost
+#: model:product.template,name:project_workflow_dec.service_bnu_ost_product_template
+msgid "On-site training"
+msgstr "Formation sur site"
 
 #. module: project_workflow_dec
 #: model_terms:ir.ui.view,arch_db:project_workflow_dec.edit_project_form_view
@@ -130,6 +158,14 @@ msgid "Sequence"
 msgstr "Séquence"
 
 #. module: project_workflow_dec
+#: model:product.product,name:project_workflow_dec.service_beq_sdd
+#: model:product.product,name:project_workflow_dec.service_bnu_sdd
+#: model:product.template,name:project_workflow_dec.service_beq_sdd_product_template
+#: model:product.template,name:project_workflow_dec.service_bnu_sdd_product_template
+msgid "Specific design & development"
+msgstr "Études & développement spécifiques"
+
+#. module: project_workflow_dec
 #: model:ir.model,name:project_workflow_dec.model_project_task
 msgid "Task"
 msgstr "Tâche"
@@ -138,21 +174,6 @@ msgstr "Tâche"
 #: model:project.project,label_tasks:project_workflow_dec.project_internal_management
 msgid "Tasks"
 msgstr "Tâches"
-
-#. module: project_workflow_dec
-#: model:project.project,label_tickets:project_workflow_dec.project_internal_management
-#: model:project.task,label_tickets:project_workflow_dec.project_task_building_maintenance
-#: model:project.task,label_tickets:project_workflow_dec.project_task_household
-#: model:project.task,label_tickets:project_workflow_dec.project_task_internal_training
-#: model:project.task,label_tickets:project_workflow_dec.project_task_leave_normal
-#: model:project.task,label_tickets:project_workflow_dec.project_task_leave_sick
-#: model:project.task,label_tickets:project_workflow_dec.project_task_non_attendance
-#: model:project.task,label_tickets:project_workflow_dec.project_task_procedure_drafting
-#: model:project.task,label_tickets:project_workflow_dec.project_task_reporting_expense
-#: model:project.task,label_tickets:project_workflow_dec.project_task_timesheet_filling
-#: model:project.task,label_tickets:project_workflow_dec.project_task_vehicle_maintenance
-msgid "Tickets"
-msgstr "Tickets"
 
 #. module: project_workflow_dec
 #: model:ir.model.fields,field_description:project_workflow_dec.field_project_project__privacy_visibility
@@ -199,11 +220,12 @@ msgstr "📚 BE"
 msgid "🔰 Internal"
 msgstr "🔰 Interne"
 
-#. module: project_workflow_dec
-#: code:addons/project_workflow_dec/models/project_task.py:0
+#~ msgid "Tickets"
+#~ msgstr "Tickets"
+
 #, python-format
-msgid "🚨 Auto: To Assign and to Plan"
-msgstr "🚨 Auto: À assigner et planifier"
+#~ msgid "🚨 Auto: To Assign and to Plan"
+#~ msgstr "🚨 Auto: À assigner et planifier"
 
 #~ msgid "ID of the record defined in xml file"
 #~ msgstr "ID de l'enregistrement défini dans le fichier xml"

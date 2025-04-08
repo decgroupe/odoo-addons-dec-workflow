@@ -1,0 +1,67 @@
+services:
+  - name: postgres:9.6
+    alias: postgres
+
+variables:
+  # https://docs.gitlab.com/runner/configuration/feature-flags.html
+  FF_TIMESTAMPS: 1
+  # PostgreSQL
+  POSTGRES_USER: odoo
+  POSTGRES_PASSWORD: odoo
+  POSTGRES_DB: odoo
+  VERSION: "14.0"
+
+job:
+  tags:
+    - _odoo
+  cache:
+    paths:
+      - /root/.cache/pip
+  timeout: 2h
+  image: docker-registry.decgroupe.com/erp/oca/oca-ci/py3.8-ocb14.0-dec:latest
+  script:
+    # Add nano command
+    - apt install -y nano
+    # Add killall command
+    - apt install -y psmisc 
+    # Install dependencies (old way using oca_dependencies.txt)
+    - oca_clone_dependencies
+    # Force install of older lxml 
+    - pip install lxml==4.6.5
+    # Install aerolib to venv
+    - git clone https://github.com/decgroupe/aeroolib.git /tmp/aeroolib
+    - pip install -e /tmp/aeroolib
+    # - cd /opt/odoo
+    # Install addons and dependencies (new way using setuptool)
+    - oca_install_addons
+    # Check licenses
+    # - manifestoo -d . check-licenses
+    # Check development status
+    # - manifestoo -d . check-dev-status --default-dev-status=Beta
+    # Config server wide modules
+    - echo "server_wide_modules=base,web,queue_job,base_module_list,dbfilter_from_header,db_from_header,base_deterministic_session_gc" >> /etc/odoo.cfg
+    # Exclude some modules
+    - EXCLUDE=product_create_prefill,website_sale_product_public_code,mail_activity_team_schedule,mail_activity_schedule_dhxgantt,project_schedule,mrp_schedule,sale_timesheet_project_schedule,web_report_workflow,account_report_qweb,sale_report_qweb,l10n_fr_hr_expense_easy
+    # - INCLUDE=procurement_exception
+    # Initialize test db
+    - oca_init_test_database
+    # Run tests with coverage ()
+    # - oca_run_tests || (echo "CI is now in sleep mode for 1 hour, you can go to '/builds/erp/odoo-addons/dec/public' and run 'odoo shell -d odoo' to debug current status" ; sleep 1h; (exit 1) )
+    - oca_run_tests
+    # Output coverage console report
+    - coverage report
+    # Generate coverage HTML report to htmlcov directory
+    - coverage html
+    # Generate coverage.xml cobertura report
+    - coverage xml
+    # - sleep 8h || true
+  artifacts:
+    paths:
+      - /tmp/odoo
+      - htmlcov
+    expire_in: 3 day
+    when: always
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage.xml

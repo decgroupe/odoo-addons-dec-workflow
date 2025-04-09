@@ -60,23 +60,29 @@ class ProjectTask(models.Model):
     def _get_auto_tag_data(self):
         self.ensure_one()
         tag_id = False
+        origin = False
         if self.sale_line_id:
             # use sudo() to avoid ACL issues
+            sale_line_id = self.sudo().sale_line_id
+            origin = {
+                "res_id": sale_line_id.id,
+                "res_model": sale_line_id._name,
+            }
             tag_id = self._get_tag_for_product_code(
-                self.sudo().sale_line_id.product_id.default_code
+                sale_line_id.product_id.default_code
             )
         else:
             tag_id = False
-        return tag_id
+        return origin, tag_id
 
     def _auto_tag(self):
         self.ensure_one()
         # avoid infinite loop
-        if self.env.context.get("apply_auto_tag", False):
+        if self.env.context.get("auto_tag_origin", False):
             return
-        tag_id = self._get_auto_tag_data()
+        origin, tag_id = self._get_auto_tag_data()
         if tag_id:
-            self.with_context(apply_auto_tag=True).write(
+            self.with_context(auto_tag_origin=origin).write(
                 {"tag_ids": [(4, tag_id.id)]},
             )
 
@@ -97,33 +103,37 @@ class ProjectTask(models.Model):
 
     def _get_auto_activity_data(self):
         self.ensure_one()
+        origin = False
+        act_values = {}
         if self.sale_line_id:
-            origin = self.sale_line_id
             # use sudo() to avoid ACL issues
+            sale_line_id = self.sudo().sale_line_id
+            origin = {
+                "res_id": sale_line_id.id,
+                "res_model": sale_line_id._name,
+            }
             team_id = self._get_team_for_product_code(
-                self.sudo().sale_line_id.product_id.default_code
+                sale_line_id.product_id.default_code
             )
-        else:
-            origin = False
-            team_id = False
-        return origin, team_id
+            if team_id:
+                act_values = {
+                    "team_id": team_id.id,
+                    "user_id": team_id.user_id.id,
+                }
+        return origin, act_values
 
     def _auto_activity(self):
         self.ensure_one()
         # avoid infinite loop
-        if self.env.context.get("apply_auto_activity", False):
+        if self.env.context.get("auto_activity_origin", False):
             return
-        origin, team_id = self._get_auto_activity_data()
-        if team_id:
-            self.with_context(apply_auto_activity=True).create_to_assign_activity(
-                origin=origin,
-                user_id=team_id.user_id.id,
-                team_id=team_id.id,
+        origin, act_values = self._get_auto_activity_data()
+        if act_values:
+            self.with_context(auto_activity_origin=origin).create_to_assign_activity(
+                **act_values,
             )
-            self.with_context(apply_auto_activity=True).create_to_plan_activity(
-                origin=origin,
-                user_id=team_id.user_id.id,
-                team_id=team_id.id,
+            self.with_context(auto_activity_origin=origin).create_to_plan_activity(
+                **act_values,
             )
 
     def _compute_show_time_control(self):

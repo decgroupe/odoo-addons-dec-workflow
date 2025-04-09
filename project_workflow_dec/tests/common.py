@@ -43,6 +43,17 @@ class TestProjectWorkflowDecCommon(TransactionCase):
         self.tag_digital = self.env.ref(
             "project_workflow_dec.project_tag_design_office_digital"
         )
+        # teams
+        self.team_design_office_digital = self.env.ref(
+            "mail_activity_workflow_dec.team_design_office_digital"
+        )
+        self.team_design_office_equipment = self.env.ref(
+            "mail_activity_workflow_dec.team_design_office_equipment"
+        )
+        self.team_support_functions = self.env.ref(
+            "mail_activity_workflow_dec.team_support_functions"
+        )
+        self.team_treading = self.env.ref("mail_activity_workflow_dec.team_trading")
         # products
         self.service_bnu_sdd = self.env.ref("project_workflow_dec.service_bnu_sdd")
         self.service_bnu_ost = self.env.ref("project_workflow_dec.service_bnu_ost")
@@ -61,7 +72,8 @@ class TestProjectWorkflowDecCommon(TransactionCase):
         self.assertIsNotNone(self.tag_equipment, "Tag Equipment not found")
         self.assertIsNotNone(self.tag_digital, "Tag Digital not found")
         # users
-        self.user_jd = self.env.ref("project_workflow_dec.user_jd")
+        self.bnu_user_jd = self.env.ref("project_workflow_dec.user_jd")
+        self.beq_user_mw = self.env.ref("project_workflow_dec.user_mw")
         # stages
         self.task_stage_new = self.env.ref("project.project_stage_0")
         self.task_stage_done = self.env.ref("project.project_stage_2")

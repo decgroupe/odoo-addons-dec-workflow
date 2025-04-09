@@ -1,6 +1,8 @@
 # Copyright (C) DEC SARL, Inc - All Rights Reserved.
 # Written by Yann Papouin <ypa at decgroupe.com>, Apr 2025
 
+import datetime
+from odoo import fields
 from .common import TestProjectWorkflowDecCommon
 
 
@@ -68,12 +70,18 @@ class TestProjectWorkflowDec(TestProjectWorkflowDecCommon):
         self.assertIn(self.activity_to_assign, activity_types)
         self.assertIn(self.activity_to_plan, activity_types)
         # test "assign to me"
-        sol1_id.task_id.with_user(self.user_jd).action_assign_to_me()
+        sol1_id.task_id.with_user(self.bnu_user_jd).action_assign_to_me()
         # check that the task is correctly assigned
         # and that the activity has been dropped
-        self.assertEqual(sol1_id.task_id.user_id, self.user_jd)
+        self.assertEqual(sol1_id.task_id.user_id, self.bnu_user_jd)
         self.assertEqual(
-            len(sol1_id.task_id.activity_ids), 1, "Task should have one activity"
+            len(sol1_id.task_id.activity_ids),
+            1,
+            "Task should now have only one activity",
+        )
+        # remaining activity should be "to plan"
+        self.assertIn(
+            self.activity_to_plan, sol1_id.task_id.activity_ids.activity_type_id
         )
         # set the task to "done"
         sol1_id.task_id.write({"stage_id": self.task_stage_done.id})
@@ -101,8 +109,28 @@ class TestProjectWorkflowDec(TestProjectWorkflowDecCommon):
         )
         # ensure no activities are re-created
         self.assertFalse(task4_id.activity_ids, "Task should still have no activities")
+        # test set "date_deadline" to tomorrow
+        sol2_id.task_id.with_user(self.beq_user_mw).date_deadline = (
+            fields.date.today() + datetime.timedelta(days=1)
+        )
+        self.assertEqual(
+            len(sol2_id.task_id.activity_ids),
+            1,
+            "Task should now have only one activity",
+        )
+        # remaining activity should be "to assign"
+        self.assertIn(
+            self.activity_to_assign, sol2_id.task_id.activity_ids.activity_type_id
+        )
 
-    def test_40_(self):
-        pass
-        # TODO: set date_deadline
-        # TODO: set check assigned team
+    def test_40_check_assigned_team(self):
+        _order_id, sol1_id, sol2_id, _sol3_id = self._create_so_with_3_lines()
+        team1_ids = sol1_id.task_id.activity_ids.mapped("team_id")
+        user1_ids = sol1_id.task_id.activity_ids.mapped("user_id")
+        self.assertEqual(team1_ids, self.team_design_office_digital)
+        self.assertFalse(user1_ids)
+        team2_ids = sol2_id.task_id.activity_ids.mapped("team_id")
+        user2_ids = sol2_id.task_id.activity_ids.mapped("user_id")
+        self.assertEqual(team2_ids, self.team_design_office_equipment)
+        self.assertFalse(user2_ids)
+

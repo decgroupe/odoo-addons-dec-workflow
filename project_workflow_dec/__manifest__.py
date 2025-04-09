@@ -10,7 +10,8 @@
         # 'sale_timesheet_task_exclude', [MIG] 14.0: Not needed anymore acoording to https://github.com/OCA/timesheet/pull/440#issuecomment-1235611830
         "project_list",
         "project_action_view",
-        "project_activity",
+        "project_auto_activity",
+        "project_auto_tag",
         "project_category",
         "project_identification",
         "project_timesheet_time_control",

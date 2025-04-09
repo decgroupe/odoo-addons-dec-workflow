@@ -57,12 +57,10 @@ class TestProjectWorkflowDec(TestProjectWorkflowDecCommon):
         order_id, sol1_id, sol2_id, sol3_id = self._create_so_with_3_lines()
         # check that the tasks have activities
         sol_ids = sol1_id | sol2_id | sol3_id
-        for sol_id in [sol1_id, sol2_id]:
+        for sol_id in sol_ids:
             self.assertEqual(
                 len(sol_id.task_id.activity_ids), 2, "Task should have two activities"
             )
-        self.assertFalse(sol3_id.task_id.activity_ids, "Task should have no activities")
-
         # check that the activities are of the right type
         activity_types = (
             sol_ids.mapped("task_id").mapped("activity_ids").mapped("activity_type_id")
@@ -124,7 +122,7 @@ class TestProjectWorkflowDec(TestProjectWorkflowDecCommon):
         )
 
     def test_40_check_assigned_team(self):
-        _order_id, sol1_id, sol2_id, _sol3_id = self._create_so_with_3_lines()
+        _order_id, sol1_id, sol2_id, sol3_id = self._create_so_with_3_lines()
         team1_ids = sol1_id.task_id.activity_ids.mapped("team_id")
         user1_ids = sol1_id.task_id.activity_ids.mapped("user_id")
         self.assertEqual(team1_ids, self.team_design_office_digital)
@@ -133,4 +131,7 @@ class TestProjectWorkflowDec(TestProjectWorkflowDecCommon):
         user2_ids = sol2_id.task_id.activity_ids.mapped("user_id")
         self.assertEqual(team2_ids, self.team_design_office_equipment)
         self.assertFalse(user2_ids)
-
+        team3_ids = sol3_id.task_id.activity_ids.mapped("team_id")
+        user3_ids = sol3_id.task_id.activity_ids.mapped("user_id")
+        self.assertFalse(team3_ids)
+        self.assertEqual(user3_ids, self.env.user)

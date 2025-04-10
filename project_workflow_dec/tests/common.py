@@ -2,9 +2,9 @@
 # Written by Yann Papouin <ypa at decgroupe.com>, Apr 2025
 
 from odoo.tests.common import TransactionCase
+from odoo.addons.project_activity.tests.common import TestProjectActivityCommon
 
-
-class TestProjectWorkflowDecCommon(TransactionCase):
+class TestProjectWorkflowDecCommon(TestProjectActivityCommon):
 
     def _create_so(self, partner_id):
         return (
@@ -63,18 +63,10 @@ class TestProjectWorkflowDecCommon(TransactionCase):
         self.service_senior_architect = self.env.ref(
             "sale_timesheet.product_service_deliver_timesheet_1"
         )
-        # activity types
-        self.activity_to_assign = self.env.ref(
-            "project_activity.mail_activity_to_assign"
-        )
-        self.activity_to_plan = self.env.ref("project_activity.mail_activity_to_plan")
         # ensure tags are present
         self.assertIsNotNone(self.tag_equipment, "Tag Equipment not found")
         self.assertIsNotNone(self.tag_digital, "Tag Digital not found")
         # users
         self.bnu_user_jd = self.env.ref("project_workflow_dec.user_jd")
         self.beq_user_mw = self.env.ref("project_workflow_dec.user_mw")
-        # stages
-        self.task_stage_new = self.env.ref("project.project_stage_0")
-        self.task_stage_done = self.env.ref("project.project_stage_2")
-        self.task_stage_cancelled = self.env.ref("project.project_stage_3")
+

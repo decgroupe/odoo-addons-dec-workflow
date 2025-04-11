@@ -35,6 +35,6 @@ class TestHrWorkflowDec2(TransactionCase):
         )
         self.assertEqual(
             sheet1_id.journal_id,
-            self.env.ref("hr_expense.hr_expense_account_journal"),
+            self.env.ref("hr_workflow_dec.od_journal"),
             "Default journal should be specific",
         )

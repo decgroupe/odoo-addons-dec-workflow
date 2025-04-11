@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data noupdate="1">
+
+        <record model="account.journal" id="od_journal">
+            <field name="name">Journal des OD</field>
+            <field name="code">OD</field>
+            <field name="type">purchase</field>
+            <!-- avoid being selected as default journal -->
+            <field name="sequence">10</field>
+            <field name="alias_name">journal-des-od</field>
+        </record>
+
+    </data>
+</odoo>

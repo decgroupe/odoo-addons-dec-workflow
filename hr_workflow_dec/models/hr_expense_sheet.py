@@ -38,9 +38,12 @@ class HrExpenseSheet(models.Model):
 
     @api.model
     def _default_journal_id(self):
-        # Restore 12.0 code to get default journal for expense (Journal des OD)
+        # set a default journal for expenses (Journal des OD)
+        # note that `hr_expense.hr_expense_account_journal` cannot be used since this
+        # is a demo record, and this journal will also be deleted if
+        # `l10n_generic_coa` is installed
         journal = self.env.ref(
-            "hr_expense.hr_expense_account_journal", raise_if_not_found=False
+            "hr_workflow_dec.od_journal", raise_if_not_found=False
         )
         if not journal or journal.sudo().company_id not in self.env.companies:
             return super()._default_journal_id()

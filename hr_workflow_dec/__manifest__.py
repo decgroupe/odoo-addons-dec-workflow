@@ -12,6 +12,7 @@
         "sale_expense",
     ],
     "data": [
+        "data/account_journal.xml",
         "views/hr_expense_sheet.xml",
         "views/hr_timesheet.xml",
         "views/hr_leave.xml",
